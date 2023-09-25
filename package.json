@@ -5,17 +5,8 @@
     "start": "govuk-prototype-kit start"
   },
   "dependencies": {
-    "@dwp/dwp-frontend": "3.3.0",
-    "@govuk-prototype-kit/common-templates": "2.0.1",
-    "@govuk-prototype-kit/step-by-step": "2.2.3",
-    "@govuk-prototype-kit/task-list": "2.0.0",
-    "@x-govuk/edit-prototype-in-browser": "^0.3.2",
-    "@x-govuk/govuk-prototype-filters": "2.0.0",
-    "alternative-formats-plugin": "github:dwp/alternative-formats-plugin",
-    "find-an-address-plugin": "github:dwp/find-an-address-plugin",
-    "govuk-frontend": "5.10.0",
-    "govuk-prototype-kit": "13.16.2",
-    "jquery": "3.7.1",
-    "radio-button-redirect": "^1.2.0"
+    "@govuk-prototype-kit/common-templates": "1.2.2",
+    "govuk-frontend": "4.7.0",
+    "govuk-prototype-kit": "13.13.2"
   }
 }

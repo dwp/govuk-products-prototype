@@ -1,17 +1,10 @@
-/* const govukPrototypeKit = require('govuk-prototype-kit'); 
-const addFilter = govukPrototypeKit.views.addFilter;
+//
+// For guidance on how to create filters see:
+// https://prototype-kit.service.gov.uk/docs/filters
+//
 
-let filters = {}; // Define filters as an object 
-filters.toMonth = function(x) {
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    if (x > 0 && x <= 12) {
-        return months[x - 1]; // returns the month as per x
-    } else {
-        return 'Invalid month'; // Handle invalid month
-    }
-};
+const govukPrototypeKit = require('govuk-prototype-kit')
+const addFilter = govukPrototypeKit.views.addFilter
 
-addFilter('toMonth', filters.toMonth);
-module.export = filters;
+// Add your filters here
 
- */
