@@ -5,60 +5,61 @@ Did you have a joint claim with a partner between 26 January 2023 and 25 Februar
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        A joint claim gets just one £300 payment
-      </h1>
-    
-     <p> If you had a joint claim between 18 August 2023 to 17 September 2023, and if you were eligible, you should have got a single payment of £300.</p>
- 
-     <p> This is one payment for the joint claim. You will not get £300 each.</p>
-       
-     <p>It should have been sent using the same payment method you used to get Universal Credit between those dates.</p> 
+    <h1 class="govuk-heading-l">
+      A joint claim gets just one £300 payment
+    </h1>
 
-      <form class="form" action="report-as-missing-answer" method="post">
+    <p> If you had a joint claim between 18 August 2023 to 17 September 2023, and if you were eligible, you should have
+      got a single payment of £300.</p>
+     
+    <p> This is one payment for the joint claim. You will not get £300 each.</p>
+     
+    <p>It should have been sent using the same payment method you used to get Universal Credit between those dates.</p>
+
+    <form class="form" action="report-as-missing-answer" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-    {{ govukRadios({
-      name: "still-report-missing-payment",
-      id: "still-report-missing-payment",
-      fieldset: {
+      {{ govukRadios({
+        name: "still-report-missing-payment",
+        id: "still-report-missing-payment",
+        fieldset: {
         legend: {
           text: "Do you still want to report this payment as missing?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
-      },
-      items: [
-        {
+        },
+        items: [
+          {
           value: "yes",
           text: "Yes"
-        },
-        {
+          },
+          {
           value: "no",
           text: "No"
-        }
-      ]
-    }) }}
+          }
+        ]
+      }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+      {{ govukButton({
+      text: "Continue"
+      }) }}
 
-      </form>
+    </form>
 
-    </div>
   </div>
+</div>
 
 {% endblock %}

@@ -1,26 +1,26 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      {{ govukPanel({
-        titleText: "We've received your details"
-      }) }}
+    {{ govukPanel({
+    titleText: "We've received your details"
+    }) }}
 
-      <h2 class="govuk-heading-m">
-        What happens next
-      </h2>
+    <h2 class="govuk-heading-m">
+      What happens next
+    </h2>
 
     <p>We will look into whether you should have had the £300 Cost of Living Payment.</p>
- 
+     
     <p>We will usually get back to you within 2 weeks, but this may take longer.</p>
- 
+     
     <p>We will phone you, write to you or put a message in your Universal Credit journal, if you have one.</p>
 
     <h2 class="govuk-heading-m">
@@ -29,21 +29,20 @@
 
     <p class="govuk-body"><a class="govuk-link" href="index.html">Report another missing Cost of Living Payment</a></p>
 
-
     <h2 class="govuk-heading-m">
       Other benefits and financial support
     </h2>
 
-    <p class="govuk-body">Check if you could get any <a class="govuk-link" href="#">further benefits or financial support</a>.</p>
-    
+    <p class="govuk-body">Check if you could get any <a class="govuk-link" href="#">further benefits or financial
+        support</a>.</p>
+
     <p>
-        <a href="#">
-          What did you think of this service?
-        </a> (takes 30 seconds)
-      </p>
-
-
-    </div>
+      <a href="#">
+        What did you think of this service?
+      </a> (takes 30 seconds)
+    </p>
+    
   </div>
+</div>
 
 {% endblock %}
