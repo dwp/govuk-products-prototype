@@ -48,7 +48,7 @@ router.post('/joint-benefit-answer', function(request, response) {
     if (jointBenefit == "yes"){
         response.redirect("/joint-claim")
     } else {
-        response.redirect("/index")
+        response.redirect("/personal-details")
     }
 })
 
