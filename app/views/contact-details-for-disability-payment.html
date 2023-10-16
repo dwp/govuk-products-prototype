@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l">Contact details for the Disability Cost of Living Payment</h1>
+
+ <p>If you're still unsure whether you should have had the 2023 Disability Cost of Living Payment of £150, contact the office that pays your benefit.</p>
+
+<p>Contact the <a href="" class="govuk-link--no-visited-state">Disability Service Centre</a> if you get:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>Disability Living Allowance for adults (DLA)</li>
+<li>Disability Living Allowance for children (DLA)</li>
+<li>Personal Independence Payment (PIP)</li>
+<li>Attendance Allowance (AA)</li>
+</ul>
+
+<p>Contact <a href="" class="govuk-link--no-visited-state">Social Security Scotland</a> if you get:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>Adult Disability Payment (ADP)</li>
+<li>Child Disability Payment (CDP)</li>
+</ul>
+
+<p>Contact Barnsley Industrial Injuries Disablement Benefit Centre if you get:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Constant Attendance Allowance (CAA) paid with Industrial Injuries Disablement Benefit</li>
+  </ul>
+
+<p>Barnsley Industrial Injuries Disablement Benefit Centre <br>
+Telephone: 0800 121 8379 <br>
+<a href="" class="govuk-link--no-visited-state">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 121 8379 <br>
+<a href="" class="govuk-link--no-visited-state">Find out about call charges</a></p>
+
+<p>Contact Veterans UK if you get:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Constant Attendance Allowance (CAA) paid under the War Pensions Scheme</li>
+  <li>Armed Forces Independence Payment</li>
+  <li>War Pensioners' Mobility Supplement (WPMS)</li>
+  </ul>
+
+<p>Veterans UK <br>
+Telephone: 0808 191 4218 <br>
+Email: <a href="" class="govuk-link--no-visited-state">veterans-uk@mod.gov.uk</a> <br>
+Monday to Friday: 8am to 4pm</p>
+  
+
+  </ul><h2 class="govuk-heading-m">Do you want to report another missing Cost of Living Payment?</h2>
+  <p class="govuk-body"><a class="govuk-link" href="/report-a-missing-cost-of-living-payment/welcome">Report another missing Cost of Living Payment</a></p>
+  <h2 class="govuk-heading-m">Other benefits and financial support</h2><p class="govuk-body">Check if you could get any <a class="govuk-link" href="https://www.gov.uk/check-benefits-financial-support">further benefits or financial support</a>.</p>
+  
+  <p class="govuk-body"><a class="govuk-link" href="feedback">What did you think of this service?</a> (takes 30 seconds)</p>
+  
+</div>
+  </div>
+
+{% endblock %}
