@@ -45,10 +45,10 @@ router.post('/joint-benefit-answer', function(request, response) {
 
     var jointBenefit = request.session.data['joint-benefit']
 
-    if (jointBenefit == "yes"){
-        response.redirect("/joint-claim")
-    } else {
+    if (jointBenefit == "no"){
         response.redirect("/personal-details")
+    } else {
+        response.redirect("/joint-claim")
     }
 })
 
