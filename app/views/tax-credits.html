@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Tax credits
+      </h1>
+
+      <p>
+        If you think you should have had the £301 or £300 payment for tax credits from HMRC by now, but you cannot see it in your bank, building society or credit union account, you can contact HMRC to check.</p>
+
+<p>Telephone: 0345 300 3900 <br> <a href="https://www.relayuk.bt.com/">Relay UK</a> if you cannot hear or speak on the phone: dial 18001 then 0345 300 3900 <br> Monday to Friday: 8am to 6pm</p>
+
+<p>If you get tax credits from HMRC and a low income benefit from DWP, you will get a Cost of Living Payment from DWP only.</p>
+
+<h2 class="govuk-heading-m">Do you want to report another missing Cost of Living Payment?</h2>
+     
+<p class="govuk-body"><a href="welcome.html" class="govuk-link">Report another missing Cost of Living Payment</a></p>
+
+<h2 class="govuk-heading-m">Other benefits and financial support</h2>
+     
+<p class="govuk-body">Check if you could get any <a href="https://www.gov.uk/check-benefits-financial-support" class="govuk-link">further benefits or financial support</a>.</p>
+
+<p class="govuk-body"><a class="govuk-link" href="feedback">What did you think of this service?</a> (takes 30 seconds)</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
