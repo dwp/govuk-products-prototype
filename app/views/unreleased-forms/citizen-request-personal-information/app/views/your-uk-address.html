@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+    text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What is your UK address? 
+      </h1>
+
+      <form class="form" action="/send-information-to-different-address" method="post">
+
+     
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        <div class="govuk-width-container">
+        {{ govukInput({
+        label: {
+        text: "Postcode"
+        },
+        classes: "govuk-!-width-two-thirds",
+        hint: {
+        text: "For example, AA3 1AB."
+        },
+        id: "postcode",
+        name: "postcode"
+        }) }}
+        
+        {{ govukInput({
+        label: {
+        text: "Building number or name"
+        },
+        classes: "govuk-!-width-two-thirds",
+        hint: {
+        text: "For example, 15 or Prospect Cottage."
+        },
+        id: "searchString",
+        name: "searchString"
+        }) }}
+        
+        {{ govukButton({
+        text: "Find address"
+        }) }}
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+        </div>  
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

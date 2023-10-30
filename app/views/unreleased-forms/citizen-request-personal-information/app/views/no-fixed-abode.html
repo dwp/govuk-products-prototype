@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+    text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+       <span class="govuk-caption-l">The citizen's address</span>
+      <h1 class="govuk-heading-l">
+        Do they have no fixed abode?
+      </h1>
+      
+      <form class="form" action="/uk-address" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        
+        {% set noHtml %}
+        {{ govukRadios({
+          id: "no-fixed-abode",
+          name: "no-fixed-abode",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Email address"
+          }
+        }) }}
+
+       <!--  {{ govukRadios({
+          id: "no-fixed-abode",
+          name: "no-fixed-abode",
+          type: "",
+          autocomplete: "",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Email address"
+          }
+          fieldset: {
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+                html: noHtml
+              }
+            }
+          ]
+        }) }}
+        {% endset -%} -->
+        
+        {{ govukRadios({
+          name: "contact",
+          fieldset: {
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+                html: noHtml
+              }
+            }
+          ]
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
