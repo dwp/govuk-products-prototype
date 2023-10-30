@@ -18,7 +18,7 @@ href: "javascript:window.history.back()"
 
     <span class="govuk-caption-l">About you</span>
 
-    {% from "govuk/components/input/macro.njk" import govukInput %}
+    {% from "govuk/components/input/macro.njk" import govukInput %} 
 
     {{ govukInput({
       label: {
@@ -26,8 +26,8 @@ href: "javascript:window.history.back()"
         classes: "govuk-label--l",
         isPageHeading: true
       },
-      id: "event-name",
-      name: "eventName"
+      id: "telNumber",
+      name: 'tel-number'
     }) }}
 
     {{ govukButton({
