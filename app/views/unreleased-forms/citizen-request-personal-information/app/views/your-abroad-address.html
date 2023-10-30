@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+    text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What is your abroad address? 
+      </h1>
+
+      <form class="form" action="/send-information-to-different-address" method="post">
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "address",
+          id: "address",
+          autocomplete: "street-address",
+          label: {
+            text: "What is your address?"
+          }
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
