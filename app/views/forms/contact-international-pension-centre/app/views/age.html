@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Contact the International Pension Centre
+      </h1>
+
+      <p>Send an enquiry about pensions and benefits if you live abroad or have lived abroad.</p>
+
+      <p>Don't use this form to report a change in your circumstances (such as your address or bank details). You must do this <a href="#">by phone or in writing</a>.</p>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+        <form class="form" action="/contact-form" method="post">
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          fieldset: {
+            legend: {
+              text: "Are you within 4 months of State Pension age and requiring a forecast on your State Pension?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
