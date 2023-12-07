@@ -6,13 +6,13 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-router.post('/uk-address', function(request, response) {
+router.post('uk-address', function(request, response) {
 
     var addressInUK = request.session.data['uk-address']
     if (addressInUK == "yes"){
-        response.redirect("/your-uk-address")
+        response.redirect("your-uk-address")
     } else {
-        response.redirect("/your-abroad-address")
+        response.redirect("your-abroad-address")
     }
 })
 
