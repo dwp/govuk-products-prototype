@@ -87,9 +87,9 @@ router.post('/mtb4-retired-payment-type-answer', function(request, response) {
     var typeOfPaymentMissing = request.session.data['type-of-payment-missing']
 
     if (typeOfPaymentMissing == "301-or-300"){
-        response.redirect("forms/retiring-MTB4-form/app/views/contact-details-for-low-income-benefits")
+        response.redirect("forms/cost-of-living-retiring-MTB4/contact-details-for-low-income-benefits")
     } else {
-        response.redirect("forms/retiring-MTB4-form/app/views/contact-details-for-disability-payment")
+        response.redirect("forms/cost-of-living-retiring-MTB4/contact-details-for-disability-payment")
     }
 })
 
