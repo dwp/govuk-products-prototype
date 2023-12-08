@@ -28,9 +28,9 @@ router.post('/payment-type-answer', function(request, response) {
     var typeOfPaymentMissing = request.session.data['type-of-payment-missing']
 
     if (typeOfPaymentMissing == "301-or-300"){
-        response.redirect("forms/cost-of-living/views/which-benefit-were-you-expecting")
+        response.redirect("forms/cost-of-living-mtb4/views/which-benefit-were-you-expecting")
     } else {
-        response.redirect("forms/cost-of-living/views/contact-details-for-disability-payment")
+        response.redirect("forms/cost-of-living-mtb4/views/contact-details-for-disability-payment")
     }
 })
 
@@ -39,10 +39,10 @@ router.post('/which-benefit-answer', function(request, response) {
     var missingBenefit = request.session.data['which-benefit']
 
     if (missingBenefit == "tax-credits"){
-        response.redirect("forms/cost-of-living/views/tax-credits")
+        response.redirect("forms/cost-of-living-mtb4/views/tax-credits")
     }
     else {
-        response.redirect("forms/cost-of-living/views/which-payment-are-you-missing")
+        response.redirect("forms/cost-of-living-mtb4/views/which-payment-are-you-missing")
     }
 })
 
@@ -51,10 +51,10 @@ router.post('/which-payment-answer', function(request, response) {
     var missingBenefit = request.session.data['which-payment']
 
     if (missingBenefit == "301"){
-        response.redirect("forms/cost-of-living/views/contact-details-for-low-income-benefits")
+        response.redirect("forms/cost-of-living-mtb4/views/contact-details-for-low-income-benefits")
     }
     else {
-        response.redirect("forms/cost-of-living/views/did-you-have-a-joint-claim")
+        response.redirect("forms/cost-of-living-mtb4/views/did-you-have-a-joint-claim")
     }
 })
 
@@ -63,9 +63,9 @@ router.post('/joint-benefit-answer', function(request, response) {
     var jointBenefit = request.session.data['joint-benefit']
 
     if (jointBenefit == "no"){
-        response.redirect("forms/cost-of-living/views/personal-details")
+        response.redirect("forms/cost-of-living-mtb4/views/personal-details")
     } else {
-        response.redirect("forms/cost-of-living/views/joint-claim")
+        response.redirect("forms/cost-of-living-mtb4/views/joint-claim")
     }
 })
 
@@ -74,9 +74,9 @@ router.post('/report-as-missing-answer', function(request, response) {
     var reportMissing = request.session.data['still-report-missing-payment']
 
     if (reportMissing == "yes"){
-        response.redirect("forms/cost-of-living/views/personal-details")
+        response.redirect("forms/cost-of-living-mtb4/views/personal-details")
     } else {
-        response.redirect("forms/cost-of-living/views/report-a-different-missing-cost-of-living-payment")
+        response.redirect("forms/cost-of-living-mtb4/views/report-a-different-missing-cost-of-living-payment")
     }
 })
 
