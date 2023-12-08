@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="which-benefit-answer" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        name: "which-benefit",
+        id: "which-benefit",
+        fieldset: {
+          legend: {
+            text: "Which benefit were you expecting a Cost of Living payment for?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+          value: "universal-credit",
+          text: "Universal Credit"
+          },
+          {
+          value: "jsa",
+          text: "income-based Jobseeker's Allowance (JSA)"
+          },
+          {
+          value: "esa",
+          text: "income-related Employment and Support Allowance (ESA)"
+          },
+          {
+          value: "income-support",
+          text: "Income Support"
+          },
+          {
+          value: "pension-credit",
+          text: "Pension Credit"
+          },
+          {
+          divider: "or"
+          },
+          {
+          value: "tax-credits",
+          text: "Tax Credits",
+          behaviour: "exclusive"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If your benefit is not listed
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If your benefit is not listed here, <a href="#">find out if you're eligible for a Cost of Living Payment and
+          payment dates for other benefits</a>.
+      </div>
+    </details>
+
+  </div>
+</div>
+
+{% endblock %}
