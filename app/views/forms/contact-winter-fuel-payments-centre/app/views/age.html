@@ -20,8 +20,9 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 
-        <form class="form" action="/contact-form" method="post">
+        <form class="form" action="/cwfpc-age" method="post">
         {{ govukRadios({
+          name: "age-verification",
           classes: "govuk-radios--inline",
           fieldset: {
             legend: {
