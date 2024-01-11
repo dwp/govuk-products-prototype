@@ -1,10 +1,23 @@
 {% extends "layouts/main.html" %}
 
+{% set serviceName %}
+  Report a missing Cost of Living Payment
+{% endset%}
+
 {% block pageTitle %}
-Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+Which payment are you missing?
 {% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
 {{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
@@ -16,7 +29,7 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="which-payment-answer" method="post">
+    <form class="form" action="/mtb5-which-payment-answer" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -32,12 +45,16 @@ href: "javascript:window.history.back()"
         },
         items: [
           {
-          value: "301",
-          text: "£301 paid between 25 April and 17 May 2023 for most people"
+            value: "301",
+            text: "£301 paid between 25 April and 17 May 2023 for most people"
           },
           {
-          value: "300",
-          text: "£300 paid between 31 October and 19 November 2023 for most people"
+            value: "300",
+            text: "£300 paid between 31 October and 19 November 2023 for most people"
+          },
+          {
+            value: "299",
+            text: "£299 paid between 6 February and 22 February 2024 for most people"
           }
         ]
       }) }}

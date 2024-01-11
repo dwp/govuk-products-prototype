@@ -1,7 +1,22 @@
 {% extends "layouts/main.html" %}
 
+{% set serviceName %}
+  Report a missing Cost of Living Payment
+{% endset%}
+
 {% block pageTitle %}
-Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+We've received your details
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -17,7 +32,7 @@ Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
       What happens next
     </h2>
 
-    <p>We will look into whether you should have had the £300 Cost of Living Payment.</p>
+    <p>We will look into whether you should have had the £299 Cost of Living Payment.</p>
      
     <p>We will usually get back to you within 2 weeks, but this may take longer.</p>
      
