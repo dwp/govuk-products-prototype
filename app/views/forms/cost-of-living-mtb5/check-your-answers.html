@@ -1,121 +1,82 @@
 {% extends "layouts/main.html" %}
 
+{% set serviceName %}
+  Report a missing Cost of Living Payment
+{% endset%}
+
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+Check your answers
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
 {% block content %}
-
-  <div class="govuk-grid-row">
+ 
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         Check your answers
       </h1>
 
-      <h2 class="govuk-heading-m">Personal details</h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Benefit
-          </dt>
-          <dd class="govuk-summary-list__value">
-            UC
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> benefit type</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['full-name'] or "Full name not given" }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/personal-details.html">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            5 January 1978
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> date of birth</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            National Insurance number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Not provided
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> National Insurance number</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Home address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            72 Guild Street<br>London<br>SE23 6FH
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> home address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Telephone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">{{ data['tel-number'] }}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> telephone number</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
-  
-        
-      <h2 class="govuk-heading-m">Now send your application</h2>
-      <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-    
-
       {{ govukSummaryList({
         rows: [
-          {
+        {
+          key: {
+            text: "Type of Cost of Living payment"
+          },
+          value: {
+            text: "Answer 1"
+          },
+          actions: {
+            items: [
+              {
+                href: "which-benefit-were-you-expecting",
+                text: "Change",
+                visuallyHiddenText: "Question 1"
+              }
+            ]
+          }
+        }
+        ,
+        {
             key: {
               text: "Benefit"
             },
             value: {
-              text: "UC"
+              text: "Answer 1"
+            },
+            actions: {
+              items: [
+                {
+                  href: "which-benefit-were-you-expecting",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Which payment are you missing?"
+            },
+            value: {
+              text: "Answer 1"
             },
             actions: {
               items: [
@@ -133,7 +94,7 @@
               text: "Name"
             },
             value: {
-              text: data['first-name'] or "First name not given"
+              text: data['full-name']
             },
             actions: {
               items: [
@@ -184,7 +145,7 @@
           ,
           {
             key: {
-              text: "Home address"
+              text: "Address"
             },
             value: {
               text: "Answer 3"
@@ -221,7 +182,7 @@
       })
      }}
 
-      <form action="/details-received" method="post" novalidate>
+      <form action="/mtb5-details-received" method="post" novalidate>
 
         {{ govukButton({
           text: "Accept and send"

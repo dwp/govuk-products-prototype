@@ -21,7 +21,7 @@ router.post('/cwfpc-age', function(request, response) {
     }
 })
 
-/* Cost of Living form */
+/* Cost of Living form - MTB4 */
 
 router.post('/payment-type-answer', function(request, response) {
 
@@ -91,6 +91,69 @@ router.post('/mtb4-retired-payment-type-answer', function(request, response) {
     } else {
         response.redirect("forms/cost-of-living-retiring-mtb4/contact-details-for-disability-payment")
     }
+})
+
+/* Cost of Living form - MTB5 */
+
+router.post('/mtb5-payment-type-answer', function(request, response) {
+
+    var typeOfPaymentMissing = request.session.data['type-of-payment-missing']
+
+    if (typeOfPaymentMissing == "301-or-300-or-299"){
+        response.redirect("forms/cost-of-living-mtb5/which-benefit-were-you-expecting")
+    } else {
+        response.redirect("forms/cost-of-living-mtb5/contact-details-for-disability-payment")
+    }
+})
+
+router.post('/mtb5-which-benefit-answer', function(request, response) {
+
+    var missingBenefit = request.session.data['which-benefit']
+
+    if (missingBenefit == "tax-credits"){
+        response.redirect("forms/cost-of-living-mtb5/tax-credits")
+    }
+    else {
+        response.redirect("forms/cost-of-living-mtb5/which-payment-are-you-missing")
+    }
+})
+
+router.post('/mtb5-which-payment-answer', function(request, response) {
+
+    var missingBenefit = request.session.data['which-payment']
+
+    if (missingBenefit == "301"){
+        response.redirect("forms/cost-of-living-mtb5/contact-details-for-low-income-benefits")
+    }
+    else {
+        response.redirect("forms/cost-of-living-mtb5/did-you-have-a-joint-claim")
+    }
+})
+
+router.post('/mtb5-joint-benefit-answer', function(request, response) {
+
+    var jointBenefit = request.session.data['joint-benefit']
+
+    if (jointBenefit == "no"){
+        response.redirect("forms/cost-of-living-mtb5/personal-details")
+    } else {
+        response.redirect("forms/cost-of-living-mtb5/joint-claim")
+    }
+})
+
+router.post('/mtb5-report-as-missing-answer', function(request, response) {
+
+    var reportMissing = request.session.data['still-report-missing-payment']
+
+    if (reportMissing == "yes"){
+        response.redirect("forms/cost-of-living-mtb5/personal-details")
+    } else {
+        response.redirect("forms/cost-of-living-mtb5/report-a-different-missing-cost-of-living-payment")
+    }
+})
+
+router.post('/mtb5-details-received', function(request, response) {
+        response.redirect("forms/cost-of-living-mtb5/details-received")
 })
 
 /* Request Personal Information form */

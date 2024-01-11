@@ -1,10 +1,23 @@
 {% extends "layouts/main.html" %}
 
+{% set serviceName %}
+  Report a missing Cost of Living Payment
+{% endset%}
+
 {% block pageTitle %}
-Did you have a joint claim with a partner between 26 January 2023 and 25 February 2023?
+A joint claim
 {% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
 {{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
@@ -17,17 +30,17 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      A joint claim gets just one £300 payment
+      A joint claim gets just one £299 payment
     </h1>
 
-    <p> If you had a joint claim between 18 August 2023 to 17 September 2023, and if you were eligible, you should have
+    <p> If you had a joint claim between 13 November 2023 and 12 December 2023, and if you were eligible, you should have
       got a single payment of £300.</p>
      
-    <p> This is one payment for the joint claim. You will not get £300 each.</p>
+    <p> This is one payment for the joint claim. You will not get 299 each.</p>
      
     <p>It should have been sent using the same payment method you used to get Universal Credit between those dates.</p>
 
-    <form class="form" action="report-as-missing-answer" method="post">
+    <form class="form" action="/mtb5-report-as-missing-answer" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
