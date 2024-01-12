@@ -122,7 +122,7 @@ router.post('/mtb5-which-payment-answer', function(request, response) {
 
     var missingBenefit = request.session.data['which-payment']
 
-    if (missingBenefit == "301"){
+    if (missingBenefit == "301" || "300"){
         response.redirect("forms/cost-of-living-mtb5/contact-details-for-low-income-benefits")
     }
     else {
