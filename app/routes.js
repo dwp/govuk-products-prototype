@@ -134,10 +134,10 @@ router.post('/mtb5-joint-benefit-answer', function(request, response) {
 
     var jointBenefit = request.session.data['joint-benefit']
 
-    if (jointBenefit == "no"){
-        response.redirect("forms/cost-of-living-mtb5/personal-details")
-    } else {
+    if (jointBenefit == "yes" || "not sure"){
         response.redirect("forms/cost-of-living-mtb5/joint-claim")
+    } else {
+        response.redirect("forms/cost-of-living-mtb5/personal-details")
     }
 })
 
