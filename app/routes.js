@@ -122,11 +122,11 @@ router.post('/mtb5-which-payment-answer', function(request, response) {
 
     var missingBenefit = request.session.data['which-payment']
 
-    if (missingBenefit == "301" || "300"){
-        response.redirect("forms/cost-of-living-mtb5/contact-details-for-low-income-benefits")
+    if (missingBenefit == "299"){
+        response.redirect("forms/cost-of-living-mtb5/did-you-have-a-joint-claim")
     }
     else {
-        response.redirect("forms/cost-of-living-mtb5/did-you-have-a-joint-claim")
+        response.redirect("forms/cost-of-living-mtb5/contact-details-for-low-income-benefits")
     }
 })
 
@@ -134,10 +134,10 @@ router.post('/mtb5-joint-benefit-answer', function(request, response) {
 
     var jointBenefit = request.session.data['joint-benefit']
 
-    if (jointBenefit == "yes" || "not sure"){
-        response.redirect("forms/cost-of-living-mtb5/joint-claim")
-    } else {
+    if (jointBenefit == "no"){
         response.redirect("forms/cost-of-living-mtb5/personal-details")
+    } else {
+        response.redirect("forms/cost-of-living-mtb5/joint-claim")
     }
 })
 
@@ -154,6 +154,37 @@ router.post('/mtb5-report-as-missing-answer', function(request, response) {
 
 router.post('/mtb5-details-received', function(request, response) {
         response.redirect("forms/cost-of-living-mtb5/details-received")
+})
+
+/* Retiring MTB5 form */
+
+router.post('/mtb5-retired-payment-type-answer', function(request, response) {
+
+    var typeOfPaymentMissing = request.session.data['type-of-payment-missing']
+
+    if (typeOfPaymentMissing == "301-or-300"){
+        response.redirect("forms/cost-of-living-retiring-mtb5/contact-details-for-low-income-benefits")
+    } else {
+        response.redirect("forms/cost-of-living-retiring-mtb5/contact-details-for-disability-payment")
+    }
+})
+
+/* Cold Weather Payments */
+
+
+router.post('/cwp-check-postcode', function(request, response) {
+
+    var country = request.session.data['country']
+
+    if (country == "england"){
+        response.redirect("forms/cold-weather-payments/england-and-wales")
+    } else if (country == "wales"){
+        response.redirect("forms/cold-weather-payments/england-and-wales")
+    } else if (country == "northern ireland"){
+        response.redirect("forms/cold-weather-payments/northern-ireland")
+    } else {
+        response.redirect("forms/cold-weather-payments/scotland")
+    }
 })
 
 /* Request Personal Information form */
