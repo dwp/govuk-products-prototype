@@ -1,0 +1,127 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Ask for a Maternity Allowance claim form</span>
+      Design history
+    </h1>
+
+    <div class="dwp-timeline">
+      <ol class="dwp-timeline__events">
+        <li class="dwp-timeline__events--entry">
+          <div class="dwp-timeline__events--entry-header">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/v2/index.html">Version 2</a> Northern Ireland content
+            </h2>
+            {{govukTag({ text: "Beta", classes: "govuk-tag--light-blue" })}}
+          </div>
+          <p class="govuk-caption-m">October 2023</p>
+
+          {{ govukDetails({
+            summaryText: "Main changes",
+            html: 
+            govukTable({
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Change",
+                  classes: "govuk-!-width-one-third"
+                },
+                {
+                  text: "Why we made it"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "[Change here]"
+                  },
+                  {
+                    text: "[Reason here]"
+                  }
+                ],
+                [
+                  {
+                    text: "[Change here]"
+                  },
+                  {
+                    text: "[Reason here]"
+                  }
+                ],
+                [
+                  {
+                    text: "[Change here]"
+                  },
+                  {
+                    text: "[Reason here]"
+                  }
+                ]
+              ]
+            })
+          }) }}
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <div class="dwp-timeline__events--entry-header">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/v1/index.html">Version 1</a> User journey
+            </h2>
+            {{govukTag({ text: "Beta", classes: "govuk-tag--light-blue" })}}
+          </div>
+          <p class="govuk-caption-m">March 2022</p>
+
+          {{ govukDetails({
+            summaryText: "Main changes",
+            html: 
+            govukTable({
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Change",
+                  classes: "govuk-!-width-one-third"
+                },
+                {
+                  text: "Why we made it"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "[Change here]"
+                  },
+                  {
+                    text: "[Reason here]"
+                  }
+                ],
+                [
+                  {
+                    text: "[Change here]"
+                  },
+                  {
+                    text: "[Reason here]"
+                  }
+                ],
+                [
+                  {
+                    text: "[Change here]"
+                  },
+                  {
+                    text: "[Reason here]"
+                  }
+                ]
+              ]
+            })
+          }) }}
+        </li>
+      </ol>
+      </div>
+  
+  </div>
+</div>
+{% endblock %}
