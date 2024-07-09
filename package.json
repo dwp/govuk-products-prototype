@@ -8,11 +8,8 @@
     "@dwp/dwp-frontend": "2.7.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@x-govuk/edit-prototype-in-browser": "^0.3.2",
-<<<<<<< HEAD
     "govuk-frontend": "5.2.0",
-=======
     "govuk-frontend": "5.4.0",
->>>>>>> 9d4e205 (Index page revamp)
     "govuk-prototype-kit": "13.16.2"
   }
 }
