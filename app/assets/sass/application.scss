@@ -14,7 +14,7 @@
     }
 
     .design-history {
-        @include govuk-responsive-margin(5, "bottom");
+        @include govuk-responsive-margin(5, "top");
         @include govuk-responsive-padding(3);
         background-color: govuk-colour("light-grey");
         border-left: 4px solid $govuk-brand-colour;
