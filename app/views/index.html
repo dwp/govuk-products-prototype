@@ -9,6 +9,15 @@ GOV.UK team products
 {{ govukHeader() }}
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Discovery"
+    },
+    html: 'These products are not live, they are conceptual screens.'
+  }) }}
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -17,392 +26,460 @@ GOV.UK team products
       GOV.UK team's products
     </h1>
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Ask for a Maternity Allowance claim form</h2>
+    <p class="govuk-body-l">The GOV.UK team build interactive products that help DWP to work and communicate efficiently. We design forms and calculators to support user journeys.</p>
 
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/design-history.html">Design history</a>
-              </p>
-            </div>
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Ask for a Maternity Allowance claim form</h2>
 
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-        </div>
-              
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Check your maternity allowance dates</h2>
-            
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "20 Nov 2023"
+              }
+            ]
+          ]
+        }) }}
 
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="check-your-maternity-allowance-dates/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/design-history.html">Design history</a>
+          </p>
         </div>
 
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Cold weather payments</h2>
-            
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
-
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="cold-weather-payments/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-        </div>
-
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Contact DWP about accessibility</h2>
-            
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
-
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="contact-dwp-about-accessibility/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-        </div>
-
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Contact Employer Services</h2>
-            
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
-
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="contact-employer-services/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-        </div>
-
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Contact the DWP ministerial correspondence team</h2>
-           
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
-
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="contact-the-dwp-ministerial-correspondence-team/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-        </div>
-
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Contact International Pension Centre</h2>
-            
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
-
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="contact-the-international-pension-centre/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-        </div>
-
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Contact Winter Fuel Payments Centre</h2>
-           
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
-
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="contact-winter-fuel-payments-centre/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-        </div>
-
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Cost of Living</h2>
-
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-half">
-                <h3 class="govuk-heading-s">Cost of Living - MTB4</h3>
-                {{ govukTable({
-                  firstCellIsHeader: false,
-                  classes: "govuk-!-width-two-thirds",
-                  rows: [
-                    [
-                      {
-                        html: '<a class="govuk-link" href="cost-of-living-mtb4/index.html">Latest version</a>'
-                      },
-                      {
-                        html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                      }
-                    ]
-                  ]
-                }) }}
-    
-                <h3 class="govuk-heading-s">Cost of Living - MTB4 retired</h3>
-                {{ govukTable({
-                  firstCellIsHeader: false,
-                  classes: "govuk-!-width-two-thirds",
-                  rows: [
-                    [
-                      {
-                        html: '<a class="govuk-link" href="cost-of-living-retiring-mtb4/index.html">Latest version</a>'
-                      },
-                      {
-                        html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                      }
-                    ]
-                  ]
-                }) }}
-              </div>
-             
-              <div class="govuk-grid-column-one-half">
-                    <h3 class="govuk-heading-s">Cost of Living - MTB5</h3>
-                    {{ govukTable({
-                      firstCellIsHeader: false,
-                      classes: "govuk-!-width-two-thirds",
-                      rows: [
-                        [
-                          {
-                            html: '<a class="govuk-link" href="cost-of-living-mtb5/index.html">Latest version</a>'
-                          },
-                          {
-                            html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                          }
-                        ]
-                      ]
-                    }) }}
+      </div>
+    </div>
+          
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Check your maternity allowance dates</h2>
         
-                    <h3 class="govuk-heading-s">Cost of Living - MTB5 retired</h3>
-                    {{ govukTable({
-                      firstCellIsHeader: false,
-                      classes: "govuk-!-width-two-thirds",
-                      rows: [
-                        [
-                          {
-                            html: '<a class="govuk-link" href="cost-of-living-retiring-mtb5/index.html">Latest version</a>'
-                          },
-                          {
-                            html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                          }
-                        ]
-                      ]
-                    }) }}
-              </div>
-            </div>
-          </div>
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="check-your-maternity-allowance-dates/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
         </div>
 
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Find out who to contact about money taken off your Universal Credit payment</h2>
-            
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
+      </div>
+    </div>
 
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Cold weather payments</h2>
+        
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="cold-weather-payments/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Contact DWP about accessibility</h2>
+        
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="contact-dwp-about-accessibility/v1/#">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Contact Employer Services</h2>
+        
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="contact-dwp-about-accessibility/v1/#">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Contact the DWP ministerial correspondence team</h2>
+        
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="contact-dwp-about-accessibility/v1/#">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Contact International Pension Centre</h2>
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="contact-the-international-pension-centre/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Contact Winter Fuel Payments Centre</h2>
+        
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="contact-winter-fuel-payments-centre/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Cost of Living</h2>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s">Cost of Living - MTB4</h3>
             {{ govukTable({
               firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
+              classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-7",
               rows: [
                 [
                   {
-                    html: '<a class="govuk-link" href="find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v1/index.html">Version 1</a>'
+                    html: '<a class="govuk-link" href="cost-of-living-mtb4/index.html">Latest version</a>'
                   },
                   {
                     html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
                   }
-                ],
+                ]
+              ]
+            }) }}
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s">Cost of Living - MTB4 retired</h3>
+            {{ govukTable({
+              firstCellIsHeader: false,
+              classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-7",
+              rows: [
                 [
                   {
-                    text: "Version 2"
+                    html: '<a class="govuk-link" href="cost-of-living-retiring-mtb4/index.html">Latest version</a>'
                   },
                   {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
                   }
                 ]
               ]
@@ -410,179 +487,354 @@ GOV.UK team products
           </div>
         </div>
 
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Find your nearest Jobcentre</h2>
-           
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
-
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s">Cost of Living - MTB5</h3>
             {{ govukTable({
               firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
+              classes: "govuk-!-width-two-thirds",
               rows: [
                 [
                   {
-                    html: '<a class="govuk-link" href="find-your-nearest-jobcentre/v1/index.html">Version 1</a>'
+                    html: '<a class="govuk-link" href="cost-of-living-mtb5/index.html">Latest version</a>'
                   },
                   {
                     html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
                   }
-                ],
+                ]
+              ]
+            }) }}
+          </div>
+          
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s">Cost of Living - MTB5 retired</h3>
+            {{ govukTable({
+              firstCellIsHeader: false,
+              classes: "govuk-!-width-two-thirds",
+              rows: [
                 [
                   {
-                    text: "Version 2"
+                    html: '<a class="govuk-link" href="cost-of-living-retiring-mtb5/index.html">Latest version</a>'
                   },
                   {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
                   }
                 ]
               ]
             }) }}
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Get a proof of benefit letter</h2>
-            
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Find out who to contact about money taken off your Universal Credit payment</h2>
+        
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v1/#">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
 
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="get-a-proof-of-benefit-letter/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
         </div>
+      </div>
+    </div>
 
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Request your personal information</h2>
-            
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Find your nearest Jobcentre</h2>
+        
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="find-your-nearest-jobcentre/v1/#">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
 
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="personal-information-request/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
         </div>
+      </div>
+    </div>
 
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Send a personal information request for a citizen</h2>
-           
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Get a proof of benefit letter</h2>
 
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="personal-information-request-for-a-citizen/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="get-a-proof-of-benefit-letter/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
         </div>
+      </div>
+    </div>
 
-        <div class="dwp-card">
-          <div class="dwp-card__content">
-            <h2 class="govuk-heading-m">Request information about underpaid state pension for someone who has died</h2>
-            
-            <div class="design-history">
-              <p class="govuk-body">
-                <a class="govuk-link" href="#">Design history</a>
-              </p>
-            </div>
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Request your personal information</h2>
+        
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="personal-information-request/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
 
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-one-half",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="request-information-about-underpaid-state-pension-for-someone-who-has-died/v1/index.html">Version 1</a>'
-                  },
-                  {
-                    html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
-                  }
-                ],
-                [
-                  {
-                    text: "Version 2"
-                  },
-                  {
-                    html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
-                  }
-                ]
-              ]
-            }) }}
-          </div>
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Send a personal information request for a citizen</h2>
+        
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="personal-information-request-for-a-citizen/v1/#">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dwp-card">
+      <div class="dwp-card__content">
+        <h2 class="govuk-heading-m">Request information about underpaid state pension for someone who has died</h2>
+        
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-one-half",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="request-information-about-underpaid-state-pension-for-someone-who-has-died/v1/#">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="design-history">
+          <p class="govuk-body">
+            <a class="govuk-link" href="#">Design history</a>
+          </p>
         </div>
       </div>
     </div>
