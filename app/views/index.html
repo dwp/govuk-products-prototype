@@ -5,28 +5,33 @@ GOV.UK team products
 {% endblock %}
 
 {% block header %}
-<!-- Blank header with no service name for the start page -->
-{{ govukHeader() }}
+
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Discovery"
-    },
-    html: 'These products are not live, they are conceptual screens.'
-  }) }}
-{% endblock %}
+ {% block bodyStart %}
+  <div class="big-bar">
+    <div class="govuk-width-container big-bar__wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-heading-xl">GOV.UK team's products</h1>
+          <p class="govuk-body-l">The GOV.UK team designs and builds forms and calculators to support user journeys.</p>
+          <p class="govuk-body-l">These are not real DWP services. They are prototypes used for research with users.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %} 
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">
+  <!--  <h1 class="govuk-heading-l">
       GOV.UK team's products
     </h1>
 
     <p class="govuk-body">The GOV.UK team build interactive products that help DWP to work and communicate efficiently. We design forms and calculators to support user journeys.</p>
+-->
 
     <div class="dwp-card">
       <div class="dwp-card__content">

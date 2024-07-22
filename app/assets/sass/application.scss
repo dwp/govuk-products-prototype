@@ -3,6 +3,29 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
 
+.big-bar {
+    background-color: $govuk-brand-colour;
+    height: auto;
+    width: 100%;
+
+    .big-bar__wrapper {
+        margin: 0 auto;
+        padding: 30px 0 10px 0;
+    }
+
+    h1 {
+        @include govuk-responsive-margin(6, "bottom");
+    }
+
+    p {
+        @include govuk-responsive-margin(4, "bottom");
+   }
+
+    h1, p {
+        color: govuk-colour("white");
+    }
+}
+
 .dwp-card {
     @include govuk-responsive-margin(5, "bottom");
     @include govuk-responsive-padding(5);
