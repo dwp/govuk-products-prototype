@@ -32,11 +32,19 @@ GOV.UK team products
 {% endblock %} 
 
 {% block content %}
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-products">
   <div class="govuk-grid-column-full">
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="search">
+        Search
+      </label>
+      <input type="text" id="search" name="search" class="govuk-input govuk-input--width-10" />
+      <a class="clear-selection-link" href="#" class="govuk-link" onclick="clearSelection()">Clear selection</a>
+    </div>
+
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Ask for a Maternity Allowance claim form</h2>
+        <h2 class="govuk-heading-m govuk-product">Ask for a Maternity Allowance claim form</h2>
 
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -90,12 +98,10 @@ GOV.UK team products
           href: "ask-for-a-maternity-allowance-claim-form/design-history.html"
         }) }}
 
-      </div>
     </div>
           
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Check your maternity allowance dates</h2>
+        <h2 class="govuk-heading-m govuk-product">Check your maternity allowance dates</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -143,12 +149,10 @@ GOV.UK team products
           href: "#"
         }) }}
 
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Cold weather payments</h2>
+        <h2 class="govuk-heading-m govuk-product">Cold weather payments</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -195,12 +199,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Contact DWP about accessibility</h2>
+        <h2 class="govuk-heading-m govuk-product">Contact DWP about accessibility</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -247,12 +249,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Contact Employer Services</h2>
+        <h2 class="govuk-heading-m govuk-product">Contact Employer Services</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -299,12 +299,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Contact the DWP ministerial correspondence team</h2>
+        <h2 class="govuk-heading-m govuk-product">Contact the DWP ministerial correspondence team</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -351,12 +349,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Contact International Pension Centre</h2>
+        <h2 class="govuk-heading-m govuk-product">Contact International Pension Centre</h2>
         {{ govukTable({
           firstCellIsHeader: tue,
           classes: "govuk-!-width-one-half",
@@ -402,12 +398,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Contact Winter Fuel Payments Centre</h2>
+        <h2 class="govuk-heading-m govuk-product">Contact Winter Fuel Payments Centre</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -454,12 +448,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Cost of Living</h2>
+        <h2 class="govuk-heading-m govuk-product">Cost of Living</h2>
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-half">
@@ -536,12 +528,10 @@ GOV.UK team products
             }) }}
           </div>
         </div>
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Find out who to contact about money taken off your Universal Credit payment</h2>
+        <h2 class="govuk-heading-m govuk-product">Find out who to contact about money taken off your Universal Credit payment</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -588,12 +578,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Find your nearest Jobcentre</h2>
+        <h2 class="govuk-heading-m govuk-product">Find your nearest Jobcentre</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -640,12 +628,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Get a proof of benefit letter</h2>
+        <h2 class="govuk-heading-m govuk-product">Get a proof of benefit letter</h2>
 
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -692,12 +678,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Request your personal information</h2>
+        <h2 class="govuk-heading-m govuk-product">Request your personal information</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -744,12 +728,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Send a personal information request for a citizen</h2>
+        <h2 class="govuk-heading-m govuk-product">Send a personal information request for a citizen</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -796,12 +778,10 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
 
     <div class="dwp-card">
-      <div class="dwp-card__content">
-        <h2 class="govuk-heading-m">Request information about underpaid state pension for someone who has died</h2>
+        <h2 class="govuk-heading-m govuk-product">Request information about underpaid state pension for someone who has died</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -848,8 +828,11 @@ GOV.UK team products
           classes: "govuk-button--secondary",
           href: "#"
         }) }}
-      </div>
     </div>
   </div>
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/application.js"></script>
 {% endblock %}

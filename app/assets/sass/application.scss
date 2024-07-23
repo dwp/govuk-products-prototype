@@ -94,3 +94,11 @@
         }
     }
 }
+
+.hide {
+    display: none;
+}
+
+.clear-selection-link {
+    @include govuk-responsive-margin(2, "left");
+}
