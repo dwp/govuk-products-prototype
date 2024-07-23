@@ -3,6 +3,10 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
 
+.dwp-header {
+    border-bottom: 10px solid $govuk-brand-colour;
+}
+
 .big-bar {
     background-color: $govuk-brand-colour;
     height: auto;
@@ -46,6 +50,11 @@
         .govuk-body {
             margin: 0;
         }
+    }
+
+    .govuk-button {
+        @include govuk-responsive-margin(5, "top");
+        @include govuk-responsive-margin(0, "bottom");
     }
 
     .govuk-table {

@@ -8,13 +8,22 @@ GOV.UK team products
 
 {% endblock %}
 
- {% block bodyStart %}
+{% block bodyStart %}
+ {% from "internal-service-header/macro.njk" import dwpHeader %}
+ {{
+     dwpHeader({
+         serviceName: "GOV.UK team prototype library" ,
+         serviceHref: "#",
+         container: true
+     })
+ }}
+
   <div class="big-bar">
     <div class="govuk-width-container big-bar__wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-          <h1 class="govuk-heading-xl">GOV.UK team's products</h1>
-          <p class="govuk-body-l">The GOV.UK team designs and builds forms and calculators to support user journeys.</p>
+          <h1 class="govuk-heading-xl">Prototypes for DWP GOV.UK products</h1>
+          <p class="govuk-body-l">The GOV.UK team designs and builds forms and calculators to support user journeys on GOV.UK.</p>
           <p class="govuk-body-l">These are not real DWP services. They are prototypes used for research with users.</p>
         </div>
       </div>
@@ -25,14 +34,6 @@ GOV.UK team products
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
-  <!--  <h1 class="govuk-heading-l">
-      GOV.UK team's products
-    </h1>
-
-    <p class="govuk-body">The GOV.UK team build interactive products that help DWP to work and communicate efficiently. We design forms and calculators to support user journeys.</p>
--->
-
     <div class="dwp-card">
       <div class="dwp-card__content">
         <h2 class="govuk-heading-m">Ask for a Maternity Allowance claim form</h2>
@@ -77,11 +78,17 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
+        <!--<div class="design-history">
           <p class="govuk-body">
             <a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/design-history.html">Design history</a>
           </p>
-        </div>
+        </div>-->
+
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "ask-for-a-maternity-allowance-claim-form/design-history.html"
+        }) }}
 
       </div>
     </div>
@@ -130,11 +137,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
 
       </div>
     </div>
@@ -183,11 +190,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -235,11 +242,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+         {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -287,11 +294,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -339,11 +346,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -390,11 +397,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -442,11 +449,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -576,11 +583,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -628,11 +635,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -680,11 +687,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -732,11 +739,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -784,11 +791,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
 
@@ -836,11 +843,11 @@ GOV.UK team products
           ]
         }) }}
 
-        <div class="design-history">
-          <p class="govuk-body">
-            <a class="govuk-link" href="#">Design history</a>
-          </p>
-        </div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#"
+        }) }}
       </div>
     </div>
   </div>
