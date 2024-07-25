@@ -40,7 +40,7 @@ GOV.UK team products
         Search
       </label>
       <input type="text" id="search" name="search" class="govuk-input govuk-input--width-10" />
-      <a class="clear-selection-link" href="#" class="govuk-link" onclick="clearSelection()">Clear selection</a>
+      <a href="#" class="govuk-link clear-search-link" onclick="clearSearch()">Clear search</a>
     </div>
 
     <div class="dwp-card">
@@ -134,7 +134,7 @@ GOV.UK team products
                 html: '<a class="govuk-link" href="check-your-maternity-allowance-dates/v1/index.html">Version 1</a>'
               },
               {
-                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+                html: govukTag({ text: "Live - Alpha", classes: "govuk-tag--light-blue" })
               },
               {
                 text: "-"
@@ -401,7 +401,7 @@ GOV.UK team products
     </div>
 
     <div class="dwp-card">
-        <h2 class="govuk-heading-m govuk-product">Contact Winter Fuel Payments Centre</h2>
+        <h2 class="govuk-heading-m govuk-product">Contact the Winter Fuel Payments Centre</h2>
         
         {{ govukTable({
           firstCellIsHeader: tue,
@@ -420,13 +420,13 @@ GOV.UK team products
           rows: [
             [
               {
-                text: "Version 2"
+                html: '<a class="govuk-link" href="contact-winter-fuel-payments-centre/v2/index.html">Version 2</a>'
               },
               {
-                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
               },
               {
-                text: "-"
+                text: "Early Nov 2023"
               }
             ],
             [
@@ -434,7 +434,7 @@ GOV.UK team products
                 html: '<a class="govuk-link" href="contact-winter-fuel-payments-centre/v1/index.html">Version 1</a>'
               },
               {
-                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+                text: ""
               },
               {
                 text: "-"
@@ -446,7 +446,7 @@ GOV.UK team products
         {{ govukButton({
           text: "View design history",
           classes: "govuk-button--secondary",
-          href: "#"
+          href: "contact-winter-fuel-payments-centre/design-history"
         }) }}
     </div>
 

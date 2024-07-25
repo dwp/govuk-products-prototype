@@ -2,5 +2,15 @@
 For guidance on how to use layouts see:
 https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
  #}
+
+ {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
     
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+  }) }}
+{% endblock %}
+

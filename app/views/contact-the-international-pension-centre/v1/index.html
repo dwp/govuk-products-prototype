@@ -1,20 +1,91 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% set serviceName %}
+  Contact the  International Pension Centre
+{% endset %}
+
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+      <h1 class="govuk-heading-xl">
+        Contact the  International Pension Centre
+      </h1>
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+      <p class="govuk-body">Send an enquiry about pensions and benefits if you live abroad or have lived abroad.</p>
+     
+      <p class="govuk-body">Don't use this form to report a change in your circumstances (such as your address or bank details). You must do this <a href="https://www.gov.uk/international-pension-centre">by phone or in writing</a>.
+      </p>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+      <h2 class="govuk-heading-l">
+        Your message
+      </h2>
+
+        <form class="form" action="/what-happens-next" method="post">
+        {{ govukInput({
+          label: {
+            text: "Your full name",
+            classes: "govuk-label--m"
+          },
+          classes: "govuk-input--width-20"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label--m"
+          },
+          classes: "govuk-input--width-20",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false
+        }) }}
+
+
+        {{ govukDateInput({
+          fieldset: {
+            legend: {
+              text: "What is your date of birth?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 1948"
+          }
+        }) }}
+
+        {{ govukTextarea({
+          rows: "5",
+          label: {
+            text: "What's your enquiry?",
+            classes: "govuk-label--m"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Send your enquiry",
+          href: "what-happens-next"
+        }) }}
+      </form>
+
+    </div>
   </div>
-</div>
 
 {% endblock %}

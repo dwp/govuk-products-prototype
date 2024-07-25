@@ -1,7 +1,11 @@
 {% extends "layouts/main.html" %}
 
+{% set serviceName %}
+  Contact the  International Pension Centre
+{% endset %}
+
 {% block pageTitle %}
-  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+  What happens next – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -10,20 +14,14 @@
     <div class="govuk-grid-column-two-thirds">
 
         {{ govukPanel({
-          titleText: "Message sent"
+          titleText: "What happens next"
         }) }}
-        
-        <h2 class="govuk-heading-m">
-          What happens next
-        </h2>
 
-        <p>The Winter Fuel Payments Centre will respond to you as soon as possible.</p>
+        <p class="govuk-body">The International Pension Centre reply to most emails within 10 working days. They will tell you if it will take longer to reply to your enquiry.</p>
 
-        <p>
-          <a href="#">
-            What did you think of this service?
-          </a> (takes 30 seconds)
-        </p>
+        <p class="govuk-body">Read more about the <a href="">State Pension</a>.</p>
+
+        <p class="govuk-body">Go to the <a href="https://www.gov.uk/">GOV.UK homepage</a>.</p>
 
     </div>
   </div>
