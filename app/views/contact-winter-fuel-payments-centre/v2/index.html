@@ -13,12 +13,6 @@
         Your enquiry
       </h1>
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
         <form class="form" action="/what-happens-next" method="post">
         {{ govukInput({
           label: {
@@ -40,17 +34,15 @@
           spellcheck: false
         }) }}
 
-
-        {{ govukDateInput({
-          fieldset: {
-            legend: {
-              text: "Your date of birth",
-              classes: "govuk-fieldset__legend--m"
-            }
+        {{ govukInput({
+          label: {
+            text: "Telephone (optional)",
+            classes: "govuk-label--m"
           },
           hint: {
-            text: "For example, 31 3 1950"
-          }
+            text: "For international numbers include the country code"
+          },
+          classes: "govuk-input--width-20"
         }) }}
 
        <!--  {{ govukCheckboxes({
@@ -97,7 +89,8 @@
         }) }}
 
         {{ govukButton({
-          text: "Send your question"
+          text: "Send your question",
+          href: "what-happens-next"
         }) }}
       </form>
 

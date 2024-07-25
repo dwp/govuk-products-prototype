@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Ask for a Maternity Allowance claim form  
+{% endset %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+  text: "Beta"
+  },
+  html: 'This is a new service – help us improve it by sending your <a class="govuk-link" href="#">feedback (opens in a new tab)</a>'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      Ask for a Maternity Allowance claim form
+    </h1>
+
+    <p>Use this service to ask for a Maternity Allowance claim form to be posted to you.</p>
+
+    <p>The form has notes to help you fill it in.</p>
+
+    {{ govukButton({
+      text: "Start now",
+      href: "contact-form",
+      isStartButton: true
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Before you start
+    </h2>
+
+    <p>
+      You can also <a href="#">print off a claim form</a>.
+    </p>
+
+
+    <h2 class="govuk-heading-m">
+      Alternative formats
+    </h2>
+
+    <p>
+      For alternative formats, such as braille, large print or audio CD, <a href="#">contact Jobcentre Plus</a>.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

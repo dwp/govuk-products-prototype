@@ -1,11 +1,7 @@
 {% extends "layouts/main.html" %}
 
-{% set serviceName %}
-  Contact the Winter Fuel Payment Centre
-{% endset %}
-
 {% block pageTitle %}
-  What happens next - {{ serviceName }}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -14,12 +10,16 @@
     <div class="govuk-grid-column-two-thirds">
 
         {{ govukPanel({
-          titleText: "What happens next"
+          titleText: "Message sent"
         }) }}
         
-        <p class="govuk-body">The Winter Fuel Payments Centre will respond to you as soon as possible.</p>
+        <h2 class="govuk-heading-m">
+          What happens next
+        </h2>
 
-        <p class="govuk-body">
+        <p>The Winter Fuel Payments Centre will respond to you as soon as possible.</p>
+
+        <p>
           <a href="#">
             What did you think of this service?
           </a> (takes 30 seconds)

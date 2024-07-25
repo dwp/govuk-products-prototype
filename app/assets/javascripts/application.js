@@ -21,7 +21,7 @@ document.getElementById("search").addEventListener("keyup", function (evt) {
     });
 }, false);
 
-function clearSelection(){      
+function clearSearch(){      
    document.getElementById('search').value = '';
    $('.hide').removeClass('hide');
 }
