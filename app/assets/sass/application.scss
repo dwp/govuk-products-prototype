@@ -7,7 +7,7 @@
     border-bottom: 10px solid $govuk-brand-colour;
 }
 
-.big-bar {
+.app-big-bar {
     background-color: $govuk-brand-colour;
     height: auto;
     width: 100%;
@@ -30,7 +30,7 @@
     }
 }
 
-.app-app-dwp-card {
+.app-dwp-card {
     @include govuk-responsive-margin(5, "bottom");
     @include govuk-responsive-padding(5);
     border: 1px solid $govuk-border-colour;
