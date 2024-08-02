@@ -12,7 +12,7 @@
     height: auto;
     width: 100%;
 
-    .big-bar__wrapper {
+    .app-big-bar__wrapper {
         margin: 0 auto;
         padding: 30px 0 10px 0;
     }
@@ -30,7 +30,7 @@
     }
 }
 
-.dwp-card {
+.app-app-dwp-card {
     @include govuk-responsive-margin(5, "bottom");
     @include govuk-responsive-padding(5);
     border: 1px solid $govuk-border-colour;
@@ -39,7 +39,7 @@
         margin-bottom: 0;
     }
 
-    .design-history {
+    .app-design-history {
         @include govuk-responsive-margin(5, "top");
         @include govuk-responsive-padding(3);
         background-color: govuk-colour("light-grey");
