@@ -14,9 +14,9 @@
 document.getElementById("search").addEventListener("keyup", function (evt) {
     [].forEach.call(document.querySelectorAll(".govuk-products .govuk-product"), function (subject) {
         if (subject.textContent.indexOf(evt.target.value) === -1) {
-            subject.parentElement.classList.add("hide");
+            subject.parentElement.parentElement.classList.add("hide");
         } else {
-            subject.parentElement.classList.remove("hide");
+            subject.parentElement.parentElement.classList.remove("hide");
         }
     });
 }, false);
