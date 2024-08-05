@@ -32,11 +32,25 @@
 
 .app-dwp-card {
     @include govuk-responsive-margin(5, "bottom");
-    @include govuk-responsive-padding(5);
     border: 1px solid $govuk-border-colour;
 
-    h3 {
-        margin-bottom: 0;
+    .app-card-title-wrapper {
+        background-color: govuk-colour("light-grey");
+        @include govuk-responsive-padding(4, "top");
+        @include govuk-responsive-padding(4, "bottom");
+        @include govuk-responsive-padding(5, "left");
+        @include govuk-responsive-padding(5, "right");
+
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+
+    .app-card-content {
+        @include govuk-responsive-padding(4, "top");
+        @include govuk-responsive-padding(4, "bottom");
+        @include govuk-responsive-padding(5, "left");
+        @include govuk-responsive-padding(5, "right");
     }
 
     .app-design-history {
