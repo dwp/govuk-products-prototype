@@ -1,6 +1,12 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% set serviceName %}
+  Get a proof of benefit letter 
+{% endset %}
+
+{% block pageTitle %}
+  What happens next – {{ serviceName }}
+{% endblock %}
 
 {% block beforeContent %}
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
@@ -33,7 +39,7 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
             <p> You do not need to contact the office that pays your benefit unless it has been more than 5 working days since you applied, and you have not received a letter.</p>
     
           <p class="govuk-body">
-            <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+            <a href="#" class="govuk-link">What did you think of this service?</a>
           </p>
     
 

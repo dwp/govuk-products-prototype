@@ -1,16 +1,22 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% set serviceName %}
+  Get a proof of benefit letter 
+{% endset %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
 
 {% block beforeContent %}
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
 {{ govukPhaseBanner({
-tag: {
-text: "Alpha"
-},
-html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+  tag: {
+  text: "Alpha"
+  },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -36,17 +42,13 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
 
     <p>You'll need your National Insurance number. If you've lost your National Insurance number, check  <a class="govuk-link" href="https://www.gov.uk/lost-national-insurance-number">how to find a lost National Insurance number</a>.</p>
     
-    
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-
     {{ govukButton({
       text: "Start now",
-      href: "contact-form",
+      href: "list-of-benefits",
       isStartButton: true
     }) }}
     
-
-    <h2 class="govuk-heading-m">
+    <h2 class="govuk-heading-l">
       Before you start
     </h2>
 
@@ -59,8 +61,6 @@ html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a
     <li>live outside Great Britain or Northern Ireland</li>
   </ul>
   
-<p>You can find their contact details on your benefit award letter.</p>
-
   </div>
 </div>
 
