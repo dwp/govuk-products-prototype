@@ -13,9 +13,9 @@ router.post('/cwfpc-age', function(request, response) {
     var ageVerification = request.session.data['age-verification']
 
     if (ageVerification == "yes"){
-        response.redirect("/contact-winter-fuel-payments-centre/contact-form")
+        response.redirect("/contact-winter-fuel-payments-centre/v2/contact-form")
     } else {
-        response.redirect("/contact-winter-fuel-payments-centre/not-eligible")
+        response.redirect("/contact-winter-fuel-payments-centre/v2/not-eligible")
     }
 })
 
