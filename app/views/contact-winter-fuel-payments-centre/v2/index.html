@@ -1,7 +1,11 @@
 {% extends "layouts/main.html" %}
 
+{% set serviceName %}
+  Contact the Winter Fuel Payment Centre
+{% endset %}
+
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -9,90 +13,43 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Your enquiry
+      <h1 class="govuk-heading-xl">
+        Contact the Winter Fuel Payments Centre
       </h1>
 
-        <form class="form" action="/what-happens-next" method="post">
-        {{ govukInput({
-          label: {
-            text: "Full name",
-            classes: "govuk-label--m"
-          }
-        }) }}
+      <p>If you’ve claimed Winter Fuel Payment before, you should get it automatically.</p>
 
-        {{ govukInput({
-          label: {
-            text: "Email address",
-            classes: "govuk-label--m"
-          },
-          hint: {
-            text: "We’ll only use this to reply to your enquiry"
-          },
-          type: "email",
-          autocomplete: "email",
-          spellcheck: false
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "Telephone (optional)",
-            classes: "govuk-label--m"
-          },
-          hint: {
-            text: "For international numbers include the country code"
-          },
-          classes: "govuk-input--width-20"
-        }) }}
-
-       <!--  {{ govukCheckboxes({
+      <form class="form" action="/cwfpc-age" method="post">
+       
+        {{ govukRadios({
+          name: "age-verification",
           fieldset: {
             legend: {
-              text: "What do you need help with?",
+              text: "Were you born before 25 September 1957?",
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "Select all that apply."
+            text: "If you’re enquiring for someone else, were they born before 25 September 1957?"
           },
           items: [
             {
-              text: "Eligibility"
+              value: "yes",
+              text: "Yes"
             },
             {
-              text: "Change of Circumstances"
-            },
-            {
-              text: "How to make a WFP Claim"
-            },
-            {
-              text: "How to claim death arrears"
-            },
-            {
-              text: "Non-payment/payment amount query"
-            },
-            {
-              text: "When will payment be made/received"
+              value: "no",
+              text: "No"
             }
           ]
-        }) }} -->
-
-        {{ govukTextarea({
-          rows: "10",
-          label: {
-            text: "Your question",
-            classes: "govuk-label--m"
-          },
-          hint: {
-            text: "Do not include personal or financial information, such as your National Insurance number or bank account details"
-          }
         }) }}
 
         {{ govukButton({
-          text: "Send your question",
-          href: "what-happens-next"
+          text: "Continue"
         }) }}
+
       </form>
+
 
     </div>
   </div>
