@@ -34,16 +34,16 @@
     @include govuk-responsive-margin(5, "bottom");
     border: 1px solid $govuk-border-colour;
 
+    h2, h3 {
+        margin-bottom: 0;
+    }
+
     .app-card-title-wrapper {
         background-color: govuk-colour("light-grey");
         @include govuk-responsive-padding(4, "top");
         @include govuk-responsive-padding(4, "bottom");
         @include govuk-responsive-padding(5, "left");
-        @include govuk-responsive-padding(5, "right");
-
-        h2 {
-            margin-bottom: 0;
-        }
+        @include govuk-responsive-padding(5, "right");  
     }
 
     .app-card-content {
@@ -53,7 +53,7 @@
         @include govuk-responsive-padding(5, "right");
     }
 
-    .app-design-history {
+    /* .app-design-history {
         @include govuk-responsive-margin(5, "top");
         @include govuk-responsive-padding(3);
         background-color: govuk-colour("light-grey");
@@ -63,7 +63,7 @@
         .govuk-body {
             margin: 0;
         }
-    }
+    } */
 
     .govuk-button {
         @include govuk-responsive-margin(5, "top");
