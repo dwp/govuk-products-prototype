@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Request information about underpaid State Pension for someone who has died   
+{% endset %}
+
+{% block pageTitle %}
+  About you - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "index.html"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      About you
+    </h1>
+  
+    {{ govukInput({
+      label: {
+        text: "What is your full name?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "full-name",
+      name: "fullName"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "What is your telephone number?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "telNumber",
+      name: 'tel-number'
+    }) }}
+
+    {{ govukTextarea({
+      name: "address",
+      id: "address",
+      label: {
+        text: "What is your address?",
+        classes: "govuk-label--m"
+      }
+    }) }}
+
+    {{ govukRadios({
+      name: "executor",
+      fieldset: {
+        legend: {
+          text: "Are you an executor of the estate?
+          ",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "about-the-person-who-has-died"
+    }) }}
+  </div>
+</div>
+
+{% endblock %}
