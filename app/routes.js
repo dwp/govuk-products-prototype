@@ -228,3 +228,15 @@ router.post('/cpri-different-address', function(request, response) {
         response.redirect("/citizen-personal-information-request/national-insurance-number")
     }
 })
+
+/* Request information about underpaid State Pension for someone who has died */
+
+router.post('/relationship-answer', function(request, response) {
+
+    var relationship = request.session.data['relationship']
+    if (relationship == "husband wife or civil partner"){
+        response.redirect("/request-information-about-underpaid-state-pension-for-someone-who-has-died/v1/about-you-partner")
+    } else {
+        response.redirect("/request-information-about-underpaid-state-pension-for-someone-who-has-died/v1/about-you")
+    }
+})
