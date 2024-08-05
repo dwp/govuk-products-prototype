@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Cold Weather Payments
+{% endset%}
+
+{% block pageTitle %}
+  Cold Weather Payment
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      Cold Weather Payment
+    </h1>
+
+    <p class="govuk-body">The 2022 to 2023 Cold Weather payment scheme has now ended. The 2023 to 2024 Cold Weather Payment scheme is due to start on 1 November 2023.</p>
+    <p class="govuk-body">You'll be able to check if your area is due a payment in November 2023.</p>
+    
+    <h2 class="govuk-heading-m">Check if a payment is due in your area</h2>
+
+    {{ govukInput({
+      label: {
+        text: "What's the first part of your postcode?",
+        classes: "govuk-label--s"
+      },
+      hint: {
+        html: "eg if your postcode is LS1 1AG then only enter <strong>LS1</strong>"
+      },
+      id: "postcode",
+      name: "postcode",
+      classes: "govuk-input--width-10"
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "search-results"
+    }) }}
+
+    <p class="govuk-body"><a class="govuk-link" href="#">Read about Cold Weather Payments</a></p>
+
+    <h2 class="govuk-heading-m">Help us improve</h2>
+    <p class="govuk-body"><a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DpxP-knna0i8NIr6EGM3VoCNQgbNAjxHjLjIMX0kidBUMFo5WkZGOFUyWE5LS0NNQUhHRzhaTjZKVi4u">Give your feedback on this service</a></p>
+
+
+  </div>
+</div>
+
+{% endblock %}
