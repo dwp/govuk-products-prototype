@@ -1,0 +1,146 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Request information about underpaid State Pension for someone who has died   
+{% endset %}
+
+{% block pageTitle %}
+  About you - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "index.html"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      About you
+    </h1>
+  
+    {{ govukInput({
+      label: {
+        text: "What is your full name?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "full-name",
+      name: "fullName"
+    }) }}
+   
+    {{ govukDateInput({
+      fieldset: {
+        legend: {
+          text: "What is your date of birth?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, 31 3 1948"
+      }
+    }) }}
+
+    {% set ninoHtml %}
+    {{ govukInput({
+      id: "know-partner-nino",
+      name: "knowPartnerNino",
+      label: {
+        text: "What is your National Insurance number?"
+      },
+      classes: "govuk-!-width-one-third"
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      name: "partner-nino",
+      fieldset: {
+        legend: {
+          text: "Do you know your National Insurance number?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 45 C'."
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: ninoHtml
+          }
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "What is your telephone number?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "telNumber",
+      name: 'tel-number'
+    }) }}
+
+    {{ govukTextarea({
+      name: "address",
+      id: "address",
+      label: {
+        text: "What is your address?",
+        classes: "govuk-label--m"
+      }
+    }) }}
+
+    {{ govukDateInput({
+      fieldset: {
+        legend: {
+          text: "What date did you marry or enter a civil partnership with the person who has died?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, 31 3 1970."
+      }
+    }) }}
+
+    {{ govukRadios({
+      name: "executor",
+      fieldset: {
+        legend: {
+          text: "Are you an executor of the estate?
+          ",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "about-the-person-who-has-died-partner"
+    }) }}
+  </div>
+</div>
+
+{% endblock %}

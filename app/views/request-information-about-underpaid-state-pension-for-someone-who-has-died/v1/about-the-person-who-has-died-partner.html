@@ -1,0 +1,141 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Request information about underpaid State Pension for someone who has died   
+{% endset %}
+
+{% block pageTitle %}
+  About the person who has died - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "about-you.html"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      About the person who has died
+    </h1>
+  
+    {{ govukInput({
+      label: {
+        text: "What was their full name?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "full-name",
+      name: "fullName"
+    }) }}
+
+    {{ govukDateInput({
+      fieldset: {
+        legend: {
+          text: "What was their date of birth?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, 31 3 1948."
+      }
+    }) }}
+
+    {{ govukDateInput({
+      fieldset: {
+        legend: {
+          text: "What was their date of death?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, 31 3 2018."
+      }
+    }) }}
+
+    {% set ninoHtml %}
+    {{ govukInput({
+      id: "know-partner-nino",
+      name: "knowPartnerNino",
+      label: {
+        text: "What was their National Insurance number?"
+      },
+      classes: "govuk-!-width-one-third"
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      name: "partner-nino",
+      fieldset: {
+        legend: {
+          text: "Do you know their National Insurance number?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "It's on their National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 45 C'."
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: ninoHtml
+          }
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {% set lastKnownAddressHtml %}
+    {{ govukTextarea({
+      id: "last-known-address",
+      name: "lastKnownAddress",
+      label: {
+        text: "What was their last known address?",
+        classes: "govuk-label--m"
+      }
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      name: "last-known-address",
+      fieldset: {
+        legend: {
+          text: "Was their last known address the same as yours?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m "
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No",
+          conditional: {
+            html: lastKnownAddressHtml
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "what-happens-next"
+    }) }}
+  </div>
+</div>
+
+{% endblock %}

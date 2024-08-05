@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Request information about underpaid State Pension for someone who has died   
+{% endset %}
+
+{% block pageTitle %}
+  About you - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      About you
+    </h1>
+
+    <form class="form" action="/relationship-answer" method="post">
+
+      {% set relationshipOtherHtml %}
+      {{ govukInput({
+        id: "relationship-other",
+        name: "relationshipOther",
+        label: {
+          text: "Tell us your relationship with the person who has died",
+          classes: "govuk-label--s"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        name: "relationship",
+        fieldset: {
+          legend: {
+            text: "What is your relationship to the person who has died?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "husband wife or civil partner",
+            text: "Husband, wife or civil partner"
+          },
+          {
+            value: "son daughter stepson or stepdaughter",
+            text: "Son, daughter, stepson or stepdaughter"
+          },
+          {
+            value: "solicitor",
+            text: "Solicitor"
+          },
+          {
+            value: "other",
+            text: "Other",
+            conditional: {
+              html: relationshipOtherHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
