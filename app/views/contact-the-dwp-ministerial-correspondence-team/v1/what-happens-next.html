@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Contact the DWP ministerial correspondence team
+{% endset %}
+
+{% block pageTitle %}
+  What happens next – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {{ govukPanel({
+          titleText: "What happens next"
+        }) }}
+
+        <p class="govuk-body">We aim to reply to policy questions within 4 weeks.</p>
+       
+        <p class="govuk-body">If you enquiry was not about policy - such as a question about a benefit claim - we'll share your message with the team that's responsible for the service.</p>
+
+        <p class="govuk-body">
+          <a href="#">
+            What did you think of this service?
+          </a> (takes 30 seconds)
+        </p>
+    </div>
+  </div>
+
+{% endblock %}
