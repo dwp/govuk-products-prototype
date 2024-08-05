@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Find your nearest office
+{% endset%}
+
+{% block pageTitle %}
+  Contact Jobcentre Plus – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">  
+        Contact Jobcentre Plus
+      </h1>
+
+      <h2 class="govuk-heading-l">Results for LS1 1AG</h2>
+
+      <p class="govuk-body">1 office found</p>
+
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Universal Credit, JSA and AA - Leeds Park Place Jobcentre Plus"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Postal address"
+            },
+            value: {
+              html: "21-22 Park Place<br>Leeds<br>West Yorkshire<br>United Kingdom<br>LS1 2SL<br>"
+            }
+          },
+          {
+            key: {
+              text: "Contact details"
+            },
+            value: {
+              html: 'Telephone: 0800 169 0190<br>
+              Textphone 0800 169 0314<br>
+              <a class="govuk-link" href="https://www.relayuk.bt.com/"> NGT text relay</a> (if you cannot hear or speak on the phone): 18001 then 0800 169 0190<br>
+              British Sign Language (BSL) <a class="govuk-link" href="https://connect.interpreterslive.co.uk/vrs?ilc=DWP">video relay service</a> if you’re on a computer - find out how to <a class="govuk-link" href="https://www.youtube.com/watch?v=oELNMfAvDxw">use the service on mobile or tablet</a><br>                           
+              Welsh language: 0800 169 0207<br>
+              Monday to Friday, 8am to 6pm<br>
+              <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>'
+            }
+          }
+        ]
+      }) }}
+
+      
+
+      {{ govukButton({
+        text: "Finish",
+        href: "index"
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
