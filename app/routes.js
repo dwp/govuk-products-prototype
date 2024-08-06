@@ -6,7 +6,7 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-/* Contact Winter Fuel Payment Centre */
+// Contact Winter Fuel Payment Centre
 
 router.post('/cwfpc-age', function(request, response) {
 
@@ -19,7 +19,7 @@ router.post('/cwfpc-age', function(request, response) {
     }
 })
 
-/* Cost of Living form - MTB4 */
+// Cost of Living form - MTB4
 
 router.post('/payment-type-answer', function(request, response) {
 
@@ -78,7 +78,7 @@ router.post('/report-as-missing-answer', function(request, response) {
     }
 })
 
-/* Retiring MTB4 form */
+// Retiring MTB4 form
 
 router.post('/mtb4-retired-payment-type-answer', function(request, response) {
 
@@ -91,7 +91,7 @@ router.post('/mtb4-retired-payment-type-answer', function(request, response) {
     }
 })
 
-/* Cost of Living form - MTB5 */
+// Cost of Living form - MTB5
 
 router.post('/mtb5-payment-type-answer', function(request, response) {
 
@@ -154,20 +154,20 @@ router.post('/mtb5-details-received', function(request, response) {
         response.redirect("/cost-of-living-mtb5/details-received")
 })
 
-/* Retiring MTB5 form */
+// Retiring MTB5 form
 
 router.post('/mtb5-retired-payment-type-answer', function(request, response) {
 
     var typeOfPaymentMissing = request.session.data['type-of-payment-missing']
 
     if (typeOfPaymentMissing == "301-or-300"){
-        response.redirect("/cost-of-living-retiring-mtb5/contact-details-for-low-income-benefits")
+        response.redirect("/cost-of-living/retiring-mtb5/contact-details-for-low-income-benefits")
     } else {
-        response.redirect("/cost-of-living-retiring-mtb5/contact-details-for-disability-payment")
+        response.redirect("/cost-of-living/retiring-mtb5/contact-details-for-disability-payment")
     }
 })
 
-/* Cold Weather Payments */
+// Cold Weather Payments
 
 
 router.post('/cwp-check-postcode', function(request, response) {
@@ -185,7 +185,7 @@ router.post('/cwp-check-postcode', function(request, response) {
     }
 })
 
-/* Request Personal Information form */
+// Request Personal Information form
 
 router.post('/rpi-uk-address', function(request, response) {
 
@@ -207,7 +207,7 @@ router.post('/rpi-different-address', function(request, response) {
     }
 })
 
-/* Send a personal information request for a citizen form */
+// Send a personal information request for a citizen form
 
 router.post('/cpri-uk-address', function(request, response) {
 
@@ -229,7 +229,7 @@ router.post('/cpri-different-address', function(request, response) {
     }
 })
 
-/* Request information about underpaid State Pension for someone who has died */
+// Request information about underpaid State Pension for someone who has died
 
 router.post('/relationship-answer', function(request, response) {
 

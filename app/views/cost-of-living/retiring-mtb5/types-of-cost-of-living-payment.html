@@ -1,14 +1,11 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+{% set serviceName %}
+  Find out how to report a missing Cost of Living Payment
+{% endset %}
 
-{% block beforeContent %}
-{{ govukBackLink({
-text: "Back",
-href: "javascript:window.history.back()"
-}) }}
+{% block pageTitle %}
+  Types of Cost of Living Payment - {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -20,9 +17,9 @@ href: "javascript:window.history.back()"
       Types of Cost of Living Payment
     </h1>
 
-    <p>Tell us which type of Cost of Living Payment you want to report as missing.</p>
+     <p class="govuk-body">Tell us which type of Cost of Living Payment you want to report as missing.</p>
 
-    <p>£301 or £300 for a low income benefit:</p>
+     <p class="govuk-body">£301, £300 or £299 for a low income benefit:</p>
 
     <ul class="govuk-list govuk-list--bullet">
       <li>Universal Credit</li>
@@ -34,8 +31,7 @@ href: "javascript:window.history.back()"
       <li>Working Tax Credit</li>
     </ul>
 
-
-    <p>£150 for a disability benefit:</p>
+     <p class="govuk-body">£150 for a disability benefit:</p>
 
     <ul class="govuk-list govuk-list--bullet">
       <li>Attendance Allowance</li>
@@ -49,7 +45,7 @@ href: "javascript:window.history.back()"
       <li>War Pension Mobility Supplement</li>
     </ul>
 
-    <form class="form" action="/mtb4-retired-payment-type-answer" method="post">
+    <form class="form" action="/mtb5-retired-payment-type-answer" method="post">
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
@@ -64,7 +60,7 @@ href: "javascript:window.history.back()"
         items: [
           {
           value: "301-or-300",
-          text: "£301 or £300 for a low income benefit"
+          text: " £301, £300 or £299 for a low income benefit"
           },
           {
           value: "150",

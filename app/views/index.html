@@ -510,71 +510,69 @@
       </div>
       
       <div class="app-card-content">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-third">
-            <h3 class="govuk-heading-s">MTB4</h3>
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-7",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="cost-of-living-mtb4/index.html">Latest version</a>'
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-
-          <div class="govuk-grid-column-one-third">
-            <h3 class="govuk-heading-s">MTB4 retired</h3>
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-7",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="cost-of-living-retiring-mtb4/index.html">Latest version</a>'
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-        </div>
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-third">
-            <h3 class="govuk-heading-s">MTB5</h3>
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-two-thirds",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="cost-of-living-mtb5/index.html">Latest version</a>'
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-          
-          <div class="govuk-grid-column-one-third">
-            <h3 class="govuk-heading-s">MTB5 retired</h3>
-            {{ govukTable({
-              firstCellIsHeader: false,
-              classes: "govuk-!-width-two-thirds",
-              rows: [
-                [
-                  {
-                    html: '<a class="govuk-link" href="cost-of-living-retiring-mtb5/index.html">Latest version</a>'
-                  }
-                ]
-              ]
-            }) }}
-          </div>
-        </div>
-</div>
-        </div>
+        {{ govukTable({
+          firstCellIsHeader: tue,
+          classes: "govuk-!-width-two-thirds",
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          }
+          ],  
+          rows: [
+            [
+              {
+                html: '<a class="govuk-link" href="cost-of-living/retiring-mtb5/index.html">Retiring MTB5</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "Mar 2024"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="cost-of-living/mtb5/index.html">MTB 5</a>'
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "Feb 2024"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="cost-of-living/retiring-mtb4/index.html">Retiring MTB 4</a>'
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="cost-of-living/mtb4/index.html">MTB 4</a>'
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }}
+      </div>
+    </div>
 
     <div class="app-dwp-card">
       <div class="app-card-title-wrapper">

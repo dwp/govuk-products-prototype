@@ -1,15 +1,11 @@
 {% extends "layouts/main.html" %}
 
-{% set serviceName %}
-  Report a missing Cost of Living Payment
-{% endset%}
-
 {% block pageTitle %}
-Personal details
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
- {{ govukBackLink({
+{{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
@@ -26,7 +22,7 @@ Personal details
       Personal details
     </h1>
 
-    <p>
+     <p class="govuk-body">
       If you're completing this form on behalf of another adult, enter their details here.
     </p>
 
