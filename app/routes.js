@@ -6,7 +6,7 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-/* Contact Winter Fuel Payments Centre */
+/* Contact Winter Fuel Payment Centre */
 
 router.post('/cwfpc-age', function(request, response) {
 
