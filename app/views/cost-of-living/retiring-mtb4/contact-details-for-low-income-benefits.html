@@ -1,14 +1,11 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+{% set serviceName %}
+  Find out how to report a missing Cost of Living Payment
+{% endset%}
 
-{% block beforeContent %}
- {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+{% block pageTitle %}
+Contact details for low income benefits - {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -25,7 +22,7 @@ Content page template – {{ serviceName }} – GOV.UK Prototype Kit
           Jobseeker's Allowance (JSA)</a></li>
       <li><a class="govuk-link" href="https://www.gov.uk/contact-jobcentre-plus/existing-benefit-claims">Income
           Support</a></li>
-          <li><a class="govuk-link" href="//cost-of-living-retiring-mtb4/tax-credits.html">Tax credits</a>
+          <li><a class="govuk-link" href="tax-credits">Tax credits</a>
           </li>
 
       <li><a class="govuk-link" href="https://www.gov.uk/universal-credit/contact-universal-credit">Universal Credit</a>
