@@ -1,12 +1,11 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Report a missing Cost of Living Payment
-{% endblock %}
+{% set serviceName %}
+  Find out how to report a missing Cost of Living Payment
+{% endset %}
 
-{% block header %}
-<!-- Blank header with no service name for the start page -->
-{{ govukHeader() }}
+{% block pageTitle %}
+  {{ serviceName }}
 {% endblock %}
 
 {% block content %}
