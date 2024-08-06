@@ -8,15 +8,6 @@
   What happens next – {{ serviceName }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukPhaseBanner({
-  tag: {
-  text: "Beta"
-  },
-  html: 'This is a new service – help us improve it by sending your <a class="govuk-link" href="#">feedback (opens in a new tab)</a>'
-  }) }}
-{% endblock %}
-
 {% block content %}
 
   <div class="govuk-grid-row">

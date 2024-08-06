@@ -8,15 +8,6 @@
   Contact form - {{ serviceName }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukPhaseBanner({
-  tag: {
-  text: "Beta"
-  },
-  html: 'This is a new service – help us improve it by sending your <a class="govuk-link" href="#">feedback (opens in a new tab)</a>'
-  }) }}
-{% endblock %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -43,7 +34,7 @@
           },
           classes: "govuk-input--width-20",
           id: "full-name",
-          name: "fullName"
+          name: "fill-name"
         }) }}
         
         {{ govukInput({
