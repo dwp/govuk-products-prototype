@@ -1,7 +1,11 @@
 {% extends "layouts/main.html" %}
 
+{% set serviceName %}
+  Ask for a Maternity Allowance claim form  
+{% endset %}
+
 {% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Design history – {{ serviceName }}
 {% endblock %}
 
 {% block header %}
@@ -40,11 +44,11 @@
         <li class="dwp-timeline__events--entry">
           <div class="dwp-timeline__events--entry-header">
             <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-              <a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/v2/index.html">Version 2</a> Northern Ireland content
+              <a class="govuk-link" href="v2/index.html">Version 2</a> Northern Ireland content
             </h2>
             {{govukTag({ text: "Beta", classes: "govuk-tag--light-blue" })}}
           </div>
-          <p class="govuk-caption-m">October 2023</p>
+          <p class="govuk-caption-m">Last updated: October 2023</p>
 
           {{ govukDetails({
             summaryText: "Main changes",
@@ -63,26 +67,13 @@
               rows: [
                 [
                   {
-                    text: "[Change here]"
+                    text: "Added a details component for how to ask for a claim form in Northern Ireland."
                   },
                   {
-                    text: "[Reason here]"
-                  }
-                ],
-                [
-                  {
-                    text: "[Change here]"
-                  },
-                  {
-                    text: "[Reason here]"
-                  }
-                ],
-                [
-                  {
-                    text: "[Change here]"
-                  },
-                  {
-                    text: "[Reason here]"
+                    text: "Users in Northern Ireland were requesting the form that was created for 
+                    users in England, Scotland and Wales. This was putting strain on the Northern 
+                    Ireland team and other teams to convert the form and results in users 
+                    having an extended waiting time for a decision."
                   }
                 ]
               ]
@@ -91,55 +82,13 @@
         </li>
         <li class="dwp-timeline__events--entry">
           <div class="dwp-timeline__events--entry-header">
+            
             <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-              <a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/v1/index.html">Version 1</a> User journey
+              <a class="govuk-link" href="v1/index.html">Version 1</a>
             </h2>
-            {{govukTag({ text: "Beta", classes: "govuk-tag--light-blue" })}}
           </div>
           <p class="govuk-caption-m">March 2022</p>
 
-          {{ govukDetails({
-            summaryText: "Main changes",
-            html: 
-            govukTable({
-              firstCellIsHeader: false,
-              head: [
-                {
-                  text: "Change",
-                  classes: "govuk-!-width-one-half"
-                },
-                {
-                  text: "Why we made it"
-                }
-              ],
-              rows: [
-                [
-                  {
-                    text: "[Change here]"
-                  },
-                  {
-                    text: "[Reason here]"
-                  }
-                ],
-                [
-                  {
-                    text: "[Change here]"
-                  },
-                  {
-                    text: "[Reason here]"
-                  }
-                ],
-                [
-                  {
-                    text: "[Change here]"
-                  },
-                  {
-                    text: "[Reason here]"
-                  }
-                ]
-              ]
-            })
-          }) }}
         </li>
       </ol>
       </div>
