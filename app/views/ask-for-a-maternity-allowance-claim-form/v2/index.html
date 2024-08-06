@@ -1,11 +1,17 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% set serviceName %}
+  Ask for a Maternity Allowance claim form  
+{% endset %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-xl">
       Ask for a Maternity Allowance claim form
@@ -15,27 +21,18 @@
 
     <p>The form has notes to help you fill it in.</p>
 
-    {% from "govuk/components/details/macro.njk" import govukDetails %}
+    {{ govukDetails({
+      summaryText: "If you live in Northern Ireland",
+      html: '<p class="govuk-body">This service is only available if you live in England, Scotland or Wales. There is a different process in Northern Ireland.</p>
+      <p class="govuk-body"><a href="https://www.nidirect.gov.uk/articles/maternity-allowance" class="govuk-link">Find out how to ask for a claim form in Northern Ireland</a>.</p>'
+    }) }}
 
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          If you live in Northern Ireland
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p>
-          This service is only available if you live in England, Scotland or Wales. There is a different process in Northern Ireland.
-        </p>
-        <p>Find out <a href="#">how to ask for a claim form in Northern Ireland</a>.</p>
-      </div>
-    </details>
-
-     <a href="what-is-your-name.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-9" data-module="govuk-button">
-      Start now
-      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-      </svg></a>
+    {{ govukButton({
+      text: "Start now",
+      href: "contact-form",
+      isStartButton: true,
+      classes: "govuk-!-margin-bottom-9"
+    }) }}
 
     <h2 class="govuk-heading-m">
       Before you start
