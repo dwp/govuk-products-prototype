@@ -1,7 +1,11 @@
 {% extends "layouts/main.html" %}
 
+{% set serviceName %}
+  Ask for a Maternity Allowance claim form  
+{% endset %}
+
 {% block pageTitle %}
-  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+  What happens next – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -10,11 +14,10 @@
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukPanel({
-        titleText: "Request sent"
+        titleText: "Request sent to DWP"
             }) }}
 
-    
-      <h2 class="govuk-heading-m">
+      <h2 class="govuk-heading-l">
         What happens next
       </h2>
 
@@ -25,7 +28,6 @@
           What did you think of this service?
         </a> (takes 30 seconds)
       </p>
-
 
     </div>
   </div>

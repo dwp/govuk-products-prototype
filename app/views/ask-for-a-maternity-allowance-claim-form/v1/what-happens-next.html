@@ -8,15 +8,6 @@
   What happens next – {{ serviceName }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukPhaseBanner({
-  tag: {
-  text: "Beta"
-  },
-  html: 'This is a new service – help us improve it by sending your <a class="govuk-link" href="#">feedback (opens in a new tab)</a>'
-  }) }}
-{% endblock %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -30,7 +21,7 @@
           What happens next
         </h2>
 
-        <p class="govuk-body">A maternity allowance claim form will be sent out and should arrive within 5 working days.</p>
+        <p class="govuk-body">A Maternity Allowance claim form will be sent out and should arrive within 5 working days.</p>
        
         <p class="govuk-body">
           <a href="#">
