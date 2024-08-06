@@ -1,12 +1,15 @@
 {% extends "layouts/main.html" %}
 
+{% set serviceName %}
+  Report a missing Cost of Living Payment
+{% endset %}
+
 {% block pageTitle %}
-Report a missing Cost of Living Payment
+  {{ serviceName }}
 {% endblock %}
 
 {% block header %}
-<!-- Blank header with no service name for the start page -->
-{{ govukHeader() }}
+
 {% endblock %}
 
 {% block content %}
@@ -18,7 +21,7 @@ Report a missing Cost of Living Payment
       Find out how to report a missing Cost of Living Payment
     </h1>
 
-    <p>Use this service if you were expecting one of the following a Cost of Living Payments but have not received it:
+     <p class="govuk-body">Use this service if you were expecting one of the following a Cost of Living Payments but have not received it:
     </p>
 
     <ul class="govuk-list govuk-list--bullet">
@@ -27,16 +30,16 @@ Report a missing Cost of Living Payment
       <li>£150 Disability Cost of Living Payment paid between 20 June and 4 July for most people</li>
     </ul>
 
-    <p>You'll need your National Insurance number. If you've lost your National Insurance number, check <a
+     <p class="govuk-body">You'll need your National Insurance number. If you've lost your National Insurance number, check <a
         href="https://www.gov.uk/lost-national-insurance-number">how to find a lost National Insurance number</a>.</p>
 
-    <p>Before reporting a missing payment, check your bank, building society or credit union account, or your Payment
+     <p class="govuk-body">Before reporting a missing payment, check your bank, building society or credit union account, or your Payment
       Exception Service voucher receipt. The payment will be made separately from your benefit.</p>
 
-    <p>You do not need to contact us about <a href="https://www.gov.uk/guidance/cost-of-living-payment">future Cost of
+     <p class="govuk-body">You do not need to contact us about <a href="https://www.gov.uk/guidance/cost-of-living-payment">future Cost of
         Living Payments</a>. You'll be paid automatically if you're entitled.</p>
 
-    <p>Do not report the same missing payment more than once. We will reply to you as soon as we can.</p>
+     <p class="govuk-body">Do not report the same missing payment more than once. We will reply to you as soon as we can.</p>
 
     {{ govukButton({
       text: "Start now",
