@@ -30,12 +30,12 @@
     }
 }
 
-.app-dwp-card {
+.app-card {
     @include govuk-responsive-margin(5, "bottom");
     border: 1px solid $govuk-border-colour;
 
     h2, h3 {
-        margin-bottom: 0;
+        @include govuk-responsive-margin(0, "bottom");  
     }
 
     .app-card-title-wrapper {
@@ -44,6 +44,11 @@
         @include govuk-responsive-padding(4, "bottom");
         @include govuk-responsive-padding(5, "left");
         @include govuk-responsive-padding(5, "right");  
+
+        .app-card-title-description {
+            @include govuk-responsive-margin(0, "bottom");  
+            @include govuk-responsive-margin(2, "top");  
+        }
     }
 
     .app-card-content {

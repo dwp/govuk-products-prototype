@@ -6,8 +6,8 @@
 /* $('#search').on('input', function(){
     var lowercase = $(this).val().toLowerCase();
     var input = $(this).val();
-    $('.govuk-products .app-dwp-card').show();  
-    $(".govuk-products .app-dwp-card:not(:contains("+input+"))").hide(); 
+    $('.govuk-products .app-card').show();  
+    $(".govuk-products .app-card:not(:contains("+input+"))").hide(); 
     console.log(lowercase, input);
 });  */
 
