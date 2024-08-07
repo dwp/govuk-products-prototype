@@ -5,14 +5,16 @@
 {% endset%}
 
 {% block pageTitle %}
-Which benefit were you expecting a Cost of Living payment for?
+  Which benefit were you expecting a Cost of Living payment for? - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
- {{ govukBackLink({
-text: "Back",
-href: "javascript:window.history.back()"
-}) }}
+  {{ super() }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -21,8 +23,6 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-two-thirds">
 
     <form class="form" action="/mtb5-which-benefit-answer" method="post">
-
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
         name: "which-benefit",
@@ -66,24 +66,19 @@ href: "javascript:window.history.back()"
         ]
       }) }}
 
+      {{ govukDetails({
+        summaryText: "If your benefit is not listed",
+        html: '<p class="govuk-body">If your benefit is not listed here, <a href="#">find out if you&#39;re eligible for a Cost of Living Payment and payment dates for other benefits</a>.</p>'
+      }) }}
+
       {{ govukButton({
-      text: "Continue"
+        text: "Continue",
+        attributes: "govuk-button"
       }) }}
 
     </form>
 
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          If your benefit is not listed
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        If your benefit is not listed here, <a href="#">find out if you're eligible for a Cost of Living Payment and
-          payment dates for other benefits</a>.
-      </div>
-    </details>
-
+   
   </div>
 </div>
 

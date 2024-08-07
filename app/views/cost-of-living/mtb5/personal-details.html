@@ -5,7 +5,7 @@
 {% endset%}
 
 {% block pageTitle %}
-Personal details
+Personal details - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,15 +30,6 @@ Personal details
       If you're completing this form on behalf of another adult, enter their details here.
     </p>
 
-    {% from "govuk/components/input/macro.njk" import govukInput %}
-
-   <!--  <div class="govuk-form-group">
-      <label class="govuk-label" for="width-20">
-        What is your full name?
-      </label>
-      <input class="govuk-input govuk-input--width-20" id="full-name" name="full-name" type="text" value="{{ data['full-name'] }}">
-    </div> -->
-
     {{ govukInput({
       name: 'first-name',
       value: data['first-name'],
@@ -47,8 +38,6 @@ Personal details
         classes: "govuk-label--m"
       }
     }) }}
-
-    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
     {{ govukDateInput({
       id: "dob",
@@ -97,13 +86,8 @@ Personal details
 
     {{ govukButton({
       text: "Continue",
-      href: "check-your-answers"
-    }) }}
-<!-- 
-    {{ govukButton({
-      text: "Continue",
         href: "what-is-your-address"
-      }) }} -->
+      }) }}
   </div>
 </div>
 
