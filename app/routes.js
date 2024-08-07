@@ -72,9 +72,9 @@ router.post('/report-as-missing-answer', function(request, response) {
     var reportMissing = request.session.data['still-report-missing-payment']
 
     if (reportMissing == "yes"){
-        response.redirect("/cost-of-living-mtb4/personal-details")
+        response.redirect("/cost-of-living/mtb4/personal-details")
     } else {
-        response.redirect("/cost-of-living-mtb4/report-a-different-missing-cost-of-living-payment")
+        response.redirect("/cost-of-living/mtb4/report-a-different-missing-cost-of-living-payment")
     }
 })
 
@@ -98,9 +98,9 @@ router.post('/mtb5-payment-type-answer', function(request, response) {
     var typeOfPaymentMissing = request.session.data['type-of-payment-missing']
 
     if (typeOfPaymentMissing == "301-or-300-or-299"){
-        response.redirect("/cost-of-living-mtb5/which-benefit-were-you-expecting")
+        response.redirect("/cost-of-living/mtb5/benefit-entitlement-low-income")
     } else {
-        response.redirect("/cost-of-living-mtb5/contact-details-for-disability-payment")
+        response.redirect("/cost-of-living/mtb5/benefit-entitlement")
     }
 })
 
@@ -109,22 +109,26 @@ router.post('/mtb5-which-benefit-answer', function(request, response) {
     var missingBenefit = request.session.data['which-benefit']
 
     if (missingBenefit == "tax-credits"){
-        response.redirect("/cost-of-living-mtb5/tax-credits")
+        response.redirect("/cost-of-living/mtb5/tax-credits")
     }
     else {
-        response.redirect("/cost-of-living-mtb5/which-payment-are-you-missing")
+        response.redirect("/cost-of-living/mtb5/which-payment-are-you-missing")
     }
 })
 
 router.post('/mtb5-which-payment-answer', function(request, response) {
 
-    var missingBenefit = request.session.data['which-payment']
+    var missingPayment = request.session.data['which-payment']
+    var missingBenefit = request.session.data['which-benefit']
 
-    if (missingBenefit == "299"){
-        response.redirect("/cost-of-living-mtb5/did-you-have-a-joint-claim")
+    if (missingBenefit == "universal-credit" && missingPayment == "299"){
+        response.redirect("/cost-of-living/mtb5/did-you-have-a-joint-claim")
     }
+    else if (missingBenefit != "universal-credit" && missingPayment == "299"){
+        response.redirect("/cost-of-living/mtb5/personal-details")
+    } 
     else {
-        response.redirect("/cost-of-living-mtb5/contact-details-for-low-income-benefits")
+        response.redirect("/cost-of-living/mtb5/contact-details-for-low-income-benefits")
     }
 })
 
@@ -133,9 +137,9 @@ router.post('/mtb5-joint-benefit-answer', function(request, response) {
     var jointBenefit = request.session.data['joint-benefit']
 
     if (jointBenefit == "no"){
-        response.redirect("/cost-of-living-mtb5/personal-details")
+        response.redirect("/cost-of-living/mtb5/personal-details")
     } else {
-        response.redirect("/cost-of-living-mtb5/joint-claim")
+        response.redirect("/cost-of-living/mtb5/joint-claim")
     }
 })
 
@@ -144,14 +148,14 @@ router.post('/mtb5-report-as-missing-answer', function(request, response) {
     var reportMissing = request.session.data['still-report-missing-payment']
 
     if (reportMissing == "yes"){
-        response.redirect("/cost-of-living-mtb5/personal-details")
+        response.redirect("/cost-of-living/mtb5/personal-details")
     } else {
-        response.redirect("/cost-of-living-mtb5/report-a-different-missing-cost-of-living-payment")
+        response.redirect("/cost-of-living/mtb5/report-a-different-missing-cost-of-living-payment")
     }
 })
 
 router.post('/mtb5-details-received', function(request, response) {
-        response.redirect("/cost-of-living-mtb5/details-received")
+        response.redirect("/cost-of-living/mtb5/details-received")
 })
 
 // Retiring MTB5 form

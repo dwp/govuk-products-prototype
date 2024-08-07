@@ -5,7 +5,7 @@
 {% endset%}
 
 {% block pageTitle %}
-Which payment are you missing?
+Which payment are you missing? - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,8 +21,6 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-two-thirds">
 
     <form class="form" action="/mtb5-which-payment-answer" method="post">
-
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
         name: "which-payment",

@@ -2,17 +2,10 @@
 
 {% set serviceName %}
   Report a missing Cost of Living Payment
-{% endset%}
+{% endset %}
 
 {% block pageTitle %}
-Which type of Cost of Living Payment do you want to report as missing?
-{% endblock %}
-
-{% block beforeContent %}
- {{ govukBackLink({
-text: "Back",
-href: "javascript:window.history.back()"
-}) }}
+  Types of Cost of Living Payment - {{ serviceName }}
 {% endblock %}
 
 {% block content %}
