@@ -3,6 +3,10 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
 
+main.govuk-main-wrapper {
+    @include govuk-responsive-padding(6, "top");
+}
+
 .dwp-header {
     border-bottom: 10px solid $govuk-brand-colour;
 }
