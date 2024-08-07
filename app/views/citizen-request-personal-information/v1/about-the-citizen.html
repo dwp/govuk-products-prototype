@@ -23,10 +23,6 @@
 
       <form class="form" action="/end" method="post">
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
         {{ govukInput({
           label: {
             text: "Their full name"
@@ -72,8 +68,6 @@
             text: "For example, 31 3 1970"
           }
         }) }}
-
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           name: "where-do-you-live",

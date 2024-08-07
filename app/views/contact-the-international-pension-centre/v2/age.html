@@ -17,9 +17,6 @@
 
        <p class="govuk-body">Don't use this form to report a change in your circumstances (such as your address or bank details). You must do this <a href="#" class="govuk-link">by phone or in writing</a>.</p>
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-
         <form class="form" action="/contact-form" method="post">
         {{ govukRadios({
           classes: "govuk-radios--inline",

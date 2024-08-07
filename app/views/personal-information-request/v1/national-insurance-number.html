@@ -18,8 +18,6 @@
 
       <form class="form" action="/end" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
         {{ govukRadios({
           classes: "govuk-radios--inline",
           name: "national-insurance-number",

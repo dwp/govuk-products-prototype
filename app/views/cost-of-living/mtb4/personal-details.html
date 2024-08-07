@@ -26,8 +26,6 @@ Content page template – {{ serviceName }} – GOV.UK Prototype Kit
       If you're completing this form on behalf of another adult, enter their details here.
     </p>
 
-    {% from "govuk/components/input/macro.njk" import govukInput %}
-
    <!--  <div class="govuk-form-group">
       <label class="govuk-label" for="width-20">
         What is your full name?
@@ -43,8 +41,6 @@ Content page template – {{ serviceName }} – GOV.UK Prototype Kit
         classes: "govuk-label--m"
       }
     }) }}
-
-    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
     {{ govukDateInput({
       id: "dob",
