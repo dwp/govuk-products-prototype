@@ -3,8 +3,6 @@
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
-{% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -20,8 +18,6 @@
         <h1 class="govuk-heading-l">
           Should we send information to a different address?
         </h1>
-
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",

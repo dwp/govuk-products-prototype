@@ -33,8 +33,6 @@ href: "javascript:window.history.back()"
 
     <form class="form" action="/mtb5-report-as-missing-answer" method="post">
 
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
       {{ govukRadios({
         name: "still-report-missing-payment",
         id: "still-report-missing-payment",

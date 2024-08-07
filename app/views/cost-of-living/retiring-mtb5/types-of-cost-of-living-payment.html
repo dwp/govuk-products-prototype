@@ -46,7 +46,6 @@
     </ul>
 
     <form class="form" action="/mtb5-retired-payment-type-answer" method="post">
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
         name: "type-of-payment-missing",
@@ -69,15 +68,11 @@
         ]
       }) }}
 
-      {% from "govuk/components/details/macro.njk" import govukDetails %}
-
       {{ govukDetails({
         summaryText: "If you have more than one missing payment to report",
         text: "If you want to report a missing payment for both a low income benefit and a disability benefit, you'll need
         to report each separately."
       }) }}
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
       text: "Continue"

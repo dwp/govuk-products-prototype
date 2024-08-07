@@ -17,10 +17,7 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-two-thirds">
 
     <span class="govuk-caption-l">About you</span>
-
-    {% from "govuk/components/input/macro.njk" import govukInput %}
-    {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
-
+    
     {% call govukFieldset({
       legend: {
       text: "What is your address?",
