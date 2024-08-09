@@ -9,7 +9,8 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
+  {{ super() }}
+{{ govukBackLink({
     text: "Back",
     href: "index.html"
   }) }}

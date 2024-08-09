@@ -9,7 +9,8 @@ Did you have a joint claim with a partner between 26 January 2023 and 25 Februar
 {% endblock %}
 
 {% block beforeContent %}
- {{ govukBackLink({
+ {{ super() }}
+{{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
 }) }}
@@ -53,7 +54,8 @@ href: "javascript:window.history.back()"
       }) }}
 
       {{ govukButton({
-        text: "Continue"
+        text: "Continue",
+        attributes: "govuk-button"
       }) }}
 
     </form>

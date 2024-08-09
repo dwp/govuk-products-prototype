@@ -9,6 +9,7 @@ Contact details for the Disability Cost of Living Payment -  - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
+{{ super() }}
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
