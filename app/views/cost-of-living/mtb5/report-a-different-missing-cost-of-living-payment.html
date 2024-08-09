@@ -9,7 +9,8 @@ Report a different missing Cost of Living Payment? - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
- {{ govukBackLink({
+ {{ super() }}
+{{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
 }) }}

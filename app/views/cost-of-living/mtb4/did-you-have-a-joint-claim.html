@@ -5,6 +5,7 @@ Did you have a joint claim with a partner between 26 January 2023 and 25 Februar
 {% endblock %}
 
 {% block beforeContent %}
+{{ super() }}
 {{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"

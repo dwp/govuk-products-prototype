@@ -9,7 +9,8 @@ Contact details for low income benefits - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
- {{ govukBackLink({
+ {{ super() }}
+{{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
