@@ -21,39 +21,42 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukRadios({
-      name: "advnacePaymentEnquiryType",
-      fieldset: {
-        legend: {
-          text: "Advance payment – What is your enquiry about?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      items: [
-        {
-          value: "how-much-owed-in-total",
-          text: "How much I owe in total"
-        },
-        {
-          value: "how-much-paid-every-month",
-          text: "How much I pay every month"
-        },
-        {
-          value: "one-off-payment",
-          text: "I want to make a one-off payment"
-        },
-        {
-          value: "pause-payments",
-          text: "I want to pause repayments"
-        }
-      ]
-    }) }}
+    <form class="form" action="/find-out-prod-advance-payment-enquiry-type" method="post">
 
-    {{ govukButton({
-      text: "Next step"
-    }) }}
+      {{ govukRadios({
+        name: "advancePaymentEnquiryType",
+        fieldset: {
+          legend: {
+            text: "Advance payment – What is your enquiry about?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "how-much-owed-in-total",
+            text: "How much I owe in total"
+          },
+          {
+            value: "how-much-paid-every-month",
+            text: "How much I pay every month"
+          },
+          {
+            value: "one-off-payment",
+            text: "I want to make a one-off payment"
+          },
+          {
+            value: "pause-payments",
+            text: "I want to pause repayments"
+          }
+        ]
+      }) }}
 
+      {{ govukButton({
+        text: "Next step"
+      }) }}
+    
+    </form> 
   </div>
 </div>
 

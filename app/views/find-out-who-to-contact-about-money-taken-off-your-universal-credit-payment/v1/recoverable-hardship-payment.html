@@ -24,39 +24,42 @@
 
     <h1 class="govuk-heading-xl">Recoverable hardship payment</h1>
 
-    {{ govukRadios({
-      name: "whereDoYouNeedHelpWith",
-      fieldset: {
-        legend: {
-          text: "What do you need help with?",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "hardship-payment-payment-reason",
-          text: "I want to know what the recoverable hardship payment is for"
-        },
-        {
-          value: "hardship-payment-left-to-pay",
-          text: "How much I have left to pay"
-        },
-        {
-          value: "hardship-overpayment-one-off-payment",
-          text: "I want to make a one-off payment"
-        },
-        {
-          value: "hardship-hardship-payment",
-          text: "I am struggling to repay"
-        }
-      ]
-    }) }}
+    <form class="form" action="/find-out-prod-recoverable-hardship-payment-help" method="post">
 
-    {{ govukButton({
-      text: "Next step"
-    }) }}
+        {{ govukRadios({
+        name: "recoverableHardshipPaymentHelp",
+        fieldset: {
+          legend: {
+            text: "What do you need help with?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "hardship-payment-payment-reason",
+            text: "I want to know what the recoverable hardship payment is for"
+          },
+          {
+            value: "hardship-payment-left-to-pay",
+            text: "How much I have left to pay"
+          },
+          {
+            value: "hardship-payment-one-off-payment",
+            text: "I want to make a one-off payment"
+          },
+          {
+            value: "hardship-payment-stuggling-to-repay",
+            text: "I am struggling to repay"
+          }
+        ]
+      }) }}
 
+      {{ govukButton({
+        text: "Next step"
+      }) }}
+    
+    </form>  
   </div>
 </div>
 
