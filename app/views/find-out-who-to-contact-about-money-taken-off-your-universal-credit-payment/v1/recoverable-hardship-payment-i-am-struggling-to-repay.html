@@ -24,35 +24,38 @@
 
     <h1 class="govuk-heading-xl">Recoverable hardship payment – I am struggling to repay</h1>
 
-    {{ govukRadios({
-      name: "whereDoYouNeedHelpWith",
-      fieldset: {
-        legend: {
-          text: "Do you have any other money taken off your Universal Credit payment for debt and deductions?",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "hardship-payment-left-to-pay",
-          text: "No, I only have a recoverable hardship payment"
-        },
-        {
-          value: "hardship-overpayment-one-off-payment",
-          text: "Yes, but only a Universal Credit advance"
-        },
-        {
-          value: "hardship-hardship-payment",
-          text: "Yes, I have other debt and deductions – for example benefit overpayments and social fund loans"
-        }
-      ]
-    }) }}
+    <form class="form" action="/find-out-prod-debt-and-deductions" method="post">
 
-    {{ govukButton({
-      text: "Next step"
-    }) }}
+      {{ govukRadios({
+        name: "recoverableHardshipDebtAndDeductions",
+        fieldset: {
+          legend: {
+            text: "Do you have any other money taken off your Universal Credit payment for debt and deductions?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "no-only-recoverable-hardship-payment",
+            text: "No, I only have a recoverable hardship payment"
+          },
+          {
+            value: "yes-but-only-a-uc-advance",
+            text: "Yes, but only a Universal Credit advance"
+          },
+          {
+            value: "yes-other-debt-and-deductions",
+            text: "Yes, I have other debt and deductions – for example benefit overpayments and social fund loans"
+          }
+        ]
+      }) }}
 
+      {{ govukButton({
+        text: "Next step"
+      }) }}
+
+    </form>
   </div>
 </div>
 

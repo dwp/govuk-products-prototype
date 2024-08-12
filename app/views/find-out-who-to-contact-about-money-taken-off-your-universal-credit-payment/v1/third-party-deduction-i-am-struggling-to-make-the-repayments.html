@@ -26,32 +26,34 @@
     
     <p class="govuk-body">Money can be taken off your Universal Credit payment to pay your debts for:</p><p></p><ul class="govuk-list govuk-list--bullet"><li>rent arrears</li><li>service charge arrears</li><li>court fines</li><li>child maintenance</li><li>utilities, like electricity, gas and water</li><li>Council Tax arrears</li></ul>
     
-    {{ govukRadios({
-      name: "whereDoYouLive",
-      fieldset: {
-        legend: {
-          text: "Do you have money taken off for rent arrears?",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
-        },
-        {
-          value: "no",
-          text: "No"
-        }
-      ]
-    }) }}
+    <form class="form" action="/find-out-prod-third-party-rent-arrears" method="post">
 
-    {{ govukButton({
-      text: "Next step",
-      href: "northern-ireland"
-    }) }}
-    
+      {{ govukRadios({
+        name: "thirdPartyDeductionRentArrears",
+        fieldset: {
+          legend: {
+            text: "Do you have money taken off for rent arrears?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Next step"
+      }) }}
+      
+    </form>
   </div>
 </div>
 

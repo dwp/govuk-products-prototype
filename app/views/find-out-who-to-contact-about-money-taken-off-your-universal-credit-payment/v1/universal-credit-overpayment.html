@@ -23,36 +23,39 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">Universal Credit overpayment</h1>
+    
+    <form class="form" action="/find-out-prod-universal-credit-overpayment" method="post">
 
-    {{ govukRadios({
-      name: "universalCreditOverpayment",
-      fieldset: {
-        legend: {
-          text: "What is your enquiry about?",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "uc-overpayment-reason",
-          text: "I want to know what the overpayment was for"
+      {{ govukRadios({
+        name: "universalCreditOverpayment",
+        fieldset: {
+          legend: {
+            text: "What is your enquiry about?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
         },
-        {
-          value: "uc-how-much-left-to-pay",
-          text: "How much I have left to pay"
-        },
-        {
-          value: "uc-one-off-payment",
-          text: "I want to make a one-off payment"
-        }
-      ]
-    }) }}
+        items: [
+          {
+            value: "uc-overpayment-reason",
+            text: "I want to know what the overpayment was for"
+          },
+          {
+            value: "uc-how-much-left-to-pay",
+            text: "How much I have left to pay"
+          },
+          {
+            value: "uc-one-off-payment",
+            text: "I want to make a one-off payment"
+          }
+        ]
+      }) }}
 
-    {{ govukButton({
-      text: "Next step"
-    }) }}
+      {{ govukButton({
+        text: "Next step"
+      }) }}
 
+    </form>
   </div>
 </div>
 

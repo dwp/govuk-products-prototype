@@ -24,8 +24,10 @@ Third party deduction – I do not have money taken off for a benefit overpaymen
           
     <h1 class="govuk-heading-xl">Third party deduction – I do not have money taken off for a benefit overpayment, social fund loan or recoverable hardship payment</h1>
         
+    <form class="form" action="/find-out-prod-third-party-other-third-party-deductions" method="post">
+
     {{ govukRadios({
-      name: "whereDoYouLive",
+      name: "thirdPartyDeduction",
       fieldset: {
         legend: {
           text: "Do you have any other third party deductions taken from your Universal Credit payment?",
@@ -46,10 +48,10 @@ Third party deduction – I do not have money taken off for a benefit overpaymen
     }) }}
 
     {{ govukButton({
-      text: "Next step",
-      href: "northern-ireland"
+      text: "Next step"
     }) }}
-    
+
+    </form>
   </div>
 </div>
 
