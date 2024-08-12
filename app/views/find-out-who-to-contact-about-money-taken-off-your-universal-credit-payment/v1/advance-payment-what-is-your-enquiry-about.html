@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Find out who to contact about money taken off your Universal Credit payment  
+{% endset %}
+
+{% block pageTitle %}
+  Advance payment – What is your enquiry about? - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukRadios({
+      name: "advnacePaymentEnquiryType",
+      fieldset: {
+        legend: {
+          text: "Advance payment – What is your enquiry about?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "how-much-owed-in-total",
+          text: "How much I owe in total"
+        },
+        {
+          value: "how-much-paid-every-month",
+          text: "How much I pay every month"
+        },
+        {
+          value: "one-off-payment",
+          text: "I want to make a one-off payment"
+        },
+        {
+          value: "pause-payments",
+          text: "I want to pause repayments"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Next step"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

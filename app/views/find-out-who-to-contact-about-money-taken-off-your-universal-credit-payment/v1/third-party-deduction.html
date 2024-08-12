@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Find out who to contact about money taken off your Universal Credit payment  
+{% endset %}
+
+{% block pageTitle %}
+  Third party deduction - if you owe money for things like rent, Council Tax, electricity, gas, water or court fines - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Third party deduction - if you owe money for things like rent, Council Tax, electricity, gas, water or court fines
+    </h1>
+
+    {{ govukRadios({
+      name: "whereDoYouLive",
+      fieldset: {
+        legend: {
+          text: "What is your enquiry about?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "england",
+          text: "I want to know why the money was taken off"
+        },
+        {
+          value: "northern-ireland",
+          text: "How much I owe in total"
+        },
+        {
+          value: "northern-ireland",
+          text: "I want to make a one-off payment"
+        },
+        {
+          value: "northern-ireland",
+          text: "I am struggling to make the repayments"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Next step",
+      href: "northern-ireland"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

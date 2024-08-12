@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Find out who to contact about money taken off your Universal Credit payment  
+{% endset %}
+
+{% block pageTitle %}
+  Universal Credit overpayment - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Universal Credit overpayment</h1>
+
+    {{ govukRadios({
+      name: "universalCreditOverpayment",
+      fieldset: {
+        legend: {
+          text: "What is your enquiry about?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "uc-overpayment-reason",
+          text: "I want to know what the overpayment was for"
+        },
+        {
+          value: "uc-how-much-left-to-pay",
+          text: "How much I have left to pay"
+        },
+        {
+          value: "uc-one-off-payment",
+          text: "I want to make a one-off payment"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Next step"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
