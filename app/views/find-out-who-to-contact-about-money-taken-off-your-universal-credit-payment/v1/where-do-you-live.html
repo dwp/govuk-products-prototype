@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Find out who to contact about money taken off your Universal Credit payment  
+{% endset %}
+
+{% block pageTitle %}
+  Where do you live? - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukRadios({
+      name: "whereDoYouLive",
+      fieldset: {
+        legend: {
+          text: "Where do you live?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "england",
+          text: "England, Scotland or Wales"
+        },
+        {
+          value: "northern-ireland",
+          text: "Northern Ireland"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Next step",
+      href: "northern-ireland"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

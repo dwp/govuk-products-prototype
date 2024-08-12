@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Find out who to contact about money taken off your Universal Credit payment  
+{% endset %}
+
+{% block pageTitle %}
+  Third party deduction - if you owe money for things like rent, Council Tax, electricity, gas, water or court fines - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Third party deduction – I have money taken off for rent arrears
+    </h1>
+
+    {{ govukRadios({
+      name: "whereDoYouLive",
+      fieldset: {
+        legend: {
+          text: "Do you also have money taken off for a benefit overpayment, social fund loan or recoverable hardship payment?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Next step",
+      href: "northern-ireland"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

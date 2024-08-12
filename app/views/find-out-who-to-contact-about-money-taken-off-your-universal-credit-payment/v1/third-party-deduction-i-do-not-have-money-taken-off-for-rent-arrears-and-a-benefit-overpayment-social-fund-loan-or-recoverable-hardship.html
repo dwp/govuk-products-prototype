@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Find out who to contact about money taken off your Universal Credit payment  
+{% endset %}
+
+{% block pageTitle %}
+Third party deduction – I do not have money taken off for a benefit overpayment, social fund loan or recoverable hardship payment - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row"> 
+  <div class="govuk-grid-column-two-thirds">     
+          
+    <h1 class="govuk-heading-xl">Third party deduction – I do not have money taken off for a benefit overpayment, social fund loan or recoverable hardship payment</h1>
+        
+    {{ govukRadios({
+      name: "whereDoYouLive",
+      fieldset: {
+        legend: {
+          text: "Do you have any other third party deductions taken from your Universal Credit payment?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "no",
+          text: "No, I only have rent arrears"
+        },
+        {
+          value: "yes",
+          text: "Yes, I have other deductions"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Next step",
+      href: "northern-ireland"
+    }) }}
+    
+  </div>
+</div>
+
+{% endblock %}

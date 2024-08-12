@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Find out who to contact about money taken off your Universal Credit payment  
+{% endset %}
+
+{% block pageTitle %}
+  Recoverable hardship payment – I am struggling to repay - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Recoverable hardship payment – I am struggling to repay</h1>
+
+    {{ govukRadios({
+      name: "whereDoYouNeedHelpWith",
+      fieldset: {
+        legend: {
+          text: "Do you have any other money taken off your Universal Credit payment for debt and deductions?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "hardship-payment-left-to-pay",
+          text: "No, I only have a recoverable hardship payment"
+        },
+        {
+          value: "hardship-overpayment-one-off-payment",
+          text: "Yes, but only a Universal Credit advance"
+        },
+        {
+          value: "hardship-hardship-payment",
+          text: "Yes, I have other debt and deductions – for example benefit overpayments and social fund loans"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Next step"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
