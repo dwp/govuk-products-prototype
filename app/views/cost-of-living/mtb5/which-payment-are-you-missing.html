@@ -9,7 +9,8 @@ Which payment are you missing? - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
- {{ govukBackLink({
+ {{ super() }}
+{{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
 }) }}
@@ -20,11 +21,14 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {{data['which-benefit']}}
+
     <form class="form" action="/mtb5-which-payment-answer" method="post">
 
       {{ govukRadios({
         name: "which-payment",
         id: "which-payment",
+        value: data['which-payment'],
         fieldset: {
           legend: {
             text: "Which payment are you missing?",
@@ -49,12 +53,11 @@ href: "javascript:window.history.back()"
       }) }}
 
       {{ govukButton({
-      text: "Continue"
+        text: "Continue",
+        attributes: "govuk-button"
       }) }}
 
     </form>
-
-
   </div>
 </div>
 

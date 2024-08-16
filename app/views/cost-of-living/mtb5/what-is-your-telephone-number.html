@@ -9,7 +9,8 @@ What is your telephone number? - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
- {{ govukBackLink({
+ {{ super() }}
+{{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
 }) }}
@@ -22,21 +23,25 @@ href: "javascript:window.history.back()"
 
     <span class="govuk-caption-l">About you</span>
 
+    <form class="form" action="check-your-answers" method="post">
+
     {{ govukInput({
       label: {
         text: "What is your telephone number? (optional)",
         classes: "govuk-label--l",
         isPageHeading: true
       },
-      id: "telNumber",
-      name: 'tel-number'
+      id: "tel-number",
+      name: "tel-number",
+      value: data['tel-number']
     }) }}
 
     {{ govukButton({
       text: "Continue",
-      href: "check-your-answers"
+      attributes: "govuk-button"
     }) }}
 
+    </form>
   </div>
 </div>
 
