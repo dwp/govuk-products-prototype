@@ -9,6 +9,7 @@ Check your answers - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
+{{ super() }}
 {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -24,6 +25,8 @@ Check your answers - {{ serviceName }}
         Check your answers
       </h1>
 
+      <form class="form" action="what-happens-next" method="post">
+
       {{ govukSummaryList({
         rows: [
         {
@@ -31,14 +34,14 @@ Check your answers - {{ serviceName }}
             text: "Type of Cost of Living payment"
           },
           value: {
-            text: "£301, £300 or £299 for a low income benefit"
+            text: data['type-of-payment-missing']
           },
           actions: {
             items: [
               {
-                href: "which-benefit-were-you-expecting",
+                href: "types-of-cost-of-living-payment",
                 text: "Change",
-                visuallyHiddenText: "Question 1"
+                visuallyHiddenText: "type of Cost of Living payment"
               }
             ]
           }
@@ -49,14 +52,14 @@ Check your answers - {{ serviceName }}
               text: "Benefit"
             },
             value: {
-              text: "income-based Jobseeker's Allowance (JSA)"
+              text: data['which-benefit']
             },
             actions: {
               items: [
                 {
-                  href: "which-benefit-were-you-expecting",
+                  href: "benefit-entitlement-low-income",
                   text: "Change",
-                  visuallyHiddenText: "Question 1"
+                  visuallyHiddenText: "which benefit you were expecting a payment for"
                 }
               ]
             }
@@ -67,14 +70,14 @@ Check your answers - {{ serviceName }}
               text: "Which payment are you missing?"
             },
             value: {
-              text: "£299 paid between 6 February and 22 February 2024 for most people"
+              text: data['which-payment']
             },
             actions: {
               items: [
                 {
-                  href: "which-benefit-were-you-expecting",
+                  href: "which-payment-are-you-missing",
                   text: "Change",
-                  visuallyHiddenText: "Question 1"
+                  visuallyHiddenText: "which payment is missing"
                 }
               ]
             }
@@ -85,14 +88,14 @@ Check your answers - {{ serviceName }}
               text: "Name"
             },
             value: {
-              text: "Sarah Phillips"
+              text: data['full-name']
             },
             actions: {
               items: [
                 {
                   href: "personal-details",
                   text: "Change",
-                  visuallyHiddenText: "Question 2"
+                  visuallyHiddenText: "name"
                 }
               ]
             }
@@ -103,14 +106,14 @@ Check your answers - {{ serviceName }}
               text: "Date of birth"
             },
             value: {
-              text: "1/1/1992"
+              text: data['dob-day'] + " " + data['dob-month'] | toMonth + " " +  data['dob-year']
             },
             actions: {
               items: [
                 {
                   href: "personal-details",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "date of birth"
                 }
               ]
             }
@@ -121,14 +124,14 @@ Check your answers - {{ serviceName }}
               text: "National Insurance number"
             },
             value: {
-              text: "JR172655D"
+              text: data['nino']
             },
             actions: {
               items: [
                 {
                   href: "personal-details",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "National Insurance number"
                 }
               ]
             }
@@ -139,14 +142,14 @@ Check your answers - {{ serviceName }}
               text: "Address"
             },
             value: {
-              text: "72 Guild Street"
+               text: ""
             },
             actions: {
               items: [
                 {
                   href: "what-is-your-address",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "address"
                 }
               ]
             }
@@ -157,14 +160,14 @@ Check your answers - {{ serviceName }}
               text: "Telephone number"
             },
             value: {
-              text: "01234567891"
+              text: data['tel-number'] or "Telephone number not given"
             },
             actions: {
               items: [
                 {
                   href: "what-is-your-telephone-number",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "telephone number"
                 }
               ]
             }
@@ -173,14 +176,12 @@ Check your answers - {{ serviceName }}
       })
      }}
 
-      <form action="/mtb5-details-received" method="post" novalidate>
-
-        {{ govukButton({
-          text: "Accept and send"
-        }) }}
+      {{ govukButton({
+        text: "Accept and send",
+        attributes: "govuk-button"
+      }) }}
 
       </form>
-
     </div>
   </div>
 {% endblock %}

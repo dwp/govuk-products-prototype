@@ -31,8 +31,7 @@
       <li>Working Tax Credit</li>
     </ul>
 
-
-     <p class="govuk-body">£150 for a disability benefit:</p>
+    <p class="govuk-body">£150 for a disability benefit:</p>
 
     <ul class="govuk-list govuk-list--bullet">
       <li>Attendance Allowance</li>
@@ -49,8 +48,9 @@
     <form class="form" action="/mtb5-payment-type-answer" method="post">
 
       {{ govukRadios({
-        name: "type-of-payment-missing",
         id: "type-of-payment-missing",
+        prefix: "type-of-payment-missing",
+        name: "type-of-payment-missing",
         fieldset: {
           legend: {
           text: "Which type of Cost of Living Payment do you want to report as missing?",
@@ -59,12 +59,12 @@
         },
         items: [
           {
-          value: "301-or-300-or-299",
-          text: "£301, £300 or £299 for a low income benefit"
+            text: "£301, £300 or £299 for a low income benefit",
+            name: data['301-or-300-or-299']
           },
           {
-          value: "150",
-          text: "£150 for a disability benefit"
+            text: "£150 for a disability benefit",
+            name: data['150']
           }
         ]
       }) }}
@@ -76,7 +76,8 @@
       }) }}
 
       {{ govukButton({
-      text: "Continue"
+        text: "Continue",
+        attributes: "govuk-button"
       }) }}
 
     </form>
