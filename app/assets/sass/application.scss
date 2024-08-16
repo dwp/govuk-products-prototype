@@ -3,12 +3,17 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
 
+.remove-govuk-crown .govuk-header__logo {
+    display: none;
+}
+
 main.govuk-main-wrapper {
     @include govuk-responsive-padding(6, "top");
 }
 
 .dwp-header {
     border-bottom: 10px solid $govuk-brand-colour;
+
 }
 
 .app-big-bar {
@@ -34,6 +39,10 @@ main.govuk-main-wrapper {
     }
 }
 
+#search-wrapper {
+    @include govuk-responsive-margin(6, "bottom");
+}
+
 .app-card {
     @include govuk-responsive-margin(5, "bottom");
     border: 1px solid $govuk-border-colour;
@@ -57,7 +66,7 @@ main.govuk-main-wrapper {
 
     .app-card-content {
         @include govuk-responsive-padding(4, "top");
-        @include govuk-responsive-padding(4, "bottom");
+        @include govuk-responsive-padding(6, "bottom");
         @include govuk-responsive-padding(5, "left");
         @include govuk-responsive-padding(5, "right");
     }
@@ -82,9 +91,9 @@ main.govuk-main-wrapper {
     .govuk-table {
         @include govuk-responsive-margin(0, "bottom");
 
-        .govuk-table__row:last-child td {
+      /*   .govuk-table__row:last-child td {
             border: 0;
-        }
+        } */
     }
 
     .govuk-tag {

@@ -21,7 +21,11 @@ document.getElementById("search").addEventListener("keyup", function (evt) {
     });
 }, false);
 
-function clearSearch(){      
+/* function clearSearch(){      
    document.getElementById('search').value = '';
    $('.hide').removeClass('hide');
-}
+} */
+
+import('https://unpkg.com/@ukic/web-components/loader').then((module) => {
+    module.defineCustomElements();
+});

@@ -4,6 +4,11 @@
   GOV.UK team products
 {% endblock %}
 
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@ukic/web-components/dist/core/core.css" crossorigin="anonymous" />
+{% endblock %}
+
 {% block header %}
 
 {% endblock %}
@@ -39,12 +44,34 @@
 <div class="govuk-grid-row govuk-products">
   <div class="govuk-grid-column-full">
 
-    <div class="govuk-form-group">
+  <!--   <div class="govuk-form-group">
       <label class="govuk-label" for="search">
         Search
       </label>
       <input type="text" id="search" name="search" class="govuk-input govuk-input--width-10" autocomplete="on" aria-label="Search for a prototype" />
       <a href="#" class="govuk-link clear-search-link" onclick="clearSearch()">Clear search</a>
+    </div> -->
+
+  <!--   <div id="search-wrapper">
+    {{ govukInput({
+        id: "search",
+        name: "search",
+        classes: "govuk-!-width-one-third",
+        attributes: {
+          "autocomplete": "on",
+          "aria-label": "Search for a prototype",
+          "placeholder": "Start typing to search…"
+        }
+      }) }} 
+     
+      <input type="text" id="search" name="search" class="govuk-input govuk-!-width-one-third" autocomplete="on" aria-label="Search for a prototype" placeholder="Start typing to search..." />
+      <a href="#" class="govuk-link clear-search-link" onclick="clearSearch()">Clear search</a>
+    </div>
+ -->
+
+    <div id="search-wrapper">
+      <ic-search-bar id="search" name="search" placeholder="Start typing to search…" label="Search for a product" hide-label="true"aria-label="Search for a prototype"  class="search hydrated" value="">
+      <input type="hidden" class="ic-input" name="ic-search-bar-input-19" value=""></ic-search-bar>
     </div>
 
     <div class="app-card">
