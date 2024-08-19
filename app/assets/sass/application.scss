@@ -44,7 +44,7 @@ main.govuk-main-wrapper {
 }
 
 .app-card {
-    @include govuk-responsive-margin(5, "bottom");
+    @include govuk-responsive-margin(6, "bottom");
     border: 1px solid $govuk-border-colour;
 
     h2, h3 {
