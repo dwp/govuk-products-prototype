@@ -44,6 +44,31 @@
 <div class="govuk-grid-row govuk-products">
   <div class="govuk-grid-column-full">
 
+  <!--   <div class="govuk-form-group">
+      <label class="govuk-label" for="search">
+        Search
+      </label>
+      <input type="text" id="search" name="search" class="govuk-input govuk-input--width-10" autocomplete="on" aria-label="Search for a prototype" />
+      <a href="#" class="govuk-link clear-search-link" onclick="clearSearch()">Clear search</a>
+    </div> -->
+
+  <!--   <div id="search-wrapper">
+    {{ govukInput({
+        id: "search",
+        name: "search",
+        classes: "govuk-!-width-one-third",
+        attributes: {
+          "autocomplete": "on",
+          "aria-label": "Search for a prototype",
+          "placeholder": "Start typing to search…"
+        }
+      }) }} 
+     
+      <input type="text" id="search" name="search" class="govuk-input govuk-!-width-one-third" autocomplete="on" aria-label="Search for a prototype" placeholder="Start typing to search..." />
+      <a href="#" class="govuk-link clear-search-link" onclick="clearSearch()">Clear search</a>
+    </div>
+ -->
+
     <div id="search-wrapper">
       <ic-search-bar id="search" name="search" placeholder="Start typing to search…" label="Search for a product" hide-label="true"aria-label="Search for a prototype"  class="search hydrated" value="">
       <input type="hidden" class="ic-input" name="ic-search-bar-input-19" value=""></ic-search-bar>
@@ -90,6 +115,91 @@
             </tr>
           </tbody>
         </table>
+
+        <!-- {{ govukTable({
+          caption: "Prototype versions for Ask for a Maternity Allowance claim form",
+          captionClasses: "govuk-visually-hidden",
+          head: [
+          {
+            text: "Version",
+            attributes: {
+              "scope": “col”
+            }
+          }, 
+          {
+            text: "Phase",
+            attributes: {
+              "scope": “col”
+            }
+          },
+          {
+            text: "Last updated",
+            attributes: {
+              "scope": “col”
+            }
+          },
+          {
+            text: "User journeys",
+            attributes: {
+              "scope": “col”
+            }
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 3",
+                attributes: {
+                  scope: “row”
+                }
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/v2/index.html">Version 2</a>',
+                visuallyHiddenText: "of Ask for a Maternity Allowance claim form",
+                attributes: {
+                  "scope": “row”
+                }
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "20 Nov 2023"
+              },
+              {
+                html: '<a class="govuk-link" href="/public/images/version-2_ask-for-a-maternity-allowance-claim-form.pdf#navpanes=0"> User journey (PDF, 453KB)</a>'
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/v1/index.html">Version 1</a>',
+                attributes: {
+                  "scope": “row”
+                }
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              },
+              {
+                html: '<a class="govuk-link" href="/public/images/version-1_ask-for-a-maternity-allowance-claim-form.pdf#navpanes=0" type="application/pdf">User journey (PDF, 448KB)</a>'
+              }
+            ]
+          ]
+        }) }} -->
 
       <!--<div class="app-design-history">
         <p class="govuk-body">
@@ -142,6 +252,66 @@
             </tr>
           </tbody>
         </table>
+       
+        <!-- {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Check your maternity allowance dates"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="check-your-maternity-allowance-dates/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Alpha", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+
+    <!--     {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Check your maternity allowance dates"
+        }
+        }) }} -->
+
         </div>
     </div>
 
@@ -185,6 +355,79 @@
               </tr>
             </tbody>
           </table>
+      
+       <!--  {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Cold weather payments"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 3"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="cold-weather-payments/v2/index.html">Version 2</a>'
+              },
+              {
+                html: govukTag({ text: "Live - ?", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "Nov 2023"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="cold-weather-payments/v1/index.html">Version 1</a>'
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+
+        <!-- {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Cold weather payments"
+          }
+        }) }} -->
     </div></div>
 
     <div class="app-card">
@@ -221,6 +464,65 @@
             </tr>
           </tbody>
         </table>
+
+       <!--  {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Contact DWP about accessibility"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="contact-dwp-about-accessibility/v1/#">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+
+     <!--     {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Contact DWP about accessibility"
+          }
+        }) }} -->
     </div></div>
 
     <div class="app-card">
@@ -257,6 +559,65 @@
             </tr>
           </tbody>
         </table>
+
+       <!--  {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Contact Employer Services"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="contact-dwp-about-accessibility/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+
+     <!--    {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Contact Employer Services"
+          }
+        }) }} -->
     </div></div>
 
     <div class="app-card">
@@ -293,6 +654,65 @@
             </tr>
           </tbody>
         </table>
+
+       <!--  {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Contact the DWP ministerial correspondence team"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="contact-the-dwp-ministerial-correspondence-team/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+
+   <!--      {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Contact the DWP ministerial correspondence team"
+          }
+        }) }} -->
     </div></div>
 
     <div class="app-card">
@@ -329,6 +749,65 @@
             </tr>
           </tbody>
         </table>
+
+       <!--  {{ govukTable({
+            attributes: {
+              "aria-label": "Prototype versions for Contact International Pension Centre"
+            },
+            head: [
+            {
+              text: "Version"
+            },
+            {
+              text: "Phase"
+            },
+            {
+              text: "Last updated"
+            },
+            {
+              text: "User journeys"
+            }
+            ],  
+            rows: [
+              [
+                {
+                  text: "Version 2"
+                },
+                {
+                  html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+                },
+                {
+                  text: "-"
+                },
+                {
+                  text: "-"
+                }
+              ],
+              [
+                {
+                  html: '<a class="govuk-link" href="contact-the-international-pension-centre/v1/index.html">Version 1</a>'
+                },
+                {
+                  html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+                },
+                {
+                  text: "-"
+                },
+                {
+                  text: "-"
+                }
+              ]
+            ]
+          }) }} -->
+
+  <!--       {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Contact International Pension Centre"
+          }
+        }) }} -->
     </div></div>
 
     <div class="app-card">
@@ -365,6 +844,56 @@
             </tr>
           </tbody>
         </table>
+
+       <!--  {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Contact the Winter Fuel Payments Centre"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                html: '<a class="govuk-link" href="contact-winter-fuel-payments-centre/v2/index.html">Version 2</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "Early Nov 2023"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="contact-winter-fuel-payments-centre/v1/index.html">Version 1</a>'
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
 
         {{ govukButton({
           text: "View design history",
@@ -423,6 +952,84 @@
             </tr>
           </tbody>
         </table>
+
+      <!--   {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Cost of Living"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                html: '<a class="govuk-link" href="cost-of-living/retiring-mtb5/index.html">Retiring MTB5</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "Mar 2024"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                text: "MTB5"
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "Feb 2024"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="cost-of-living/retiring-mtb4/index.html">Retiring MTB4</a>'
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                text: "MTB4"
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
       </div>
     </div>
 
@@ -460,6 +1067,65 @@
               </tr>
             </tbody>
           </table>
+        
+        <!--   {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Find out who to contact about money taken off your Universal Credit payment"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                text: "Version 1"
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+<!-- 
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Find out who to contact about money taken off your Universal Credit payment"
+          }
+        }) }} -->
     </div></div>
 
     <div class="app-card">
@@ -496,6 +1162,65 @@
             </tr>
           </tbody>
         </table>
+
+       <!--  {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Find your nearest Jobcentre"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="find-your-nearest-jobcentre/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - ?", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+
+        <!-- {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Find your nearest Jobcentre"
+          }
+        }) }} -->
     </div></div>
 
     <div class="app-card">
@@ -533,6 +1258,65 @@
             </tr>
           </tbody>
         </table>
+
+       <!--  {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Get a proof of benefit letter"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="get-a-proof-of-benefit-letter/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+
+        <!-- {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Get a proof of benefit letter"
+          }
+        }) }} -->
     </div></div>
 
     <div class="app-card">
@@ -569,6 +1353,65 @@
             </tr>
           </tbody>
         </table>
+
+       <!--  {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Request your personal information"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                text: "Version 1"
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+
+        <!-- {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Request your personal information"
+          }
+        }) }} -->
     </div></div>
 
     <div class="app-card">
@@ -605,6 +1448,65 @@
             </tr>
           </tbody>
         </table>
+
+      <!--   {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Send a personal information request for a citizen"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                text: "Version 1"
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+
+      <!--   {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Send a personal information request for a citizen"
+          }
+        }) }} -->
     </div></div>
 
     <div class="app-card">
@@ -640,6 +1542,65 @@
             </tr>
           </tbody>
         </table>
+
+       <!--  {{ govukTable({
+          attributes: {
+            "aria-label": "Prototype versions for Request information about underpaid state pension for someone who has died"
+          },
+          head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Phase"
+          },
+          {
+            text: "Last updated"
+          },
+          {
+            text: "User journeys"
+          }
+          ],  
+          rows: [
+            [
+              {
+                text: "Version 2"
+              },
+              {
+                html: govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ],
+            [
+              {
+                html: '<a class="govuk-link" href="request-information-about-underpaid-state-pension-for-someone-who-has-died/v1/index.html">Version 1</a>'
+              },
+              {
+                html: govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "-"
+              }
+            ]
+          ]
+        }) }} -->
+
+        <!-- {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "#",
+          attributes: {
+          "aria-label": "View design history for Request information about underpaid state pension for someone who has died"
+          }
+        }) }} -->
     </div></div>
   </div>
 </div>
