@@ -1,5 +1,4 @@
 {% extends "layouts/main.html" %}
-{% extends "layouts/internal-service-header.html" %}
 
 {% set serviceName %}
   Find out who to contact about money taken off your Universal Credit payment  
@@ -7,16 +6,6 @@
 
 {% block pageTitle %}
   Where do you live? - {{ serviceName }}
-{% endblock %}
-
-{% block header %}
-  {% from "internal-service-header/macro.njk" import dwpHeader %}
-  {{ dwpHeader({
-    serviceName: "Find out who to contact about money taken off your Universal Credit payment",
-    serviceHref: 'index',
-    container: true,
-    containerClasses: ""
-  }) }}
 {% endblock %}
 
 {% block content %}
