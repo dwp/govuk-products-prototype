@@ -3,15 +3,15 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
-/* $('#search').on('input', function(){
-    var lowercase = $(this).val().toLowerCase();
-    var input = $(this).val();
+$('#search').on('input', function(){
+    var input = $(this).val().toLowerCase();
+    var product = $('.govuk-product').text().toLowerCase();
     $('.govuk-products .app-card').show();  
-    $(".govuk-products .app-card:not(:contains("+input+"))").hide(); 
-    console.log(lowercase, input);
-});  */
+    $(".govuk-product:not(:contains(" + input + "))").parent().parent().hide(); 
+    console.log(input, product);
+});     
 
-document.getElementById("search").addEventListener("keyup", function (evt) {
+/* document.getElementById("search").addEventListener("keyup", function (evt) {
     [].forEach.call(document.querySelectorAll(".govuk-products .govuk-product"), function (subject) {
         if (subject.textContent.indexOf(evt.target.value) === -1) {
             subject.parentElement.parentElement.classList.add("hide");
@@ -19,7 +19,7 @@ document.getElementById("search").addEventListener("keyup", function (evt) {
             subject.parentElement.parentElement.classList.remove("hide");
         }
     });
-}, false);
+}, false); */
 
 /* function clearSearch(){      
    document.getElementById('search').value = '';
