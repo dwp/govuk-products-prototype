@@ -5,7 +5,7 @@
 {% endset %}
 
 {% block pageTitle %}
-  Universal Credit overpayment - {{ serviceName }}
+  Third party deduction - if you owe money for things like rent, Council Tax, electricity, gas, water or court fines - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,31 +22,29 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Universal Credit overpayment</h1>
-    
-    <form class="form" action="/v1-contact-about-money-off-uc-universal-credit-overpayment" method="post">
+    <h1 class="govuk-heading-l">
+      Third party deduction – I have money taken off for rent arrears
+    </h1>
+
+    <form class="form" action="/v2-contact-about-money-off-uc-third-party-other-reasons" method="post">
 
       {{ govukRadios({
-        name: "universalCreditOverpayment",
+        name: "thirdPartyDeduction",
         fieldset: {
           legend: {
-            text: "What is your enquiry about?",
+            text: "Do you have any other third party deductions taken from your Universal Credit payment?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
         },
         items: [
           {
-            value: "uc-overpayment-reason",
-            text: "I want to know what the overpayment was for"
+            value: "no",
+            text: "No, I only have rent arrears"
           },
           {
-            value: "uc-how-much-left-to-pay",
-            text: "How much I have left to pay"
-          },
-          {
-            value: "uc-one-off-payment",
-            text: "I want to make a one-off payment"
+            value: "yes",
+            text: "Yes, I have other deductions"
           }
         ]
       }) }}

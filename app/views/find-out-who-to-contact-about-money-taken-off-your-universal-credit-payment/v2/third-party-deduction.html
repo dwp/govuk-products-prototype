@@ -5,7 +5,7 @@
 {% endset %}
 
 {% block pageTitle %}
-  Recoverable hardship payment - {{ serviceName }}
+  Third party deduction - if you owe money for things like rent, Council Tax, electricity, gas, water or court fines - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,35 +22,37 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Recoverable hardship payment</h1>
+    <h1 class="govuk-heading-xl">
+      Third party deduction - if you owe money for things like rent, Council Tax, electricity, gas, water or court fines
+    </h1>
 
-    <form class="form" action="/v1-contact-about-money-off-uc-recoverable-hardship-payment-help" method="post">
+    <form class="form" action="/v2-contact-about-money-off-uc-third-party-deductions" method="post">
 
-        {{ govukRadios({
-        name: "recoverableHardshipPaymentHelp",
+      {{ govukRadios({
+        name: "thirdPartyDeduction",
         fieldset: {
           legend: {
-            text: "What do you need help with?",
+            text: "What is your enquiry about?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
         },
         items: [
           {
-            value: "hardship-payment-payment-reason",
-            text: "I want to know what the recoverable hardship payment is for"
+            value: "money-taken-off-reason",
+            text: "I want to know why the money was taken off"
           },
           {
-            value: "hardship-payment-left-to-pay",
-            text: "How much I have left to pay"
+            value: "amount-owed-in-total",
+            text: "How much I owe in total"
           },
           {
-            value: "hardship-payment-one-off-payment",
+            value: "one-off-payment",
             text: "I want to make a one-off payment"
           },
           {
-            value: "hardship-payment-stuggling-to-repay",
-            text: "I am struggling to repay"
+            value: "stuggling-to-make-repayments",
+            text: "I am struggling to make the repayments"
           }
         ]
       }) }}
@@ -59,7 +61,7 @@
         text: "Next step"
       }) }}
     
-    </form>  
+    </form>
   </div>
 </div>
 

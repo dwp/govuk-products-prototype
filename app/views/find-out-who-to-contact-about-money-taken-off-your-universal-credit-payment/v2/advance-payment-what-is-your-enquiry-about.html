@@ -5,12 +5,11 @@
 {% endset %}
 
 {% block pageTitle %}
-  Universal Credit overpayment - {{ serviceName }}
+  Advance payment – What is your enquiry about? - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
 {{super()}}
-
 {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -22,31 +21,33 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Universal Credit overpayment</h1>
-    
-    <form class="form" action="/v1-contact-about-money-off-uc-universal-credit-overpayment" method="post">
+    <form class="form" action="/v2-contact-about-money-off-uc-advance-payment-enquiry-type" method="post">
 
       {{ govukRadios({
-        name: "universalCreditOverpayment",
+        name: "advancePaymentEnquiryType",
         fieldset: {
           legend: {
-            text: "What is your enquiry about?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
+            text: "Advance payment – What is your enquiry about?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
           }
         },
         items: [
           {
-            value: "uc-overpayment-reason",
-            text: "I want to know what the overpayment was for"
+            value: "how-much-owed-in-total",
+            text: "How much I owe in total"
           },
           {
-            value: "uc-how-much-left-to-pay",
-            text: "How much I have left to pay"
+            value: "how-much-paid-every-month",
+            text: "How much I pay every month"
           },
           {
-            value: "uc-one-off-payment",
+            value: "one-off-payment",
             text: "I want to make a one-off payment"
+          },
+          {
+            value: "pause-payments",
+            text: "I want to pause repayments"
           }
         ]
       }) }}
@@ -54,8 +55,8 @@
       {{ govukButton({
         text: "Next step"
       }) }}
-
-    </form>
+    
+    </form> 
   </div>
 </div>
 

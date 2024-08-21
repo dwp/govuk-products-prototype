@@ -6,6 +6,7 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+// -------------------------------------------------------------------------------------------------------------------------
 // Contact Winter Fuel Payment Centre
 
 router.post('/cwfpc-age', function(request, response) {
@@ -19,6 +20,7 @@ router.post('/cwfpc-age', function(request, response) {
     }
 })
 
+// -------------------------------------------------------------------------------------------------------------------------
 // Cost of Living form - MTB4
 
 router.post('/payment-type-answer', function(request, response) {
@@ -78,6 +80,7 @@ router.post('/report-as-missing-answer', function(request, response) {
     }
 })
 
+// -------------------------------------------------------------------------------------------------------------------------
 // Retiring MTB4 form
 
 router.post('/mtb4-retired-payment-type-answer', function(request, response) {
@@ -91,6 +94,7 @@ router.post('/mtb4-retired-payment-type-answer', function(request, response) {
     }
 })
 
+// -------------------------------------------------------------------------------------------------------------------------
 // Cost of Living form - MTB5
 
 router.post('/mtb5-payment-type-answer', function(request, response) {
@@ -158,6 +162,7 @@ router.post('/mtb5-details-received', function(request, response) {
         response.redirect("/cost-of-living/mtb5/details-received")
 })
 
+// -------------------------------------------------------------------------------------------------------------------------
 // Retiring MTB5 form
 
 router.post('/mtb5-retired-payment-type-answer', function(request, response) {
@@ -171,6 +176,7 @@ router.post('/mtb5-retired-payment-type-answer', function(request, response) {
     }
 })
 
+// -------------------------------------------------------------------------------------------------------------------------
 // Cold Weather Payments
 
 
@@ -189,6 +195,7 @@ router.post('/cwp-check-postcode', function(request, response) {
     }
 })
 
+// -------------------------------------------------------------------------------------------------------------------------
 // Request Personal Information form
 
 router.post('/rpi-uk-address', function(request, response) {
@@ -211,6 +218,7 @@ router.post('/rpi-different-address', function(request, response) {
     }
 })
 
+// -------------------------------------------------------------------------------------------------------------------------
 // Send a personal information request for a citizen form
 
 router.post('/cpri-uk-address', function(request, response) {
@@ -233,6 +241,7 @@ router.post('/cpri-different-address', function(request, response) {
     }
 })
 
+// -------------------------------------------------------------------------------------------------------------------------
 // Request information about underpaid State Pension for someone who has died
 
 router.post('/relationship-answer', function(request, response) {
@@ -245,9 +254,10 @@ router.post('/relationship-answer', function(request, response) {
     }
 })
 
+// -------------------------------------------------------------------------------------------------------------------------
 // Find out who to contact about money taken off your Universal Credit payment v1
 
-router.post('/contact-about-money-off-uc-where-do-you-live', function(request, response) {
+router.post('/v1-contact-about-money-off-uc-where-do-you-live', function(request, response) {
 
     var whereDoYouLive = request.session.data['WhereDoYouLive']
     if (whereDoYouLive == "england-scotland-wales"){
@@ -257,7 +267,7 @@ router.post('/contact-about-money-off-uc-where-do-you-live', function(request, r
     }
 })
 
-router.post('/contact-about-money-off-uc-what-do-you-need-help-with', function(request, response) {
+router.post('/v1-contact-about-money-off-uc-what-do-you-need-help-with', function(request, response) {
 
     var whatDoYouNeedHelpWith = request.session.data['whatDoYouNeedHelpWith']
     if (whatDoYouNeedHelpWith == "advance-payment"){
@@ -277,7 +287,7 @@ router.post('/contact-about-money-off-uc-what-do-you-need-help-with', function(r
     }
 })
 
-router.post('/contact-about-money-off-uc-advance-payment-enquiry-type', function(request, response) {
+router.post('/v1-contact-about-money-off-uc-advance-payment-enquiry-type', function(request, response) {
 
     var advancePaymentEnquiryType = request.session.data['advancePaymentEnquiryType']
     if (advancePaymentEnquiryType == "how-much-owed-in-total"){
@@ -294,7 +304,7 @@ router.post('/contact-about-money-off-uc-advance-payment-enquiry-type', function
     }
 })
 
-router.post('/contact-about-money-off-uc-universal-credit-overpayment', function(request, response) {
+router.post('/v1-contact-about-money-off-uc-universal-credit-overpayment', function(request, response) {
 
     var universalCreditOverpayment = request.session.data['universalCreditOverpayment']
     if (universalCreditOverpayment == "uc-overpayment-reason"){
@@ -308,7 +318,7 @@ router.post('/contact-about-money-off-uc-universal-credit-overpayment', function
     }
 })
 
-router.post('/contact-about-money-off-uc-recoverable-hardship-payment-help', function(request, response) {
+router.post('/v1-contact-about-money-off-uc-recoverable-hardship-payment-help', function(request, response) {
 
     var recoverableHardshipPaymentHelp = request.session.data['recoverableHardshipPaymentHelp']
     if (recoverableHardshipPaymentHelp == "hardship-payment-payment-reason"){
@@ -325,7 +335,7 @@ router.post('/contact-about-money-off-uc-recoverable-hardship-payment-help', fun
     }
 })
 
-router.post('/contact-about-money-off-uc-debt-and-deductions', function(request, response) {
+router.post('/v1-contact-about-money-off-uc-debt-and-deductions', function(request, response) {
 
     var recoverableHardshipDebtAndDeductions = request.session.data['recoverableHardshipDebtAndDeductions']
     if (recoverableHardshipDebtAndDeductions == "no-only-recoverable-hardship-payment"){
@@ -339,7 +349,7 @@ router.post('/contact-about-money-off-uc-debt-and-deductions', function(request,
     }
 })
 
-router.post('/contact-about-money-off-uc-third-party-deductions', function(request, response) {
+router.post('/v1-contact-about-money-off-uc-third-party-deductions', function(request, response) {
 
     var thirdPartyDeduction = request.session.data['thirdPartyDeduction']
     if (thirdPartyDeduction == "money-taken-off-reason"){
@@ -356,7 +366,7 @@ router.post('/contact-about-money-off-uc-third-party-deductions', function(reque
     }
 })
 
-router.post('/contact-about-money-off-uc-third-party-rent-arrears', function(request, response) {
+router.post('/v1-contact-about-money-off-uc-third-party-rent-arrears', function(request, response) {
 
     var thirdPartyDeductionRentArrears = request.session.data['thirdPartyDeductionRentArrears']
     if (thirdPartyDeductionRentArrears == "yes"){
@@ -367,7 +377,7 @@ router.post('/contact-about-money-off-uc-third-party-rent-arrears', function(req
     }
 })
 
-router.post('/contact-about-money-off-uc-third-party-other-reasons', function(request, response) {
+router.post('/v1-contact-about-money-off-uc-third-party-other-reasons', function(request, response) {
 
     var thirdPartyDeductionOtherReasons = request.session.data['thirdPartyDeductionOtherReasons']
     if (thirdPartyDeductionOtherReasons == "yes"){
@@ -378,7 +388,7 @@ router.post('/contact-about-money-off-uc-third-party-other-reasons', function(re
     }
 })
 
-router.post('/contact-about-money-off-uc-third-party-other-third-party-deductions', function(request, response) {
+router.post('/v1-contact-about-money-off-uc-third-party-other-third-party-deductions', function(request, response) {
 
     var thirdPartyDeduction = request.session.data['thirdPartyDeduction']
     if (thirdPartyDeduction == "no"){
@@ -386,5 +396,125 @@ router.post('/contact-about-money-off-uc-third-party-other-third-party-deduction
     }
     else {
         response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v1/third-party-deduction-i-have-rent-arrears-and-other-third-party-deductions")
+    }
+})
+
+// -------------------------------------------------------------------------------------------------------------------------
+// Find out who to contact about money taken off your Universal Credit payment v2
+
+router.post('/v2-contact-about-money-off-uc-where-do-you-live', function(request, response) {
+
+    var whereDoYouLive = request.session.data['WhereDoYouLive']
+    if (whereDoYouLive == "england-scotland-wales"){
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/what-do-you-need-help-with")
+    } else {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/northern-ireland")
+    }
+})
+
+router.post('/v2-contact-about-money-off-uc-what-do-you-need-help-with', function(request, response) {
+
+    var whatDoYouNeedHelpWith = request.session.data['whatDoYouNeedHelpWith']
+    if (whatDoYouNeedHelpWith == "advance-payment"){
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/advance-payment-what-is-your-enquiry-about")
+    } 
+    else if (whatDoYouNeedHelpWith == "universal-credit-overpayment") {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/universal-credit-overpayment")
+    }
+    else if (whatDoYouNeedHelpWith == "tax-credits-benefit-overpayment-budgeting-crisis-loan-repayments") {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/tax-credits-and-benefit-overpayments-budgeting-and-crisis-loan-repayments")
+    }
+    else if (whatDoYouNeedHelpWith == "recoverable-hardship-payment") {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/recoverable-hardship-payment")
+    }
+    else {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction")
+    }
+})
+
+router.post('/v2-contact-about-money-off-uc-advance-payment-enquiry-type', function(request, response) {
+
+    var advancePaymentEnquiryType = request.session.data['advancePaymentEnquiryType']
+    if (advancePaymentEnquiryType == "how-much-owed-in-total"){
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/advance-payment-how-much-i-owe-in-total")
+    } 
+    else if (advancePaymentEnquiryType == "how-much-paid-every-month") {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/advance-payment-how-much-i-pay-every-month")
+    }
+    else if (advancePaymentEnquiryType == "one-off-payment") {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/advance-payment-i-want-to-make-a-one-off-payment")
+    }
+    else {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/advance-payment-i-want-to-pause-repayments")
+    }
+})
+
+router.post('/v2-contact-about-money-off-uc-universal-credit-overpayment', function(request, response) {
+
+    var universalCreditOverpayment = request.session.data['universalCreditOverpayment']
+    if (universalCreditOverpayment == "uc-overpayment-reason"){
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/universal-credit-overpayment-i-want-to-know-what-the-overpayment-was-for")
+    } 
+    else if (universalCreditOverpayment == "uc-how-much-left-to-pay") {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/universal-credit-overpayment-how-much-i-have-left-to-pay")
+    }
+    else {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/universal-credit-overpayment-i-want-to-make-a-one-off-payment")
+    }
+})
+
+router.post('/v2-contact-about-money-off-uc-recoverable-hardship-payment-help', function(request, response) {
+
+    var recoverableHardshipPaymentHelp = request.session.data['recoverableHardshipPaymentHelp']
+    if (recoverableHardshipPaymentHelp == "hardship-payment-payment-reason"){
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/recoverable-hardship-payment-i-want-to-know-what-the-payment-is-for")
+    } 
+    else if (recoverableHardshipPaymentHelp == "hardship-payment-left-to-pay") {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/recoverable-hardship-payment-how-much-i-have-left-to-pay")
+    }
+    else if (recoverableHardshipPaymentHelp == "hardship-payment-one-off-payment") {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/recoverable-hardship-payment-i-want-to-make-a-one-off-payment")
+    }
+    else {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/recoverable-hardship-payment-i-am-struggling-to-repay-outcome")
+    }
+})
+
+router.post('/v2-contact-about-money-off-uc-third-party-deductions', function(request, response) {
+
+    var thirdPartyDeduction = request.session.data['thirdPartyDeduction']
+    if (thirdPartyDeduction == "money-taken-off-reason"){
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-want-to-know-why-the-money-was-taken-off")
+    } 
+    else if (thirdPartyDeduction == "amount-owed-in-total") {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-how-much-i-owe-in-total")
+    }
+    else if (thirdPartyDeduction == "one-off-payment") {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-want-to-make-a-one-off-payment")
+    }
+    else {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-am-struggling-to-make-the-repayments")
+    }
+})
+
+router.post('/v2-contact-about-money-off-uc-third-party-rent-arrears', function(request, response) {
+
+    var thirdPartyDeductionRentArrears = request.session.data['thirdPartyDeductionRentArrears']
+    if (thirdPartyDeductionRentArrears == "yes"){
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-have-money-taken-off-for-rent-arrears")
+    }
+    else {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-do-not-have-money-taken-off-for-rent-arrears")
+    }
+})
+
+router.post('/v2-contact-about-money-off-uc-third-party-other-reasons', function(request, response) {
+
+    var thirdPartyDeductionOtherReasons = request.session.data['thirdPartyDeduction']
+    if (thirdPartyDeductionOtherReasons == "no"){
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-only-have-rent-arrears")
+    }
+    else {
+        response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-have-rent-arrears-and-other-third-party-deductions")
     }
 })
