@@ -5,7 +5,7 @@
 {% endset %}
 
 {% block pageTitle %}
-  Recoverable hardship payment - {{ serviceName }}
+  Universal Credit overpayment - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,35 +22,35 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Recoverable hardship payment</h1>
+    <h1 class="govuk-heading-xl">Universal Credit overpayment</h1>
+    
+    <form class="form" action="/v2-contact-about-money-off-uc-universal-credit-overpayment" method="post">
 
-    <form class="form" action="/v1-contact-about-money-off-uc-recoverable-hardship-payment-help" method="post">
-
-        {{ govukRadios({
-        name: "recoverableHardshipPaymentHelp",
+      {{ govukRadios({
+        name: "universalCreditOverpayment",
         fieldset: {
           legend: {
-            text: "What do you need help with?",
+            text: "What is your enquiry about?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
         },
         items: [
           {
-            value: "hardship-payment-payment-reason",
-            text: "I want to know what the recoverable hardship payment is for"
+            value: "uc-overpayment-reason",
+            text: "I want to know what the overpayment was for"
           },
           {
-            value: "hardship-payment-left-to-pay",
+            value: "uc-how-much-left-to-pay",
             text: "How much I have left to pay"
           },
           {
-            value: "hardship-payment-one-off-payment",
+            value: "uc-one-off-payment",
             text: "I want to make a one-off payment"
           },
           {
-            value: "hardship-payment-stuggling-to-repay",
-            text: "I am struggling to repay"
+            value: "uc-struggling-to-repay",
+            text: "I'm struggling to repay"
           }
         ]
       }) }}
@@ -58,8 +58,8 @@
       {{ govukButton({
         text: "Next step"
       }) }}
-    
-    </form>  
+
+    </form>
   </div>
 </div>
 
