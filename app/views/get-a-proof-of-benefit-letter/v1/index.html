@@ -1,8 +1,5 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Get a proof of benefit letter 
-{% endset %}
+{% extends "layouts/headers/get-a-proof-of-benefit-letter.html" %}
 
 {% block pageTitle %}
   {{ serviceName }}
@@ -10,7 +7,6 @@
 
 {% block beforeContent %}
  
-
 {{ govukPhaseBanner({
   tag: {
   text: "Alpha"
