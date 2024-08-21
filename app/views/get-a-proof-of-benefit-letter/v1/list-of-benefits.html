@@ -1,24 +1,18 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Get a proof of benefit letter 
-{% endset %}
+{% extends "layouts/headers/get-a-proof-of-benefit-letter.html" %}
 
 {% block pageTitle %}
   Contact form - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
- 
-
-{{ govukPhaseBanner({
-tag: {
-text: "Alpha"
-},
-html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-{% endblock %}
-
+  {{ govukPhaseBanner({
+  tag: {
+  text: "Alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
