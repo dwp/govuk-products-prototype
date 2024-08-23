@@ -1,19 +1,16 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Report a missing Cost of Living Payment
-{% endset%}
+{% extends "layouts/headers/cost-of-living-report.html" %}
 
 {% block pageTitle %}
 A joint claim - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
- {{ super() }}
-{{ govukBackLink({
-text: "Back",
-href: "javascript:window.history.back()"
-}) }}
+  {{ super() }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -46,11 +43,11 @@ href: "javascript:window.history.back()"
         },
         items: [
           {
-          value: "yes",
+          value: "Yes",
           text: "Yes"
           },
           {
-          value: "no",
+          value: "No",
           text: "No"
           }
         ]

@@ -1,11 +1,8 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Report a missing Cost of Living Payment
-{% endset%}
+{% extends "layouts/headers/cost-of-living-report.html" %}
 
 {% block pageTitle %}
-What happens next - {{ serviceName }}
+  What happens next - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,10 +14,8 @@ What happens next - {{ serviceName }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
- 
-
     {{ govukPanel({
-    titleText: "We've received your details"
+      titleText: "We've received your details"
     }) }}
 
     <h2 class="govuk-heading-m">
