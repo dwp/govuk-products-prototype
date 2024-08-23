@@ -2,50 +2,42 @@
 {% extends "layouts/headers/personal-information-request.html" %}
 
 {% block pageTitle %}
-  Your National Insurance number – {{ serviceName }}
+  Do you need the information in an alternative format? – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-  {{ super() }}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+{{ super() }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
+      <form class="form" action="/rpi-different-address" method="post">
 
-      <h1 class="govuk-heading-l">
-        Your National Insurance number
-      </h1>
-
-      <form class="form" action="" method="post">
-
-        {% set ninoHtml %}
+        {% set alternativeFormatHtml %}
         {{ govukInput({
-          id: "nino",
-          name: "nino",
+          id: "callback",
+          name: "callback",
           classes: "govuk-input--width-20",
           label: {
-            text: "Your National Insurance number",
-            classes: "govuk-input--width-20 govuk-label--s"
-          },
-          hint: {
-            text: "For example, QQ 12 34 56 C"
+            text: "What alternative format do you need?",
+            classes: "govuk-input--width-20 govuk-label--m"
           }
         }) }}
         {% endset -%}
 
         {{ govukRadios({
-          name: "national-insurance-number",
+          name: "alternative-format",
           fieldset: {
             legend: {
-              text: "Can you tell us your National Insurance number?",
+              text: "Do you need the information in an alternative format?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
+              classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
@@ -53,7 +45,7 @@
               value: "yes",
               text: "Yes",
               conditional: {
-                html: ninoHtml
+                html: alternativeFormatHtml
               }
             },
             {
