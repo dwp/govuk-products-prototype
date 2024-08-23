@@ -1,15 +1,16 @@
 {% extends "layouts/main.html" %}
+{% extends "layouts/headers/personal-information-request.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  What address should we write to?  – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-{{ super() }}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -24,22 +25,21 @@
       <form class="form" action="/rpi-uk-address" method="post">
 
         {{ govukRadios({
-          classes: "govuk-radios--inline",
           name: "uk-address",
           fieldset: {
             legend: {
               text: "Do you have an address in the UK to write to?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
-              value: "yes",
+              value: "Yes",
               text: "Yes"
             },
             {
-              value: "no",
+              value: "No",
               text: "No"
             }
           ]

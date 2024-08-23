@@ -2,7 +2,7 @@
 {% extends "layouts/headers/personal-information-request.html" %}
 
 {% block pageTitle %}
-  Your National Insurance number – {{ serviceName }}
+  Address - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,49 +12,30 @@
     href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
-
-{% block content %}
+ 
+{% block content %} 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      
       <h1 class="govuk-heading-l">
-        Your National Insurance number
+        Your home address
       </h1>
-
-      <form class="form" action="" method="post">
-
-        {% set ninoHtml %}
-        {{ govukInput({
-          id: "nino",
-          name: "nino",
-          classes: "govuk-input--width-20",
-          label: {
-            text: "Your National Insurance number",
-            classes: "govuk-input--width-20 govuk-label--s"
-          },
-          hint: {
-            text: "For example, QQ 12 34 56 C"
-          }
-        }) }}
-        {% endset -%}
+      
+      <form class="form" action="/rpi-uk-address" method="post">
 
         {{ govukRadios({
-          name: "national-insurance-number",
+          name: "uk-address",
           fieldset: {
             legend: {
-              text: "Can you tell us your National Insurance number?",
-              isPageHeading: true,
+              text: "Do you have an address in the UK?",
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
               value: "yes",
-              text: "Yes",
-              conditional: {
-                html: ninoHtml
-              }
+              text: "Yes"
             },
             {
               value: "no",
@@ -62,6 +43,7 @@
             }
           ]
         }) }}
+        
         {{ govukButton({
           text: "Continue"
         }) }}

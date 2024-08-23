@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/personal-information-request.html" %}
+
+{% block pageTitle %}
+  Your UK address – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form class="form" action="/rpi-send-information-to-different-address" method="post">
+        
+        {% call govukFieldset({
+          legend: {
+            text: "Your UK address",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: true
+          }
+        }) %}
+        
+          {{ govukInput({
+            label: {
+              text: "Building name or number and street"
+            },
+            id: "address-line-1",
+            name: "addressLine1",
+            autocomplete: "address-line1"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              visuallyHiddenText: "Building and street line 2 of 2"
+            },
+            id: "address-line-2",
+            name: "addressLine2",
+            autocomplete: "address-line2"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "addressTown",
+            autocomplete: "address-level2"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "County"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-county",
+            name: "addressCounty"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "addressPostcode",
+            autocomplete: "postal-code"
+          }) }}
+        
+        {% endcall %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+          
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

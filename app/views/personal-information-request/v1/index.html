@@ -1,22 +1,56 @@
 {% extends "layouts/main.html" %}
+{% extends "layouts/headers/personal-information-request.html" %}
 
-{% set pageName="Home" %}
+{% block pageTitle %}
+  Your name - {{ serviceName }}
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
-      Request your personal information from DWP
+    <h1 class="govuk-heading-l">
+      Your name
     </h1>
 
-    {{ govukButton({
-      text: "Start now",
-      href: "address-in-the-uk",
-      isStartButton: true
+    <form class="form" action="" method="post">
+
+    {{ govukInput({
+      label: {
+        text: "Your full name",
+        classes: "govuk-label--m"
+      },
+      classes: "govuk-input--width-20",
+      id: "full-name",
+      name: "full-name"
     }) }}
 
+    {{ govukRadios({
+      name: "anotherName",
+      fieldset: {
+        legend: {
+          text: "Have you been known by another name?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes~/personal-information-request/v1/previous-names",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+    </form>
   </div>
 </div>
 
