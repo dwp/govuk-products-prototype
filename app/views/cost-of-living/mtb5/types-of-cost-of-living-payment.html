@@ -1,8 +1,5 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Report a missing Cost of Living Payment
-{% endset %}
+{% extends "layouts/headers/cost-of-living-report.html" %}
 
 {% block pageTitle %}
   Types of Cost of Living Payment - {{ serviceName }}
@@ -59,12 +56,12 @@
         },
         items: [
           {
-            text: "£301, £300 or £299 for a low income benefit",
-            name: data['301-or-300-or-299']
+            value: "£301, £300 or £299 for a low income benefit",
+            text: "£301, £300 or £299 for a low income benefit"
           },
           {
-            text: "£150 for a disability benefit",
-            name: data['150']
+            value: "£150 for a disability benefit",
+            text: "£150 for a disability benefit"
           }
         ]
       }) }}
