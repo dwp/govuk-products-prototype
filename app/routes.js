@@ -6,6 +6,9 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+const radioButtonRedirect = require('radio-button-redirect')
+router.use(radioButtonRedirect)
+
 // -------------------------------------------------------------------------------------------------------------------------
 // Contact Winter Fuel Payment Centre
 
@@ -101,7 +104,7 @@ router.post('/mtb5-payment-type-answer', function(request, response) {
 
     var typeOfPaymentMissing = request.session.data['type-of-payment-missing']
 
-    if (typeOfPaymentMissing == "301-or-300-or-299"){
+    if (typeOfPaymentMissing == "£301, £300 or £299 for a low income benefit"){
         response.redirect("/cost-of-living/mtb5/benefit-entitlement-low-income")
     } else {
         response.redirect("/cost-of-living/mtb5/contact-details-for-disability-payment")
@@ -112,7 +115,7 @@ router.post('/mtb5-which-benefit-answer', function(request, response) {
 
     var missingBenefit = request.session.data['which-benefit']
 
-    if (missingBenefit == "tax-credits"){
+    if (missingBenefit == "Tax Credits"){
         response.redirect("/cost-of-living/mtb5/tax-credits")
     }
     else {
@@ -125,10 +128,10 @@ router.post('/mtb5-which-payment-answer', function(request, response) {
     var missingPayment = request.session.data['which-payment']
     var missingBenefit = request.session.data['which-benefit']
 
-    if (missingBenefit == "universal-credit" && missingPayment == "299"){
+    if (missingBenefit == "Universal Credit" && missingPayment == "£299 paid between 6 February and 22 February 2024 for most people"){
         response.redirect("/cost-of-living/mtb5/did-you-have-a-joint-claim")
     }
-    else if (missingBenefit != "universal-credit" && missingPayment == "299"){
+    else if (missingBenefit != "Universal Credit" && missingPayment == "£299 paid between 6 February and 22 February 2024 for most people"){
         response.redirect("/cost-of-living/mtb5/personal-details")
     } 
     else {
@@ -140,7 +143,7 @@ router.post('/mtb5-joint-benefit-answer', function(request, response) {
 
     var jointBenefit = request.session.data['joint-benefit']
 
-    if (jointBenefit == "no"){
+    if (jointBenefit == "No"){
         response.redirect("/cost-of-living/mtb5/personal-details")
     } else {
         response.redirect("/cost-of-living/mtb5/joint-claim")
@@ -151,7 +154,7 @@ router.post('/mtb5-report-as-missing-answer', function(request, response) {
 
     var reportMissing = request.session.data['still-report-missing-payment']
 
-    if (reportMissing == "yes"){
+    if (reportMissing == "Yes"){
         response.redirect("/cost-of-living/mtb5/personal-details")
     } else {
         response.redirect("/cost-of-living/mtb5/report-a-different-missing-cost-of-living-payment")
