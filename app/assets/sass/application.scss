@@ -13,7 +13,6 @@ main.govuk-main-wrapper {
 
 .dwp-header {
     border-bottom: 10px solid $govuk-brand-colour;
-
 }
 
 .app-big-bar {
@@ -133,4 +132,42 @@ main.govuk-main-wrapper {
 
 .clear-search-link {
     @include govuk-responsive-margin(2, "left");
+}
+
+.app-mainstream-inset {
+    border-left: 1px solid $govuk-border-colour;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.pension-credit-calculator {
+    .govuk-header__container {
+        border-bottom-color: #00beb7;
+    }
+
+    .govuk-panel--confirmation {
+        @include govuk-responsive-padding(3);
+        background-color: #28a197;
+        margin-bottom: govuk-spacing(7);
+       
+        h2 {
+            color: govuk-colour("white");
+            margin: 0;
+        }
+
+        .govuk-panel__title {
+            display: none;
+        }
+    }
+
+    .govuk-button {
+        background-color: #00823b;
+        padding: 14px;
+    }
+
+    footer {
+        background-color: #dee0e2;
+        border-top: 10px solid #00beb7;
+    }
 }

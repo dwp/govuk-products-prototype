@@ -1,0 +1,35 @@
+{% extends "layouts/headers/pension-credit-calculator.html" %}
+
+{% block pageTitle %}
+  About you – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Pension Credit calculator
+      </h1>  
+
+      {{ govukPanel({
+        titleHtml: '<h2 class="govuk-heading-l govuk-!-font-size-27">You are not eligible for Pension Credit</h2>'
+      }) }}
+
+      <p class="govuk-body">It's too early for you to apply for <a href="https://www.gov.uk/pension-credit" class="govuk-link">Pension Credit</a> because you haven't reached Pension Credit age.</p> 
+      <p class="govuk-body">You may become eligible on: 01 September 2058</p>
+      <p class="govuk-body">However, your partner may be eligible to claim <a href="https://www.gov.uk/pension-credit" class="govuk-link">Pension Credit</a> if they haven't already. They can use this <a href="form.html" class="govuk-link">calculator</a> to see if they are eligible.</p>
+
+      <p class="govuk-body"><a href="#" class="govuk-link">Print your calculation</a></p>
+
+      <h2 class="govuk-heading-s">Help us improve this service</h2>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">
+          What did you think of this service?
+        </a> (takes 30 seconds)
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
