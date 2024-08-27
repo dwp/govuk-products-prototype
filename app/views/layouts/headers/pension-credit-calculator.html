@@ -1,0 +1,61 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% set htmlClasses = "pension-credit-calculator" %}
+
+{% block header %}
+  <header class="govuk-header" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <img src="/public/images/dwp_logo.png" alt="Department for Work and Pensions logo">
+        </a>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% set serviceName %}
+  Pension Credit Calculator
+{% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter",
+          text: "Privacy policy"
+        },
+        {
+          href: "https://pensioncreditcalculator.dwp.gov.uk/accessibility-statement.php",
+          text: " Accessibility statement"
+        },
+        {
+          href: "https://www.gov.uk/government/organisations/department-for-work-pensions",
+          text: "Built by the Department for Work and Pensions"
+        }
+      ]
+    },
+    navigation: [
+      {
+        title: "Related services",
+        width: "two-thirds",
+        items: [
+          {
+            href: "https://pensioncreditcalculator.dwp.gov.uk/cyfrifiannell-credyd-pensiwn.php?stage=1",
+            text: "This calculator is also available in Welsh (Cymraeg)"
+          },
+          {
+            href: "https://www.gov.uk/calculate-state-pension",
+            text: "Check your State Pension age"
+          },
+          {
+            href: "https://www.gov.uk/pension-credit",
+            text: "Pension Credit guidance"
+          }
+          ]
+        }
+      ]
+    }) }}
+{% endblock %}
+
