@@ -161,6 +161,19 @@ main.govuk-main-wrapper {
         }
     }
 
+    .check-your-answers {
+        @media (min-width: 40.0625em) {
+            .govuk-summary-list__key {
+              width: 70%;
+            }
+
+            .govuk-heading-m {
+                @include govuk-responsive-margin(3, "top");
+                @include govuk-responsive-margin(1, "bottom");
+            }
+        } 
+    }
+
     .govuk-button {
         background-color: #00823b;
         padding: 14px;

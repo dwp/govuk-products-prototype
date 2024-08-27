@@ -1,0 +1,652 @@
+{% extends "layouts/headers/pension-credit-calculator.html" %}
+
+{% block pageTitle %}
+  Check your answers - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row check-your-answers">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Pension Credit calculator
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Check your answers
+      </h2>
+
+      <p class="govuk-body">Check your answers before sending your details.</p>
+
+      <form class="form" action="" method="post">
+
+        <h2 class="govuk-heading-m">About you</h2>
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "What is your date of birth?",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Are you a:",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+                text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Where do you live?",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+                text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Are you registered blind?",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+                text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Do you live alone?",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+                text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "What kind of accommodation do you live in?",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+                text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Do you or your partner (if you have one) own any other property or land?",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+                text: "Answer"
+            }
+          }
+        ]
+        }) }}
+        
+        <h2 class="govuk-heading-m">Care home</h2>
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Do you live in your care home permanently?",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-m">Your benefits</h2>
+        <p class="govuk-body">Do you get any of the following benefits?</p>
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Attendance Allowance",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Armed Forces Independence Payment",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Disability Living Allowance (care component — lowest)",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Disability Living Allowance (care component — middle)",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Disability Living Allowance (care component — highest)",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Personal Independence Payment or Adult Disability Payment (daily component — standard)",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Personal Independence Payment or Adult Disability Payment (daily component — enhanced)",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          }
+        ]
+        }) }}
+
+        <p class="govuk-body">How much do you get per week for the following benefits:</p>
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Armed Forces Compensation Scheme",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Bereavement Allowance",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Carer's Allowance or Carer Support Payment",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Disability Living Allowance (mobility component)",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Employment and Support Allowance (contribution based)",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Exceptionally Severe Disablement Allowance",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Jobseeker's Allowance (contribution based)",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Industrial Death Benefit",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Industrial Injuries Disablement Benefit",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Constant Attendance Allowance",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Personal Independence Payment or Adult Disability Payment (mobility component)",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Severe Disablement Allowance",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Widowed Mother's Allowance",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Widowed Parent's allowance",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Maternity Allowance",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Statutory Maternity Pay",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Statutory Paternity Pay",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Statutory Shared Parental Pay",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Statutory Adoption Pay",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Working Tax Credit",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Does anyone get paid Carer's Allowance or Carer Support Payment for looking after you?",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              html: '<p>Have you applied for <a href="https://www.gov.uk/carers-allowance/eligibility" target="_blank" rel="external">Carer&#39;s Allowance</a> or Carer Support Payment and been told that you have &#39;underlying entitlement&#39;?</p>',
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          }
+        ]
+        }) }}
+       
+        <h2 class="govuk-heading-m">Your income — pensions</h2>
+        <p class="govuk-body">How much income, per week, do you get from:</p>
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "State Pension",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Occupational or private pension",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Foreign state pension",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "War Widow(ers) Pension",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "War Disablement Pension",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Overage Infirm Allowance Pension",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "War Widows Supplementary Pension",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Payment to victims of national socialist persecution",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Spousal maintenance",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Annuity",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-m">Your income — earnings</h2>
+        <p class="govuk-body">How much income, per week, do you get from:</p>
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Earnings from employment",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Statutory Sick Pay",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Income from being a part time firefighter, auxiliary coastguard, manning or launching a lifeboat, or a member of any Territorial Army or reserve force",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-m">Your savings</h2>
+        <p class="govuk-body"> How much do you have in the following types of savings:</p>
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Current account",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Savings or deposit",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Money in any other bank account",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Building society account",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Post Office account",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "National savings certificates",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Cash saved for something, even if you keep at home	",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Premium bonds",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Bonds",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Investments (eg ISAs, PEPS)	",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Unit trusts or shares	",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Money from personal injury compensation	",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          },
+          {
+            key: {
+              text: "Any money from State Pension deferral",
+              classes: "govuk-!-font-weight-regular"
+            },
+            value: {
+              text: "Answer"
+            }
+          }
+        ]
+        }) }}    
+     
+     <p class="govuk-body">By clicking continue, you will submit your answers and be unable to change them.</p>
+
+     {{ govukButton({
+      text: "Back",
+      href: "who-lives-with-you"
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "calculation-outcome"
+    }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
