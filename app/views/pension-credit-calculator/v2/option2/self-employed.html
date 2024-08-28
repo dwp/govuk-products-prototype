@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Pension Credit calculator 
+{% endset %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="" method="post">
+
+      {{ govukRadios({
+        name: "self-employed",
+        id: "self-employed",
+        classes: "govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: "Are you or your partner self employed?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Yes~/pension-credit-calculator/v2/option2/not-eligible",
+            text: "Yes"
+          },
+          {
+            value: "No~/pension-credit-calculator/v2/option2/housing-costs",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

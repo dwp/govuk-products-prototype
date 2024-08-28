@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Pension Credit calculator
+{% endset %}
+
+{% block pageTitle %}
+  Not eligible - {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      You're not eligible for the Pension Credit calculator
+    </h1>
+
+    <p class="govuk-body">You cannot use the calculator, you can call the Pension Credit claim line. There's a
+      different number if you
+      have deferred claiming your State Pension.</p>
+
+    <h2 class="govuk-heading-s">Pension Credit claim line</h3>
+    <div class="contact app-mainstream-inset">
+      <p>0800 99 1234<br>
+        <a href="http://ngts.org.uk/" class="govuk-link">NGT text relay</a> (if you cannot hear or speak on the
+        phone): 18001 then 0800 99 1234<br>
+        Monday to Friday, 8am to 6pm (except public holidays)<br>
+        <a href="/call-charges" class="govuk-link">Find out about call charges</a>
+      </p>
+    </div>
+
+    <h3 class="govuk-heading-s">Deferring the State Pension</h3>
+    <p>Call the Pension Service helpline and ask about Pension Credit.</p>
+    <div class="contact app-mainstream-inset">
+      <p>Pension Service helpline <br>
+        <a href="http://ngts.org.uk/" class="govuk-link">NGT text relay</a> (if you cannot hear or speak on the
+        phone): 18001 then 0800 731 0469<br>
+        Monday to Friday, 8am to 6pm (except public holidays)<br>
+        <a href="/call-charges" class="govuk-link">Find out about call charges</a>
+      </p>
+    </div>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link">
+        What did you think of this service?
+      </a> (takes 30 seconds)
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
