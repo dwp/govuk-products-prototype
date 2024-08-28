@@ -572,7 +572,17 @@
             </tr>
           </tbody>
         </table>
-    </div></div>
+
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "pension-credit-calculator/design-history.html",
+          attributes: {
+            "aria-label": "View design history for Pension Credit calculator"
+          }
+        }) }}
+    </div>
+  </div>
 
     <div class="app-card">
       <div class="app-card-title-wrapper">
