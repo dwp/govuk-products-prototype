@@ -1,0 +1,160 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Pension Credit calculator 
+{% endset %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: "Home",
+      href: "https://www.gov.uk/"
+      },
+      {
+      text: "Welfare",
+      href: "https://www.gov.uk/welfare"
+      },
+      {
+      text: "Jobseeker's Allowance and low income benefits",
+      href: "https://www.gov.uk/welfare/jobseekers-allowance"
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="" method="post">
+
+      <span class="govuk-caption-l">Pension Credit calculator</span>
+
+      {% call govukFieldset({
+        legend: {
+          text: "5. Are you or your partner under State Pension age?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>You can <a href="/state-pension-age">check you or your partner's State Pension age</a> if you're not sure.</p>
+
+      {{ govukRadios({
+        name: "under-state-pension-age",
+        id: "under-state-pension-age",
+        items: [
+          {
+            value: "Yes~/pension-credit-calculator/v3/housing-benefit",
+            text: "Yes"
+          },
+          {
+            value: "No~/pension-credit-calculator/v3/pension-age-disability-payment",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+
+      {{ govukButton({
+      text: "Next step"
+      }) }}
+
+      <section class="govuk-!-padding-top-6">
+        <h2 class="govuk-heading-m">Your answers</h2>
+
+        <p class="govuk-body">
+          <a href="index" class="govuk-link">Start again</a>
+        </p>
+
+        {{ govukSummaryList({
+          classes: "govuk-!-margin-bottom-9",
+          rows: [
+            {
+              key: {
+                text: "1. Are you or your partner self-employed?"
+              },
+              value: {
+                text: data['self-employed']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "self-employed",
+                    text: "Change",
+                    visuallyHiddenText: "1. Are you or your partner self-employed?"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+              },
+              value: {
+                text: data['own-more-than-one-property']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "own-more-than-one-property",
+                    text: "Change",
+                    visuallyHiddenText: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "3. Do you pay housing costs other than mortgage payments or rent?"
+              },
+              value: {
+                text: data['have-housing-costs']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "housing-costs",
+                    text: "Change",
+                    visuallyHiddenText: "3. Do you pay housing costs other than mortgage payments or rent?"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "4. Are you or your partner delaying (deferring) your State Pension?"
+              },
+              value: {
+                text: data['deferring-state-pension']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "deferring-state-pension",
+                    text: "Change",
+                    visuallyHiddenText: "4. Are you or your partner delaying (deferring) your State Pension?"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+    </section>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

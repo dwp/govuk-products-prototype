@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Pension Credit calculator 
+{% endset %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: "Home",
+      href: "https://www.gov.uk/"
+      },
+      {
+      text: "Welfare",
+      href: "https://www.gov.uk/welfare"
+      },
+      {
+      text: "Jobseeker's Allowance and low income benefits",
+      href: "https://www.gov.uk/welfare/jobseekers-allowance"
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="" method="post">
+
+      <span class="govuk-caption-l">Pension Credit calculator</span>
+
+      {{ govukRadios({
+        name: "housing-benefit",
+        id: "housing-benefit",
+        fieldset: {
+          legend: {
+            text: "6. Are you or your partner getting Housing Benefit for people over State Pension age?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Yes~/pension-credit-calculator/v3/cant-use-calculator-housing-benefit",
+            text: "Yes"
+          },
+          {
+            value: "No~/pension-credit-calculator/v3/not-eligible",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+      text: "Next step"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
