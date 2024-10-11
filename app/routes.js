@@ -521,20 +521,3 @@ router.post('/v2-contact-about-money-off-uc-third-party-other-reasons', function
         response.redirect("/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-have-rent-arrears-and-other-third-party-deductions")
     }
 })
-
-// Pension Credit Calculator v2 option 1
-
-router.post('/pension-credit-calculator-v2-o1-eligibility', function(request, response) {
-
-    var eligibility = request.session.data['eligibility']
-    
-    if (eligibility == "deferring-state-pension") {
-        response.redirect("/pension-credit-calculator/v2/option1/not-eligible-deferring-state-pension.html")
-    }
-    else if (eligibility != ""){
-        response.redirect("/pension-credit-calculator/v2/option1/not-eligible.html")
-    }
-    else {
-        response.redirect("/pension-credit-calculator/v2/option1/form.html")
-    }
-})
