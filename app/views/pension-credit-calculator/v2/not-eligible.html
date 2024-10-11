@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Pension Credit calculator
+{% endset %}
+
+{% block pageTitle %}
+  Not eligible - {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: "Home",
+      href: "https://www.gov.uk/"
+      },
+      {
+      text: "Welfare",
+      href: "https://www.gov.uk/welfare"
+      },
+      {
+      text: "Jobseeker's Allowance and low income benefits",
+      href: "https://www.gov.uk/welfare/jobseekers-allowance"
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Pension Credit calculator</span>
+
+    <h1 class="govuk-heading-l">
+      You are not eligible for Pension Credit
+    </h1>
+
+    <p class="govuk-body">You are not eligible for Pension Credit. This is because:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you or your partner have not reached State Pension age</li>
+      <li>neither of you are getting Housing Benefit for people over State Pension age</li>
+    </ul>
+
+    <p class="govuk-body">A partner is either:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>your husband, wife or civil partner - if you live with them</li>
+      <li>someone you live with as a couple, without being married or in a civil partnership</li>
+    </ul>
+    
+    <p class="govuk-body">You might be eligible for <a href="#">Universal Credit</a>.</p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list">
+          <li>
+            <a href="https://www.gov.uk/pension-credit" class="govuk-link govuk-body-s">
+              Pension Credit
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/state-pension-if-you-retire-abroad" class="govuk-link govuk-body-s">
+              State Pension if you retire abroad
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/state-pension" class="govuk-link govuk-body-s">
+              The basic State Pension
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/benefit-fraud" class="govuk-link govuk-body-s">
+              Benefit fraud
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</div>
+
+{% endblock %}
