@@ -1,8 +1,5 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Pension Credit calculator 
-{% endset %}
+{% extends "layouts/headers/pension-credit.html" %}
 
 {% block pageTitle %}
   {{ serviceName }}
@@ -71,7 +68,7 @@
             text: "No"
           },
           {
-            value: "Note sure~/pension-credit-calculator/v2/cant-use-calculator-housing-costs",
+            value: "Not sure~/pension-credit-calculator/v2/cant-use-calculator-housing-costs",
             text: "Not sure"
           }
         ]

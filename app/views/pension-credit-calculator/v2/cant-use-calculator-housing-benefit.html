@@ -1,11 +1,8 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Pension Credit calculator
-{% endset %}
+{% extends "layouts/headers/pension-credit.html" %}
 
 {% block pageTitle %}
-  Not eligible - {{ serviceName }}
+  {{ serviceName }}
 {% endblock %}
 
 {% block header %}
@@ -42,7 +39,7 @@
 
     <p class="govuk-body">Because you or your partner are under State Pension age, the calculator cannot work out if you’re eligible for Pension Credit or how much you could get.</p>
 
-    <p class="govuk-body">You might be eligible for Pension Credit. You can <a href="https://www.gov.uk/pension-credit/eligibility">check the eligibility rules</a> or call the Pension Credit claim line.</p>
+    <p class="govuk-body">You might be eligible for Pension Credit. You can <a href="https://www.gov.uk/pension-credit/eligibility" class="govuk-link">check the eligibility rules</a> or call the Pension Credit claim line.</p>
    
     <div class="contact app-mainstream-inset">
       <p>
@@ -54,7 +51,122 @@
         <a href="/call-charges" class="govuk-link">Find out about call charges</a>
       </p>
     </div>
+    <section class="govuk-!-padding-top-6">
+      <h2 class="govuk-heading-m">Your answers</h2>
 
+      <p class="govuk-body">
+        <a href="index" class="govuk-link">Start again</a>
+      </p>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+          {
+            key: {
+              text: "1. Are you or your partner self-employed?"
+            },
+            value: {
+              text: data['self-employed']
+            },
+            actions: {
+              items: [
+                {
+                  href: "self-employed",
+                  text: "Change",
+                  visuallyHiddenText: "1. Are you or your partner self-employed?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+            },
+            value: {
+              text: data['own-more-than-one-property']
+            },
+            actions: {
+              items: [
+                {
+                  href: "own-more-than-one-property",
+                  text: "Change",
+                  visuallyHiddenText: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "3. Do you pay housing costs other than mortgage payments or rent?"
+            },
+            value: {
+              text: data['have-housing-costs']
+            },
+            actions: {
+              items: [
+                {
+                  href: "housing-costs",
+                  text: "Change",
+                  visuallyHiddenText: "3. Do you pay housing costs other than mortgage payments or rent?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "4. Are you or your partner delaying (deferring) your State Pension?"
+            },
+            value: {
+              text: data['deferring-state-pension']
+            },
+            actions: {
+              items: [
+                {
+                  href: "deferring-state-pension",
+                  text: "Change",
+                  visuallyHiddenText: "4. Are you or your partner delaying (deferring) your State Pension?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "5. Are you or your partner under State Pension age?"
+            },
+            value: {
+              text: data['under-state-pension-age']
+            },
+            actions: {
+              items: [
+                {
+                  href: "under-state-pension-age",
+                  text: "Change",
+                  visuallyHiddenText: "5. Are you or your partner under State Pension age?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "6. Are you or your partner getting Housing Benefit for people over State Pension age?"
+            },
+            value: {
+              text: data['housing-benefit']
+            },
+            actions: {
+              items: [
+                {
+                  href: "housing-benefit",
+                  text: "Change",
+                  visuallyHiddenText: "6. Are you or your partner getting Housing Benefit for people over State Pension age?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+  </section>
   </div>
 
   <div class="govuk-grid-column-one-third">
