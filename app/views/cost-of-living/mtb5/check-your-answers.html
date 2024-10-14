@@ -1,8 +1,5 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Report a missing Cost of Living Payment
-{% endset%}
+{% extends "layouts/headers/cost-of-living-report.html" %}
 
 {% block pageTitle %}
 Check your answers - {{ serviceName }}
@@ -25,6 +22,12 @@ Check your answers - {{ serviceName }}
         Check your answers
       </h1>
 
+      <ul>
+        {% for benefit in data['which-benefit'] %}
+          <li>{{ benefit }}</li>
+        {% endfor %}
+        </ul>
+
       <form class="form" action="what-happens-next" method="post">
 
       {{ govukSummaryList({
@@ -45,14 +48,13 @@ Check your answers - {{ serviceName }}
               }
             ]
           }
-        }
-        ,
+        },
         {
             key: {
               text: "Benefit"
             },
             value: {
-              text: data['which-benefit']
+              html: '<ul>{% for benefit in data['which-benefit'] %} <li>{{ benefit }}</li> {% endfor %} </ul>'
             },
             actions: {
               items: [
@@ -63,8 +65,7 @@ Check your answers - {{ serviceName }}
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
               text: "Which payment are you missing?"
@@ -81,8 +82,7 @@ Check your answers - {{ serviceName }}
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
               text: "Name"
@@ -99,8 +99,7 @@ Check your answers - {{ serviceName }}
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
               text: "Date of birth"
@@ -117,8 +116,7 @@ Check your answers - {{ serviceName }}
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
               text: "National Insurance number"
@@ -135,14 +133,13 @@ Check your answers - {{ serviceName }}
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
               text: "Address"
             },
             value: {
-               text: ""
+               text: data['address-line-1'] + " " +  data['address-line-2']
             },
             actions: {
               items: [
@@ -153,8 +150,7 @@ Check your answers - {{ serviceName }}
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
               text: "Telephone number"

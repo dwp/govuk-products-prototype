@@ -1,19 +1,16 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Report a missing Cost of Living Payment
-{% endset%}
+{% extends "layouts/headers/cost-of-living-report.html" %}
 
 {% block pageTitle %}
-Did you have a joint claim with a partner between 26 January 2023 and 25 February 2023? - {{ serviceName }}
+  Did you have a joint claim with a partner between 26 January 2023 and 25 February 2023? - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
- {{ super() }}
-{{ govukBackLink({
-text: "Back",
-href: "javascript:window.history.back()"
-}) }}
+  {{ super() }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -39,15 +36,15 @@ href: "javascript:window.history.back()"
         },
         items: [
           {
-          value: "yes",
+          value: "Yes",
           text: "Yes"
           },
           {
-          value: "no",
+          value: "No",
           text: "No"
           },
           {
-          value: "not sure",
+          value: "Not sure",
           text: "Not sure"
           }
         ]
