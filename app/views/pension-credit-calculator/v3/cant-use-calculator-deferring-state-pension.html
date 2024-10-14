@@ -1,11 +1,8 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Pension Credit calculator
-{% endset %}
+{% extends "layouts/headers/pension-credit.html" %}
 
 {% block pageTitle %}
-  Not eligible - {{ serviceName }}
+  {{ serviceName }}
 {% endblock %}
 
 {% block header %}
@@ -55,6 +52,92 @@
       </p>
     </div>
 
+    {{ govukInsetText({
+      html: '<p class="govuk-body">If you live in Northern Ireland, <a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre" class="govuk-link">contact the Northern Ireland Pension Centre</a> instead.</p>'
+    }) }}
+    
+    <section class="govuk-!-padding-top-6">
+      <h2 class="govuk-heading-m">Your answers</h2>
+
+      <p class="govuk-body">
+        <a href="index" class="govuk-link">Start again</a>
+      </p>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+          {
+            key: {
+              text: "1. Are you or your partner self-employed?"
+            },
+            value: {
+              text: data['self-employed']
+            },
+            actions: {
+              items: [
+                {
+                  href: "self-employed",
+                  text: "Change",
+                  visuallyHiddenText: "1. Are you or your partner self-employed?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+            },
+            value: {
+              text: data['own-more-than-one-property']
+            },
+            actions: {
+              items: [
+                {
+                  href: "own-more-than-one-property",
+                  text: "Change",
+                  visuallyHiddenText: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "3. Do you pay housing costs other than mortgage payments or rent?"
+            },
+            value: {
+              text: data['have-housing-costs']
+            },
+            actions: {
+              items: [
+                {
+                  href: "housing-costs",
+                  text: "Change",
+                  visuallyHiddenText: "3. Do you pay housing costs other than mortgage payments or rent?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "4. Are you or your partner delaying (deferring) your State Pension?"
+            },
+            value: {
+              text: data['deferring-state-pension']
+            },
+            actions: {
+              items: [
+                {
+                  href: "deferring-state-pension",
+                  text: "Change",
+                  visuallyHiddenText: "4. Are you or your partner delaying (deferring) your State Pension?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+  </section>
   </div>
 
   <div class="govuk-grid-column-one-third">

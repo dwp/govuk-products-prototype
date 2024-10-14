@@ -1,8 +1,5 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Pension Credit calculator 
-{% endset %}
+{% extends "layouts/headers/pension-credit.html" %}
 
 {% block pageTitle %}
   {{ serviceName }}
@@ -63,6 +60,106 @@
       {{ govukButton({
       text: "Next step"
       }) }}
+
+      <section class="govuk-!-padding-top-6">
+        <h2 class="govuk-heading-m">Your answers</h2>
+  
+        <p class="govuk-body">
+          <a href="index" class="govuk-link">Start again</a>
+        </p>
+  
+        {{ govukSummaryList({
+          classes: "govuk-!-margin-bottom-9",
+          rows: [
+            {
+              key: {
+                text: "1. Are you or your partner self-employed?"
+              },
+              value: {
+                text: data['self-employed']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "self-employed",
+                    text: "Change",
+                    visuallyHiddenText: "1. Are you or your partner self-employed?"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+              },
+              value: {
+                text: data['own-more-than-one-property']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "own-more-than-one-property",
+                    text: "Change",
+                    visuallyHiddenText: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "3. Do you pay housing costs other than mortgage payments or rent?"
+              },
+              value: {
+                text: data['have-housing-costs']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "housing-costs",
+                    text: "Change",
+                    visuallyHiddenText: "3. Do you pay housing costs other than mortgage payments or rent?"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "4. Are you or your partner delaying (deferring) your State Pension?"
+              },
+              value: {
+                text: data['deferring-state-pension']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "deferring-state-pension",
+                    text: "Change",
+                    visuallyHiddenText: "4. Are you or your partner delaying (deferring) your State Pension?"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "5. Are you or your partner under State Pension age?"
+              },
+              value: {
+                text: data['under-state-pension-age']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "under-state-pension-age",
+                    text: "Change",
+                    visuallyHiddenText: "5. Are you or your partner under State Pension age?"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+  
+    </section>
 
     </form>
   </div>
