@@ -1,8 +1,5 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Report a missing Cost of Living Payment
-{% endset%}
+{% extends "layouts/headers/cost-of-living-report.html" %}
 
 {% block pageTitle %}
   Which benefit were you expecting a Cost of Living payment for? - {{ serviceName }}
@@ -21,8 +18,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{data['which-benefit']}}
-
     <form class="form" action="/mtb5-which-benefit-answer" method="post">
 
       {{ govukCheckboxes({
@@ -38,30 +33,30 @@
         },
         items: [
           {
-          value: "universal-credit",
+          value: "Universal Credit",
           text: "Universal Credit"
           },
           {
-          value: "jsa",
+          value: "income-based Jobseeker's Allowance (JSA)",
           text: "income-based Jobseeker's Allowance (JSA)"
           },
           {
-          value: "esa",
+          value: "income-related Employment and Support Allowance (ESA)",
           text: "income-related Employment and Support Allowance (ESA)"
           },
           {
-          value: "income-support",
+          value: "Income Support",
           text: "Income Support"
           },
           {
-          value: "pension-credit",
+          value: "Pension Credit",
           text: "Pension Credit"
           },
           {
           divider: "or"
           },
           {
-          value: "tax-credits",
+          value: "Tax Credits",
           text: "Tax Credits",
           behaviour: "exclusive"
           }
