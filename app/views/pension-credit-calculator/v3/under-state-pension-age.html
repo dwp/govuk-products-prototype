@@ -1,8 +1,5 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Pension Credit calculator 
-{% endset %}
+{% extends "layouts/headers/pension-credit.html" %}
 
 {% block pageTitle %}
   {{ serviceName }}
@@ -46,7 +43,7 @@
         }
       }) %}
 
-      <p>You can <a href="/state-pension-age">check you or your partner's State Pension age</a> if you're not sure.</p>
+      <p>You can <a href="/state-pension-age" class="govuk-link">check you or your partner's State Pension age</a> if you're not sure.</p>
 
       {{ govukRadios({
         name: "under-state-pension-age",
@@ -57,7 +54,7 @@
             text: "Yes"
           },
           {
-            value: "No~/pension-credit-calculator/v3/pension-age-disability-payment",
+            value: "No~/pension-credit-calculator/v3/can-use-calculator",
             text: "No"
           }
         ]
