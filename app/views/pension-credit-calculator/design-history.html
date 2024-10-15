@@ -43,7 +43,7 @@
       <ol class="dwp-timeline__items">
 
         <li class="dwp-timeline__item">
-          <p class="dwp-timeline__datetime">Last updated: 21 Oct 2024</p>
+          <p class="dwp-timeline__datetime">21 Oct 2024</p>
           <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v4/index.html">Version 4</a> - Additional question added</h2>
           {{ govukDetails({
             summaryText: "Main changes",
@@ -62,11 +62,20 @@
               rows: [
                 [
                   {
-                    text: "Added [solution] so that users can be filtered out earlier in the journey if [they aren't eligible?], avoiding unneccessarily completing the longer calculator form. This should make it faster for users to work out if they should submit an application."
+                    html: '<p class="govuk-body">Added an extra question to the end of the smart answer.</p>
+                    <p class="govuk-body">It was added to the end as the number of citizens in these areas is assumed to be quite small.</p>
+                    <p class="govuk-body">Instead of asking if the citizens lives in one of the pilot areas we have asked if they live in Scotland and receive Pension Age Disability Payment (the new benefit).</p>'
                   },
                   {
-                    html: '<p>As part of the recent changes to Winter Fuel Payment (WFP), Pension Credit is now one of the main benefits which can &#39;passport&#39; someone to receiving WFP.</p>
-                    <p>Later in September 2024, a letter will be sent to over 12 million households about the WFP changes and also signpost users to the Pension Credit calculator. Currently the application Pension Credit backlog is around 10 weeks, but there is a risk it becomes significantly longer.</p>'
+                    html: '<p class="govuk-body">Attendance Allowance is being devolved with a pilot trial starting on 21st October 2024 in Argyll & Bute, Highland, Aberdeen City, Orkney and Shetland. Citizens in these areas will not be able to use the Pension Credit Calculator and will need to be filtered out in the smart answer.</p>'
+                  }
+                ],
+                [
+                  {
+                    html: '<p class="govuk-body">Added drop out screen for the new question.</p>'
+                  },
+                  {
+                    html: '<p class="govuk-body">To signpost citizens in the pilot areas to the phone lines so they can recieve accurate information about applying for Pension Credit.</p>'
                   }
                 ]
               ]
@@ -75,7 +84,7 @@
         </li>
 
         <li class="dwp-timeline__item">
-          <p class="dwp-timeline__datetime">Last updated: 21 Oct 2024</p>
+          <p class="dwp-timeline__datetime">21 Oct 2024</p>
           <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v3/index.html">Version 3</a> - Add Northern Ireland link to dropouts {{govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</h2>            
           {{ govukDetails({
             summaryText: "Main changes",
@@ -94,11 +103,10 @@
               rows: [
                 [
                   {
-                    html: 'Added a link to the <a ref="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre" class="govuk-link">Northern Ireland Pension Centre</a> on all dropout screens.'
+                    html: '<p class="govuk-body">Added a link to the Northern Ireland Pension Centre on all dropout screens. This ensures citizens in Northern Ireland won&#39;t be ringing the wrong phone lines and therefore saving time for both citizens and agents.</p>'
                   },
                   {
-                    html: '<p>As part of the recent changes to Winter Fuel Payment (WFP), Pension Credit is now one of the main benefits which can &#39;passport&#39; someone to receiving WFP.</p>
-                    <p>Later in September 2024, a letter will be sent to over 12 million households about the WFP changes and also signpost users to the Pension Credit calculator. Currently the application Pension Credit backlog is around 10 weeks, but there is a risk it becomes significantly longer.</p>'
+                    html: '<p class="govuk-body">The Pension Credit calculator is linked to from the Northern Ireland guidance and Northern Ireland have their own phone lines, therefore citizens in Northern Ireland need the correct contact information.</p>'
                   }
                 ]
               ]
@@ -107,7 +115,7 @@
         </li>
         
         <li class="dwp-timeline__item">
-          <p class="dwp-timeline__datetime">Last updated: 27 Aug 2024</p>
+          <p class="dwp-timeline__datetime">27 Aug 2024</p>
           <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v2/index.html">Version 2</a> - Filtering</h2>
           {{ govukDetails({
             summaryText: "Main changes",
@@ -126,11 +134,12 @@
               rows: [
                 [
                   {
-                    text: "Added [solution] so that users can be filtered out earlier in the journey if [they aren't eligible?], avoiding unneccessarily completing the longer calculator form. This should make it faster for users to work out if they should submit an application."
+                    text: "Added GDS smart answer so that users can be filtered out earlier in the journey if shouldn't use the calculator based on their circumstances. This should make it faster for users to work out if they should submit an application."
                   },
                   {
-                    html: '<p>As part of the recent changes to Winter Fuel Payment (WFP), Pension Credit is now one of the main benefits which can &#39;passport&#39; someone to receiving WFP.</p>
-                    <p>Later in September 2024, a letter will be sent to over 12 million households about the WFP changes and also signpost users to the Pension Credit calculator. Currently the application Pension Credit backlog is around 10 weeks, but there is a risk it becomes significantly longer.</p>'
+                    html: '<p class="govuk-body">Pension Credit is now one of the main benefits which can &#39;passport&#39; someone to receiving the Winter Fuel Payment.</p>
+                    <p class="govuk-body">In October 2024, a letter was sent to over 12 million households about the WFP changes and also signpost users to the Pension Credit calculator. At the time the application Pension Credit backlog was around 10 weeks, but there was a risk it could have become significantly longer.</p>
+                    <p class="govuk-body">There are 5 user groups that shouldn&#39;t use the calculator as it could give them the wrong outcome, so these users need to be provided with information for them to continue their journey by calling the phone lines instead.</p>'
                   }
                 ]
               ]
@@ -139,7 +148,7 @@
         </li>
 
         <li class="dwp-timeline__item">
-          <p class="dwp-timeline__datetime">Last updated: 27 Aug 2024</p>
+          <p class="dwp-timeline__datetime">27 Aug 2024</p>
           <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v1/index.html">Version 1</a></h2>
         </li>
       </ol>
