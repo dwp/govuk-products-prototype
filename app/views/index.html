@@ -460,6 +460,15 @@
               </tr>
             </tbody>
           </table>
+         
+          {{ govukButton({
+            text: "View design history",
+            classes: "govuk-button--secondary",
+            href: "find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/design-history.html",
+            attributes: {
+              "aria-label": "View design history for Find out who to contact about money taken off your Universal Credit payment"
+            }
+          }) }}
     </div></div>
 
     <div class="app-card">
@@ -685,14 +694,8 @@
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Version 2 <span class="govuk-visually-hidden">of Request information about underpaid state pension for someone who has died</span></td>
-              <td class="govuk-table__cell">{{govukTag({ text: "Dependent on roadmap", classes: "govuk-tag--grey" })}}</td>
-              <td class="govuk-table__cell">-</td>
-              <td class="govuk-table__cell">-</td>
-            </tr>
-            <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="request-information-about-underpaid-state-pension-for-someone-who-has-died/v1/index.html">Version 1<span class="govuk-visually-hidden">of Request information about underpaid state pension for someone who has died</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}} {{ govukTag({ text: "Decommissioned by 31 Dec 2024", classes: "govuk-tag--yellow" })}}</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_request-information-about-underpaid-state-pension-for-someone-who-has-died.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Request information about underpaid state pension for someone who has died</span></a></td>
             </tr>
