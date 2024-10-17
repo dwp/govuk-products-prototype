@@ -18,7 +18,7 @@ Can we call you if we need to check something? - {{ serviceName }} - GOV.UK
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       
-      <form class="form" action="/rpi-uk-address" method="post">
+      <form class="form" action="" method="post">
 
         {% set callbackHtml %}
         {{ govukInput({
@@ -57,7 +57,8 @@ Can we call you if we need to check something? - {{ serviceName }} - GOV.UK
         }) }}
         
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          href: "alternative-format"
         }) }}
 
       </form>

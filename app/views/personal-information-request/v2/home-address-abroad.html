@@ -18,23 +18,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        What is your abroad address? 
-      </h1>
-
-      <form class="form" action="/rpi-send-information-to-different-address" method="post">
+      <form class="form" action="" method="post">
 
         {{ govukTextarea({
           name: "address",
           id: "address",
-          autocomplete: "street-address",
+          rows: "8",
           label: {
-            text: "What is your address?"
+            text: "Your address abroad",
+            classes: "govuk-label--m",
+            isPageHeading: true
           }
         }) }}
         
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          href: "write-to-different-address"
         }) }}
 
       </form>
