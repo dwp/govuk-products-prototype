@@ -58,8 +58,12 @@ main.govuk-main-wrapper {
         @include govuk-responsive-padding(5, "right");  
 
         .app-card-title-description {
-            @include govuk-responsive-margin(0, "bottom");  
+            @include govuk-responsive-margin(2, "bottom");  
             @include govuk-responsive-margin(2, "top");  
+        }
+
+        .app-card-title-govuk-links {
+            @include govuk-responsive-margin(0, "bottom");  
         }
     }
 
