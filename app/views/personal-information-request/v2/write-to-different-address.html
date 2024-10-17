@@ -18,27 +18,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
-      <h1 class="govuk-heading-l">
-        Your home address
-      </h1>
-      
-      <form class="form" action="/rpi-uk-address" method="post">
+      <form class="form" action="" method="post">
 
         {{ govukRadios({
           name: "uk-address",
           fieldset: {
             legend: {
-              text: "Do you have an address in the UK?",
+              text: "Should we send the information to a different address?",
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
-              value: "yes",
+              value: "yes~/personal-information-request/v1/address-to-write-to",
               text: "Yes"
             },
             {
-              value: "no",
+              value: "no~/personal-information-request/v1/national-insurance-number",
               text: "No"
             }
           ]

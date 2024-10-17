@@ -18,6 +18,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    <form class="form" action="" method="post">
+
     {{ govukDateInput({
       id: "date-of-birth",
       namePrefix: "date-of-birth",
@@ -32,9 +34,10 @@
 
     {{ govukButton({
       text: "Continue",
-      href: "address-in-the-uk"
+      href: "address"
     }) }}
 
+    </form>
   </div>
 </div>
 

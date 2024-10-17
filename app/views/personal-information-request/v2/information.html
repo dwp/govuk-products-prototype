@@ -19,25 +19,29 @@
   <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-l">
-      Previous names
+      Information you need
     </h1>
 
+    <form class="form" action="" method="post">
+    
     {{ govukTextarea({
-      name: "previous-names",
-      id: "previous-names",
+      name: "information",
+      id: "information",
+      rows: "8",
       label: {
-        text: "Your previous names",
+        text: "What information do you need?",
         classes: "govuk-label--m"
       },
       hint: {
-        text: "Write each name in full (first name and last name)"
+        text: "Be as specific as you can. If your request relates to a particular benefit or payment, please say what this is."
       }
     }) }}
 
     {{ govukButton({
       text: "Continue",
-      href: "address-in-the-uk"
+      href: "callback"
     }) }}
+    </form>
 
   </div>
 </div>

@@ -17,7 +17,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <form class="form" action="/rpi-different-address" method="post">
+      <form class="form" action="" method="post">
 
         {% set alternativeFormatHtml %}
         {{ govukInput({
@@ -54,8 +54,10 @@
             }
           ]
         }) }}
+        
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          href: "check-your-answers"
         }) }}
 
       </form>
