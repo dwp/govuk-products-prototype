@@ -22,7 +22,8 @@
 
     {{ govukDateInput({
       id: "date-of-birth",
-      namePrefix: "date-of-birth",
+      name: "date-of-birth",
+      value: data['date-of-birth'],
       fieldset: {
         legend: {
           text: "Your date of birth",

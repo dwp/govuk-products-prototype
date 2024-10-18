@@ -25,7 +25,8 @@
       <form class="form" action="" method="post">
 
         {{ govukRadios({
-          name: "uk-address",
+          name: "address-to-write-to",
+          value: data['address-to-write-to'],
           fieldset: {
             legend: {
               text: "Do you have an address in the UK to write to?",
@@ -35,11 +36,11 @@
           },
           items: [
             {
-              value: "Yes~/personal-information-request/v1/address-to-write-to-address-uk",
+              value: "Yes~/personal-information-request/v2/address-to-write-to-address-uk",
               text: "Yes"
             },
             {
-              value: "No~/personal-information-request/v1/address-to-write-to-address-abroad",
+              value: "No~/personal-information-request/v2/address-to-write-to-address-abroad",
               text: "No"
             }
           ]

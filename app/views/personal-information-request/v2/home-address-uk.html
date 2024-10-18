@@ -27,13 +27,14 @@
             isPageHeading: true
           }
         }) %}
-        
+
           {{ govukInput({
             label: {
               text: "Building name or number and street"
             },
-            id: "address-line-1",
-            name: "addressLine1",
+            id: "uk-home-address-line-1",
+            name: "uk-home-address-line-1",
+            value: data['uk-home-address-line-1'],
             autocomplete: "address-line1"
           }) }}
         
@@ -41,8 +42,9 @@
             label: {
               visuallyHiddenText: "Building and street line 2 of 2"
             },
-            id: "address-line-2",
-            name: "addressLine2",
+            id: "uk-home-address-line-2",
+            name: "uk-home-address-line-2",
+            value: data['uk-home-address-line-2'],
             autocomplete: "address-line2"
           }) }}
         
@@ -51,8 +53,9 @@
               text: "Town or city"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "address-town",
-            name: "addressTown",
+            id: "uk-home-address-town",
+            name: "uk-home-address-town",
+            value: data['uk-home-address-town'],
             autocomplete: "address-level2"
           }) }}
         
@@ -61,8 +64,9 @@
               text: "County"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "address-county",
-            name: "addressCounty"
+            id: "uk-home-address-county",
+            name: "uk-home-address-county",
+            value: data['uk-home-address-county']
           }) }}
         
           {{ govukInput({
@@ -70,8 +74,9 @@
               text: "Postcode"
             },
             classes: "govuk-input--width-10",
-            id: "address-postcode",
-            name: "addressPostcode",
+            id: "uk-home-address-postcode",
+            name: "uk-home-address-postcode",
+            value: data['uk-home-address-postcode'],
             autocomplete: "postal-code"
           }) }}
         

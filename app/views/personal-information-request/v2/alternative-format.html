@@ -21,8 +21,9 @@
 
         {% set alternativeFormatHtml %}
         {{ govukInput({
-          id: "callback",
-          name: "callback",
+          id: "alternative-format-yes",
+          name: "alternative-format-yes",
+          value: data['alternative-format-yes'],
           classes: "govuk-input--width-20",
           label: {
             text: "What alternative format do you need?",
@@ -33,6 +34,7 @@
 
         {{ govukRadios({
           name: "alternative-format",
+          value: data['alternative-format'],
           fieldset: {
             legend: {
               text: "Do you need the information in an alternative format?",

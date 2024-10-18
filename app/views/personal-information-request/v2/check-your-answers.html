@@ -28,31 +28,32 @@ Check your answers - {{ serviceName }} - GOV.UK
         rows: [
         {
           key: {
-            text: "Type of Cost of Living payment"
+            text: "Your full name"
           },
           value: {
-            text: data['type-of-payment-missing']
+            text: data['full-name']
           },
           actions: {
             items: [
               {
-                href: "types-of-cost-of-living-payment",
+                href: "index",
                 text: "Change",
-                visuallyHiddenText: "type of Cost of Living payment"
+                visuallyHiddenText: "your full name"
               }
             ]
           }
         },
         {
             key: {
-              text: "Benefit"
+              text: "Have you been known by another name?"
             },
             value: {
+              text: data['another-name']
             },
             actions: {
               items: [
                 {
-                  href: "benefit-entitlement-low-income",
+                  href: "index",
                   text: "Change",
                   visuallyHiddenText: "which benefit you were expecting a payment for"
                 }
@@ -61,15 +62,15 @@ Check your answers - {{ serviceName }} - GOV.UK
           },
           {
             key: {
-              text: "Which payment are you missing?"
+              text: "Your previous names"
             },
             value: {
-              text: data['which-payment']
+              text: data['previous-names']
             },
             actions: {
               items: [
                 {
-                  href: "which-payment-are-you-missing",
+                  href: "previous-names",
                   text: "Change",
                   visuallyHiddenText: "which payment is missing"
                 }
@@ -78,15 +79,15 @@ Check your answers - {{ serviceName }} - GOV.UK
           },
           {
             key: {
-              text: "Name"
+              text: "Your date of birth"
             },
             value: {
-              text: data['full-name']
+              text: data['date-of-birth']
             },
             actions: {
               items: [
                 {
-                  href: "personal-details",
+                  href: "date-of-birth",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -95,15 +96,15 @@ Check your answers - {{ serviceName }} - GOV.UK
           },
           {
             key: {
-              text: "Date of birth"
+              text: "Do you have an address in the UK?"
             },
             value: {
-              text: data['dob-day'] + " " + data['dob-month'] | toMonth + " " +  data['dob-year']
+              text: data['address-in-uk']
             },
             actions: {
               items: [
                 {
-                  href: "personal-details",
+                  href: "address",
                   text: "Change",
                   visuallyHiddenText: "date of birth"
                 }
@@ -112,15 +113,15 @@ Check your answers - {{ serviceName }} - GOV.UK
           },
           {
             key: {
-              text: "National Insurance number"
+              text: "Your UK address"
             },
             value: {
-              text: data['nino']
+              text: data['uk-home-address-line-1']
             },
             actions: {
               items: [
                 {
-                  href: "personal-details",
+                  href: "home-address-uk",
                   text: "Change",
                   visuallyHiddenText: "National Insurance number"
                 }
@@ -129,15 +130,15 @@ Check your answers - {{ serviceName }} - GOV.UK
           },
           {
             key: {
-              text: "Address"
+              text: "Should we send the information to a different address?"
             },
             value: {
-               text: data['address-line-1'] + " " +  data['address-line-2']
+               text: data['write-to-different-address']
             },
             actions: {
               items: [
                 {
-                  href: "what-is-your-address",
+                  href: "write-to-different-address",
                   text: "Change",
                   visuallyHiddenText: "address"
                 }
@@ -146,7 +147,24 @@ Check your answers - {{ serviceName }} - GOV.UK
           },
           {
             key: {
-              text: "Telephone number"
+              text: "Can you tell us your National Insurance number?"
+            },
+            value: {
+              text: data['national-insurance-number']
+            },
+            actions: {
+              items: [
+                {
+                  href: "national-insurance-number",
+                  text: "Change",
+                  visuallyHiddenText: "telephone number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "What time period should the information cover - From"
             },
             value: {
               text: data['tel-number'] or "Telephone number not given"
@@ -154,7 +172,75 @@ Check your answers - {{ serviceName }} - GOV.UK
             actions: {
               items: [
                 {
-                  href: "what-is-your-telephone-number",
+                  href: "dates",
+                  text: "Change",
+                  visuallyHiddenText: "telephone number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "What time period should the information cover - To"
+            },
+            value: {
+              text: data['tel-number'] or "Telephone number not given"
+            },
+            actions: {
+              items: [
+                {
+                  href: "dates",
+                  text: "Change",
+                  visuallyHiddenText: "telephone number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "What information do you need?"
+            },
+            value: {
+              text: data['info']
+            },
+            actions: {
+              items: [
+                {
+                  href: "information",
+                  text: "Change",
+                  visuallyHiddenText: "telephone number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Can we call you if we need to check something?"
+            },
+            value: {
+              text: data['callback-yes']
+            },
+            actions: {
+              items: [
+                {
+                  href: "callback",
+                  text: "Change",
+                  visuallyHiddenText: "telephone number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Do you need the information in an alternative format?"
+            },
+            value: {
+              text: data['alternative-format']
+            },
+            actions: {
+              items: [
+                {
+                  href: "alternative-format",
                   text: "Change",
                   visuallyHiddenText: "telephone number"
                 }
@@ -166,7 +252,7 @@ Check your answers - {{ serviceName }} - GOV.UK
      }}
 
       {{ govukButton({
-        text: "Accept and send",
+        text: "Accept and send request",
         attributes: "govuk-button"
       }) }}
 

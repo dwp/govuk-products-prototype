@@ -21,7 +21,8 @@
       <form class="form" action="" method="post">
 
         {{ govukRadios({
-          name: "uk-address",
+          name: "write-to-different-address",
+          value: data['write-to-different-address'],
           fieldset: {
             legend: {
               text: "Should we send the information to a different address?",
@@ -30,11 +31,11 @@
           },
           items: [
             {
-              value: "yes~/personal-information-request/v1/address-to-write-to",
+              value: "yes~/personal-information-request/v2/address-to-write-to",
               text: "Yes"
             },
             {
-              value: "no~/personal-information-request/v1/national-insurance-number",
+              value: "no~/personal-information-request/v2/national-insurance-number",
               text: "No"
             }
           ]

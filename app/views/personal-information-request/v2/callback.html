@@ -22,8 +22,9 @@ Can we call you if we need to check something? - {{ serviceName }} - GOV.UK
 
         {% set callbackHtml %}
         {{ govukInput({
-          id: "callback",
-          name: "callback",
+          id: "callback-yes",
+          name: "callback-yes",
+          value: data['callback-yes'],
           classes: "govuk-input--width-20",
           label: {
             text: "Your phone number",
@@ -33,7 +34,8 @@ Can we call you if we need to check something? - {{ serviceName }} - GOV.UK
         {% endset -%}
 
         {{ govukRadios({
-          name: "uk-address",
+          name: "callback",
+          value: data['callback'],
           fieldset: {
             legend: {
               text: "Can we call you if we need to check something?",

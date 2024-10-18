@@ -23,11 +23,13 @@
       },
       classes: "govuk-input--width-20",
       id: "full-name",
-      name: "full-name"
+      name: "full-name",
+      value: data['full-name']
     }) }}
 
     {{ govukRadios({
-      name: "anotherName",
+      name: "another-name",
+      value: data['another-name'],
       fieldset: {
         legend: {
           text: "Have you been known by another name?",
@@ -36,11 +38,11 @@
       },
       items: [
         {
-          value: "yes~/personal-information-request/v1/previous-names",
+          value: "yes~/personal-information-request/v2/previous-names",
           text: "Yes"
         },
         {
-          value: "No~/personal-information-request/v1/date-of-birth",
+          value: "No~/personal-information-request/v2/date-of-birth",
           text: "No"
         }
       ]
