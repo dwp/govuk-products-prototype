@@ -28,6 +28,7 @@
         {{ govukInput({
           id: "nino",
           name: "nino",
+          value: data['nino'],
           classes: "govuk-input--width-20",
           label: {
             text: "Your National Insurance number",
@@ -41,6 +42,7 @@
 
         {{ govukRadios({
           name: "national-insurance-number",
+          value: data['national-insurance-number'],
           fieldset: {
             legend: {
               text: "Can you tell us your National Insurance number?",
