@@ -26,232 +26,209 @@ Check your answers - {{ serviceName }} - GOV.UK
 
       <form class="form" action="" method="post">
 
-      {{ govukSummaryList({
-        rows: [
-        {
-          key: {
-            text: "Your full name"
-          },
-          value: {
-            text: data['full-name']
-          },
-          actions: {
-            items: [
-              {
-                href: "index",
-                text: "Change",
-                visuallyHiddenText: "your full name"
-              }
-            ]
-          }
-        },
-        {
-            key: {
-              text: "Have you been known by another name?"
-            },
-            value: {
-              text: data['another-name']
-            },
-            actions: {
-              items: [
-                {
-                  href: "index",
-                  text: "Change",
-                  visuallyHiddenText: "have you been known by another name?"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Your previous names"
-            },
-            value: {
-              text: data['previous-names']
-            },
-            actions: {
-              items: [
-                {
-                  href: "previous-names",
-                  text: "Change",
-                  visuallyHiddenText: "your previous names"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Your date of birth"
-            },
-            value: {
-              text: data | isoDateFromDateInput("date-of-birth") | govukDate("truncate")
-            },
-            actions: {
-              items: [
-                {
-                  href: "date-of-birth",
-                  text: "Change",
-                  visuallyHiddenText: "your date of birth"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Do you have an address in the UK?"
-            },
-            value: {
-              text: data['address-in-uk']
-            },
-            actions: {
-              items: [
-                {
-                  href: "address",
-                  text: "Change",
-                  visuallyHiddenText: "do you have an address in the UK?"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Your UK address"
-            },
-            value: {
-              text: data['uk-home-address-line-1']
-            },
-            actions: {
-              items: [
-                {
-                  href: "home-address-uk",
-                  text: "Change",
-                  visuallyHiddenText: "your UK address"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Should we send the information to a different address?"
-            },
-            value: {
-               text: data['write-to-different-address']
-            },
-            actions: {
-              items: [
-                {
-                  href: "write-to-different-address",
-                  text: "Change",
-                  visuallyHiddenText: "should we send the information to a different address?"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Can you tell us your National Insurance number?"
-            },
-            value: {
-              html:  data['nino']
-            },
-            actions: {
-              items: [
-                {
-                  href: "national-insurance-number",
-                  text: "Change",
-                  visuallyHiddenText: "your National Insurance number"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "What time period should the information cover - From"
-            },
-            value: {
-              text: data | isoDateFromDateInput("date-from") | govukDate("truncate")
-            },
-            actions: {
-              items: [
-                {
-                  href: "dates",
-                  text: "Change",
-                  visuallyHiddenText: "what time period should the information cover - From"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "What time period should the information cover - To"
-            },
-            value: {
-              text: data | isoDateFromDateInput("date-to") | govukDate("truncate")
-            },
-            actions: {
-              items: [
-                {
-                  href: "dates",
-                  text: "Change",
-                  visuallyHiddenText: "what time period should the information cover - To"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "What information do you need?"
-            },
-            value: {
-              text: data['information']
-            },
-            actions: {
-              items: [
-                {
-                  href: "information",
-                  text: "Change",
-                  visuallyHiddenText: "what information you need"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Can we call you if we need to check something?"
-            },
-            value: {
-              text: data['callback-yes']
-            },
-            actions: {
-              items: [
-                {
-                  href: "callback",
-                  text: "Change",
-                  visuallyHiddenText: "can we call you if we need to check something?"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Do you need the information in an alternative format?"
-            },
-            value: {
-              text: data['alternative-format']
-            },
-            actions: {
-              items: [
-                {
-                  href: "alternative-format",
-                  text: "Change",
-                  visuallyHiddenText: "do you need the information in an alternative format?"
-                }
-              ]
-            }
-          }
-        ]
-      })
-     }}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['full-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> your full name</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Have you been known by another name?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          {% if data['previous-names'] != "" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your previous names
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['previous-names']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="previous-names">Change<span class="govuk-visually-hidden"> your previous names</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data | isoDateFromDateInput("date-of-birth") | govukDate("truncate") }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="date-of-birth">Change<span class="govuk-visually-hidden"> your date of birth</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you have an address in the UK?
+            </dt>
+            <dd class="govuk-summary-list__value">
+             {{data['address-in-uk']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address">Change<span class="govuk-visually-hidden"> do you have an address in the UK?</span></a>
+            </dd>
+          </div>
+          
+          {% if data['address-in-uk'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your UK address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['uk-home-address-line-1']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="home-address-uk">Change<span class="govuk-visually-hidden"> your UK address</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['address-in-uk'] == "no" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your address abroad
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['home-address-abroad']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Should we send the information to a different address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['write-to-different-address']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="write-to-different-address">Change<span class="govuk-visually-hidden"> should we send the information to a different address?</span></a>
+            </dd>
+          </div>
+
+          {% if data['address-to-write-to'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your UK address to write to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['write-to-uk-address']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['address-to-write-to'] == "no" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your address abroad to write to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['write-to-abroad-address']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Can you tell us your National Insurance number?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['nino']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="national-insurance-number">Change<span class="govuk-visually-hidden"> your National Insurance number</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What time period should the information cover - From
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data | isoDateFromDateInput("date-from") | govukDate("truncate")}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="dates">Change<span class="govuk-visually-hidden"> what time period should the information cover - From</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What time period should the information cover - To
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data | isoDateFromDateInput("date-to") | govukDate("truncate")}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="dates">Change<span class="govuk-visually-hidden"> what time period should the information cover - To</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What information do you need?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['information']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="information">Change<span class="govuk-visually-hidden"> what information you need</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Can we call you if we need to check something?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['callback-yes']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="callback">Change<span class="govuk-visually-hidden"> can we call you if we need to check something?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you need the information in an alternative format?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['alternative-format']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="alternative-format">Change<span class="govuk-visually-hidden"> do you need the information in an alternative format?</span></a>
+            </dd>
+          </div>
+        </dl>
 
       {{ govukButton({
         text: "Accept and send request",
