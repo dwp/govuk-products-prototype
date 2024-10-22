@@ -18,7 +18,7 @@ Can we call you if we need to check something? - {{ serviceName }} - GOV.UK
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       
-      <form class="form" action="" method="post">
+      <form class="form" action="alternative-format" method="post">
 
         {% set callbackHtml %}
         {{ govukInput({
@@ -45,14 +45,14 @@ Can we call you if we need to check something? - {{ serviceName }} - GOV.UK
           },
           items: [
             {
-              value: "Yes",
+              value: "yes",
               text: "Yes",
               conditional: {
                 html: callbackHtml
               }
             },
             {
-              value: "No",
+              value: "no",
               text: "No"
             }
           ]
@@ -60,7 +60,7 @@ Can we call you if we need to check something? - {{ serviceName }} - GOV.UK
         
         {{ govukButton({
           text: "Continue",
-          href: "alternative-format"
+          attributes: "govuk-button"
         }) }}
 
       </form>

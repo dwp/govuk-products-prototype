@@ -22,7 +22,7 @@
         Your National Insurance number
       </h1>
 
-      <form class="form" action="" method="post">
+      <form class="form" action="dates" method="post">
 
         {% set ninoHtml %}
         {{ govukInput({
@@ -42,7 +42,6 @@
 
         {{ govukRadios({
           name: "national-insurance-number",
-          value: data['national-insurance-number'],
           fieldset: {
             legend: {
               text: "Can you tell us your National Insurance number?",
@@ -66,7 +65,7 @@
         }) }}
         {{ govukButton({
           text: "Continue",
-          href: "dates"
+          attributes: "govuk-button"
         }) }}
 
       </form>

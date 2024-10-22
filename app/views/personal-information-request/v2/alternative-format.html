@@ -17,7 +17,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <form class="form" action="" method="post">
+      <form class="form" action="check-your-answers" method="post">
 
         {% set alternativeFormatHtml %}
         {{ govukInput({
@@ -59,7 +59,7 @@
         
         {{ govukButton({
           text: "Continue",
-          href: "check-your-answers"
+          attributes: "govuk-button"
         }) }}
 
       </form>
