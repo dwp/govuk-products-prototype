@@ -1,4 +1,4 @@
-const govukPrototypeKit = require('govuk-prototype-kit'); 
+/* const govukPrototypeKit = require('govuk-prototype-kit'); 
 const addFilter = govukPrototypeKit.views.addFilter;
 
 let filters = {}; // Define filters as an object 
@@ -14,3 +14,4 @@ filters.toMonth = function(x) {
 addFilter('toMonth', filters.toMonth);
 module.export = filters;
 
+ */
