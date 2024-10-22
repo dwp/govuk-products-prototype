@@ -22,6 +22,8 @@ Check your answers - {{ serviceName }} - GOV.UK
         Check your answers
       </h1>
 
+      {{ data | dump }}
+
       <form class="form" action="" method="post">
 
       {{ govukSummaryList({
@@ -55,7 +57,7 @@ Check your answers - {{ serviceName }} - GOV.UK
                 {
                   href: "index",
                   text: "Change",
-                  visuallyHiddenText: "which benefit you were expecting a payment for"
+                  visuallyHiddenText: "have you been known by another name?"
                 }
               ]
             }
@@ -72,7 +74,7 @@ Check your answers - {{ serviceName }} - GOV.UK
                 {
                   href: "previous-names",
                   text: "Change",
-                  visuallyHiddenText: "which payment is missing"
+                  visuallyHiddenText: "your previous names"
                 }
               ]
             }
@@ -82,14 +84,14 @@ Check your answers - {{ serviceName }} - GOV.UK
               text: "Your date of birth"
             },
             value: {
-              text: data['date-of-birth']
+              text: data | isoDateFromDateInput("date-of-birth") | govukDate("truncate")
             },
             actions: {
               items: [
                 {
                   href: "date-of-birth",
                   text: "Change",
-                  visuallyHiddenText: "name"
+                  visuallyHiddenText: "your date of birth"
                 }
               ]
             }
@@ -106,7 +108,7 @@ Check your answers - {{ serviceName }} - GOV.UK
                 {
                   href: "address",
                   text: "Change",
-                  visuallyHiddenText: "date of birth"
+                  visuallyHiddenText: "do you have an address in the UK?"
                 }
               ]
             }
@@ -123,7 +125,7 @@ Check your answers - {{ serviceName }} - GOV.UK
                 {
                   href: "home-address-uk",
                   text: "Change",
-                  visuallyHiddenText: "National Insurance number"
+                  visuallyHiddenText: "your UK address"
                 }
               ]
             }
@@ -140,7 +142,7 @@ Check your answers - {{ serviceName }} - GOV.UK
                 {
                   href: "write-to-different-address",
                   text: "Change",
-                  visuallyHiddenText: "address"
+                  visuallyHiddenText: "should we send the information to a different address?"
                 }
               ]
             }
@@ -150,14 +152,14 @@ Check your answers - {{ serviceName }} - GOV.UK
               text: "Can you tell us your National Insurance number?"
             },
             value: {
-              text: data['national-insurance-number']
+              html:  data['nino']
             },
             actions: {
               items: [
                 {
                   href: "national-insurance-number",
                   text: "Change",
-                  visuallyHiddenText: "telephone number"
+                  visuallyHiddenText: "your National Insurance number"
                 }
               ]
             }
@@ -167,14 +169,14 @@ Check your answers - {{ serviceName }} - GOV.UK
               text: "What time period should the information cover - From"
             },
             value: {
-              text: data['tel-number'] or "Telephone number not given"
+              text: data | isoDateFromDateInput("date-from") | govukDate("truncate")
             },
             actions: {
               items: [
                 {
                   href: "dates",
                   text: "Change",
-                  visuallyHiddenText: "telephone number"
+                  visuallyHiddenText: "what time period should the information cover - From"
                 }
               ]
             }
@@ -184,14 +186,14 @@ Check your answers - {{ serviceName }} - GOV.UK
               text: "What time period should the information cover - To"
             },
             value: {
-              text: data['tel-number'] or "Telephone number not given"
+              text: data | isoDateFromDateInput("date-to") | govukDate("truncate")
             },
             actions: {
               items: [
                 {
                   href: "dates",
                   text: "Change",
-                  visuallyHiddenText: "telephone number"
+                  visuallyHiddenText: "what time period should the information cover - To"
                 }
               ]
             }
@@ -201,14 +203,14 @@ Check your answers - {{ serviceName }} - GOV.UK
               text: "What information do you need?"
             },
             value: {
-              text: data['info']
+              text: data['information']
             },
             actions: {
               items: [
                 {
                   href: "information",
                   text: "Change",
-                  visuallyHiddenText: "telephone number"
+                  visuallyHiddenText: "what information you need"
                 }
               ]
             }
@@ -225,7 +227,7 @@ Check your answers - {{ serviceName }} - GOV.UK
                 {
                   href: "callback",
                   text: "Change",
-                  visuallyHiddenText: "telephone number"
+                  visuallyHiddenText: "can we call you if we need to check something?"
                 }
               ]
             }
@@ -242,7 +244,7 @@ Check your answers - {{ serviceName }} - GOV.UK
                 {
                   href: "alternative-format",
                   text: "Change",
-                  visuallyHiddenText: "telephone number"
+                  visuallyHiddenText: "do you need the information in an alternative format?"
                 }
               ]
             }

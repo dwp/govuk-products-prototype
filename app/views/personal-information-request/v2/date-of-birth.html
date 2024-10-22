@@ -18,11 +18,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form class="form" action="" method="post">
+    <form class="form" action="address" method="post">
 
     {{ govukDateInput({
       id: "date-of-birth",
       name: "date-of-birth",
+      namePrefix: "date-of-birth",
       value: data['date-of-birth'],
       fieldset: {
         legend: {
@@ -35,7 +36,7 @@
 
     {{ govukButton({
       text: "Continue",
-      href: "address"
+      attributes: "govuk-button"
     }) }}
 
     </form>

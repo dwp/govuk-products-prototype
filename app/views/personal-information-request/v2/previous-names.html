@@ -23,23 +23,23 @@
     </h1>
 
     <form class="form" action="date-of-birth" method="post">
-    {{ govukTextarea({
-      name: "previous-names",
-      id: "previous-names",
-      value: data['previous-names'],
-      label: {
-        text: "Your previous names",
-        classes: "govuk-label--m"
-      },
-      hint: {
-        text: "Write each name in full (first name and last name)"
-      }
-    }) }}
+      {{ govukTextarea({
+        name: "previous-names",
+        id: "previous-names",
+        value: data['previous-names'],
+        label: {
+          text: "Your previous names",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text: "Write each name in full (first name and last name)"
+        }
+      }) }}
 
-    {{ govukButton({
-      text: "Continue",
-      attributes: "govuk-button"
-    }) }}
+      {{ govukButton({
+        text: "Continue",
+        attributes: "govuk-button"
+      }) }}
     </form>
   </div>
 </div>

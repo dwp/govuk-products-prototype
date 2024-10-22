@@ -18,7 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form class="form" action="" method="post">
+      <form class="form" action="national-insurance-number" method="post">
         
         {% call govukFieldset({
           legend: {
@@ -65,8 +65,8 @@
             },
             classes: "govuk-!-width-two-thirds",
             id: "write-to-uk-address-county",
-            name: "write-to-uk-address-county"
-            value: data['write-to-uk-address-county'],
+            name: "write-to-uk-address-county",
+            value: data['write-to-uk-address-county']
           }) }}
         
           {{ govukInput({
@@ -84,7 +84,7 @@
 
         {{ govukButton({
           text: "Continue",
-          href: "national-insurance-number"
+          attributes: "govuk-button"
         }) }}
           
       </form>
