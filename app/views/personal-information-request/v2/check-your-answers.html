@@ -22,8 +22,6 @@ Check your answers - {{ serviceName }} - GOV.UK
         Check your answers
       </h1>
 
-      {{ data | dump }}
-
       <form class="form" action="" method="post">
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -32,7 +30,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               Your full name
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['full-name']}}
+              {{data['full-name'] or "Full name not given"}} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> your full name</span></a>
@@ -51,13 +49,13 @@ Check your answers - {{ serviceName }} - GOV.UK
             </dd>
           </div>
 
-          {% if data['previous-names'] != "" %}
+          {% if data['another-name'] == "yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Your previous names
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['previous-names']}}
+              {{data['previous-names'] or "Previous names not given"}} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="previous-names">Change<span class="govuk-visually-hidden"> your previous names</span></a>
@@ -70,7 +68,13 @@ Check your answers - {{ serviceName }} - GOV.UK
               Your date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data | isoDateFromDateInput("date-of-birth") | govukDate("truncate") }}
+              {% set dateOfBirth = data | isoDateFromDateInput("date-of-birth") | govukDate("truncate") %}
+             
+              {% if dateOfBirth | includes("Invalid") %}
+                Date of birth not given
+              {% else %}
+                {{dateOfBirth}}
+              {% endif %}             
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="date-of-birth">Change<span class="govuk-visually-hidden"> your date of birth</span></a>
@@ -82,7 +86,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               Do you have an address in the UK?
             </dt>
             <dd class="govuk-summary-list__value">
-             {{data['address-in-uk']}}
+              {{data['address-in-uk']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="address">Change<span class="govuk-visually-hidden"> do you have an address in the UK?</span></a>
@@ -95,7 +99,15 @@ Check your answers - {{ serviceName }} - GOV.UK
               Your UK address
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['uk-home-address-line-1']}}
+              {{data['uk-home-address-line-1']}} <br>
+             
+              {% if data['uk-home-address-line-2'] != "" %}
+              {{data['uk-home-address-line-2']}}<br>
+              {% endif %}
+
+              {{data['uk-home-address-town']}}<br>
+              {{data['uk-home-address-county']}}<br>
+              {{data['uk-home-address-postcode']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="home-address-uk">Change<span class="govuk-visually-hidden"> your UK address</span></a>
@@ -109,7 +121,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               Your address abroad
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['home-address-abroad']}}
+              {{data['home-address-abroad'] or "Abroad address not given"}} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
@@ -135,7 +147,15 @@ Check your answers - {{ serviceName }} - GOV.UK
               Your UK address to write to
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['write-to-uk-address']}}
+              {{data['write-to-uk-address-line-1']}}<br>
+              
+              {% if data['write-to-uk-address-line-2'] != "" %}
+              {{data['write-to-uk-address-line-2']}}<br>
+              {% endif %}
+              
+              {{data['write-to-uk-address-town']}}<br>
+              {{data['write-to-uk-address-county']}}<br>
+              {{data['write-to-uk-address-postcode']}}            
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
@@ -149,7 +169,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               Your address abroad to write to
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['write-to-abroad-address']}}
+              {{data['write-to-abroad-address'] or "Abroad address not given"}} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
@@ -162,7 +182,13 @@ Check your answers - {{ serviceName }} - GOV.UK
               Can you tell us your National Insurance number?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['nino']}}
+              {% if data['national-insurance-number'] == "" %}
+                National Insurance number not given
+              {% elif data['national-insurance-number'] == "yes" %}
+                {{data['nino'] or "National Insurance number not given"}} 
+              {% else %}
+                {{data['national-insurance-number']}}
+              {% endif %}        
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="national-insurance-number">Change<span class="govuk-visually-hidden"> your National Insurance number</span></a>
@@ -174,7 +200,13 @@ Check your answers - {{ serviceName }} - GOV.UK
               What time period should the information cover - From
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data | isoDateFromDateInput("date-from") | govukDate("truncate")}}
+              {% set datePeriodFrom = data | isoDateFromDateInput("date-from") | govukDate("truncate") %}
+             
+              {% if datePeriodFrom | includes("Invalid") %}
+                Date not given
+              {% else %}
+                {{datePeriodFrom}}
+              {% endif %}  
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="dates">Change<span class="govuk-visually-hidden"> what time period should the information cover - From</span></a>
@@ -186,7 +218,13 @@ Check your answers - {{ serviceName }} - GOV.UK
               What time period should the information cover - To
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data | isoDateFromDateInput("date-to") | govukDate("truncate")}}
+              {% set datePeriodTo = data | isoDateFromDateInput("date-to") | govukDate("truncate") %}
+             
+              {% if datePeriodTo | includes("Invalid") %}
+                Date not given
+              {% else %}
+                {{datePeriodTo}}
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="dates">Change<span class="govuk-visually-hidden"> what time period should the information cover - To</span></a>
@@ -198,7 +236,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               What information do you need?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['information']}}
+              {{data['information'] or "Information not given"}} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="information">Change<span class="govuk-visually-hidden"> what information you need</span></a>
@@ -210,7 +248,13 @@ Check your answers - {{ serviceName }} - GOV.UK
               Can we call you if we need to check something?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['callback-yes']}}
+              {% if data['callback'] == "" %}
+                Phone number not given 
+              {% elif data['callback'] == "yes" %}
+                {{data['callback-yes'] or "Phone number not given"}} 
+              {% else %}
+                {{data['callback']}}
+              {% endif %}   
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="callback">Change<span class="govuk-visually-hidden"> can we call you if we need to check something?</span></a>
@@ -221,8 +265,14 @@ Check your answers - {{ serviceName }} - GOV.UK
             <dt class="govuk-summary-list__key">
               Do you need the information in an alternative format?
             </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['alternative-format']}}
+            <dd class="govuk-summary-list__value">              
+              {% if data['alternative-format'] == "" %}
+                Alternative format not given
+              {% elif data['alternative-format'] == "yes" %}
+                {{data['alternative-format-yes'] or "Alternative format not given"}} 
+              {% else %}
+                {{data['alternative-format']}}
+              {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="alternative-format">Change<span class="govuk-visually-hidden"> do you need the information in an alternative format?</span></a>
@@ -230,10 +280,10 @@ Check your answers - {{ serviceName }} - GOV.UK
           </div>
         </dl>
 
-      {{ govukButton({
-        text: "Accept and send request",
-        attributes: "govuk-button"
-      }) }}
+        {{ govukButton({
+          text: "Accept and send request",
+          attributes: "govuk-button"
+        }) }}
 
       </form>
     </div>
