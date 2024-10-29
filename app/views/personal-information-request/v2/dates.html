@@ -26,34 +26,58 @@
 
     {{ govukDateInput({
       id: "date-from",
-      name: "date-from",
       namePrefix: "date-from",
-      value: data['date-from-date-from'],
       fieldset: {
         legend: {
-          text: "From",
+          text: "Your date of birth",
           classes: "govuk-fieldset__legend--m"
         }
       },
-      hint: {
-        text: "For example, 27 9 2021"
-      }
+      items: [
+        {
+          classes: 'govuk-input--width-2',
+          name: 'day',
+          value: data['date-from-day']
+        },
+        {
+          classes: 'govuk-input--width-2',
+          name: 'month',
+          value: data['date-from-month']
+        },
+        {
+          classes: 'govuk-input--width-4',
+          name: 'year',
+          value: data['date-from-year']
+        }
+      ]
     }) }}
 
     {{ govukDateInput({
       id: "date-to",
-      name: "date-to",
       namePrefix: "date-to",
-      value: data['date-to'],
       fieldset: {
         legend: {
-          text: "To",
+          text: "Your date of birth",
           classes: "govuk-fieldset__legend--m"
         }
       },
-      hint: {
-        text: "For example, 16 10 2021"
-      }
+      items: [
+        {
+          classes: 'govuk-input--width-2',
+          name: 'day',
+          value: data['date-to-day']
+        },
+        {
+          classes: 'govuk-input--width-2',
+          name: 'month',
+          value: data['date-to-month']
+        },
+        {
+          classes: 'govuk-input--width-4',
+          name: 'year',
+          value: data['date-to-year']
+        }
+      ]
     }) }}
 
     {{ govukButton({

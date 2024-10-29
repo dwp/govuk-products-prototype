@@ -39,11 +39,13 @@
       items: [
         {
           value: "yes~/personal-information-request/v2/previous-names",
-          text: "Yes"
+          text: "Yes",
+          checked: true if data["another-name"] === "yes"
         },
         {
           value: "no~/personal-information-request/v2/date-of-birth",
-          text: "No"
+          text: "No",
+          checked: true if data["another-name"] === "no"
         }
       ]
     }) }}
@@ -52,6 +54,16 @@
       text: "Continue",
       attributes: "govuk-button"
     }) }}
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Save Changes",
+        attributes: "govuk-button",
+        href: "check-your-answers"
+      }) }}
+
+      <a class="govuk-link" href="check-your-answers.html">Cancel</a>
+    </div>
 
     </form>
   </div>
