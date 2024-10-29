@@ -16,7 +16,7 @@ Check your answers - {{ serviceName }} - GOV.UK
 {% block content %}
  
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+    <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
         Check your answers
@@ -68,7 +68,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               Your date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              {% set dateOfBirth = data | isoDateFromDateInput("date-of-birth") | govukDate("truncate") %}
+              {% set dateOfBirth = data | isoDateFromDateInput("dob") | govukDate("truncate") %}
              
               {% if dateOfBirth | includes("Invalid") %}
                 Date of birth not given
@@ -99,14 +99,14 @@ Check your answers - {{ serviceName }} - GOV.UK
               Your UK address
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['uk-home-address-line-1']}} <br>
+              {{data['uk-home-address-line-1']}},
              
               {% if data['uk-home-address-line-2'] != "" %}
-              {{data['uk-home-address-line-2']}}<br>
+              {{data['uk-home-address-line-2']}},
               {% endif %}
 
-              {{data['uk-home-address-town']}}<br>
-              {{data['uk-home-address-county']}}<br>
+              {{data['uk-home-address-town']}},
+              {{data['uk-home-address-county']}},
               {{data['uk-home-address-postcode']}}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -147,14 +147,12 @@ Check your answers - {{ serviceName }} - GOV.UK
               Your UK address to write to
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['write-to-uk-address-line-1']}}<br>
-              
+              {{data['write-to-uk-address-line-1']}},              
               {% if data['write-to-uk-address-line-2'] != "" %}
-              {{data['write-to-uk-address-line-2']}}<br>
+              {{data['write-to-uk-address-line-2']}},
               {% endif %}
-              
-              {{data['write-to-uk-address-town']}}<br>
-              {{data['write-to-uk-address-county']}}<br>
+              {{data['write-to-uk-address-town']}},
+              {{data['write-to-uk-address-county']}},
               {{data['write-to-uk-address-postcode']}}            
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -184,8 +182,6 @@ Check your answers - {{ serviceName }} - GOV.UK
             <dd class="govuk-summary-list__value">
               {% if data['national-insurance-number'] == "" %}
                 National Insurance number not given
-              {% elif data['national-insurance-number'] == "yes" %}
-                {{data['nino'] or "National Insurance number not given"}} 
               {% else %}
                 {{data['national-insurance-number']}}
               {% endif %}        
@@ -194,6 +190,20 @@ Check your answers - {{ serviceName }} - GOV.UK
               <a class="govuk-link" href="national-insurance-number">Change<span class="govuk-visually-hidden"> your National Insurance number</span></a>
             </dd>
           </div>
+
+          {% if data['national-insurance-number'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">           
+                {{data['nino']}}       
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="national-insurance-number">Change<span class="govuk-visually-hidden"> your National Insurance number</span></a>
+            </dd>
+          </div>
+          {% endif %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -250,8 +260,6 @@ Check your answers - {{ serviceName }} - GOV.UK
             <dd class="govuk-summary-list__value">
               {% if data['callback'] == "" %}
                 Phone number not given 
-              {% elif data['callback'] == "yes" %}
-                {{data['callback-yes'] or "Phone number not given"}} 
               {% else %}
                 {{data['callback']}}
               {% endif %}   
@@ -261,6 +269,20 @@ Check your answers - {{ serviceName }} - GOV.UK
             </dd>
           </div>
 
+          {% if data['callback'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['callback-yes']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="callback">Change<span class="govuk-visually-hidden"> can we call you if we need to check something?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Do you need the information in an alternative format?
@@ -268,8 +290,6 @@ Check your answers - {{ serviceName }} - GOV.UK
             <dd class="govuk-summary-list__value">              
               {% if data['alternative-format'] == "" %}
                 Alternative format not given
-              {% elif data['alternative-format'] == "yes" %}
-                {{data['alternative-format-yes'] or "Alternative format not given"}} 
               {% else %}
                 {{data['alternative-format']}}
               {% endif %} 
@@ -278,11 +298,29 @@ Check your answers - {{ serviceName }} - GOV.UK
               <a class="govuk-link" href="alternative-format">Change<span class="govuk-visually-hidden"> do you need the information in an alternative format?</span></a>
             </dd>
           </div>
+
+          {% if data['alternative-format'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you need the information in an alternative format?
+            </dt>
+            <dd class="govuk-summary-list__value">              
+              {{data['alternative-format-yes']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="alternative-format">Change<span class="govuk-visually-hidden"> do you need the information in an alternative format?</span></a>
+            </dd>
+          </div>
+          {% endif %}
         </dl>
+
+        <h2 class="govuk-heading-m">Now send your request for personal information</h2>
+
+        <p class="govuk-body">By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
         {{ govukButton({
           text: "Accept and send request",
-          attributes: "govuk-button"
+          href: "what-happens-next"
         }) }}
 
       </form>
