@@ -55,11 +55,13 @@
               text: "Yes",
               conditional: {
                 html: ninoHtml
-              }
+              },
+              checked: true if data["national-insurance-number"] === "yes"
             },
             {
               value: "no",
-              text: "No"
+              text: "No",
+              checked: true if data["national-insurance-number"] === "no"
             }
           ]
         }) }}

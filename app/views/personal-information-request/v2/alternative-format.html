@@ -48,11 +48,13 @@
               text: "Yes",
               conditional: {
                 html: alternativeFormatHtml
-              }
+              },
+              checked: true if data["alternative-format"] === "yes"
             },
             {
               value: "no",
-              text: "No"
+              text: "No",
+              checked: true if data["alternative-format"] === "no"
             }
           ]
         }) }}

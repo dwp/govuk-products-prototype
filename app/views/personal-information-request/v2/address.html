@@ -36,11 +36,13 @@
           items: [
             {
               value: "yes~/personal-information-request/v2/home-address-uk",
-              text: "Yes"
+              text: "Yes",
+              checked: true if data["address-in-uk"] === "yes"
             },
             {
               value: "no~/personal-information-request/v2/home-address-abroad",
-              text: "No"
+              text: "No",
+              checked: true if data["address-in-uk"] === "no"
             }
           ]
         }) }}

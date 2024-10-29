@@ -32,11 +32,13 @@
           items: [
             {
               value: "yes~/personal-information-request/v2/address-to-write-to",
-              text: "Yes"
+              text: "Yes",
+              checked: true if data["write-to-different-address"] === "yes"
             },
             {
               value: "no~/personal-information-request/v2/national-insurance-number",
-              text: "No"
+              text: "No",
+              checked: true if data["write-to-different-address"] === "no"
             }
           ]
         }) }}

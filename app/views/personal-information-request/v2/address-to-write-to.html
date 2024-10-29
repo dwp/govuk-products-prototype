@@ -37,11 +37,13 @@
           items: [
             {
               value: "yes~/personal-information-request/v2/address-to-write-to-address-uk",
-              text: "Yes"
+              text: "Yes",
+              checked: true if data["address-to-write-to"] === "yes"
             },
             {
               value: "no~/personal-information-request/v2/address-to-write-to-address-abroad",
-              text: "No"
+              text: "No",
+              checked: true if data["address-to-write-to"] === "no"
             }
           ]
         }) }}

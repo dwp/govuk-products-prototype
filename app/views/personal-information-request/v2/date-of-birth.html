@@ -21,17 +21,32 @@
     <form class="form" action="address" method="post">
 
     {{ govukDateInput({
-      id: "date-of-birth",
-      name: "date-of-birth",
-      namePrefix: "date-of-birth",
-      value: data['date-of-birth'],
+      id: "dob",
+      namePrefix: "dob",
       fieldset: {
         legend: {
           text: "Your date of birth",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
-      }
+      },
+      items: [
+        {
+          classes: 'govuk-input--width-2',
+          name: 'day',
+          value: data['dob-day']
+        },
+        {
+          classes: 'govuk-input--width-2',
+          name: 'month',
+          value: data['dob-month']
+        },
+        {
+          classes: 'govuk-input--width-4',
+          name: 'year',
+          value: data['dob-year']
+        }
+      ]
     }) }}
 
     {{ govukButton({

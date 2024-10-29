@@ -49,11 +49,13 @@ Can we call you if we need to check something? - {{ serviceName }} - GOV.UK
               text: "Yes",
               conditional: {
                 html: callbackHtml
-              }
+              },
+              checked: true if data["callback"] === "yes"
             },
             {
               value: "no",
-              text: "No"
+              text: "No",
+              checked: true if data["callback"] === "no"
             }
           ]
         }) }}
