@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/personal-information-request.html" %}
+
+{% block pageTitle %}
+  What happens next - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {{ govukPanel({
+          titleText: "What happens next"
+        }) }}
+
+        <p class="govuk-body">We'll check we have enough information to identify you in our records and gather the information you asked for.</p>
+         
+        <p class="govuk-body"> We'll contact you if we need more information.</p>
+
+        <p class="govuk-body">Once we have enough information, we can start working on your request. We then have 1 month to complete it. If we need more time, we'll tell you by letter.</p>
+
+        <h2 class="govuk-heading-l">
+          What you'll get
+        </h2>
+
+        <p class="govuk-body">We'll post the information you requested to your address.</p>
+
+        <p class="govuk-body" The pack you get will also tell you how to find out:</p>
+          
+        <ul class="govuk-list govuk-list--bullet">
+          <li>what the data is and why we have it</li>
+          <li>how to understand some of the records we send you (such as what certain computer system records mean)</li>
+          <li>where we first got your information, if not directly from you</li>
+          <li>who we share your information with and how long we keep it</li>
+          <li>what to do if you think something is missing</li>
+          <li>how to</li>
+         </ul>
+  
+    </div>
+  </div>
+
+{% endblock %}
