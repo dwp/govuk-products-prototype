@@ -22,7 +22,7 @@ Check your answers - {{ serviceName }} - GOV.UK
         Check your answers
       </h1>
 
-      <form class="form" action="" method="post">
+      <form class="form"  method="post">
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -124,7 +124,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               {{data['home-address-abroad'] or "Abroad address not given"}} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+              <a class="govuk-link" href="home-address-abroad">Change<span class="govuk-visually-hidden"> previous application number</span></a>
             </dd>
           </div>
           {% endif %}

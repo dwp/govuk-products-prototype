@@ -14,7 +14,7 @@
       Your name
     </h1>
 
-    <form class="form" action="" method="post">
+    <form class="form"  method="post">
 
     {{ govukInput({
       label: {
@@ -54,16 +54,6 @@
       text: "Continue",
       attributes: "govuk-button"
     }) }}
-
-    <div class="govuk-button-group">
-      {{ govukButton({
-        text: "Save Changes",
-        attributes: "govuk-button",
-        href: "check-your-answers"
-      }) }}
-
-      <a class="govuk-link" href="check-your-answers.html">Cancel</a>
-    </div>
 
     </form>
   </div>
