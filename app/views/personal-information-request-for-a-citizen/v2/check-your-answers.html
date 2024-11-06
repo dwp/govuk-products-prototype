@@ -1,0 +1,299 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/personal-information-request.html" %}
+
+{% block pageTitle %}
+Check your answers - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <form class="form" method="post">
+
+        <h2 class="govuk-heading-m">Who the request is from</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is requesting the citizen's personal information?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['full-name'] or "Full name not given"}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> your full name</span></a>
+            </dd>
+          </div>
+          </dl>
+
+        <h2 class="govuk-heading-m">About the citizen</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Have they been known by another name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do they know their National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">The citizen's address</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do they have a permanent address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do they have a permanent address in the UK?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is delivery address different
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is the delivery address in the UK?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Delivery address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">The citizen's request</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What information do they need?	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What time period should the information cover - From	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What time period should the information cover - To	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Can we call them to check something	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">How we took the request</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              When did we receive the request?	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How the request was made	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Citizen's identity checked	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Staff name	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Staff email address	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Now send your request for personal information</h2>
+
+        <p class="govuk-body">By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+        {{ govukButton({
+          text: "Accept and send request",
+          href: "what-happens-next"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

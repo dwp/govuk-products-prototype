@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/personal-information-request.html" %}
+
+{% block pageTitle %}
+  What address should we write to?  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      <h1 class="govuk-heading-l">
+        Should we send the information to a different address?
+      </h1>
+      
+      <form class="form"  method="post">
+
+        {{ govukRadios({
+          name: "send-to-difficult-address",
+          value: data['send-to-difficult-address'],
+          fieldset: {
+            legend: {
+              text: "Should we send the information to a different address?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes~/personal-information-request-for-a-citizen/v2/delivery-address",
+              text: "Yes",
+              checked: true if data["send-to-difficult-address"] === "yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: true if data["send-to-difficult-address"] === "no"
+            }
+          ]
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
