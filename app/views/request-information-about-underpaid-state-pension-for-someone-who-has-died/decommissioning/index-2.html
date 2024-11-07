@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/request-information-about-underpaid-state-pension-for-someone-who-has-died.html" %}
+
+{% block pageTitle %}
+  Sorry, the service is unavailable - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
+    <p class="govuk-body">
+      The request information about underpaid State Pension for someone who has died service has closed.
+    </p>
+    <p class="govuk-body">
+      We will process applications submitted before this time or that are already in progress. 
+   </p>
+    <p class="govuk-body"><a class="govuk-link" href="#">
+      Contact x</a> if you need to speak to someone about your application.
+    </p>
+  </div>
+</div>
+{% endblock %}
