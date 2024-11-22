@@ -25,8 +25,8 @@
       <form class="form"  method="post">
 
         {{ govukRadios({
-          name: "send-to-difficult-address",
-          value: data['send-to-difficult-address'],
+          name: "send-to-different-address",
+          value: data['send-to-different-address'],
           fieldset: {
             legend: {
               text: "Should we send the information to a different address?",
@@ -38,12 +38,12 @@
             {
               value: "yes~/personal-information-request-for-a-citizen/v2/delivery-address",
               text: "Yes",
-              checked: true if data["send-to-difficult-address"] === "yes"
+              checked: true if data["send-to-different-address"] === "yes"
             },
             {
               value: "no~/personal-information-request-for-a-citizen/v2/request",
               text: "No",
-              checked: true if data["send-to-difficult-address"] === "no"
+              checked: true if data["send-to-different-address"] === "no"
             }
           ]
         }) }}
