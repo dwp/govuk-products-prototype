@@ -2,7 +2,7 @@
 {% extends "layouts/headers/personal-information-request-for-a-citizen.html" %}
 
 {% block pageTitle %}
-  Your UK address – {{ serviceName }} - GOV.UK
+  Your UK address - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -40,7 +40,7 @@
               checked: true if data["permanent-address-in-uk"] === "yes"
             },
             {
-              value: "no",
+              value: "no~/personal-information-request-for-a-citizen/v2/delivery-address-non-uk",
               text: "No",
               conditional: {
                 html: noFixedAbodeHtml

@@ -5,6 +5,14 @@
   What address should we write to?  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -19,53 +27,33 @@
           value: data['requester-appointee'],
           classes: "govuk-!-width-one-third",
           label: {
-            text: "Appointee's full name"          }
+            text: "How did you confirm this?"          }
         }) }}
         {% endset -%}
-
-        {% set requesterSomeoneElseHtml %}
-        {{ govukInput({
-          id: "requester-someone-else",
-          name: "requester-someone-else",
-          value: data['requester-someone-else'],
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "Their full name"          }
-        }) }}
-        {% endset -%}
-
 
         {{ govukRadios({
           name: "requester",
           value: data['requester'],
           fieldset: {
             legend: {
-              text: "Who is requesting the citizen's personal information?",
+              text: "Does the third party have the authority to act on the citizen's behalf?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "citizen~/personal-information-request-for-a-citizen/v2/about-the-citizen",
-              text: "The citizen",
-              checked: true if data["requester"] === "citizen"
-            },
-            {
-              value: "appointee~/personal-information-request-for-a-citizen/v2/about-the-citizen",
-              text: "Their appointee",
+              value: "yes~/personal-information-request-for-a-citizen/v2/about-the-citizen",
+              text: "Yes",
               conditional: {
                 html: requesterAppointeeHtml
               },
-              checked: true if data["requester"] === "appointee"
+              checked: true if data["requester"] === "citizen"
             },
             {
-              value: "someone-else~/personal-information-request-for-a-citizen/v2/",
-              text: "Someone else",
-              conditional: {
-                html: requesterSomeoneElseHtml
-              },
-              checked: true if data["requester"] === "someone-else"
+              value: "no~/personal-information-request-for-a-citizen/v2/cannot-take-request",
+              text: "No",
+              checked: true if data["requester"] === "appointee"
             }
           ]
         }) }}
