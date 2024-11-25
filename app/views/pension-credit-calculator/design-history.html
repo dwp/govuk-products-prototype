@@ -43,8 +43,55 @@
       <ol class="dwp-timeline__items">
 
         <li class="dwp-timeline__item">
+          <p class="dwp-timeline__datetime">25 Nov 2024</p>
+          <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v4/index.html">Version 5</a> - Content changes {{govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</h2>
+          {{ govukDetails({
+            summaryText: "Main changes",
+            html: 
+            govukTable({
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Change",
+                  classes: "govuk-!-width-one-half"
+                },
+                {
+                  text: "Why we made the change"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    html: '<p class="govuk-body">Removed &#39;The calculator will only give you an estimate and should only be used as a guide&#39; from the start screen.</p>'
+                  },
+                  {
+                    html: '<p class="govuk-body">We&#39;ve found that users are getting confused by the similarity of the start page for the smart answer and the outcome which leads to the calculator itself. We have cut this line which is duplicated on both to try to differentiate them for users.</p>'
+                  }
+                ],
+                [
+                  {
+                    html: '<p class="govuk-body">Changed &#39;Are you or your partner self-employed?&#39; to &#39;Are you or your partner (if you have one) self-employed?&#39;</p>'
+                  },
+                  {
+                    html: '<p class="govuk-body">We&#39;ve had some comments from people saying they don&#39;t have a partner - so just clarifying this.</p>'
+                  }
+                ],
+                [
+                  {
+                    html: '<p class="govuk-body">Changed the button text from &#39;Start now&#39; to &#39;Next step&#39; on the &#39;You can use the Pension Credit calculator&#39; screen.</p>'
+                  },
+                  {
+                    html: '<p class="govuk-body">As mentioned, people are confused by this outcome page which leads to the calculator. We think they are getting it mixed up with the start page for the smart answer so we are changing the green button text to differentiate them.</p>'
+                  }
+                ]
+              ]
+            })
+          }) }}
+        </li>
+
+        <li class="dwp-timeline__item">
           <p class="dwp-timeline__datetime">14 Oct 2024</p>
-          <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v4/index.html">Version 4</a> - Attendance Allowance devolution pilot {{govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</h2>
+          <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v4/index.html">Version 4</a> - Attendance Allowance devolution pilot</h2>
           {{ govukDetails({
             summaryText: "Main changes",
             html: 

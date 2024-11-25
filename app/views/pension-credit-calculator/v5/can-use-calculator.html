@@ -1,0 +1,222 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Pension Credit calculator 
+{% endset %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK 
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: "Home",
+      href: "https://www.gov.uk/"
+      },
+      {
+      text: "Welfare",
+      href: "https://www.gov.uk/welfare"
+      },
+      {
+      text: "Jobseeker's Allowance and low income benefits",
+      href: "https://www.gov.uk/welfare/jobseekers-allowance"
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+
+    <div class="gem-c-govspeak govuk-govspeak direction-ltr disable-youtube" data-module="govspeak"
+      data-govspeak-module-started="true">
+
+      <span class="govuk-caption-l">Pension Credit calculator</span>
+
+      <h1 class="govuk-heading-l">You can use the Pension Credit calculator</h1>
+    
+        <p class="govuk-body">You can use the Pension Credit calculator to check your eligibility and how much you could get.</p>
+  
+  <p class="govuk-body">The calculator will only give you an estimate and should only be used as a guide.</p>
+  
+  <p class="govuk-body">To use the Pension Credit calculator you'll need details of your:</p>
+  
+  <ul class="govuk-list govuk-list--bullet">
+    <li>earnings, benefits and pensions</li>
+    <li>savings and investments</li>
+  </ul>
+  
+  <p class="govuk-body">You'll need the same details for your partner, if you have one.</p>
+    
+      {{ govukButton({
+        text: "Next step",
+        href: "calculator",
+        isStartButton: true,
+        classes: "govuk-!-margin-bottom-9"
+      }) }}
+
+    </div>
+
+    <section class="govuk-!-padding-top-6">
+      <h2 class="govuk-heading-m">Your answers</h2>
+
+      <p class="govuk-body">
+        <a href="index" class="govuk-link">Start again</a>
+      </p>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+          {
+            key: {
+              text: "1. Are you or your partner self-employed?"
+            },
+            value: {
+              text: data['self-employed']
+            },
+            actions: {
+              items: [
+                {
+                  href: "self-employed",
+                  text: "Change",
+                  visuallyHiddenText: "1. Are you or your partner self-employed?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+            },
+            value: {
+              text: data['own-more-than-one-property']
+            },
+            actions: {
+              items: [
+                {
+                  href: "own-more-than-one-property",
+                  text: "Change",
+                  visuallyHiddenText: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "3. Do you pay housing costs other than mortgage payments or rent?"
+            },
+            value: {
+              text: data['have-housing-costs']
+            },
+            actions: {
+              items: [
+                {
+                  href: "housing-costs",
+                  text: "Change",
+                  visuallyHiddenText: "3. Do you pay housing costs other than mortgage payments or rent?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "4. Are you or your partner delaying (deferring) your State Pension?"
+            },
+            value: {
+              text: data['deferring-state-pension']
+            },
+            actions: {
+              items: [
+                {
+                  href: "deferring-state-pension",
+                  text: "Change",
+                  visuallyHiddenText: "4. Are you or your partner delaying (deferring) your State Pension?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "5. Are you or your partner under State Pension age?"
+            },
+            value: {
+              text: data['under-state-pension-age']
+            },
+            actions: {
+              items: [
+                {
+                  href: "under-state-pension-age",
+                  text: "Change",
+                  visuallyHiddenText: "5. Are you or your partner under State Pension age?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "6. Do you or your partner live in Scotland and get Pension Age Disability Payment?"
+            },
+            value: {
+              text: data['pension-age-disability-payment']
+            },
+            actions: {
+              items: [
+                {
+                  href: "pension-age-disability-payment",
+                  text: "Change",
+                  visuallyHiddenText: "6. Do you or your partner live in Scotland and get Pension Age Disability Payment?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+  </section>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list">
+          <li>
+            <a href="https://www.gov.uk/pension-credit" class="govuk-link govuk-body-s">
+              Pension Credit
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/state-pension-if-you-retire-abroad" class="govuk-link govuk-body-s">
+              State Pension if you retire abroad
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/state-pension" class="govuk-link govuk-body-s">
+              The basic State Pension
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/benefit-fraud" class="govuk-link govuk-body-s">
+              Benefit fraud
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+  </main>
+</div>
+
+{% endblock %}
