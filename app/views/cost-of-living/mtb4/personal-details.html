@@ -45,7 +45,6 @@ Content page template - {{ serviceName }} - GOV.UK
       fieldset: {
       legend: {
         text: "What is your date of birth?",
-        isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }
       },
@@ -55,18 +54,21 @@ Content page template - {{ serviceName }} - GOV.UK
       items: [
         {
           name: "day",
+          value: data['dob-day'],
           classes: "govuk-input--width-2",
-          autocomplete: "bday-day"
+          inputmode: "numeric"
         },
         {
           name: "month",
+          value: data['dob-month'],
           classes: "govuk-input--width-2",
-          autocomplete: "bday-month"
+          inputmode: "numeric"
         },
         {
           name: "year",
+          value: data['dob-year'],
           classes: "govuk-input--width-4",
-          autocomplete: "bday-year"
+          inputmode: "numeric"
         }
       ]
     }) }}
@@ -79,11 +81,12 @@ Content page template - {{ serviceName }} - GOV.UK
         text: "It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'."
       },
       classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
-      id: "national-insurance-number",
-      name: "nationalInsuranceNumber",
-      spellcheck: false
+      id: "nino",
+      name: "nino",
+      spellcheck: false,
+      value: data['nino']
     }) }}
-
+    
     {{ govukButton({
       text: "Continue",
       href: "what-is-your-address"

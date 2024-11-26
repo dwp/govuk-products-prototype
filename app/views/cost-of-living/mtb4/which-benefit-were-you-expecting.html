@@ -23,6 +23,7 @@ href: "javascript:window.history.back()"
       {{ govukCheckboxes({
         name: "which-benefit",
         id: "which-benefit",
+        values: data['which-benefit'],
         fieldset: {
           legend: {
             text: "Which benefit were you expecting a Cost of Living payment for?",
@@ -32,30 +33,30 @@ href: "javascript:window.history.back()"
         },
         items: [
           {
-          value: "universal-credit",
+          value: "Universal Credit",
           text: "Universal Credit"
           },
           {
-          value: "jsa",
+          value: "income-based Jobseeker's Allowance (JSA)",
           text: "income-based Jobseeker's Allowance (JSA)"
           },
           {
-          value: "esa",
+          value: "income-related Employment and Support Allowance (ESA)",
           text: "income-related Employment and Support Allowance (ESA)"
           },
           {
-          value: "income-support",
+          value: "Income Support",
           text: "Income Support"
           },
           {
-          value: "pension-credit",
+          value: "Pension Credit",
           text: "Pension Credit"
           },
           {
           divider: "or"
           },
           {
-          value: "tax-credits",
+          value: "Tax Credits",
           text: "Tax Credits",
           behaviour: "exclusive"
           }
