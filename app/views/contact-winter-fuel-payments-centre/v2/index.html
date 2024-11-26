@@ -20,6 +20,8 @@
        
         {{ govukRadios({
           name: "age-verification",
+          id: "age-verification",
+          value: data['age-verification'],
           fieldset: {
             legend: {
               text: "Were you born before 25 September 1957?",
@@ -31,11 +33,11 @@
           },
           items: [
             {
-              value: "yes",
+              value: "yes~/contact-winter-fuel-payments-centre/v2/contact-form",
               text: "Yes"
             },
             {
-              value: "no",
+              value: "no~/contact-winter-fuel-payments-centre/v2/not-eligible",
               text: "No"
             }
           ]

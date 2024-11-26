@@ -42,7 +42,7 @@
       <li>War Pension Mobility Supplement</li>
     </ul>
 
-    <form class="form" action="/mtb5-retired-payment-type-answer" method="post">
+    <form class="form" method="post">
 
       {{ govukRadios({
         name: "type-of-payment-missing",
@@ -55,11 +55,11 @@
         },
         items: [
           {
-          value: "301-or-300",
+          value: "301-or-300~/cost-of-living/retiring-mtb5/contact-details-for-low-income-benefits",
           text: " £301, £300 or £299 for a low income benefit"
           },
           {
-          value: "150",
+          value: "150~/cost-of-living/retiring-mtb5/contact-details-for-disability-payment",
           text: "£150 for a disability benefit"
           }
         ]

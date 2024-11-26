@@ -23,7 +23,7 @@
       Third party deduction - if you owe money for things like rent, Council Tax, electricity, gas, water or court fines
     </h1>
 
-    <form class="form" action="/v2-contact-about-money-off-uc-third-party-deductions" method="post">
+    <form class="form" method="post">
 
       {{ govukRadios({
         name: "thirdPartyDeduction",
@@ -36,19 +36,19 @@
         },
         items: [
           {
-            value: "money-taken-off-reason",
+            value: "money-taken-off-reason~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-want-to-know-why-the-money-was-taken-off",
             text: "I want to know why the money was taken off"
           },
           {
-            value: "amount-owed-in-total",
+            value: "amount-owed-in-total~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-how-much-i-owe-in-total",
             text: "How much I owe in total"
           },
           {
-            value: "one-off-payment",
+            value: "one-off-payment~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-want-to-make-a-one-off-payment",
             text: "I want to make a one-off payment"
           },
           {
-            value: "stuggling-to-make-repayments",
+            value: "stuggling-to-make-repayments~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/third-party-deduction-i-am-struggling-to-make-the-repayments",
             text: "I am struggling to make the repayments"
           }
         ]

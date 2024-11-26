@@ -18,11 +18,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/mtb5-joint-benefit-answer" method="post">
+    <form class="form" method="post">
 
       {{ govukRadios({
         name: "joint-benefit",
         id: "joint-benefit",
+        value: data['joint-benefit'],
         fieldset: {
           legend: {
           text: "Did you have a joint claim with a partner between 13 November 2023 and 12 December 2023?",
@@ -36,15 +37,15 @@
         },
         items: [
           {
-          value: "Yes",
+          value: "Yes~/cost-of-living/mtb5/joint-claim",
           text: "Yes"
           },
           {
-          value: "No",
+          value: "No~/cost-of-living/mtb5/personal-details",
           text: "No"
           },
           {
-          value: "Not sure",
+          value: "Not sure~/cost-of-living/mtb5/joint-claim",
           text: "Not sure"
           }
         ]

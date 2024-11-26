@@ -21,7 +21,7 @@ Third party deduction - I do not have money taken off for a benefit overpayment,
           
     <h1 class="govuk-heading-xl">Third party deduction - I do not have money taken off for a benefit overpayment, social fund loan or recoverable hardship payment</h1>
         
-    <form class="form" action="/v1-contact-about-money-off-uc-third-party-other-third-party-deductions" method="post">
+    <form class="form" method="post">
 
     {{ govukRadios({
       name: "thirdPartyDeduction",
@@ -34,11 +34,11 @@ Third party deduction - I do not have money taken off for a benefit overpayment,
       },
       items: [
         {
-          value: "no",
+          value: "no~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v1/third-party-deduction-i-only-have-rent-arrears",
           text: "No, I only have rent arrears"
         },
         {
-          value: "yes",
+          value: "yes~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v1/third-party-deduction-i-have-rent-arrears-and-other-third-party-deductions",
           text: "Yes, I have other deductions"
         }
       ]
