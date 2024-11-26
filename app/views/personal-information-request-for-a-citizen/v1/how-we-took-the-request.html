@@ -55,11 +55,11 @@
           ]
         }) }}
 
-        {% set callCitizenYesHtml %}
+        {% set anotherWayHtml %}
           {{ govukInput({
-            id: "call-citizen-yes",
-            name: "call-citizen-yes",
-            value: data['call-citizen-yes'],
+            id: "another-way-yes",
+            name: "another-way-yes",
+            value: data['another-way-yes'],
             label: {
               text: "Say how (for example the Universal Credit journal or CMS online account)"
             }
@@ -77,20 +77,20 @@
           },
           items: [
             {
-              value: "yes",
+              value: "person",
               text: "In person",
               checked: true if data["permanent-address-in-uk"] === "yes"
             },
             {
-              value: "no",
+              value: "phone",
               text: "By phone",
               checked: true if data["permanent-address-in-uk"] === "no"
             },
             {
-              value: "no",
+              value: "another-way",
               text: "In another way",
               conditional: {
-                html: callCitizenYesHtml
+                html: anotherWayHtml
               },
               checked: true if data["permanent-address-in-uk"] === "no"
             }
@@ -98,8 +98,8 @@
         }) }}
 
         {{ govukRadios({
-          name: "alternative-format",
-          value: data['alternative-format'],
+          name: "citizen-identity",
+          value: data['checked-citizen-identity'],
           fieldset: {
             legend: {
               text: "Have you checked the citizen's identity?",
@@ -110,15 +110,12 @@
             {
               value: "yes",
               text: "Yes",
-              conditional: {
-                html: alternativeFormatYesHtml
-              },
-              checked: true if data["alternative-format"] === "yes"
+              checked: true if data["checked-citizen-identity"] === "yes"
             },
             {
               value: "no",
               text: "No",
-              checked: true if data["alternative-format"] === "no"
+              checked: true if data["checked-citizen-identity"] === "no"
             }
           ]
         }) }}
@@ -127,6 +124,7 @@
           id: "their-full-name",
           name: "their-full-name",
           value: data['full-name'],
+          classes: "govuk-input--width-20",
           label: {
             text: "Staff name",
             classes: "govuk-label--m"
@@ -137,6 +135,7 @@
           id: "their-full-name",
           name: "their-full-name",
           value: data['full-name'],
+          classes: "govuk-input--width-20",
           label: {
             text: "Staff email address",
             classes: "govuk-label--m"
