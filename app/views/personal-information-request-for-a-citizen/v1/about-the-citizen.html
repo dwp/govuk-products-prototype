@@ -16,7 +16,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
         About the citizen
@@ -29,7 +29,7 @@
           id: "other-name",
           name: "other-name",
           value: data['other-name'],
-          classes: "govuk-!-width-one-third",
+          classes: "govuk-!-width-full",
           label: {
             text: "Their previous full name"
           }
@@ -41,7 +41,7 @@
             text: "Their full name",
             classes: "govuk-label--m"
           },
-          classes: "govuk-input--width-20",
+          classes: "govuk-!-width-full",
           id: "their-full-name",
           name: "their-full-name",
           value: data['full-name']
@@ -109,9 +109,9 @@
           id: "nino",
           name: "nino",
           value: data['nino'],
-          classes: "govuk-input--width-20",
+          classes: "govuk-input--width-10",
           label: {
-            text: "Your National Insurance number"
+            text: "Their National Insurance number"
           }
         }) }}
         {% endset -%}
@@ -120,11 +120,14 @@
           name: "national-insurance-number",
           fieldset: {
             legend: {
-              text: "Can you tell us your National Insurance number?",
+              text: "Do they know their National Insurance number?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
+            hint: {
+              text: "It's on their National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'."
+            },
           items: [
             {
               value: "yes",
