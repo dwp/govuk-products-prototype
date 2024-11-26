@@ -21,7 +21,7 @@
 
     <h1 class="govuk-heading-xl">Universal Credit overpayment</h1>
     
-    <form class="form" action="/v2-contact-about-money-off-uc-universal-credit-overpayment" method="post">
+    <form class="form" method="post">
 
       {{ govukRadios({
         name: "universalCreditOverpayment",
@@ -34,19 +34,19 @@
         },
         items: [
           {
-            value: "uc-overpayment-reason",
+            value: "uc-overpayment-reason~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/universal-credit-overpayment-i-want-to-know-what-the-overpayment-was-for",
             text: "I want to know what the overpayment was for"
           },
           {
-            value: "uc-how-much-left-to-pay",
+            value: "uc-how-much-left-to-pay~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/universal-credit-overpayment-how-much-i-have-left-to-pay",
             text: "How much I have left to pay"
           },
           {
-            value: "uc-one-off-payment",
+            value: "uc-one-off-payment~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/universal-credit-overpayment-i-want-to-make-a-one-off-payment",
             text: "I want to make a one-off payment"
           },
           {
-            value: "uc-struggling-to-repay",
+            value: "uc-struggling-to-repay~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/universal-credit-overpayment-i-am-struggling-to-repay",
             text: "I'm struggling to repay"
           }
         ]

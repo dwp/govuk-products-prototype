@@ -42,12 +42,12 @@
       <li>War Pension Mobility Supplement</li>
     </ul>
 
-    <form class="form" action="/mtb5-payment-type-answer" method="post">
+    <form class="form" method="post">
 
       {{ govukRadios({
         id: "type-of-payment-missing",
-        prefix: "type-of-payment-missing",
         name: "type-of-payment-missing",
+        value: data['type-of-payment-missing'],
         fieldset: {
           legend: {
           text: "Which type of Cost of Living Payment do you want to report as missing?",
@@ -56,11 +56,11 @@
         },
         items: [
           {
-            value: "£301, £300 or £299 for a low income benefit",
+            value: "£301, £300 or £299 for a low income benefit~/cost-of-living/mtb5/benefit-entitlement-low-income",
             text: "£301, £300 or £299 for a low income benefit"
           },
           {
-            value: "£150 for a disability benefit",
+            value: "£150 for a disability benefit~/cost-of-living/mtb5/contact-details-for-disability-payment",
             text: "£150 for a disability benefit"
           }
         ]

@@ -21,7 +21,7 @@
 
     <h1 class="govuk-heading-xl">Recoverable hardship payment - I am struggling to repay</h1>
 
-    <form class="form" action="/v1-contact-about-money-off-uc-debt-and-deductions" method="post">
+    <form class="form" method="post">
 
       {{ govukRadios({
         name: "recoverableHardshipDebtAndDeductions",
@@ -34,15 +34,15 @@
         },
         items: [
           {
-            value: "no-only-recoverable-hardship-payment",
+            value: "no-only-recoverable-hardship-payment~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v1/recoverable-hardship-payment-i-am-struggling-to-repay-outcome",
             text: "No, I only have a recoverable hardship payment"
           },
           {
-            value: "yes-but-only-a-uc-advance",
+            value: "yes-but-only-a-uc-advance~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v1/recoverable-hardship-payment-i-am-struggling-to-repay-and-only-have-a-universal-credit-advance",
             text: "Yes, but only a Universal Credit advance"
           },
           {
-            value: "yes-other-debt-and-deductions",
+            value: "yes-other-debt-and-deductions~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v1/recoverable-hardship-payment-i-am-struggling-to-repay-and-have-other-debt-and-deductions",
             text: "Yes, I have other debt and deductions - for example benefit overpayments and social fund loans"
           }
         ]
