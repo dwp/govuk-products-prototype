@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/ask-for-a-maternity-allowance-claim-form.html" %}
+
+{% block pageTitle %}
+  What happens next - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {{ govukPanel({
+          titleText: "Request sent to the right of access gateway team",
+          text: "Now update your benefit system's notes to record your actions.",
+          classes: "dwp-old-primary-background"
+        }) }}
+
+        <h2 class="govuk-heading-l">
+          What happens next
+        </h2>
+
+        <p class="govuk-body">Tell the requestor we'll check we have enough information to identify the citizen in our records and gather the information requested. We'll contact them if we need more information.</p>
+        
+        <p class="govuk-body">Once we have enough information, we can start working on their request. We'll send them a confirmation letter to say that we're dealing with their request. We have 1 calendar month from the date the request was sent to complete it. If we need more time, we'll write to them.</p>
+       
+        <h2 class="govuk-heading-l">
+          What they'll get
+        </h2>
+
+        <p class="govuk-body">We'll post the information with a letter to the address they asked us to write</p>
+
+        <p class="govuk-body">The letter will tell them:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>what information we have sent</li>
+          <li>what, if any, information we cannot send and the reasons why</li>
+        </ul>
+
+        <p class="govuk-body">The letter will also include:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a link to the DWP Personal Information Charter (or privacy policy) which tells them about how and why we use their personal information and their rights and responsibilities.</li>
+          <li>a link to a glossary so they can understand abbreviations used in the information</li>
+          <li>what to do if they think something is missing</li>
+          <li>how to complain</li>
+        </ul>
+      
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">
+            What did you think of this service?
+          </a> (takes 30 seconds)
+        </p>
+
+        <p class="govuk-body">
+          <a href="index" class="govuk-link">
+            Start another right of access request
+          </a>
+        </p>
+    </div>
+  </div>
+
+{% endblock %}
