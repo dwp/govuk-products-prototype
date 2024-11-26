@@ -18,11 +18,12 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/joint-benefit-answer" method="post">
+    <form class="form" method="post">
 
       {{ govukRadios({
         name: "joint-benefit",
         id: "joint-benefit",
+        value: data['joint-benefit'],
         fieldset: {
           legend: {
           text: "Did you have a joint claim with a partner between 18 August 2023 and 17 September 2023",

@@ -2,11 +2,11 @@
 {% extends "layouts/headers/cost-of-living-report.html" %}
 
 {% block pageTitle %}
-  Check your answers template - {{ serviceName }} - GOV.UK
+Check your answers - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-  {{ super() }}
+{{ super() }}
 {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -14,207 +14,150 @@
 {% endblock %}
 
 {% block content %}
-
-  <div class="govuk-grid-row">
+ 
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         Check your answers
       </h1>
 
-      <h2 class="govuk-heading-m">Personal details</h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Benefit
-          </dt>
-          <dd class="govuk-summary-list__value">
-            UC
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> benefit type</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['full-name'] or "Full name not given" }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/personal-details.html">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            5 January 1978
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> date of birth</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            National Insurance number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Not provided
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> National Insurance number</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Home address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            72 Guild Street<br>London<br>SE23 6FH
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> home address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Telephone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">{{ data['tel-number'] }}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> telephone number</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
-  
-        
-      <h2 class="govuk-heading-m">Now send your application</h2>
-      <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-    
+      <form class="form" action="what-happens-next" method="post">
 
       {{ govukSummaryList({
         rows: [
-          {
+        {
+          key: {
+            text: "Type of Cost of Living payment"
+          },
+          value: {
+            text: data['type-of-payment-missing']
+          },
+          actions: {
+            items: [
+              {
+                href: "types-of-cost-of-living-payment",
+                text: "Change",
+                visuallyHiddenText: "type of Cost of Living payment"
+              }
+            ]
+          }
+        },
+        {
             key: {
               text: "Benefit"
             },
             value: {
-              text: "UC"
+              text: data['which-benefit']
             },
             actions: {
               items: [
                 {
-                  href: "which-benefit-were-you-expecting",
+                  href: "benefit-entitlement-low-income",
                   text: "Change",
-                  visuallyHiddenText: "Question 1"
+                  visuallyHiddenText: "which benefit you were expecting a payment for"
                 }
               ]
             }
-          }
-          ,
+          },
+          {
+            key: {
+              text: "Which payment are you missing?"
+            },
+            value: {
+              text: data['which-payment']
+            },
+            actions: {
+              items: [
+                {
+                  href: "which-payment-are-you-missing",
+                  text: "Change",
+                  visuallyHiddenText: "which payment is missing"
+                }
+              ]
+            }
+          },
           {
             key: {
               text: "Name"
             },
             value: {
-              text: data['first-name'] or "First name not given"
+              text: data['full-name']
             },
             actions: {
               items: [
                 {
                   href: "personal-details",
                   text: "Change",
-                  visuallyHiddenText: "Question 2"
+                  visuallyHiddenText: "name"
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
               text: "Date of birth"
             },
             value: {
-              text: "Answer 3"
+              text: data['dob-day'] + " " + data['dob-month'] + " " + data['dob-year']
             },
             actions: {
               items: [
                 {
                   href: "personal-details",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "date of birth"
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
               text: "National Insurance number"
             },
             value: {
-              text: "Answer 3"
+              text: data['nino']
             },
             actions: {
               items: [
                 {
                   href: "personal-details",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "National Insurance number"
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
-              text: "Home address"
+              text: "Address"
             },
             value: {
-              text: "Answer 3"
+               text: data['address-line-1'] + ", " +  data['address-line-2'] + ", " +  data['address-town-city'] + ", " +  data['address-county'] + ", " +  data['address-postcode']
             },
             actions: {
               items: [
                 {
                   href: "what-is-your-address",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "address"
                 }
               ]
             }
-          }
-          ,
+          },
           {
             key: {
               text: "Telephone number"
             },
             value: {
-              text: ""
+              text: data['tel-number'] or "Telephone number not given"
             },
             actions: {
               items: [
                 {
                   href: "what-is-your-telephone-number",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "telephone number"
                 }
               ]
             }
@@ -223,14 +166,12 @@
       })
      }}
 
-      <form action="what-happens-next" method="post" novalidate>
-
-        {{ govukButton({
-          text: "Accept and send"
-        }) }}
+      {{ govukButton({
+        text: "Accept and send",
+        attributes: "govuk-button"
+      }) }}
 
       </form>
-
     </div>
   </div>
 {% endblock %}

@@ -29,11 +29,12 @@ href: "javascript:window.history.back()"
      
      <p class="govuk-body">It should have been sent using the same payment method you used to get Universal Credit between those dates.</p>
 
-    <form class="form" action="report-as-missing-answer" method="post">
+    <form class="form" method="post">
 
       {{ govukRadios({
         name: "still-report-missing-payment",
         id: "still-report-missing-payment",
+        value: data['still-report-missing-payment'],
         fieldset: {
         legend: {
           text: "Do you still want to report this payment as missing?",

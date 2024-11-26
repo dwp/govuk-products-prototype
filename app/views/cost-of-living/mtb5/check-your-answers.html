@@ -22,12 +22,6 @@ Check your answers - {{ serviceName }} - GOV.UK
         Check your answers
       </h1>
 
-      <ul>
-        {% for benefit in data['which-benefit'] %}
-          <li>{{ benefit }}</li>
-        {% endfor %}
-        </ul>
-
       <form class="form" action="what-happens-next" method="post">
 
       {{ govukSummaryList({
@@ -54,7 +48,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               text: "Benefit"
             },
             value: {
-              html: '<ul>{% for benefit in data['which-benefit'] %} <li>{{ benefit }}</li> {% endfor %} </ul>'
+              text: data['which-benefit']
             },
             actions: {
               items: [
@@ -105,7 +99,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               text: "Date of birth"
             },
             value: {
-              text: data['dob-day'] + " " + data['dob-month'] | toMonth + " " +  data['dob-year']
+              text: data['dob-day'] + " " + data['dob-month'] + " " + data['dob-year']
             },
             actions: {
               items: [
@@ -139,7 +133,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               text: "Address"
             },
             value: {
-               text: data['address-line-1'] + " " +  data['address-line-2']
+               text: data['address-line-1'] + ", " +  data['address-line-2'] + ", " +  data['address-town-city'] + ", " +  data['address-county'] + ", " +  data['address-postcode']
             },
             actions: {
               items: [
