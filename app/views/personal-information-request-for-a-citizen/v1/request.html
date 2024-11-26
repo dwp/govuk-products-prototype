@@ -16,15 +16,15 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         The citizen's request
       </h1>
 
       <h2 class="govuk-heading-m">What time period should the information cover?</h2>
 
-      <div class="govuk-hint">For example, from 27 9 2021 to 16 10 2021</div>
+      <div class="govuk-hint">For example, from 30 9 2016 to 30 3 2017</div>
   
       <form class="form" action="how-we-took-the-request" method="post">
 
@@ -36,9 +36,6 @@
               text: "From",
               classes: "govuk-fieldset__legend--m"
             }
-          },
-          hint: {
-            text: "For example, 27 9 2021"
           },
           items: [
             {
@@ -67,9 +64,6 @@
               text: "To",
               classes: "govuk-fieldset__legend--m"
             }
-          },
-          hint: {
-            text: "For example, 16 10 2021"
           },
           items: [
             {
@@ -108,7 +102,7 @@
             id: "call-citizen-yes",
             name: "call-citizen-yes",
             value: data['call-citizen-yes'],
-            classes: "govuk-input--width-20",
+            classes: "govuk-input--width-10",
             label: {
               text: "Their phone number"
             }
@@ -149,7 +143,7 @@
             id: "alternative-format-yes",
             name: "alternative-format-yes",
             value: data['alternative-format-yes'],
-            classes: "govuk-!-width-two-thirds",
+            classes: "govuk-input--width-20",
             label: {
               text: "What format"
             }

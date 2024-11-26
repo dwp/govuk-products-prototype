@@ -16,34 +16,116 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         Where we'll send the information
       </h1>
 
-      <form class="form" action="send-to-different-address" method="post">
+      <form class="form" action="request" method="post">
         
+        {% set permanentAddressInUKHtml %}
+        {% call govukFieldset({
+          legend: {
+            text: "What's the address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: true
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              text: "Building name or number"
+            },
+            classes: "govuk-!-width-full",
+            id: "write-to-uk-address-line-1",
+            name: "write-to-uk-address-line-1",
+            value: data['write-to-uk-address-line-1'],
+            autocomplete: "address-line1"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Street"
+            },
+            classes: "govuk-!-width-full",
+            id: "write-to-uk-address-line-2",
+            name: "write-to-uk-address-line-2",
+            value: data['write-to-uk-address-line-2'],
+            autocomplete: "address-line2"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-full",
+            id: "write-to-uk-address-town",
+            name: "write-to-uk-address-town",
+            value: data['write-to-uk-address-town'],
+            autocomplete: "address-level2"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "County (optional)"
+            },
+            classes: "govuk-!-width-full",
+            id: "write-to-uk-address-county",
+            name: "write-to-uk-address-county",
+            value: data['write-to-uk-address-county']
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-!-width-full",
+            id: "write-to-uk-address-postcode",
+            name: "write-to-uk-address-postcode",
+            value: data['write-to-uk-address-postcode'],
+            autocomplete: "postal-code"
+          }) }}
+        {% endcall -%}
+      {% endset -%}
+
+      {% set permanentAddressNonUKHtml %}
+        {{ govukTextarea({
+          name: "address",
+          id: "address",
+          rows: "6",
+          autocomplete: "street-address",
+          classes: "govuk-!-width-full",
+          label: {
+            text: "Their address outside the UK",
+            classes: "govuk-label--m"
+          }
+        }) }}
+      {% endset -%}
+
         {{ govukRadios({
           name: "permanent-address-in-uk",
           value: data['permanent-address-in-uk'],
           fieldset: {
             legend: {
-              text: "Is the address in the UK?",
+              text: "In the address in the UK?",
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
-              value: "yes~/personal-information-request-for-a-citizen/v1/delivery-address-uk",
+              value: "yes",
               text: "Yes",
+              conditional: {
+                html: permanentAddressInUKHtml
+              },
               checked: true if data["permanent-address-in-uk"] === "yes"
             },
             {
-              value: "no~/personal-information-request-for-a-citizen/v1/delivery-address-non-uk",
+              value: "no",
               text: "No",
               conditional: {
-                html: noFixedAbodeHtml
+                html: permanentAddressNonUKHtml
               },
               checked: true if data["permanent-address-in-uk"] === "no"
             }

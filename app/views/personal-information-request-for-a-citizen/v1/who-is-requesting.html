@@ -8,7 +8,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
       
       <form class="form" method="post">
 
@@ -17,7 +17,7 @@
             id: "requester-appointee",
             name: "requester-appointee",
             value: data['requester-appointee'],
-            classes: "govuk-!-width-one-third",
+            classes: "govuk-!-width-full",
             label: {
               text: "Appointee's full name"
             }
@@ -29,7 +29,7 @@
           id: "requester-someone-else",
           name: "requester-someone-else",
           value: data['requester-someone-else'],
-          classes: "govuk-!-width-one-third",
+          classes: "govuk-!-width-full",
           label: {
             text: "Their full name"
           }
@@ -43,7 +43,7 @@
             legend: {
               text: "Who is requesting the citizen's personal information?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--xl"
             }
           },
           items: [

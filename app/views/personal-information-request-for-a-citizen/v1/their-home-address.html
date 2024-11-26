@@ -16,9 +16,9 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         The citizen's home address
       </h1>
   
@@ -37,7 +37,7 @@
             label: {
               text: "Building name or number"
             },
-            classes: "govuk-!-width-two-thirds",
+            classes: "govuk-!-width-full",
             id: "write-to-uk-address-line-1",
             name: "write-to-uk-address-line-1",
             value: data['write-to-uk-address-line-1'],
@@ -48,7 +48,7 @@
             label: {
               text: "Street"
             },
-            classes: "govuk-!-width-two-thirds",
+            classes: "govuk-!-width-full",
             id: "write-to-uk-address-line-2",
             name: "write-to-uk-address-line-2",
             value: data['write-to-uk-address-line-2'],
@@ -59,7 +59,7 @@
             label: {
               text: "Town or city"
             },
-            classes: "govuk-!-width-two-thirds",
+            classes: "govuk-!-width-full",
             id: "write-to-uk-address-town",
             name: "write-to-uk-address-town",
             value: data['write-to-uk-address-town'],
@@ -70,7 +70,7 @@
             label: {
               text: "County (optional)"
             },
-            classes: "govuk-!-width-two-thirds",
+            classes: "govuk-!-width-full",
             id: "write-to-uk-address-county",
             name: "write-to-uk-address-county",
             value: data['write-to-uk-address-county']
@@ -80,7 +80,7 @@
             label: {
               text: "Postcode"
             },
-            classes: "govuk-!-width-two-thirds",
+            classes: "govuk-!-width-full",
             id: "write-to-uk-address-postcode",
             name: "write-to-uk-address-postcode",
             value: data['write-to-uk-address-postcode'],
@@ -95,7 +95,7 @@
           id: "address",
           rows: "6",
           autocomplete: "street-address",
-          classes: "govuk-!-width-two-thirds",
+          classes: "govuk-!-width-full",
           label: {
             text: "Their address outside the UK",
             classes: "govuk-label--m"
@@ -117,7 +117,7 @@
           },
           items: [
             {
-              value: "yes~/personal-information-request-for-a-citizen/v1/their-home-address-uk",
+              value: "yes",
               text: "Yes",
               conditional: {
                 html: permanentAddressInUKHtml
@@ -125,7 +125,7 @@
               checked: true if data["permanent-address-in-uk"] === "yes"
             },
             {
-              value: "no~/personal-information-request-for-a-citizen/v1/their-home-address-non-uk",
+              value: "no",
               text: "No",
               conditional: {
                 html: permanentAddressNonUKHtml
