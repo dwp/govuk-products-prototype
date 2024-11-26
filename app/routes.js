@@ -12,7 +12,7 @@ router.use(radioButtonRedirect)
 // -------------------------------------------------------------------------------------------------------------------------
 // Contact Winter Fuel Payment Centre
 
-router.post('/cwfpc-age', function(request, response) {
+/* router.post('/cwfpc-age', function(request, response) {
 
     var ageVerification = request.session.data['age-verification']
 
@@ -21,7 +21,7 @@ router.post('/cwfpc-age', function(request, response) {
     } else {
         response.redirect("/contact-winter-fuel-payments-centre/v2/not-eligible")
     }
-})
+}) */
 
 // -------------------------------------------------------------------------------------------------------------------------
 // Cost of Living form - MTB4
@@ -31,9 +31,9 @@ router.post('/payment-type-answer', function(request, response) {
     var typeOfPaymentMissing = request.session.data['type-of-payment-missing']
 
     if (typeOfPaymentMissing == "301-or-300"){
-        response.redirect("/cost-of-living-mtb4/which-benefit-were-you-expecting")
+        response.redirect("/cost-of-living/mtb4/which-benefit-were-you-expecting")
     } else {
-        response.redirect("/cost-of-living-mtb4/contact-details-for-disability-payment")
+        response.redirect("/cost-of-living/mtb4/contact-details-for-disability-payment")
     }
 })
 
@@ -42,22 +42,26 @@ router.post('/which-benefit-answer', function(request, response) {
     var missingBenefit = request.session.data['which-benefit']
 
     if (missingBenefit == "tax-credits"){
-        response.redirect("/cost-of-living-mtb4/tax-credits")
+        response.redirect("/cost-of-living/mtb4/tax-credits")
     }
     else {
-        response.redirect("/cost-of-living-mtb4/which-payment-are-you-missing")
+        response.redirect("/cost-of-living/mtb4/which-payment-are-you-missing")
     }
 })
 
 router.post('/which-payment-answer', function(request, response) {
 
-    var missingBenefit = request.session.data['which-payment']
+    var missingPayment = request.session.data['which-payment']
+    var missingBenefit = request.session.data['which-benefit']
 
-    if (missingBenefit == "301"){
-        response.redirect("/cost-of-living-mtb4/contact-details-for-low-income-benefits")
+    if (missingBenefit == "universal-credit" && missingPayment == "300"){
+        response.redirect("/cost-of-living/mtb4/did-you-have-a-joint-claim")
     }
+    else if (missingBenefit != "universal-credit" && missingPayment == "300"){
+        response.redirect("/cost-of-living/mtb4/personal-details")
+    } 
     else {
-        response.redirect("/cost-of-living-mtb4/did-you-have-a-joint-claim")
+        response.redirect("/cost-of-living/mtb4/contact-details-for-low-income-benefits")
     }
 })
 
@@ -201,7 +205,7 @@ router.post('/cwp-check-postcode', function(request, response) {
 // -------------------------------------------------------------------------------------------------------------------------
 // Request Personal Information form
 
-router.post('/rpi-uk-address', function(request, response) {
+/* router.post('/rpi-uk-address', function(request, response) {
 
     var addressInUK = request.session.data['uk-address']
     if (addressInUK == "yes"){
@@ -219,7 +223,7 @@ router.post('/rpi-different-address', function(request, response) {
     } else {
         response.redirect("/personal-information-request/national-insurance-number")
     }
-})
+}) */
 
 // -------------------------------------------------------------------------------------------------------------------------
 // Send a personal information request for a citizen form

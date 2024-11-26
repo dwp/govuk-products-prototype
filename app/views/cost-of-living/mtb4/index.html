@@ -15,7 +15,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      Find out how to report a missing Cost of Living Payment
+      Report a missing Cost of Living Payment
     </h1>
 
      <p class="govuk-body">Use this service if you were expecting one of the following a Cost of Living Payments but have not received it:
@@ -37,6 +37,11 @@
         Living Payments</a>. You'll be paid automatically if you're entitled.</p>
 
      <p class="govuk-body">Do not report the same missing payment more than once. We will reply to you as soon as we can.</p>
+
+      {{ govukInsetText({
+        html: 'You do not need to contact us about <a href="https://www.gov.uk/guidance/cost-of-living-payment" class="govuk-link">future Cost of
+          Living Payments</a>. You&#39;ll be paid automatically if you&#39;re entitled.'
+      }) }}
 
     {{ govukButton({
       text: "Start now",
