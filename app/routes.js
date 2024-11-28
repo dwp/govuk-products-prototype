@@ -68,26 +68,3 @@ router.post('/mtb5-which-payment-answer', function(request, response) {
         response.redirect("/cost-of-living/mtb5/contact-details-for-low-income-benefits")
     }
 })
-
-// -------------------------------------------------------------------------------------------------------------------------
-// Send a personal information request for a citizen form
-
-router.post('/cpri-uk-address', function(request, response) {
-
-    var addressInUK = request.session.data['uk-address']
-    if (addressInUK == "yes"){
-        response.redirect("/citizen-personal-information-request/your-uk-address")
-    } else {
-        response.redirect("/citizen-personal-information-request/your-abroad-address")
-    }
-})
-
-router.post('/cpri-different-address', function(request, response) {
-
-    var addressInUK = request.session.data['different-address']
-    if (addressInUK == "yes"){
-        response.redirect("/citizen-personal-information-request/address-to-write-to")
-    } else {
-        response.redirect("/citizen-personal-information-request/national-insurance-number")
-    }
-})
