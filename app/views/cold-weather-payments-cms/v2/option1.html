@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Cold Weather Payment Checker - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+   
+{% endblock %}
+
+{% block header %}
+    <!-- Blank header with no service name -->
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <h1 class="govuk-heading-xl">Cold Weather Payment Management</h1>
+   
+    <p class="govuk-body">
+        Access to this system is for authorised users only.
+    </p>
+    
+    {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        id: "email",
+        name: "email",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
+    
+    {{ govukPasswordInput({
+        label: {
+            text: "Password"
+        },
+        id: "password-input",
+        name: "password"
+    }) }}
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+          text: "Login"
+        }) }}
+
+        {{ govukButton({
+          text: "Forgotten password",
+          classes: "govuk-button--secondary"
+        }) }}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+
