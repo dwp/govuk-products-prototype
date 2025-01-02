@@ -792,6 +792,7 @@
 
     <div class="app-card">
       <div class="app-card-title-wrapper">
+        {{ govukTag({ text: "Decommissioned", classes: "govuk-tag--red" })}}
         <h2 class="govuk-heading-m govuk-product">Request information about underpaid state pension for someone who has died</h2>
         <p class="govuk-body app-card-title-description">         
           Enables users to request information about someone who has died that may have been underpaid State Pension and they are their next of kin or executor of the estate.
@@ -819,14 +820,14 @@
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a class="govuk-link" href="request-information-about-underpaid-state-pension-for-someone-who-has-died/v2/service-unavailable.html">Version 2<span class="govuk-visually-hidden">of Request information about underpaid state pension for someone who has died</span></a></td>
-              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="request-information-about-underpaid-state-pension-for-someone-who-has-died/v2/service-closed.html">Version 2<span class="govuk-visually-hidden">of Request information about underpaid state pension for someone who has died</span></a></td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">11 Dec 2024</td>
-              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-2_request-information-about-underpaid-state-pension-for-someone-who-has-died.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 2 of Request information about underpaid state pension for someone who has died</span></a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="request-information-about-underpaid-state-pension-for-someone-who-has-died/v1/index.html">Version 1<span class="govuk-visually-hidden">of Request information about underpaid state pension for someone who has died</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}} {{ govukTag({ text: "Decommissioned by 31 Dec 2024", classes: "govuk-tag--yellow" })}}</td>
+              <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_request-information-about-underpaid-state-pension-for-someone-who-has-died.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Request information about underpaid state pension for someone who has died</span></a></td>
             </tr>
