@@ -5,6 +5,13 @@
   Sorry, the service is unavailable - {{ serviceName }} - GOV.UK
 {% endblock %}
 
+{% block header %}
+  {{ govukHeader({
+    serviceName: "Request information about underpaid State Pension for someone who has died",
+    serviceUrl: "service-closed.html"
+  }) }}
+{% endblock %}
+
 {% block beforeContent %}
 
 {% endblock %}
