@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/personal-information-request.html" %}
+
+{% block pageTitle %}
+  What address should we write to?  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Request for someone else</span>
+      
+      <h1 class="govuk-heading-l">
+        What address should we write to?
+      </h1>
+      
+      <form class="form"  method="post">
+
+        {{ govukRadios({
+          name: "address-to-write-to",
+          value: data['address-to-write-to'],
+          fieldset: {
+            legend: {
+              text: "Do you have an address in the UK to write to?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes~/personal-information-request/v2/address-to-write-to-address-uk",
+              text: "Yes",
+              checked: true if data["address-to-write-to"] === "yes"
+            },
+            {
+              value: "no~/personal-information-request/v2/address-to-write-to-address-abroad",
+              text: "No",
+              checked: true if data["address-to-write-to"] === "no"
+            }
+          ]
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
