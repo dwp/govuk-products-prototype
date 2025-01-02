@@ -460,7 +460,7 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="cost-of-living/mtb5/index.html">MTB5<span class="govuk-visually-hidden">Cost of Living</span></a></td>
-              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Decommissioned", classes: "govuk-tag--red" })}}</td>
               <td class="govuk-table__cell">Feb 2024</td>
               <td class="govuk-table__cell">-</td>
             </tr>
@@ -581,6 +581,7 @@
 
     <div class="app-card">
       <div class="app-card-title-wrapper">
+        {{ govukTag({ text: "Replaced by Customer View in 2025", classes: "govuk-tag--yellow" })}}
         <h2 class="govuk-heading-m govuk-product">Get a proof of benefit letter</h2>
         <p class="govuk-body app-card-title-description">         
           Enables users to request a letter to prove they get Employment and Support Allowance, Income Support, Jobseeker's Allowance,
@@ -610,7 +611,7 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="get-a-proof-of-benefit-letter/v1/index.html">Version 1<span class="govuk-visually-hidden">of Get a proof of benefit letter</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}} {{ govukTag({ text: "Replaced by Customer View in 2025", classes: "govuk-tag--yellow" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_get-a-proof-of-benefit-letter.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Get a proof of benefit letter</span></a></td>
             </tr>
@@ -620,6 +621,7 @@
 
     <div class="app-card">
       <div class="app-card-title-wrapper">
+        {{ govukTag({ text: "PC digital team integrating calculator into application process", classes: "govuk-tag--yellow" })}}
         <h2 class="govuk-heading-m govuk-product">Pension Credit Calculator</h2>
         <p class="govuk-body app-card-title-description">     
           Enables users to find out whether they might be eligible for Pension Credit and how much they could get.    
