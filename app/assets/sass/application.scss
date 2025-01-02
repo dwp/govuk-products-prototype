@@ -47,7 +47,6 @@ main.govuk-main-wrapper {
     border: 1px solid $govuk-border-colour;
 
     h2 {
-        @include govuk-responsive-margin(3, "top");  
         @include govuk-responsive-margin(0, "bottom");  
     }
 
@@ -57,6 +56,10 @@ main.govuk-main-wrapper {
         @include govuk-responsive-padding(4, "bottom");
         @include govuk-responsive-padding(5, "left");
         @include govuk-responsive-padding(5, "right");  
+
+        .govuk-tag {
+            @include govuk-responsive-margin(3, "bottom");  
+        }
 
         .app-card-title-description {
             @include govuk-responsive-margin(2, "bottom");  
