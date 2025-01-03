@@ -4,8 +4,13 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+const alternativeFormatsPlugin = require("alternative-formats-plugin");
+alternativeFormatsPlugin(router);
+
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
+
+
 
 // -------------------------------------------------------------------------------------------------------------------------
 // Cost of Living form - MTB4

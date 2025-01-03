@@ -11,6 +11,7 @@
     "@govuk-prototype-kit/task-list": "2.0.0",
     "@x-govuk/edit-prototype-in-browser": "^0.3.2",
     "@x-govuk/govuk-prototype-filters": "^1.4.3",
+    "alternative-formats-plugin": "github:dwp/alternative-formats-plugin",
     "govuk-frontend": "5.7.1",
     "govuk-prototype-kit": "13.16.2",
     "jquery": "3.7.1",
