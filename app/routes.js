@@ -10,8 +10,6 @@ alternativeFormatsPlugin(router);
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
-
-
 // -------------------------------------------------------------------------------------------------------------------------
 // Cost of Living form - MTB4
 
