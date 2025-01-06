@@ -23,8 +23,8 @@
     <form class="form"  method="post">
 
       {{ govukRadios({
-        name: "pir-v3-another-name",
-        value: data['pir-v3-another-name'],
+        name: "pir-v3-requester-another-name",
+        value: data['pir-v3-requester-another-name'],
         fieldset: {
           legend: {
             text: "Have you been known by another name?",
@@ -36,15 +36,12 @@
           {
             value: "yes~/personal-information-request/v3/25",
             text: "Yes",
-            conditional: {
-              html: alternativeFormatHtml
-            },
-            checked: true if data["another-name"] === "yes"
+            checked: true if data["pir-v3-requester-another-name"] === "yes"
           },
           {
             value: "no~/personal-information-request/v3/26",
             text: "No",
-            checked: true if data["another-name"] === "no"
+            checked: true if data["pir-v3-requester-another-name"] === "no"
           }
         ]
       }) }}

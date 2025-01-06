@@ -23,8 +23,8 @@
       <form class="form"  method="post">
 
         {{ govukRadios({
-          name: "pir-v3-address-to-write-to",
-          value: data['pir-v3-address-to-write-to'],
+          name: "pir-v3-requester-address-to-write-to",
+          value: data['pir-v3-requester-address-to-write-to'],
           fieldset: {
             legend: {
               text: "Should we send the information to a different address? ",
@@ -34,14 +34,14 @@
           },
           items: [
             {
-              value: "yes~/personal-information-request/v2/address-to-write-to-address-uk",
+              value: "yes~/personal-information-request/v3/32",
               text: "Yes",
-              checked: true if data["address-to-write-to"] === "yes"
+              checked: true if data["pir-v3-requester-address-to-write-to"] === "yes"
             },
             {
-              value: "no~/personal-information-request/v2/address-to-write-to-address-abroad",
+              value: "no~/personal-information-request/v3/4",
               text: "No",
-              checked: true if data["address-to-write-to"] === "no"
+              checked: true if data["pir-v3-requester-address-to-write-to"] === "no"
             }
           ]
         }) }}

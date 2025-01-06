@@ -24,18 +24,36 @@
       Name a DWP benefit you are currently receiving?
     </h1>
 
-    <form class="form" action="" method="post">
+    <form class="form" action="/pir-v3-receiving-benefit" method="post">
 
       {{ govukSelect({
-        id: "pir-v3-sort",
-        name: "pir-v3-sort",
+        id: "pir-v3-receiving-benefit",
+        name: "pir-v3-receiving-benefit",
+        value: data['pir-v3-receiving-benefit'],
         label: {
           text: "Choose benefit"
         },
         items: [
           {
-            value: "published",
+            value: "pir-v3-choose",
             text: "Choose benefit"
+          }, 
+          {
+            value: "pir-v3-none",
+            text: "None"
+          },
+          {
+            value: "pir-v3-attendance-allowance",
+            text: "Attendance Allowance"
+          }, 
+          {
+            value: "pir-v3-jobseekers",
+            text: "Jobseeker's Allowance
+            "
+          },
+          {
+            value: "pir-v3-uc",
+            text: "Universal Credit"
           }
         ]
       }) }}

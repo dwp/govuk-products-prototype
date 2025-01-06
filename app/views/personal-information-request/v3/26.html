@@ -23,8 +23,8 @@
     <form class="form" action="27" method="post">
 
       {{ govukDateInput({
-        id: "pir-v3-dob",
-        namePrefix: "dob",
+        id: "pir-v3-requester-dob",
+        namePrefix: "pir-v3-requester-dob",
         fieldset: {
           legend: {
             text: "Date of birth",
@@ -36,17 +36,17 @@
           {
             classes: 'govuk-input--width-2',
             name: 'day',
-            value: data['pir-v3-dob-day']
+            value: data['pir-v3-requester-dob-day']
           },
           {
             classes: 'govuk-input--width-2',
             name: 'month',
-            value: data['pir-v3-dob-month']
+            value: data['pir-v3-requester-dob-month']
           },
           {
             classes: 'govuk-input--width-4',
             name: 'year',
-            value: data['pir-v3-dob-year']
+            value: data['pir-v3-requester-dob-year']
           }
         ]
       }) }}

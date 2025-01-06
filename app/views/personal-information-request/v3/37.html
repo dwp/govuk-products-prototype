@@ -23,8 +23,8 @@
     <form class="form" action="38" method="post">
 
       {{ govukDateInput({
-        id: "pir-v3-passport-issued",
-        namePrefix: "passport-issued",
+        id: "pir-v3-last-payment",
+        namePrefix: "pir-v3-last-payment",
         fieldset: {
           legend: {
             text: "When did you receive your last payment?",
@@ -32,9 +32,23 @@
             classes: "govuk-fieldset__legend--l"
           }
         },
-        hint: {
-          text: "For example, 27 3 2007"
-        }
+        items: [
+          {
+            classes: 'govuk-input--width-2',
+            name: 'day',
+            value: data['pir-v3-last-payment-day']
+          },
+          {
+            classes: 'govuk-input--width-2',
+            name: 'month',
+            value: data['pir-v3-last-payment-month']
+          },
+          {
+            classes: 'govuk-input--width-4',
+            name: 'year',
+            value: data['pir-v3-last-payment-year']
+          }
+        ]
       }) }}
       
     {{ govukButton({

@@ -36,15 +36,12 @@
           {
             value: "yes~/personal-information-request/v3/6",
             text: "Yes",
-            conditional: {
-              html: alternativeFormatHtml
-            },
-            checked: true if data["another-name"] === "yes"
+            checked: true if data["pir-v3-another-name"] === "yes"
           },
           {
             value: "no~/personal-information-request/v3/7",
             text: "No",
-            checked: true if data["another-name"] === "no"
+            checked: true if data["pir-v3-another-name"] === "no"
           }
         ]
       }) }}

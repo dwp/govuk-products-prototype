@@ -25,16 +25,30 @@
     <form class="form" action="39" method="post">
     
       {{ govukSelect({
-        id: "pir-v3-sort",
-        name: "pir-v3-sort",
+        id: "pir-v3-info-on-benefit",
+        name: "pir-v3-info-on-benefit",
+        value: data['pir-v3-info-on-benefit'],
         label: {
           text: "Choose benefit"
         },
         items: [
-          {
-            value: "published",
-            text: "Choose benefit"
-          }
+        {
+          value: "pir-v3-choose",
+          text: "Choose benefit"
+        },
+        {
+          value: "pir-v3-attendance-allowance",
+          text: "Attendance Allowance"
+        }, 
+        {
+          value: "pir-v3-jobseekers",
+          text: "Jobseeker's Allowance
+          "
+        },
+        {
+          value: "pir-v3-uc",
+          text: "Universal Credit"
+        }
         ]
       }) }}
       
