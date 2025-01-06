@@ -20,12 +20,12 @@
 
     <span class="govuk-caption-l">Request for someone else</span>
 
-    <form class="form"  method="post">
+    <form class="form" action="26" method="post">
 
       {{ govukTextarea({
-        name: "previous-names",
-        id: "previous-names",
-        value: data['previous-names'],
+        name: "pir-v3-previous-names",
+        id: "pir-v3-previous-names",
+        value: data['pir-v3-previous-names'],
         label: {
           text: "Your previous names",
           classes: "govuk-label--l"
@@ -37,8 +37,7 @@
 
     {{ govukButton({
       text: "Continue",
-      attributes: "govuk-button",
-      href: "26"
+      attributes: "govuk-button"
     }) }}
 
     </form>

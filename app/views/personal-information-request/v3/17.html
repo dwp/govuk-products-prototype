@@ -24,11 +24,11 @@
       
       <form class="form" method="post">
 
-        {% set requesterAppointeeHtml %}
+        {% set requesterOtherHtml %}
         {{ govukInput({
-          id: "requester-appointee",
-          name: "requester-appointee",
-          value: data['requester-appointee'],
+          id: "pir-v3-requester-other",
+          name: "pir-v3-requester-other",
+          value: data['pir-v3-requester-other'],
           classes: "govuk-input--width-20",
           label: {
             text: "Tell us your relationship to the customer"
@@ -37,8 +37,8 @@
       {% endset -%}
 
         {{ govukRadios({
-          name: "requester",
-          value: data['requester'],
+          name: "pir-v3-requester-2",
+          value: data['pir-v3-requester-2'],
           fieldset: {
             legend: {
               text: "Are you:",
@@ -49,23 +49,20 @@
             {
               value: "solicitor~/personal-information-request-for-a-citizen/v3/18",
               text: "Solicitor",
-              checked: true if data["requester"] === "solicitor"
+              checked: true if data["requester-2"] === "solicitor"
             },
             {
               value: "other~/personal-information-request-for-a-citizen/v3/23",
               text: "Other 3rd party such as relative or friend",
               conditional: {
-                html: requesterAppointeeHtml
+                html: requesterOtherHtml
               },
-              checked: true if data["requester"] === "other"
+              checked: true if data["requester-2"] === "other"
             },
             {
               value: "appointee~/personal-information-request-for-a-citizen/v3/23",
               text: "Appointee/Court Appointed Litigation friend",
-              conditional: {
-                html: requesterSomeoneElseHtml
-              },
-              checked: true if data["requester"] === "appointee"
+              checked: true if data["requester-2"] === "appointee"
             }
           ]
         }) }}

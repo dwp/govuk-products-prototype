@@ -20,11 +20,11 @@
 
     <span class="govuk-caption-l">Security question</span>
 
-    <form class="form" action="national-insurance-number" method="post">
+    <form class="form" action="37" method="post">
 
       {{ govukInput({
-        id: "cost",
-        name: "cost",
+        id: "pir-v3-cost",
+        name: "pir-v3-cost",
         label: {
           text: "What is the weekly or monthly amount of the benefit?",
           classes: "govuk-label--l",
@@ -39,8 +39,7 @@
 
     {{ govukButton({
       text: "Continue",
-      attributes: "govuk-button",
-      href: "37"
+      attributes: "govuk-button"
     }) }}
 
     </form>

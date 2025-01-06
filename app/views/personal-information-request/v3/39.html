@@ -22,10 +22,10 @@
       What time period should the information cover?
     </h1>
     
-    <form class="form" action="information" method="post">
+    <form class="form" method="post">
 
     {{ govukDateInput({
-      id: "date-from",
+      id: "pir-v3-date-from",
       namePrefix: "date-from",
       fieldset: {
         legend: {
@@ -40,23 +40,23 @@
         {
           classes: 'govuk-input--width-2',
           name: 'day',
-          value: data['date-from-day']
+          value: data['pir-v3-date-from-day']
         },
         {
           classes: 'govuk-input--width-2',
           name: 'month',
-          value: data['date-from-month']
+          value: data['pir-v3-date-from-month']
         },
         {
           classes: 'govuk-input--width-4',
           name: 'year',
-          value: data['date-from-year']
+          value: data['pir-v3-date-from-year']
         }
       ]
     }) }}
 
     {{ govukDateInput({
-      id: "date-to",
+      id: "pir-v3-date-to",
       namePrefix: "date-to",
       fieldset: {
         legend: {
@@ -71,17 +71,17 @@
         {
           classes: 'govuk-input--width-2',
           name: 'day',
-          value: data['date-to-day']
+          value: data['pir-v3-date-to-day']
         },
         {
           classes: 'govuk-input--width-2',
           name: 'month',
-          value: data['date-to-month']
+          value: data['pir-v3-date-to-month']
         },
         {
           classes: 'govuk-input--width-4',
           name: 'year',
-          value: data['date-to-year']
+          value: data['pir-v3-date-to-year']
         }
       ]
     }) }}

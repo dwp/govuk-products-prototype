@@ -20,10 +20,10 @@
 
     <span class="govuk-caption-l">Customer details</span>
 
-    <form class="form"  method="post">
+    <form class="form" action="8" method="post">
 
       {{ govukDateInput({
-        id: "dob",
+        id: "pir-v3-dob",
         namePrefix: "dob",
         fieldset: {
           legend: {
@@ -36,25 +36,24 @@
           {
             classes: 'govuk-input--width-2',
             name: 'day',
-            value: data['dob-day']
+            value: data['pir-v3-dob-day']
           },
           {
             classes: 'govuk-input--width-2',
             name: 'month',
-            value: data['dob-month']
+            value: data['pir-v3-dob-month']
           },
           {
             classes: 'govuk-input--width-4',
             name: 'year',
-            value: data['dob-year']
+            value: data['pir-v3-dob-year']
           }
         ]
       }) }}
 
     {{ govukButton({
       text: "Continue",
-      attributes: "govuk-button",
-      href: "8"
+      attributes: "govuk-button"
     }) }}
 
     </form>

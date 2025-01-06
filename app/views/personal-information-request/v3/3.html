@@ -21,8 +21,8 @@
     <form class="form"  method="post">
 
     {{ govukRadios({
-      name: "another-name",
-      value: data['another-name'],
+      name: "pir-v3-requester-1",
+      value: data['pir-v3-requester-1'],
       fieldset: {
         legend: {
           text: "Is the request for you or someone else?",
@@ -34,15 +34,12 @@
         {
           value: "you~/personal-information-request/v3/4",
           text: "You",
-          conditional: {
-            html: alternativeFormatHtml
-          },
-          checked: true if data["another-name"] === "you"
+          checked: true if data["requester-1"] === "you"
         },
         {
           value: "someone-else~/personal-information-request/v3/17",
           text: "Someone else",
-          checked: true if data["another-name"] === "someone-else"
+          checked: true if data["requester-1"] === "someone-else"
         }
       ]
     }) }}

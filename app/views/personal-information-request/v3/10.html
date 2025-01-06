@@ -20,12 +20,12 @@
 
       <span class="govuk-caption-l">Customer details</span>
 
-      <form class="form" action="write-to-different-address" method="post">
+      <form class="form" action="/pir-v3-address" method="post">
 
         {{ govukTextarea({
-          name: "home-address-abroad",
-          id: "home-address-abroad",
-          value: data['home-address-abroad'],
+          name: "pir-v3-home-address-abroad",
+          id: "pir-v3-home-address-abroad",
+          value: data['pir-v3-home-address-abroad'],
           rows: "8",
           label: {
             text: "Your address abroad including telephone number",

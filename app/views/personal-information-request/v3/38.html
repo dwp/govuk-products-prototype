@@ -22,11 +22,11 @@
       What information do you need? 
     </h1>
 
-    <form class="form" action="national-insurance-number" method="post">
+    <form class="form" action="39" method="post">
     
       {{ govukSelect({
-        id: "sort",
-        name: "sort",
+        id: "pir-v3-sort",
+        name: "pir-v3-sort",
         label: {
           text: "Choose benefit"
         },
@@ -40,8 +40,7 @@
       
     {{ govukButton({
       text: "Continue",
-      attributes: "govuk-button",
-      href: "39"
+      attributes: "govuk-button"
     }) }}
 
     </form>
