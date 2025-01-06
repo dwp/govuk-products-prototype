@@ -27,8 +27,8 @@
       <form class="form"  method="post">
 
         {{ govukRadios({
-          name: "address-to-write-to",
-          value: data['address-to-write-to'],
+          name: "pir-v3-address-to-write-to",
+          value: data['pir-v3-address-to-write-to'],
           fieldset: {
             legend: {
               text: "Do you have an address in the UK to write to?",
@@ -51,7 +51,8 @@
         }) }}
         
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          attributes: "govuk-button"
         }) }}
 
       </form>

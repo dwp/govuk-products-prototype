@@ -20,10 +20,10 @@
 
     <span class="govuk-caption-l">Security question</span>
 
-    <form class="form" action="national-insurance-number" method="post">
+    <form class="form" action="38" method="post">
 
       {{ govukDateInput({
-        id: "passport-issued",
+        id: "pir-v3-passport-issued",
         namePrefix: "passport-issued",
         fieldset: {
           legend: {
@@ -39,8 +39,7 @@
       
     {{ govukButton({
       text: "Continue",
-      attributes: "govuk-button",
-      href: "38"
+      attributes: "govuk-button"
     }) }}
 
     </form>

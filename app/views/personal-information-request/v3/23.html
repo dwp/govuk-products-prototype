@@ -24,7 +24,7 @@
 
     <p class="govuk-body">This section is to gather the third-party information (not the person the request for information is about).</p>
 
-    <form class="form"  method="post">
+    <form class="form" action="24" method="post">
 
       {{ govukInput({
         label: {
@@ -32,15 +32,14 @@
           classes: "govuk-label--m"
         },
         classes: "govuk-input--width-20",
-        id: "full-name",
-        name: "full-name",
-        value: data['full-name']
+        id: "pir-v3-full-name",
+        name: "pir-v3-full-name",
+        value: data['pir-v3-full-name']
       }) }}
 
     {{ govukButton({
       text: "Continue",
-      attributes: "govuk-button",
-      href: "24"
+      attributes: "govuk-button"
     }) }}
 
     </form>

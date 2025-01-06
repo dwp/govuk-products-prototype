@@ -34,9 +34,9 @@
             label: {
               text: "Building name or number and street"
             },
-            id: "uk-home-address-line-1",
-            name: "uk-home-address-line-1",
-            value: data['uk-home-address-line-1'],
+            id: "pir-v3-uk-home-address-line-1",
+            name: "pir-v3-uk-home-address-line-1",
+            value: data['pir-v3-uk-home-address-line-1'],
             autocomplete: "address-line1"
           }) }}
         
@@ -44,9 +44,9 @@
             label: {
               visuallyHiddenText: "Building and street line 2 of 2"
             },
-            id: "uk-home-address-line-2",
-            name: "uk-home-address-line-2",
-            value: data['uk-home-address-line-2'],
+            id: "pir-v3-uk-home-address-line-2",
+            name: "pir-v3-uk-home-address-line-2",
+            value: data['pir-v3-uk-home-address-line-2'],
             autocomplete: "address-line2"
           }) }}
         
@@ -55,9 +55,9 @@
               text: "Town or city"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "uk-home-address-town",
-            name: "uk-home-address-town",
-            value: data['uk-home-address-town'],
+            id: "pir-v3-uk-home-address-town",
+            name: "pir-v3-uk-home-address-town",
+            value: data['pir-v3-uk-home-address-town'],
             autocomplete: "address-level2"
           }) }}
         
@@ -66,9 +66,9 @@
               text: "County"
             },
             classes: "govuk-!-width-two-thirds",
-            id: "uk-home-address-county",
-            name: "uk-home-address-county",
-            value: data['uk-home-address-county']
+            id: "pir-v3-uk-home-address-county",
+            name: "pir-v3-uk-home-address-county",
+            value: data['pir-v3-uk-home-address-county']
           }) }}
         
           {{ govukInput({
@@ -76,16 +76,17 @@
               text: "Postcode"
             },
             classes: "govuk-input--width-10",
-            id: "uk-home-address-postcode",
-            name: "uk-home-address-postcode",
-            value: data['uk-home-address-postcode'],
+            id: "pir-v3-uk-home-address-postcode",
+            name: "pir-v3-uk-home-address-postcode",
+            value: data['pir-v3-uk-home-address-postcode'],
             autocomplete: "postal-code"
           }) }}
         
         {% endcall %}
         
         {{ govukButton({
-          text: "Continue"
+          text: "Continue",
+          attributes: "govuk-button"
         }) }}
 
       </form>

@@ -20,7 +20,7 @@
 
       <span class="govuk-caption-l">Solicitor details</span>
 
-      <form class="form" action="dates" method="post">
+      <form class="form" action="19" method="post">
 
         {{ govukInput({
           label: {
@@ -29,15 +29,14 @@
             isPageHeading: "true"
           },
           classes: "govuk-input--width-20",
-          id: "full-name",
-          name: "full-name",
-          value: data['full-name']
+          id: "pir-v3-full-name",
+          name: "pir-v3-full-name",
+          value: data['pir-v3-full-name']
         }) }}
 
         {{ govukButton({
           text: "Continue",
-          attributes: "govuk-button",
-          href: "19"
+          attributes: "govuk-button"
         }) }}
 
       </form>
