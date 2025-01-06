@@ -47,25 +47,25 @@
           },
           items: [
             {
-              value: "citizen~/personal-information-request-for-a-citizen/v2/about-the-citizen",
+              value: "solicitor~/personal-information-request-for-a-citizen/v3/18",
               text: "Solicitor",
-              checked: true if data["requester"] === "citizen"
+              checked: true if data["requester"] === "solicitor"
             },
             {
-              value: "appointee~/personal-information-request-for-a-citizen/v2/about-the-citizen",
+              value: "other~/personal-information-request-for-a-citizen/v3/23",
               text: "Other 3rd party such as relative or friend",
               conditional: {
                 html: requesterAppointeeHtml
               },
-              checked: true if data["requester"] === "appointee"
+              checked: true if data["requester"] === "other"
             },
             {
-              value: "someone-else~/personal-information-request-for-a-citizen/v2/how-authority-confirmed",
+              value: "appointee~/personal-information-request-for-a-citizen/v3/23",
               text: "Appointee/Court Appointed Litigation friend",
               conditional: {
                 html: requesterSomeoneElseHtml
               },
-              checked: true if data["requester"] === "someone-else"
+              checked: true if data["requester"] === "appointee"
             }
           ]
         }) }}
