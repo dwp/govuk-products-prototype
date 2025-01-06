@@ -47,22 +47,22 @@
           },
           items: [
             {
-              value: "solicitor~/personal-information-request-for-a-citizen/v3/18",
+              value: "solicitor~/personal-information-request/v3/18",
               text: "Solicitor",
-              checked: true if data["requester-2"] === "solicitor"
+              checked: true if data["pir-v3-requester-2"] === "solicitor"
             },
             {
-              value: "other~/personal-information-request-for-a-citizen/v3/23",
+              value: "other~/personal-information-request/v3/23",
               text: "Other 3rd party such as relative or friend",
               conditional: {
                 html: requesterOtherHtml
               },
-              checked: true if data["requester-2"] === "other"
+              checked: true if data["pir-v3-requester-2"] === "other"
             },
             {
-              value: "appointee~/personal-information-request-for-a-citizen/v3/23",
+              value: "appointee~/personal-information-request/v3/23",
               text: "Appointee/Court Appointed Litigation friend",
-              checked: true if data["requester-2"] === "appointee"
+              checked: true if data["pir-v3-requester-2"] === "appointee"
             }
           ]
         }) }}

@@ -28,9 +28,9 @@
 
         {% set ninoHtml %}
         {{ govukInput({
-          id: "pir-v3-nino",
-          name: "pir-v3-nino",
-          value: data['pir-v3-nino'],
+          id: "pir-v3-requester-nino",
+          name: "pir-v3-requester-nino",
+          value: data['pir-v3-requester-nino'],
           classes: "govuk-input--width-10",
           label: {
             text: "Your National Insurance number",
@@ -43,7 +43,7 @@
         {% endset -%}
 
         {{ govukRadios({
-          name: "pir-v3-national-insurance-number",
+          name: "pir-v3-requester-national-insurance-number",
           fieldset: {
             legend: {
               text: "Can you tell us your National Insurance number?",
@@ -58,12 +58,12 @@
               conditional: {
                 html: ninoHtml
               },
-              checked: true if data["national-insurance-number"] === "yes"
+              checked: true if data["pir-v3-requester-national-insurance-number"] === "yes"
             },
             {
               value: "no",
               text: "No",
-              checked: true if data["national-insurance-number"] === "no"
+              checked: true if data["pir-v3-requester-national-insurance-number"] === "no"
             }
           ]
         }) }}

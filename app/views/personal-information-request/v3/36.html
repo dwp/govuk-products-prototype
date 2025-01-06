@@ -23,8 +23,9 @@
     <form class="form" action="37" method="post">
 
       {{ govukInput({
-        id: "pir-v3-cost",
-        name: "pir-v3-cost",
+        id: "pir-v3-benefit-amount",
+        name: "pir-v3-benefit-amount",
+        value: data['pir-v3-benefit-amount'],
         label: {
           text: "What is the weekly or monthly amount of the benefit?",
           classes: "govuk-label--l",

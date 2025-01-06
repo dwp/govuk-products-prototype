@@ -21,8 +21,8 @@
     <form class="form"  method="post">
 
     {{ govukRadios({
-      name: "pir-v3-another-name",
-      value: data['pir-v3-another-name'],
+      name: "pir-v3-reader-software",
+      value: data['pir-v3-reader-software'],
       fieldset: {
         legend: {
           text: "Do your emails need to be compatible with Reader software?",
@@ -34,15 +34,12 @@
         {
           value: "yes~/personal-information-request/v3/3",
           text: "Yes",
-          conditional: {
-            html: alternativeFormatHtml
-          },
-          checked: true if data["another-name"] === "yes"
+          checked: true if data["pir-v3-reader-software"] === "yes"
         },
         {
           value: "no~/personal-information-request/v3/3",
           text: "No",
-          checked: true if data["another-name"] === "no"
+          checked: true if data["pir-v3-reader-software"] === "no"
         }
       ]
     }) }}

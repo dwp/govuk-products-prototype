@@ -47,12 +47,12 @@
           conditional: {
             html: emailAddressHtml
           },
-          checked: true if data["email-address"] === "yes"
+          checked: true if data["pir-v3-email-address"] === "yes"
         },
         {
           value: "no~/personal-information-request/v3/3",
           text: "No",
-          checked: true if data["email-address"] === "no"
+          checked: true if data["pir-v3-email-address"] === "no"
         }
       ]
     }) }}
