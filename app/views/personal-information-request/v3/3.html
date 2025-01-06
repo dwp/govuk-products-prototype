@@ -32,17 +32,17 @@
       },
       items: [
         {
-          value: "yes~/personal-information-request/v1/previous-names",
+          value: "you~/personal-information-request/v3/4",
           text: "You",
           conditional: {
             html: alternativeFormatHtml
           },
-          checked: true if data["another-name"] === "yes"
+          checked: true if data["another-name"] === "you"
         },
         {
-          value: "no~/personal-information-request/v1/date-of-birth",
+          value: "someone-else~/personal-information-request/v3/17",
           text: "Someone else",
-          checked: true if data["another-name"] === "no"
+          checked: true if data["another-name"] === "someone-else"
         }
       ]
     }) }}
