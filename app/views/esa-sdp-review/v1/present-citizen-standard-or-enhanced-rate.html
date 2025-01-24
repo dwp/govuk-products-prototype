@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/esa-sdp-review.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukRadios({
+      name: "whereDoYouLive",
+      fieldset: {
+        legend: {
+          text: "Are you in receipt of standard or enhanced rate ADP/PIP or middle or high rate DLA?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "yes~/esa-sdp-review/v1/do-you-live-with-a-partner",
+          text: "Yes"
+        },
+        {
+          value: "no~/esa-sdp-review/v1/not-eligible",
+          text: "No"
+        },
+        {
+          value: "dont-know~/esa-sdp-review/v1/do-you-live-with-a-partner",
+          text: "Don't know"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "did-you-live-with-a-partner"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
