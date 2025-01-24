@@ -7,6 +7,9 @@ const router = govukPrototypeKit.requests.setupRouter()
 const alternativeFormatsPlugin = require("alternative-formats-plugin");
 alternativeFormatsPlugin(router);
 
+const findAddressPlugin = require("find-an-address-plugin");
+findAddressPlugin(router);
+
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
