@@ -17,10 +17,11 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="what-is-your-national-insurance-number" method="post">
 
     {{ govukDateInput({
       id: "dob",
-      namePrefix: "dob",
+      namePrefix: "esa--dob",
       fieldset: {
         legend: {
           text: "What is your date of birth?",
@@ -52,9 +53,9 @@
 
     {{ govukButton({
       text: "Continue",
-      href: "what-is-your-national-insurance-number"
+      attributes: "govuk-button"
     }) }}
-
+  </form>
   </div>
 </div>
 

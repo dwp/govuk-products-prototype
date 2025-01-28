@@ -8,223 +8,185 @@
 {% block beforeContent %}
   {{ super() }}
   {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
+  text: "Back",
+  href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds-from-desktop">
-    
-          <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
-    
-          <h2 class="govuk-heading-m">Personal details</h2>
-    
-          {{ govukSummaryList({
-            classes: "govuk-!-margin-bottom-9",
-            rows: [
-              {
-                key: {
-                  text: "Name"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "name"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Date of birth"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "date of birth"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "National Insurance Number"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "customer reference"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Address"
-                },
-                value: {
-                  html: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "address"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Contact number"
-                },
-                value: {
-                  html: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "contact details"
-                    }
-                  ]
-                }
-              }
-            ]
-          }) }}
-    
-          <h2 class="govuk-heading-m">Employment and Support Allowance details</h2>
-    
-          {{ govukSummaryList({
-            classes: "govuk-!-margin-bottom-9",
-            rows: [
-              {
-                key: {
-                  text: "Are you currently in receipt of Employment and Support Allowance?"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "previous application number"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Are you in receipt of standard or enhanced rate ADP/PIP or middle or high rate DLA?"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "licence type"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Do you live with a partner?"
-                },
-                value: {
-                  html: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "home address"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Is your partner in receipt of standard or enhanced rate PIP/ADP/AFIP, middle or high rate DLA, AA, CAA, PADP?"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "licence period"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Is your partner registered blind or severely sight impaired?"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "licence period"
-                    }
-                  ]
-                }
-              }
-            ]
-          }) }}
-    
-          <h2 class="govuk-heading-m">Now send your application</h2>
-    
-          <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-    
-          <form action="/form-handler" method="post" novalidate>
-    
-            <input type="hidden" name="answers-checked" value="true">
-    
-            {{ govukButton({
-              text: "Accept and send",
-              href: "what-happens-next"
-            }) }}
-    
-          </form>
-    
-        </div>
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+
+    <h2 class="govuk-heading-m">Personal details</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--full-name']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--full-name']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance Nummber
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--national-insurance-number']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--full-name']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--phone-number']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+        </dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">Employment and Support Allowance details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are you currently in receipt of Employment and Support Allowance?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--currently-in-receipt']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="are-you-currently-in-receipt-of-esa.html">Change<span class="govuk-visually-hidden"> previous application
+              number</span></a>
+        </dd>
       </div>
 
+      {% if data['esa--currently-in-receipt'] == "Yes" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Are you in receipt of standard or enhanced rate ADP/PIP or middle or high rate DLA?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['esa--present-in-receipt']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you live with a partner?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['esa--did-you-live-with-a-partner']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is your partner in receipt of standard or enhanced rate PIP/ADP/AFIP, middle or high rate DLA, AA, CAA, PADP?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['esa--esa--present-partner-in-receipt']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+          </dd>
+        </div>
+      {% endif %}
+
+      {% if data['esa--currently-in-receipt'] == "No" and data['esa--have-you-ever-received-esa'] == "Yes" %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Were you in receipt of standard or enhanced rate ADP/PIP or middle or high rate DLA?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--present-in-receipt']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Did you live with a partner?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--did-you-live-with-a-partner']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Was your partner in receipt of standard or enhanced rate PIP/ADP/AFIP, middle or high rate DLA, AA, CAA, PADP?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--esa--present-partner-in-receipt']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+        </dd>
+      </div>
+    {% endif %}
+    </dl>
+
+    <h2 class="govuk-heading-m">Now send your application</h2>
+
+    <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the
+      details you are providing are correct.</p>
+
+    <form action="/form-handler" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      {{ govukButton({
+      text: "Accept and send",
+      href: "what-happens-next"
+      }) }}
+
+    </form>
+
   </div>
+</div>
+
+</div>
 </div>
 
 {% endblock %}
