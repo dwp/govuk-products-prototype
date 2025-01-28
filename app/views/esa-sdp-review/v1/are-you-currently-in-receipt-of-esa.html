@@ -18,31 +18,33 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukRadios({
-      name: "whereDoYouLive",
-      fieldset: {
-        legend: {
-          text: "Are you currently in receipt of Employment and Support Allowance?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      items: [
-        {
-          value: "yes~/esa-sdp-review/v1/present-citizen-standard-or-enhanced-rate",
-          text: "Yes"
+    <form class="form" method="post">
+      {{ govukRadios({
+        name: "esa--currently-in-receipt",
+        fieldset: {
+          legend: {
+            text: "Are you currently in receipt of Employment and Support Allowance?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
         },
-        {
-          value: "no~/esa-sdp-review/v1/have-you-ever-received-esa",
-          text: "No"
-        }
-      ]
-    }) }}
+        items: [
+          {
+            value: "yes~/esa-sdp-review/v1/present-citizen-standard-or-enhanced-rate",
+            text: "Yes"
+          },
+          {
+            value: "no~/esa-sdp-review/v1/have-you-ever-received-esa",
+            text: "No"
+          }
+        ]
+      }) }}
 
     {{ govukButton({
-      text: "Continue"
+      text: "Continue",
+      attributes: "govuk-button"
     }) }}
-
+  </form>
   </div>
 </div>
 

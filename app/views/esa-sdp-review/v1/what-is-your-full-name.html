@@ -9,6 +9,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="what-is-your-date-of-birth" method="post">
 
      {{ govukInput({
       label: {
@@ -17,14 +18,14 @@
         isPageHeading: true
       },
       id: "full-name",
-      name: "fullName"
-    }) }}
-   
-    {{ govukButton({
-      text: "Continue",
-      href: "what-is-your-date-of-birth"
+      name: "esa--full-name"
     }) }}
 
+    {{ govukButton({
+      text: "Continue",
+      attributes: "govuk-button"
+    }) }}
+  </form>
   </div>
 </div>
 

@@ -17,9 +17,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
 
     {{ govukRadios({
-      name: "whereDoYouLive",
+      name: "esa--have-you-ever-received-esa",
       fieldset: {
         legend: {
           text: "Have you ever received Employment and Support Allowance?",
@@ -29,7 +30,7 @@
       },
       items: [
         {
-          value: "yes~/esa-sdp-review/v1/present-citizen-standard-or-enhanced-rate",
+          value: "yes~/esa-sdp-review/v1/past-citizen-standard-or-enhanced-rate",
           text: "Yes"
         },
         {
@@ -41,9 +42,9 @@
 
     {{ govukButton({
       text: "Continue",
-      href: "citizen-standard-or-enhanced-rate"
+      attributes: "govuk-button"
     }) }}
-
+  </form>
   </div>
 </div>
 

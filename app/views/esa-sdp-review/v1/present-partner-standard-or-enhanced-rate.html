@@ -17,9 +17,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
 
     {{ govukRadios({
-      name: "whereDoYouLive",
+      name: "esa--present-partner-in-receipt",
       fieldset: {
         legend: {
           text: "Is your partner in receipt of standard or enhanced rate PIP/ADP/AFIP, middle or high rate DLA, AA, CAA, PADP?",
@@ -29,15 +30,15 @@
       },
       items: [
         {
-          value: "yes",
+          value: "yes~/esa-sdp-review/v1/check-your-answers",
           text: "Yes"
         },
         {
-          value: "no",
+          value: "no~/esa-sdp-review/v1/present-partner-registered-blind-or-severely-sight-impaired",
           text: "No"
         },
         {
-          value: "dont-know",
+          value: "dont-know~/esa-sdp-review/v1/check-your-answers",
           text: "Don't know"
         }
       ]
@@ -45,9 +46,9 @@
 
     {{ govukButton({
       text: "Continue",
-      href: "partner-registered-blind-or-severely-sight-impaired"
+      attributes: "govuk-button"
     }) }}
-
+  </form>
   </div>
 </div>
 

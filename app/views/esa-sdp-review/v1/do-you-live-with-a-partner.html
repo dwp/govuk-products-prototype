@@ -17,9 +17,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
 
     {{ govukRadios({
-      name: "whereDoYouLive",
+      name: "esa--do-you-live-with-a-partner",
       fieldset: {
         legend: {
           text: "Do you live with a partner?",
@@ -29,21 +30,21 @@
       },
       items: [
         {
-          value: "yes",
+          value: "yes~/esa-sdp-review/v1/present-partner-standard-or-enhanced-rate",
           text: "Yes"
         },
         {
-          value: "no",
-          text: "Yes"
+          value: "no~/esa-sdp-review/v1/check-your-answers",
+          text: "No"
         }
       ]
     }) }}
 
     {{ govukButton({
       text: "Continue",
-      href: "partner-standard-or-enhanced-rate"
+      attributes: "govuk-button"
     }) }}
-
+  </form>
   </div>
 </div>
 
