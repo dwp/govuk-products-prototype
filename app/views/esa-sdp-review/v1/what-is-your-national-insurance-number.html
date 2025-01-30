@@ -17,7 +17,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" method="post">
+    <form class="form" action="/dwp-find-an-address-plugin/start?find_an_address_exit_url=/esa-sdp-review/v1/what-is-your-contact-number" method="post">
 
     {{ govukInput({
       label: {
@@ -37,7 +37,6 @@
 
     {{ govukButton({
       text: "Continue",
-      href: "/dwp-find-an-address-plugin/start?find_an_address_exit_url=/esa-sdp-review/v1/what-is-your-contact-number",
       attributes: "govuk-button"
     }) }}
     </form>
