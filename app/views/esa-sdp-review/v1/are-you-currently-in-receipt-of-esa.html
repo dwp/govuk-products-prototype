@@ -21,6 +21,7 @@
     <form class="form" method="post">
       {{ govukRadios({
         name: "esa--currently-in-receipt",
+        value: data['esa--currently-in-receipt'],
         fieldset: {
           legend: {
             text: "Are you currently in receipt of Employment and Support Allowance?",
@@ -30,11 +31,11 @@
         },
         items: [
           {
-            value: "yes~/esa-sdp-review/v1/present-citizen-standard-or-enhanced-rate",
+            value: "Yes~/esa-sdp-review/v1/present-citizen-standard-or-enhanced-rate",
             text: "Yes"
           },
           {
-            value: "no~/esa-sdp-review/v1/have-you-ever-received-esa",
+            value: "No~/esa-sdp-review/v1/have-you-ever-received-esa",
             text: "No"
           }
         ]

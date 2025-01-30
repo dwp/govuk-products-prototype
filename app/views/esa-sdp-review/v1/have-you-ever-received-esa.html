@@ -21,6 +21,7 @@
 
     {{ govukRadios({
       name: "esa--have-you-ever-received-esa",
+      value: data['esa--have-you-ever-received-esa'],
       fieldset: {
         legend: {
           text: "Have you ever received Employment and Support Allowance?",
@@ -30,12 +31,14 @@
       },
       items: [
         {
-          value: "yes~/esa-sdp-review/v1/past-citizen-standard-or-enhanced-rate",
-          text: "Yes"
+          value: "Yes~/esa-sdp-review/v1/past-citizen-standard-or-enhanced-rate",
+          text: "Yes",
+          checked: true if data["esa--have-you-ever-received-esa"] === "Yes"
         },
         {
-          value: "no~/esa-sdp-review/v1/not-eligible",
-          text: "No"
+          value: "No~/esa-sdp-review/v1/not-eligible",
+          text: "No",
+          checked: true if data["esa--have-you-ever-received-esa"] === "No"
         }
       ]
     }) }}

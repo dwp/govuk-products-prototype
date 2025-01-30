@@ -21,6 +21,7 @@
 
     {{ govukRadios({
       name: "esa--present-partner-in-receipt",
+      value: data['esa--present-partner-in-receipt'],
       fieldset: {
         legend: {
           text: "Is your partner in receipt of standard or enhanced rate PIP/ADP/AFIP, middle or high rate DLA, AA, CAA, PADP?",
@@ -30,16 +31,19 @@
       },
       items: [
         {
-          value: "yes~/esa-sdp-review/v1/check-your-answers",
-          text: "Yes"
+          value: "Yes~/esa-sdp-review/v1/check-your-answers",
+          text: "Yes",
+          checked: true if data["esa--present-partner-in-receipt"] === "Yes"
         },
         {
-          value: "no~/esa-sdp-review/v1/present-partner-registered-blind-or-severely-sight-impaired",
-          text: "No"
+          value: "No~/esa-sdp-review/v1/present-partner-registered-blind-or-severely-sight-impaired",
+          text: "No",
+          checked: true if data["esa--present-partner-in-receipt"] === "No"
         },
         {
-          value: "dont-know~/esa-sdp-review/v1/check-your-answers",
-          text: "Don't know"
+          value: "Dont-know~/esa-sdp-review/v1/check-your-answers",
+          text: "Don't know",
+          checked: true if data["esa--present-partner-in-receipt"] === "Dont-know"
         }
       ]
     }) }}

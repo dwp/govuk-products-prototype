@@ -21,6 +21,7 @@
 
     {{ govukRadios({
       name: "esa--is-partner-blind-sight-impaired",
+      value: data['esa--is-partner-blind-sight-impaired'],
       fieldset: {
         legend: {
           text: "Is your partner registered blind or severely sight impaired?",
@@ -30,16 +31,19 @@
       },
       items: [
         {
-          value: "yes~/esa-sdp-review/v1/check-your-answers",
-          text: "Yes"
+          value: "Yes~/esa-sdp-review/v1/check-your-answers",
+          text: "Yes",
+          checked: true if data["esa--is-partner-blind-sight-impaired"] === "Yes"
         },
         {
-          value: "no~/esa-sdp-review/v1/not-eligible",
-          text: "No"
+          value: "No~/esa-sdp-review/v1/not-eligible",
+          text: "No",
+          checked: true if data["esa--is-partner-blind-sight-impaired"] === "No"
         },
         {
-          value: "dont-know~/esa-sdp-review/v1/check-your-answers",
-          text: "Don't know"
+          value: "Dont-know~/esa-sdp-review/v1/check-your-answers",
+          text: "Don't know",
+          checked: true if data["esa--is-partner-blind-sight-impaired"] === "Dont-know"
         }
       ]
     }) }}
