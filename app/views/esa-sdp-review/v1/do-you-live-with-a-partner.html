@@ -21,6 +21,7 @@
 
     {{ govukRadios({
       name: "esa--do-you-live-with-a-partner",
+      value: data['esa--do-you-live-with-a-partner'],
       fieldset: {
         legend: {
           text: "Do you live with a partner?",
@@ -30,12 +31,14 @@
       },
       items: [
         {
-          value: "yes~/esa-sdp-review/v1/present-partner-standard-or-enhanced-rate",
-          text: "Yes"
+          value: "Yes~/esa-sdp-review/v1/present-partner-standard-or-enhanced-rate",
+          text: "Yes",
+          checked: true if data["esa--do-you-live-with-a-partner"] === "Yes"
         },
         {
-          value: "no~/esa-sdp-review/v1/check-your-answers",
-          text: "No"
+          value: "No~/esa-sdp-review/v1/check-your-answers",
+          text: "No",
+          checked: true if data["esa--do-you-live-with-a-partner"] === "No"
         }
       ]
     }) }}

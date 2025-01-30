@@ -30,13 +30,15 @@
       },
       classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
       id: "national-insurance-number",
+      spellcheck: false,
       name: "esa--national-insurance-number",
-      spellcheck: false
+      value: data['esa--national-insurance-number']
     }) }}
 
     {{ govukButton({
       text: "Continue",
-      href: "/dwp-find-an-address-plugin/start?find_an_address_exit_url=/esa-sdp-review/v1/what-is-your-contact-number"
+      href: "/dwp-find-an-address-plugin/start?find_an_address_exit_url=/esa-sdp-review/v1/what-is-your-contact-number",
+      attributes: "govuk-button"
     }) }}
     </form>
   </div>

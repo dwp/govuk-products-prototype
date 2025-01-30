@@ -21,6 +21,7 @@
 
     {{ govukRadios({
       name: "esa--present-in-receipt",
+      value: data['esa--present-in-receipt'],
       fieldset: {
         legend: {
           text: "Are you in receipt of standard or enhanced rate ADP/PIP or middle or high rate DLA?",
@@ -30,16 +31,19 @@
       },
       items: [
         {
-          value: "yes~/esa-sdp-review/v1/do-you-live-with-a-partner",
-          text: "Yes"
+          value: "Yes~/esa-sdp-review/v1/do-you-live-with-a-partner",
+          text: "Yes",
+          checked: true if data["esa--present-in-receipt"] === "Yes"
         },
         {
-          value: "no~/esa-sdp-review/v1/not-eligible",
-          text: "No"
+          value: "No~/esa-sdp-review/v1/not-eligible",
+          text: "No",
+          checked: true if data["esa--present-in-receipt"] === "No"
         },
         {
-          value: "dont-know~/esa-sdp-review/v1/do-you-live-with-a-partner",
-          text: "Don't know"
+          value: "Dont-know~/esa-sdp-review/v1/do-you-live-with-a-partner",
+          text: "Don't know",
+          checked: true if data["esa--present-in-receipt"] === "Dont-know"
         }
       ]
     }) }}

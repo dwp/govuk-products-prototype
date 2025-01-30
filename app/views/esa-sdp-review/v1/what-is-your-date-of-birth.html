@@ -21,6 +21,7 @@
 
     {{ govukDateInput({
       id: "dob",
+      name: "esa--dob",
       namePrefix: "esa--dob",
       fieldset: {
         legend: {
@@ -36,17 +37,20 @@
         {
           name: "day",
           classes: "govuk-input--width-2",
-          autocomplete: "bday-day"
+          autocomplete: "bday-day",
+          value: data['esa--dob-bday-day']
         },
         {
           name: "month",
           classes: "govuk-input--width-2",
-          autocomplete: "bday-month"
+          autocomplete: "bday-month",
+          value: data['esa--dob-bday-month']
         },
         {
           name: "year",
           classes: "govuk-input--width-4",
-          autocomplete: "bday-year"
+          autocomplete: "bday-year",
+          value: data['esa--dob-bday-year']
         }
       ]
     }) }}
