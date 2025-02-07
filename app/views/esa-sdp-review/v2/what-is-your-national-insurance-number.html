@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/esa-sdp-review.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/dwp-find-an-address-plugin/start?find_an_address_exit_url=/esa-sdp-review/v2/what-is-your-contact-number" method="post">
+
+    {{ govukInput({
+      label: {
+        text: "National Insurance number",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      hint: {
+        text: "It's on your National Insurance card, benefit letter, payslip or P60 - for example, 'QQ 12 34 56 C'"
+      },
+      classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
+      id: "national-insurance-number",
+      spellcheck: false,
+      name: "esa--national-insurance-number",
+      value: data['esa--national-insurance-number']
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      attributes: "govuk-button"
+    }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

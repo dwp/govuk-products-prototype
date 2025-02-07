@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/esa-sdp-review.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="past-partner-registered-blind-or-severely-sight-impaired" method="post">
+
+    {{ govukRadios({
+      name: "esa--past-partner-in-receipt",
+      value: data['esa--past-partner-in-receipt'],
+      fieldset: {
+        legend: {
+          text: "Was your partner in receipt of Personal Independence Payment, Adult Disability Payment, Armed Forces Independence Payments, Disability Living Allowance, Attendance Allowance, Constant Attendance Allowance or Pension Age Disability Payment?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+      {
+        value: "Yes~/esa-sdp-review/v2/check-your-answers",
+        text: "Yes",
+        checked: true if data["esa--past-partner-in-receipt"] === "Yes"
+      },
+      {
+        value: "No~/esa-sdp-review/v2/past-partner-registered-blind-or-severely-sight-impaired",
+        text: "No",
+        checked: true if data["esa--past-partner-in-receipt"] === "No"
+      },
+      {
+        value: "Dont-know~/esa-sdp-review/v2/check-your-answers",
+        text: "Don't know",
+        checked: true if data["esa--past-partner-in-receipt"] === "Dont-know"
+      }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      attributes: "govuk-button"
+    }) }}
+  </form>
+  </div>
+</div>
+
+{% endblock %}
