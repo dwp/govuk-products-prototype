@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/esa-sdp-review.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+    {{ govukRadios({
+      name: "esa--do-you-live-with-a-partner",
+      value: data['esa--do-you-live-with-a-partner'],
+      fieldset: {
+        legend: {
+          text: "Do you live with a partner?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "Yes~/esa-sdp-review/v2/present-partner-standard-or-enhanced-rate",
+          text: "Yes",
+          checked: true if data["esa--do-you-live-with-a-partner"] === "Yes"
+        },
+        {
+          value: "No~/esa-sdp-review/v2/check-your-answers",
+          text: "No",
+          checked: true if data["esa--do-you-live-with-a-partner"] === "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      attributes: "govuk-button"
+    }) }}
+  </form>
+  </div>
+</div>
+
+{% endblock %}
