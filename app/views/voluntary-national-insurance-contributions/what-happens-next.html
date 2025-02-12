@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/voluntary-national-insurance-contributions.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Request sent"
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We've sent your application to [somebody].
+      </p>
+      <p class="govuk-body">
+        [somebody] will aim to call you back within [timeframe].
+      </p>
+      <p class="govuk-body">
+        Your request is now in a queue, please do not submit multiple requests.
+      </p>
+
+
+  </div>
+</div>
+
+{% endblock %}
