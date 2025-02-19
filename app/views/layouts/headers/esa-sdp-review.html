@@ -2,12 +2,16 @@
 
 {% block header %}
   {{ govukHeader({
-    serviceName: "ESA SDP review request",
-    serviceUrl: "index.html"
+    classes: "govuk-header--full-width-border"
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: "Employment and Support Allowance and Severe Disability Premium review request",
+    serviceUrl: "#"
   }) }}
 {% endblock %}
 
 {% set serviceName %}
-ESA SDP review request
+  Employment and Support Allowance and Severe Disability Premium review request
 {% endset %}
 
