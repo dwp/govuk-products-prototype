@@ -57,6 +57,27 @@
       classes: "govuk-input--width-20"
     }) }}
 
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      name: "welsh",
+      fieldset: {
+        legend: {
+          text: "If you live in Wales, would you like to speak to someone in Welsh?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+}) }}
+
     {{ govukButton({
       text: "Send request",
       href: "what-happens-next"
