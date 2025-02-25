@@ -14,39 +14,64 @@
 {% endblock %}
 
 {% block content %}
+{% include "layouts/welsh-toggle.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="past-partner-registered-blind-or-severely-sight-impaired" method="post">
+    <form class="form" method="post">
 
-    {{ govukRadios({
-      name: "esa--past-partner-in-receipt",
-      value: data['esa--past-partner-in-receipt'],
-      fieldset: {
-        legend: {
-          text: "Was your partner in receipt of Personal Independence Payment, Adult Disability Payment, Armed Forces Independence Payments, Disability Living Allowance, Attendance Allowance, Constant Attendance Allowance or Pension Age Disability Payment?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      items: [
-      {
-        value: "Yes~/esa-sdp-review/v2/check-your-answers",
-        text: "Yes",
-        checked: true if data["esa--past-partner-in-receipt"] === "Yes"
-      },
-      {
-        value: "No~/esa-sdp-review/v2/past-partner-registered-blind-or-severely-sight-impaired",
-        text: "No",
-        checked: true if data["esa--past-partner-in-receipt"] === "No"
-      },
-      {
-        value: "Dont-know~/esa-sdp-review/v2/check-your-answers",
-        text: "Don't know",
-        checked: true if data["esa--past-partner-in-receipt"] === "Dont-know"
-      }
-      ]
-    }) }}
+{{ govukCheckboxes({
+  name: "esa--present-partner-in-receipt",
+  value: data['esa--present-partner-in-receipt'],
+  fieldset: {
+    legend: {
+      text: "Was your partner in receipt of any of the following benefits?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select all that apply"
+  },
+  items: [
+    {
+      value: "Personal Independence Payment",
+      text: "Personal Independence Payment"
+    },
+    {
+      value: "Adult Disability Payment",
+      text: "Adult Disability Payment"
+    },
+    {
+      value: "Armed Forces Independence Payment",
+      text: "Armed Forces Independence Payment"
+    },
+    {
+      value: "Disability Living Allowance",
+      text: "Disability Living Allowance"
+    },
+    {
+      value: "Attendance Allowance",
+      text: "Attendance Allowance"
+    },
+    {
+      value: "Constant Attendance Allowance",
+      text: "Constant Attendance Allowance"
+    },
+    {
+      value: "Pension Age Disability Payment",
+      text: "Pension Age Disability Payment"
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "Don't know",
+      text: "Don't know",
+      behaviour: "exclusive"
+    }
+  ]
+}) }}
 
     {{ govukButton({
       text: "Continue",
