@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/esa-sdp-review.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {% include "layouts/welsh-toggle-w-back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="" method="post">
+
+    {{ govukRadios({
+      name: "requester",
+      value: data['requester'],
+      fieldset: {
+        legend: {
+          text: "Who is requesting a review?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "I'm requesting for myself",
+          checked: true if data["requester"] === "Yes"
+        },
+        {
+          value: "No",
+          text: "I'm an appointee, I'm requesting for someone else",
+          checked: true if data["requester"] === "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      attributes: "govuk-button"
+    }) }}
+  </form>
+  </div>
+</div>
+
+{% endblock %}
