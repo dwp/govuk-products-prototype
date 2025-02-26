@@ -5,9 +5,12 @@
   {{ serviceName }} - GOV.UK
 {% endblock %}
 
-{% block content %}
-{% include "layouts/welsh-toggle.html" %}
+{% block beforeContent %}
+  {{ super() }}
+  {% include "layouts/welsh-toggle-w-back-link.html" %}
+{% endblock %}
 
+{% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 

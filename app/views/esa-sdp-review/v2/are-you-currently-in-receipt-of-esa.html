@@ -7,16 +7,10 @@
 
 {% block beforeContent %}
   {{ super() }}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  {% include "layouts/welsh-toggle-w-back-link.html" %}
 {% endblock %}
 
 {% block content %}
-
-{% include "layouts/welsh-toggle.html" %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
