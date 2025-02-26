@@ -1,28 +1,25 @@
 {% extends "layouts/main.html" %}
-{% extends "layouts/headers/personal-information-request.html" %}
+{% extends "layouts/headers/esa-sdp-review.html" %}
 
 {% block pageTitle %}
-  Your UK address - {{ serviceName }} - GOV.UK
+  {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
   {{ super() }}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  {% include "layouts/welsh-toggle-w-back-link.html" %}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="national-insurance-number" method="post">
+      <form class="form" action="" method="post">
         
         {% call govukFieldset({
           legend: {
-            text: "Your UK address to write to",
+            text: "What is your UK home address?",
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -33,8 +30,8 @@
               text: "Building name or number and street"
             },
             id: "write-to-uk-address-line-1",
-            name: "write-to-uk-address-line-1",
-            value: data['write-to-uk-address-line-1'],
+            name: "esa--write-to-uk-address-line-1",
+            value: data['esa--write-to-uk-address-line-1'],
             autocomplete: "address-line1"
           }) }}
         
@@ -43,8 +40,8 @@
               visuallyHiddenText: "Building and street line 2 of 2"
             },
             id: "write-to-uk-address-line-2",
-            name: "write-to-uk-address-line-2",
-            value: data['write-to-uk-address-line-2'],
+            name: "esa--write-to-uk-address-line-2",
+            value: data['esa--write-to-uk-address-line-2'],
             autocomplete: "address-line2"
           }) }}
         
@@ -54,8 +51,8 @@
             },
             classes: "govuk-!-width-two-thirds",
             id: "write-to-uk-address-town",
-            name: "write-to-uk-address-town",
-            value: data['write-to-uk-address-town'],
+            name: "esa--write-to-uk-address-town",
+            value: data['esa--write-to-uk-address-town'],
             autocomplete: "address-level2"
           }) }}
         
@@ -65,8 +62,8 @@
             },
             classes: "govuk-!-width-two-thirds",
             id: "write-to-uk-address-county",
-            name: "write-to-uk-address-county",
-            value: data['write-to-uk-address-county']
+            name: "esa--write-to-uk-address-county",
+            value: data['esa--write-to-uk-address-county']
           }) }}
         
           {{ govukInput({
@@ -75,8 +72,8 @@
             },
             classes: "govuk-input--width-10",
             id: "write-to-uk-address-postcode",
-            name: "write-to-uk-address-postcode",
-            value: data['write-to-uk-address-postcode'],
+            name: "esa--write-to-uk-address-postcode",
+            value: data['esa--write-to-uk-address-postcode'],
             autocomplete: "postal-code"
           }) }}
         
