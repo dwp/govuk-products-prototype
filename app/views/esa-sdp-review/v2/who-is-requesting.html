@@ -16,8 +16,8 @@
     <form class="form" action="" method="post">
 
     {{ govukRadios({
-      name: "requester",
-      value: data['requester'],
+      name: "esa--requester",
+      value: data['esa--requester'],
       fieldset: {
         legend: {
           text: "Who is requesting a review?",
@@ -29,12 +29,12 @@
         {
           value: "Yes",
           text: "I'm requesting for myself",
-          checked: true if data["requester"] === "Yes"
+          checked: true if data["esa--requester"] === "Yes"
         },
         {
           value: "No",
           text: "I'm an appointee, I'm requesting for someone else",
-          checked: true if data["requester"] === "No"
+          checked: true if data["esa--requester"] === "No"
         }
       ]
     }) }}
