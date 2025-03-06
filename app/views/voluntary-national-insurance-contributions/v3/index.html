@@ -47,19 +47,38 @@
       classes: "govuk-input--width-20"
     }) }}
 
-   
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      name: "welsh",
+      fieldset: {
+        legend: {
+          text: "If you live in Wales, would you like to speak to someone in Welsh? (Optional)",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+}) }}
 
 {{ govukRadios({
   classes: "govuk-radios--inline",
   name: "state-pension-age",
   fieldset: {
     legend: {
-      text: "Are you within 4 months of or over State Pension age?",
+      text: "Do you live in the UK?",
       classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
-    html: '<p class="govuk-body">You can <a href="https://www.gov.uk/state-pension-age">check you or your partner&#39;s State Pension age</a> if you&#39;re not sure.</p>'
+    text: "We'll use this so the right team contacts you"
   },
   items: [
     {
@@ -73,38 +92,18 @@
   ]
 }) }}
 
+
 {{ govukRadios({
   classes: "govuk-radios--inline",
   name: "state-pension-age",
   fieldset: {
     legend: {
-      text: "Where do you live?",
+      text: "Are you within 4 months of or over State Pension age?",
       classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
-    text: "Do we need hint text here in case people think they live in both?"
-  },
-  items: [
-    {
-      value: "UK",
-      text: "UK"
-    },
-    {
-      value: "Abroad",
-      text: "Abroad"
-    }
-  ]
-}) }}
-
-{{ govukRadios({
-  classes: "govuk-radios--inline",
-  name: "welsh",
-  fieldset: {
-    legend: {
-      text: "If you live in Wales, would you like to speak to someone in Welsh? (Optional)",
-      classes: "govuk-fieldset__legend--m"
-    }
+    html: '<p class="govuk-body">You can <a href="https://www.gov.uk/state-pension-age">check you or your partner&#39;s State Pension age</a> if you&#39;re not sure.</p>'
   },
   items: [
     {
