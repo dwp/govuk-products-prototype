@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/voluntary-national-insurance-contributions.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK - What happens next
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Request sent"
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We've sent your request to the DWP Future Pension Centre.
+      </p>
+      <p class="govuk-body">
+        They will call you back within 8 weeks.
+      </p>
+      <p class="govuk-body">
+        Your request is now in a queue, please do not send another request.
+      </p>
+
+  </div>
+</div>
+
+{% endblock %}
