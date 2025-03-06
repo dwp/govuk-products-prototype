@@ -32,21 +32,6 @@
       spellcheck: false
     }) }}
 
-    {{ govukInput({
-      label: {
-        text: "Phone number",
-        classes: "govuk-label--m"
-      },
-      hint: {
-        text: "For international numbers include the country code"
-      },
-      id: "phone-number",
-      name: "phoneNumber",
-      type: "tel",
-      autocomplete: "tel",
-      classes: "govuk-input--width-20"
-    }) }}
-
    
 
 {{ govukRadios({
@@ -73,9 +58,35 @@
   ]
 }) }}
 
+
+{% set ukHtml %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contactByPhone",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-input--width-20",
+  label: {
+    text: "Phone number"
+  }
+}) }}
+{% endset -%}
+
+{% set abroadHtml %}
+{{ govukInput({
+  id: "contact-by-text",
+  name: "contactByText",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-input--width-20",
+  label: {
+    text: "Phone number"
+  }
+}) }}
+{% endset -%}
+
 {{ govukRadios({
-  classes: "govuk-radios--inline",
-  name: "state-pension-age",
+  name: "contact",
   fieldset: {
     legend: {
       text: "Where do you live?",
@@ -83,16 +94,22 @@
     }
   },
   hint: {
-    text: "Do we need hint text here in case people think they live in both?"
+    text: "We'll use this so the right team contacts you"
   },
   items: [
     {
       value: "UK",
-      text: "UK"
+      text: "UK",
+      conditional: {
+        html: ukHtml
+      }
     },
     {
       value: "Abroad",
-      text: "Abroad"
+      text: "Abroad",
+      conditional: {
+        html: abroadHtml
+      }
     }
   ]
 }) }}
