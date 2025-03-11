@@ -5,6 +5,17 @@
   {{ serviceName }} - GOV.UK
 {% endblock %}
 
+{% block beforeContent %}
+{{ super() }}
+  {% from "language-toggle/macro.njk" import dwpLanguageToggle %}
+  {{ dwpLanguageToggle({
+    selectedLang: "en",
+    href: {
+        en: "#",
+        cy: "#"
+    }
+  }) }}
+{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
