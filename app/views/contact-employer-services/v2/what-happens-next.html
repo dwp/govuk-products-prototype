@@ -5,8 +5,19 @@
   What happens next - {{ serviceName }} - GOV.UK
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
+{{ super() }}
+  {% from "language-toggle/macro.njk" import dwpLanguageToggle %}
+  {{ dwpLanguageToggle({
+    selectedLang: "en",
+    href: {
+        en: "#",
+        cy: "#"
+    }
+  }) }}
+{% endblock %}
 
+{% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -14,7 +25,7 @@
           titleText: "Request sent to DWP"
         }) }}
 
-        <h2 class="govuk-heading-l">
+        <h2 class="govuk-heading-m">
           What happens next
         </h2>
 
