@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/voluntary-national-insurance-contributions.html" %}
+
+{% block pageTitle %}
+  Sorry, the service is unavailable - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+  {% from "language-toggle/macro.njk" import dwpLanguageToggle %}
+  {{ dwpLanguageToggle({
+    selectedLang: "en",
+    href: {
+        en: "#",
+        cy: "#"
+    }
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Sorry, you can no longer request a call back</h1>
+    <p class="govuk-body">
+      The 'Request a call back to pay voluntary National Insurance contributions' service has closed.</p>
+    <p class="govuk-body">
+      If you submitted a call back request form. You don't need to call us. We will contact you.
+    <p class="govuk-body">
+      Find out about <a class="govuk-link" href="https://www.gov.uk/voluntary-national-insurance-contributions">paying voluntary National Insurance contributions.</a>.
+    </p>
+  </div>
+</div>
+{% endblock %}
+
+
+ 
+ 
+
+
+
+
+
