@@ -1,0 +1,141 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pension Credit calculator - GOV.UK
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: "Home",
+      href: "https://www.gov.uk/"
+    },
+    {
+      text: "Working, jobs and pensions",
+      href: "https://www.gov.uk/browse/working"
+    },
+    {
+      text: "State Pension",
+      href: "https://www.gov.uk/browse/working/state-pension"
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Contact the Future Pension Centre
+    </h1>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+
+    <div data-module="govspeak"
+      class="gem-c-govspeak govuk-govspeak gem-c-govspeak--direction-ltr js-disable-youtube govuk-!-margin-bottom-0"
+      data-govspeak-module-started="true">
+
+      <p class="govuk-body">Contact the Future Pension Centre for questions about the State Pension or to ask for a forecast.</p>
+
+      {{ govukInsetText({
+      html: '<p class="govuk-body">This page is also available <a href="/cysylltwch-ar-ganolfan-bensiwn-y-dyfodol">in Welsh (Cymraeg)</a>.
+      </p>'
+      }) }}
+
+      <p class="govuk-body">You can also check your <a href="/check-state-pension">State Pension forecast</a> online to find out how much
+        you could get and how you can increase it.</p>
+
+      <h2 class="govuk-heading-m" id="future-pension-centre-helpline">Future Pension Centre helpline</h2>
+
+      {{ govukInsetText({
+      html: '<p class="govuk-body">A high number of calls to the helpline is resulting in long wait times.</p>
+      <p class="govuk-body">If you submitted a call back request form. You don&#39;t need to call us. We will contact you. (written by GDS)</p>'
+      }) }}
+
+      <div class="app-mainstream-inset">
+        <div class="contact">
+          <p class="govuk-body">Telephone: 0800 731 0175<br>
+            Telephone from outside the UK: +44 (0)191 218 3600 <br>
+            Welsh language telephone: 0800 731 0175</p>
+
+          <p class="govuk-body">Textphone: 0800 731 0176<br>
+            Textphone from outside the UK: +44 (0)191 218 2051 <br>
+            Welsh language textphone: 0800 731 0456</p>
+
+          <p class="govuk-body"><a href="https://www.relayuk.bt.com">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then
+            0800 731 0175</p>
+
+          <p class="govuk-body">British Sign Language (BSL) <a href="https://connect.interpreterslive.co.uk/vrs?ilc=DWP">video relay
+              service</a> if you’re on a computer - find out how to <a
+              href="https://www.youtube.com/watch?v=oELNMfAvDxw">use the service on mobile or tablet</a></p>
+
+          <p class="govuk-body">Monday to Friday, 8am to 6pm <br>
+            <a href="/call-charges">Find out about call charges</a>
+          </p>
+        </div>
+      </div>
+
+      <p class="govuk-body">You can also write to:</p>
+
+      <div class="app-mainstream-inset">
+        <div class="address">
+          <div class="adr org fn">
+            <p class="govuk-body">
+              Freepost DWP Pensions Service 3
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="govuk-body">Do not write anything except the freepost address on the envelope. You do not need a postcode or a stamp.</p>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list">
+          <li>
+            <a href="https://www.gov.uk/deferring-state-pension" class="govuk-link govuk-body-s">
+              Delay (defer) your State Pension
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/personal-pensions-your-rights" class="govuk-link govuk-body-s">
+              Personal pensions
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/state-pension" class="govuk-link govuk-body-s">
+              The basic State Pension
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/new-state-pension" class="govuk-link govuk-body-s">
+              The new State Pension
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+  </main>
+</div>
+
+{% endblock %}
