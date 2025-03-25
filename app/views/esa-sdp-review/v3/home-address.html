@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/esa-sdp-review.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {% include "layouts/welsh-toggle-w-back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+    {{ govukRadios({
+      name: "esa--home-address",
+      value: data['esa--home-address'],
+      fieldset: {
+        legend: {
+          text: "Is your home address in the UK?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "Yes~/esa-sdp-review/v3/home-address-uk",
+          text: "Yes",
+          checked: true if data["esa--home-address"] === "Yes"
+        },
+        {
+          value: "No~/esa-sdp-review/v3/home-address-abroad",
+          text: "No",
+          checked: true if data["esa--home-address"] === "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      attributes: "govuk-button"
+    }) }}
+  </form>
+  </div>
+</div>
+
+{% endblock %}
