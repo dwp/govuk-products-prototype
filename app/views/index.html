@@ -212,13 +212,13 @@
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell"><a class="govuk-link" href="esa-sdp-review/v2/index.html">Version 2<span class="govuk-visually-hidden">of Employment and Support Allowance and Severe Disability Premium review request</span></a></td>
-                <td class="govuk-table__cell">{{govukTag({ text: "Discovery", classes: "govuk-tag--green" })}}</td>
+                <td class="govuk-table__cell">{{govukTag({ text: "Discovery", classes: "govuk-tag--light-blue" })}}</td>
                 <td class="govuk-table__cell">07 Feb 2025</td>
                 <td class="govuk-table__cell">-</td>
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell"><a class="govuk-link" href="esa-sdp-review/v1/index.html">Version 1<span class="govuk-visually-hidden">of Employment and Support Allowance and Severe Disability Premium review request</span></a></td>
-                <td class="govuk-table__cell">{{govukTag({ text: "Discovery", classes: "govuk-tag--green" })}}</td>
+                <td class="govuk-table__cell">{{govukTag({ text: "Discovery", classes: "govuk-tag--light-blue" })}}</td>
                 <td class="govuk-table__cell">29 Jan 2025</td>
                 <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_esa-sdp-review.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Employment and Support Allowance and Severe Disability Premium review request</span></a></td>
               </tr>
@@ -295,7 +295,7 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="contact-employer-services/v2/index.html">Version 2<span class="govuk-visually-hidden">of Contact Employer Services</span></a></td>
-              <td class="govuk-table__cell">{{govukTag({ text: "Design", classes: "govuk-tag--green" })}}</td>
+              <td class="govuk-table__cell">{{govukTag({ text: "Design", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell">-</td>
             </tr>
@@ -728,7 +728,7 @@
                 <br>
                 <a class="govuk-link" href="voluntary-national-insurance-contributions/v7/future-pension-centre.html">Version 3 - Contact Future Pension Centre<span class="govuk-visually-hidden"></span></a>
               </td>
-              <td class="govuk-table__cell">{{govukTag({ text: "Go live - 00:00 on 6 April", classes: "govuk-tag--green" })}}</td>
+              <td class="govuk-table__cell">{{govukTag({ text: "Go live - 00:00 on 6 April", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">24 Mar 2025</td>
               <td class="govuk-table__cell">-</td>
             </tr>
@@ -805,6 +805,7 @@
 
     <div class="app-card">
       <div class="app-card-title-wrapper">
+        {{ govukTag({ text: "The RAR team will be replacing this product", classes: "govuk-tag--yellow" })}}
         <h2 class="govuk-heading-m govuk-product">Request your personal information</h2>
         <p class="govuk-body app-card-title-description">     
           Enables users to request the personal information that DWP holds about them.    
@@ -835,7 +836,7 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="personal-information-request/v3/1.html">Version 3<span class="govuk-visually-hidden">of Request your personal information</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Design - Being built by another team", classes: "govuk-tag--yellow" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Design", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">06 Jan 2025</td>
               <td class="govuk-table__cell">-</td>
             </tr>
@@ -857,6 +858,7 @@
 
     <div class="app-card">
       <div class="app-card-title-wrapper">
+        {{ govukTag({ text: "The RAR team might be replacing this product", classes: "govuk-tag--yellow" })}}
         <h2 class="govuk-heading-m govuk-product">Send a personal information request for a citizen</h2>
         <p class="govuk-body app-card-title-description">   
           Enables internal staff to send a request on a citizen's behalf if they cannot, or will not, complete the request themselves, for the personal information that DWP holds about them.  
@@ -889,9 +891,8 @@
             </tr>
           </tbody>
         </table>
-    </div></div>
-
-   
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
