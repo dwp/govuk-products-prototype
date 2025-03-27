@@ -296,8 +296,8 @@
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="contact-employer-services/v2/index.html">Version 2<span class="govuk-visually-hidden">of Contact Employer Services</span></a></td>
               <td class="govuk-table__cell">{{govukTag({ text: "Design", classes: "govuk-tag--light-blue" })}}</td>
-              <td class="govuk-table__cell">-</td>
-              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">19 Mar 2025</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-2_contact-employer-services.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 2 of Contact Employer Services</span></a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="contact-employer-services/v1/index.html">Version 1<span class="govuk-visually-hidden">of Contact Employer Services</span></a></td>
@@ -307,7 +307,16 @@
             </tr>
           </tbody>
         </table>
-    </div></div>
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "contact-employer-services/design-history.html",
+          attributes: {
+            "aria-label": "View design history for Contact Employer Services"
+          }
+        }) }}
+    </div>
+  </div>
 
     <div class="app-card">
       <div class="app-card-title-wrapper">
