@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Contact Employer Services
+{% endset %}
+
+{% block pageTitle %}
+  Design history - {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block bodyStart %}
+ {% from "internal-service-header/macro.njk" import dwpHeader %}
+ {{
+     dwpHeader({
+         serviceName: "GOV.UK team prototype library" ,
+         serviceHref: "/",
+         container: true
+     })
+ }}
+ {% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Contact Employer Services
+      </span>
+      Design history
+    </h1>
+
+    <div class="dwp-timeline">
+      <ol class="dwp-timeline__items">        
+        <li class="dwp-timeline__item">
+          <p class="dwp-timeline__datetime">19 Mar 2025</p>
+          <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v2/index.html">Version 2</a> - Welsh language toggle and question</h2>
+          {{ govukDetails({
+            summaryText: "Main changes",
+            html: 
+            govukTable({
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Change",
+                  classes: "govuk-!-width-one-half"
+                },
+                {
+                  text: "Why we made the change"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "Added a Welsh language toggle to the top of the page. In the previous version the link for Welsh was in the footer."
+                  },
+                  {
+                    text: "We did this to make it easier for users to switch between Welsh and English. This should also make it a better experience for users who use a screen reader as they are able to navigate to the link a lot sooner with it being one of the first elements on the page."
+                  }
+                ],
+                [
+                {
+                  text: "Added the question 'If you are an employer in Wales, would you like to speak to someone in Welsh? (Optional)' to the English and Welsh versions."
+                },
+                {
+                  text: "This is required in order to know that the request needs to be allocated to a Welsh speaking staff member to contact the employer."
+                }
+              ]
+              ]
+            })
+          }) }}
+        </li>
+
+        <li class="dwp-timeline__item">
+          <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v1/index.html">Version 1</a> {{govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</h2>
+        </li>
+      </ol>
+    </div>
+  
+  </div>
+</div>
+{% endblock %}
