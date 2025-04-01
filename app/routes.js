@@ -126,3 +126,18 @@ router.post('/pir-v3-receiving-benefit', function(request, response) {
         response.redirect("/personal-information-request/v3/36")
     }
 })
+
+// -------------------------------------------------------------------------------------------------------------------------
+// Employment and Support Allowance and Severe Disability Premium review request - v3
+
+router.post('/esa-sdp-partner-benefits', function(request, response) {
+
+    var partnerBenefits = request.session.data['esa--present-partner-in-receipt']
+
+    if (partnerBenefits.length > 0){
+        response.redirect("/esa-sdp-review/v3/is-your-partner-registered-blind")
+    }
+    else if (partnerBenefits == "Don't know") {
+        response.redirect("/esa-sdp-review/v3/what-is-your-full-name")
+    }
+})
