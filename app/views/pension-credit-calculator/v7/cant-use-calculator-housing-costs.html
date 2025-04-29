@@ -1,0 +1,152 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/pension-credit.html" %}
+ 
+{% block pageTitle %}
+  Cannot use the calculator - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: "Home",
+      href: "https://www.gov.uk/"
+      },
+      {
+      text: "Welfare",
+      href: "https://www.gov.uk/welfare"
+      },
+      {
+      text: "Jobseeker's Allowance and low income benefits",
+      href: "https://www.gov.uk/welfare/jobseekers-allowance"
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Pension Credit calculator</span>
+
+    <h1 class="govuk-heading-l">
+      You cannot use the Pension Credit calculator
+    </h1>
+
+    <p class="govuk-body">Because of your housing costs, the calculator cannot work out if you're eligible for Pension Credit or how much you could get.</p>
+
+    <p class="govuk-body">You might be eligible for Pension Credit. You can <a href="https://www.gov.uk/pension-credit/eligibility" class="govuk-link">check the eligibility rules</a> or call the Pension Credit claim line.</p>
+   
+    <div class="contact app-mainstream-inset">
+      <p class="govuk-body">
+        Pension Credit claim line<br>
+        0800 99 1234<br>
+        <a href="http://ngts.org.uk/" class="govuk-link">Relay UK</a> (if you cannot hear or speak on the
+        phone): 18001 then 0800 99 1234<br>
+        Monday to Friday, 8am to 6pm (except public holidays)<br>
+        <a href="/call-charges" class="govuk-link">Find out about call charges</a>
+      </p>
+    </div>
+    <section class="govuk-!-padding-top-6">
+      <h2 class="govuk-heading-m">Your answers</h2>
+
+      <p class="govuk-body">
+        <a href="index" class="govuk-link">Start again</a>
+      </p>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+          {
+            key: {
+              text: "1. Are you or your partner self-employed?"
+            },
+            value: {
+              text: data['self-employed']
+            },
+            actions: {
+              items: [
+                {
+                  href: "self-employed",
+                  text: "Change",
+                  visuallyHiddenText: "1. Are you or your partner self-employed?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+            },
+            value: {
+              text: data['own-more-than-one-property']
+            },
+            actions: {
+              items: [
+                {
+                  href: "own-more-than-one-property",
+                  text: "Change",
+                  visuallyHiddenText: "2. Apart from the place where you live, do you or your partner own any other property or land?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "3. Do you pay housing costs other than mortgage payments or rent?"
+            },
+            value: {
+              text: data['have-housing-costs']
+            },
+            actions: {
+              items: [
+                {
+                  href: "housing-costs",
+                  text: "Change",
+                  visuallyHiddenText: "3. Do you pay housing costs other than mortgage payments or rent?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+  </section>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list">
+          <li>
+            <a href="https://www.gov.uk/pension-credit" class="govuk-link govuk-body-s">
+              Pension Credit
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/state-pension-if-you-retire-abroad" class="govuk-link govuk-body-s">
+              State Pension if you retire abroad
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/state-pension" class="govuk-link govuk-body-s">
+              The basic State Pension
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/benefit-fraud" class="govuk-link govuk-body-s">
+              Benefit fraud
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</div>
+
+{% endblock %}
