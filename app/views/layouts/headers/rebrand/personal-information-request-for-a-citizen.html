@@ -1,0 +1,20 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% set govukRebrand = true %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: "",
+    serviceUrl: "index.html",
+    rebrand: true
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: "Send a personal information request for a citizen",
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}
+
+{% set serviceName %}
+  Send a personal information request for a citizen
+{% endset %}
