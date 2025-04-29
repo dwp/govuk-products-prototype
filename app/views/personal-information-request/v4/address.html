@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/personal-information-request.html" %}
+
+{% block pageTitle %}
+  Address - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+ 
+{% block content %} 
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">
+        Your home address
+      </h1>
+      
+      <form class="form"  method="post">
+
+        {{ govukRadios({
+          name: "address-in-uk",
+          value: data['address-in-uk'],
+          fieldset: {
+            legend: {
+              text: "Do you have an address in the UK?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes~/personal-information-request/v4/home-address-uk",
+              text: "Yes",
+              checked: true if data["address-in-uk"] === "yes"
+            },
+            {
+              value: "no~/personal-information-request/v4/home-address-abroad",
+              text: "No",
+              checked: true if data["address-in-uk"] === "no"
+            }
+          ]
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue",
+          attributes: "govuk-button"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
