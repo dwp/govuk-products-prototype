@@ -16,11 +16,11 @@
 
     <form class="form" method="post">
       {{ govukRadios({
-        name: "esa--currently-in-receipt",
-        value: data['esa--currently-in-receipt'],
+        name: "esa--contact-in-welsh",
+        value: data['esa--contact-in-welsh'],
         fieldset: {
           legend: {
-            text: "Are you currently in receipt of Employment and Support Allowance?",
+            text: "If you live in Wales, would you like to speak to someone in Welsh? (Optional)",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -28,7 +28,10 @@
         items: [
           {
             value: "Yes~/esa-sdp-review/v2/are-you-in-receipt",
-            text: "Yes"
+            text: "Yes",
+            conditional: {
+              html: phoneNumberHTML
+            }
           },
           {
             value: "No~/esa-sdp-review/v2/have-you-ever-received-esa",
