@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/personal-information-request-for-a-citizen.html" %}
+
+{% block pageTitle %}
+  Your name - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Send a personal information request for a citizen
+    </h1>
+
+    <p class="govuk-body">People have the right to get a copy of the information that is held about them. This is called the 'right of access'.</p>
+
+    <p class="govuk-body">Use this form to send a request on a citizen's behalf if they cannot, or will not, complete the request themselves on GOV.UK.</p>
+
+    <h2 class="govuk-heading-l">
+      Before you start
+    </h2>
+    
+    <p class="govuk-body">Do not complete this form for:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>proof of someone's entitlement to benefits</li>
+      <li>a copy of their benefit rates and dates</li>
+      <li>copies of letters or forms</li>
+    </ul>   
+    
+    <p class="govuk-body">Use this form for more complicated personal information requests. This could be where personal information:</p>
+    
+    <ul class="govuk-list govuk-list--bullet">
+      <li>is held across different benefit systems over long periods of time</li>
+      <li>needs specialist handling by data protection staff</li>
+    </ul>   
+
+    <p class="govuk-body">Other third parties will need to prove they have the authority to act on a citizen's behalf. They can do this by writing to DWP using the    <a href="https://www.gov.uk/guidance/request-your-personal-information-from-the-department-for-work-and-pensions" class="govuk-link">personal information request form for third parties</a> 
+      instead.</p>   
+
+    {{ govukButton({
+      text: "Start now",
+      isStartButton: true,
+      href: "who-is-requesting"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
