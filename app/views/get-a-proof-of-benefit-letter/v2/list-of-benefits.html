@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/get-a-proof-of-benefit-letter.html" %}
+
+{% block pageTitle %}
+  Contact form - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+  text: "Alpha"
+  },
+  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Get a proof of benefit letter
+    </h1>
+
+    {{ govukCheckboxes({
+      name: "benefit",
+      fieldset: {
+        legend: {
+          text: "Which benefit do you need a proof of benefit letter for?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "You can select multiple benefits. If you select more than one benefit, you will receive a separate letter for each benefit."
+      },
+      items: [
+        {
+          value: "esa",
+          text: "Employment and Support Allowance"
+        },
+        {
+          value: "income-support",
+          text: "Income Support"
+        },
+        {
+          value: "jsa",
+          text: "Jobseeker's Allowance"
+        },
+        {
+          value: "pension-credit",
+          text: "Pension Credit"
+        },
+        {
+          value: "state-pension",
+          text: "State Pension"
+        }
+      ]
+    }) }}
+
+    <p class="govuk-body"><a href="what-to-do-next" class="govuk-link">I need a letter for Universal Credit or another benefit</a>.</p>
+    
+    {{ govukInput({
+      label: {
+        text: "What is your National Insurance number?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      classes: "govuk-input--width-10",
+      hint: {
+        text: "It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ123456C'."
+      },
+      id: "event-name",
+      name: "eventName"
+    }) }}
+
+    {{ govukDateInput({
+      id: "",
+      namePrefix: "",
+      fieldset: {
+        legend: {
+          text: "What is your date of birth?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      }
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "What is your postcode?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      classes: "govuk-input--width-10",
+      hint: {
+        text: "Enter your full postcode, including the space. For example LS2 7UB"
+      },
+      id: "",
+      name: ""
+    }) }}
+
+    {{ govukButton({
+      text: "Submit",
+      href: "what-happens-next"
+    }) }}
+
+    {% endblock %}
+  </div>
+</div>
