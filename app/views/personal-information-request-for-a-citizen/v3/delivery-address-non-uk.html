@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/personal-information-request-for-a-citizen.html" %}
+
+{% block pageTitle %}
+  Your UK address – {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Where we'll send the information
+      </h1>
+
+      <form class="form" action="request" method="post">
+        
+        {{ govukTextarea({
+          name: "address",
+          id: "address",
+          rows: "8",
+          autocomplete: "street-address",
+          label: {
+            text: "Their delivery address outside the UK",
+            classes: "govuk-label--m"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          attributes: "govuk-button"
+        }) }}
+          
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
