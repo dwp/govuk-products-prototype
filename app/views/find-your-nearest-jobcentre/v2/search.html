@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/find-your-nearest-jobcentre.html" %}
+
+{% block pageTitle %}
+  Contact Jobcentre Plus - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "layouts/welsh-toggle-wo-back-link.html" %}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Contact Jobcentre Plus
+    </h1>
+
+    <h2 class="govuk-heading-m">Local office search</h2>
+
+    <p class="govuk-body">To find the address of your Jobcentre Plus office, please enter your full postcode.</p>
+
+    {{ govukInput({
+      label: {
+        text: "Your postcode?",
+        classes: "govuk-label--m"
+      },
+      hint: {
+        text: "For example LS1 1AG."
+      },
+      id: "postcode",
+      name: "postcode",
+      classes: "govuk-input--width-10"
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "search-results"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
