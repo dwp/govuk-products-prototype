@@ -1,0 +1,25 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/find-your-nearest-jobcentre.html" %}
+
+{% block pageTitle %}
+  Why do you want to contact Jobcentre Plus? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "layouts/welsh-toggle-wo-back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Why do you want to contact Jobcentre Plus?</h1>
+  
+    <p class="govuk-body"><a class="govuk-link" href="https://www.gov.uk/universal-credit/acontact-universal-credit#guide-contents">Contact us about Universal Credit</a></p>
+    <p class="govuk-body"><a class="govuk-link" href="search">Contact us about anything else</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

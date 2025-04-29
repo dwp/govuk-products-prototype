@@ -1,11 +1,12 @@
 {% extends "layouts/main.html" %}
-{% extends "layouts/headers/find-your-nearest-jobcentre.html" %}
+{% extends "layouts/headers/rebrand/find-your-nearest-jobcentre.html" %}
 
 {% block pageTitle %}
   Contact Jobcentre Plus - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
+  {% include "layouts/welsh-toggle-wo-back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -16,8 +17,6 @@
       <h1 class="govuk-heading-l">  
         Search results
       </h1>
-
-      <h2 class="govuk-heading-m">Local office search</h2>
 
       <h2 class="govuk-heading-m">Results for LS1 1AG</h2>
 
