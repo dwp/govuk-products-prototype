@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/contact-the-dwp-ministerial-correspondence-team.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Contact the DWP ministerial correspondence team
+      </h1>
+
+      <p class="govuk-body">Ask a question about our welfare, pensions and child maintenance policies.</p>
+     
+      <p class="govuk-body">The types of messages we cannot reply to are explained in our <a class="govuk-link" href="/ask-a-policy-question/acceptable-use">acceptable use policy</a>.</p>
+    
+      {{ govukInput({
+        label: {
+          text: "Your full name",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        id: "name",
+        name: "name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        id: "email",
+        name: "email"
+      }) }}
+
+      {% set policyAreaHtml %}
+        {{ govukInput({
+          id: "policy-area",
+          name: "policyArea",
+          label: {
+            text: "Policy area"
+          }
+        }) }}
+      {% endset -%}
+      
+      {{ govukRadios({
+        name: "topic",
+        fieldset: {
+          legend: {
+            text: "Is your question about a specific policy area?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, Universal Credit or State Pension."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: policyAreaHtml
+            }
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukTextarea({
+        rows: "5",
+        label: {
+          text: "Your question",
+          classes: "govuk-label--m"
+        },
+        hint: {
+          text: "Do not include personal or financial information, such as your National Insurance number or bank account details."
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Send your enquiry",
+        href: "what-happens-next"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
