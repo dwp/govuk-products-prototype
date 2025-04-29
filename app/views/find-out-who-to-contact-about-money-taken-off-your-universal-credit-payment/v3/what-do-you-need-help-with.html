@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment.html" %}
+ 
+{% block pageTitle %}
+  What do you need help with? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {{ govukRadios({
+        name: "whatDoYouNeedHelpWith",
+        fieldset: {
+          legend: {
+            text: "What do you need help with?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "advance-payment~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v3/advance-payment-what-is-your-enquiry-about",
+            text: "Advance payment"
+          },
+          {
+            value: "universal-credit-overpayment~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v3/universal-credit-overpayment",
+            text: "Universal Credit overpayment"
+          },
+          {
+            value: "tax-credits-benefit-overpayment-budgeting-crisis-loan-repayments~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v3/tax-credits-and-benefit-overpayments-budgeting-and-crisis-loan-repayments",
+            text: "Tax credits and benefit overpayments, budgeting and crisis loan repayments"
+          },
+          {
+            value: "recoverable-hardship-payment~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v3/recoverable-hardship-payment",
+            text: "Recoverable hardship payment"
+          },
+          {
+            value: "third-party-deduction~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v3/third-party-deduction",
+            text: "Third party deduction - if you owe money for things like rent, Council Tax, electricity, gas, water or court fines"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Next step"
+      }) }}
+
+      </form>
+  </div>
+</div>
+
+{% endblock %}
