@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% extends "layouts/headers/esa-sdp-review.html" %}
+{% extends "layouts/headers/rebrand/esa-sdp-review.html" %}
 
 {% block pageTitle %}
   {{ serviceName }} - GOV.UK
@@ -20,20 +20,20 @@
       value: data['esa--requester'],
       fieldset: {
         legend: {
-          text: "Who is requesting a review?",
+          text: "Are you requesting a review on behalf of someone else?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       items: [
         {
-          value: "Yes",
-          text: "I'm requesting for myself",
+          value: "Yes~/esa-sdp-review/v2/",
+          text: "Yes",
           checked: true if data["esa--requester"] === "Yes"
         },
         {
-          value: "No",
-          text: "I'm an appointee, I'm requesting for someone else",
+          value: "No~/esa-sdp-review/v2/are-you-currently-in-receipt-of-esa",
+          text: "No",
           checked: true if data["esa--requester"] === "No"
         }
       ]

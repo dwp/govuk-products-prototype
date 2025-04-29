@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% extends "layouts/headers/esa-sdp-review.html" %}
+{% extends "layouts/headers/rebrand/esa-sdp-review.html" %}
 
 {% block pageTitle %}
   {{ serviceName }} - GOV.UK
@@ -27,7 +27,7 @@
       },
       items: [
         {
-          value: "Yes~/esa-sdp-review/v2/present-partner-standard-or-enhanced-rate",
+          value: "Yes~/esa-sdp-review/v2/is-your-partner-in-receipt",
           text: "Yes",
           checked: true if data["esa--do-you-live-with-a-partner"] === "Yes"
         },

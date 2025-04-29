@@ -13,28 +13,33 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" method="post">
+    <form class="form" action="" method="post">
 
     {{ govukRadios({
-      name: "esa--home-address",
-      value: data['esa--home-address'],
+      name: "esa--present-in-receipt",
+      value: data['esa--present-in-receipt'],
       fieldset: {
         legend: {
-          text: "Is your home address in the UK?",
+          text: "Are you in receipt of Adult Disability Payment, Personal Independence Payment or Disability Living Allowance?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       items: [
         {
-          value: "Yes~/esa-sdp-review/v2/home-address-uk",
+          value: "Yes~/esa-sdp-review/v2/do-you-live-with-a-partner",
           text: "Yes",
-          checked: true if data["esa--home-address"] === "Yes"
+          checked: true if data["esa--present-in-receipt"] === "Yes"
         },
         {
-          value: "No~/esa-sdp-review/v2/home-address-abroad",
+          value: "No~/esa-sdp-review/v2/are-not-eligible",
           text: "No",
-          checked: true if data["esa--home-address"] === "No"
+          checked: true if data["esa--present-in-receipt"] === "No"
+        },
+        {
+          value: "Dont-know~/esa-sdp-review/v2/do-you-live-with-a-partner",
+          text: "Don't know",
+          checked: true if data["esa--present-in-receipt"] === "Dont-know"
         }
       ]
     }) }}
