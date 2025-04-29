@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Find out who to contact about money taken off your Universal Credit payment
+    </h1>
+
+    <p class="govuk-body"> We can deduct money from your Universal Credit payment if you have a debt. You will see this on your Universal Credit statement - sign into your online account and look in the 'Payments' section.</p>
+
+    <p class="govuk-body">Find out who to ask about money taken off for:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Advances</li>
+      <li>Universal Credit overpayment</li>
+      <li>Tax credits and benefit overpayments, budgeting and crisis loan repayments</li>
+      <li>Recoverable hardship payment</li>
+      <li>Third party deduction - if you owe money for things like rent, Council Tax, electricity, gas, water or court fines</li>
+    </ul>
+
+    {{ govukButton({
+      text: "Start now",
+      href: "where-do-you-live",
+      isStartButton: true
+    }) }}
+
+    <p class="govuk-body">Find out about <a class="govuk-link" href="https://www.gov.uk/guidance/find-out-about-money-taken-off-your-universal-credit-payment">money taken off your Universal Credit payment</a>.</p>
+
+  </div>
+</div>
+
+{% endblock %}

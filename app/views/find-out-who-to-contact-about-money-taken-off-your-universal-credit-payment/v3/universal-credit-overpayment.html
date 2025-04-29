@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment.html" %}
+ 
+{% block pageTitle %}
+  Universal Credit overpayment - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Universal Credit overpayment</h1>
+    
+    <form class="form" method="post">
+
+      {{ govukRadios({
+        name: "universalCreditOverpayment",
+        fieldset: {
+          legend: {
+            text: "What is your enquiry about?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "uc-overpayment-reason~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v3/universal-credit-overpayment-i-want-to-know-what-the-overpayment-was-for",
+            text: "I want to know what the overpayment was for"
+          },
+          {
+            value: "uc-how-much-left-to-pay~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v3/universal-credit-overpayment-how-much-i-have-left-to-pay",
+            text: "How much I have left to pay"
+          },
+          {
+            value: "uc-one-off-payment~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v3/universal-credit-overpayment-i-want-to-make-a-one-off-payment",
+            text: "I want to make a one-off payment"
+          },
+          {
+            value: "uc-struggling-to-repay~/find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v3/universal-credit-overpayment-i-am-struggling-to-repay",
+            text: "I'm struggling to repay"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Next step"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
