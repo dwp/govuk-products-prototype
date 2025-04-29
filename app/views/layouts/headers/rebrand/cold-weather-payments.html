@@ -1,12 +1,15 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
+{% set govukRebrand = true %}
+
 {% block header %}
   {{ govukHeader({
-    serviceName: "Contact the  International Pension Centre",
-    serviceUrl: "index.html"
+    serviceName: "",
+    serviceUrl: "index.html",
+    rebrand: true
   }) }}
 {% endblock %}
 
 {% set serviceName %}
-  Contact the  International Pension Centre
+  Cold Weather Payments
 {% endset %}

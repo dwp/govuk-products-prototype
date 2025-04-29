@@ -1,0 +1,20 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% set govukRebrand = true %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: "",
+    serviceUrl: "index.html",
+    rebrand: true
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: "Employment and Support Allowance and Severe Disability Premium review request",
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}
+
+{% set serviceName %}
+  Employment and Support Allowance and Severe Disability Premium review request
+{% endset %}

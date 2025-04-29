@@ -1,0 +1,20 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% set govukRebrand = true %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: "",
+    serviceUrl: "index.html",
+    rebrand: true
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: "Find out who to contact about money taken off your Universal Credit payment",
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}
+
+{% set serviceName %}
+  Find out who to contact about money taken off your Universal Credit payment  
+{% endset %}

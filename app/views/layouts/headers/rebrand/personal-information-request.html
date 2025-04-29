@@ -1,0 +1,20 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% set govukRebrand = true %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: "",
+    serviceUrl: "index.html",
+    rebrand: true
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: "Request your personal information from DWP",
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}
+
+{% set serviceName %}
+  Request your personal information from DWP
+{% endset %}
