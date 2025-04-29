@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Pension Credit calculator 
+{% endset %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK 
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: "Home",
+      href: "https://www.gov.uk/"
+      },
+      {
+      text: "Welfare",
+      href: "https://www.gov.uk/welfare"
+      },
+      {
+      text: "Jobseeker's Allowance and low income benefits",
+      href: "https://www.gov.uk/welfare/jobseekers-allowance"
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Pension Credit calculator
+    </h1>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+
+    <div class="gem-c-govspeak govuk-govspeak direction-ltr disable-youtube" data-module="govspeak"
+      data-govspeak-module-started="true">
+
+      <p class="govuk-body">Find out if you're eligible for Pension Credit by checking the <a href="https://www.gov.uk/pension-credit" class="govuk-link">Pension Credit eligibility rules</a>.</p>
+      
+      <p class="govuk-body">If you need more help, you might be able to use the Pension Credit calculator to check if you're eligible and how much you could get.</p>
+
+      <p class="govuk-body">You'll need to answer some questions about your circumstances to find out if you can use the calculator.</p>
+
+      {{ govukInsetText({
+      html: '<p class="govuk-body">This calculator is also available <a href="/cyfrifiannell-credyd-pensiwn" class="govuk-link">in Welsh
+          (Cymraeg)</a>.</p>'
+      }) }}
+
+      {{ govukButton({
+        text: "Start now",
+        href: "self-employed",
+        isStartButton: true,
+        classes: "govuk-!-margin-bottom-9"
+      }) }}
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list">
+          <li>
+            <a href="https://www.gov.uk/pension-credit" class="govuk-link govuk-body-s">
+              Pension Credit
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/state-pension-if-you-retire-abroad" class="govuk-link govuk-body-s">
+              State Pension if you retire abroad
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/state-pension" class="govuk-link govuk-body-s">
+              The basic State Pension
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/benefit-fraud" class="govuk-link govuk-body-s">
+              Benefit fraud
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+  </main>
+</div>
+
+{% endblock %}
