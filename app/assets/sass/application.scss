@@ -16,25 +16,26 @@ main.govuk-main-wrapper {
 }
 
 .app-big-bar {
-    background-color: $govuk-brand-colour;
+    background-color: #f4f8fb;
+    border-bottom: 1px solid #8eb8dc;
     height: auto;
     width: 100%;
 
     .app-big-bar__wrapper {
-        @include govuk-responsive-padding(3, "top");
-        @include govuk-responsive-padding(3, "bottom");
+        @include govuk-responsive-padding(6, "top");
+        @include govuk-responsive-padding(6, "bottom");
     }
 
     h1 {
-        @include govuk-responsive-margin(6, "bottom");
+        @include govuk-responsive-margin(4, "bottom");
     }
 
-    p {
-        @include govuk-responsive-margin(4, "bottom");
-   }
-
     h1, p {
-        color: govuk-colour("white");
+        color: govuk-colour("black");
+    }
+
+    .govuk-body-l {
+        margin:0;
     }
 }
 
