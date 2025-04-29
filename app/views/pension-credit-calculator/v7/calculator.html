@@ -1,0 +1,197 @@
+{% extends "layouts/headers/pension-credit-calculator.html" %}
+
+{% block pageTitle %}
+  About you - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Pension Credit calculator
+    </h1>
+
+    <form class="form"  method="post">
+
+      <h2 class="govuk-heading-m">
+        About you
+      </h2>
+    
+      {{ govukDateInput({
+        id: "date-of-birth",
+        namePrefix: "date-of-birth",
+        fieldset: {
+          legend: {
+            text: "What is your date of birth?",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 31 3 1950"
+        }
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        name: "manorwoman",
+        fieldset: {
+          legend: {
+            text: "Are you a:",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Man",
+            text: "Man"
+          },
+          {
+            value: "Woman",
+            text: "Woman"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--small",
+        name: "live",
+        fieldset: {
+          legend: {
+            text: "Are you a:",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "England",
+            text: "England"
+          },
+          {
+            value: "Scotland",
+            text: "Scotland"
+          },
+          {
+            value: "Wales",
+            text: "Wales"
+          },
+          {
+            value: "Northern Ireland",
+            text: "Northern Ireland"
+          },
+          {
+            value: "Not a UK resident",
+            text: "Not a UK resident"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        name: "manorwoman",
+        fieldset: {
+          legend: {
+            text: "Are you registered blind?",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        name: "manorwoman",
+        fieldset: {
+          legend: {
+            text: "Do you live alone?",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "If you live in a care home, choose Yes if you have your own room"
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--small",
+        name: "live",
+        fieldset: {
+          legend: {
+            text: "What kind of accommodation do you live in?",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Rented",
+            text: "Rented"
+          },
+          {
+            value: "Property that you or your partner (if you have one) own outright",
+            text: "Property that you or your partner (if you have one) own outright"
+          },
+          {
+            value: "Property with a mortgage",
+            text: "Property with a mortgage"
+          },
+          {
+            value: "Care home",
+            text: "Care home"
+          },
+          {
+            value: "Live with family (i.e. non-householder)",
+            text: "Live with family (i.e. non-householder)"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        name: "manorwoman",
+        fieldset: {
+          legend: {
+            text: "Do you or your partner (if you have one) own any other property or land?",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
