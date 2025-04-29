@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/personal-information-request.html" %}
+
+{% block pageTitle %}
+  Address - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+ 
+{% block content %} 
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <form class="form"  method="post">
+
+        {{ govukRadios({
+          name: "write-to-different-address",
+          value: data['write-to-different-address'],
+          fieldset: {
+            legend: {
+              text: "Should we send the information to a different address?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes~/personal-information-request/v4/address-to-write-to",
+              text: "Yes",
+              checked: true if data["write-to-different-address"] === "yes"
+            },
+            {
+              value: "no~/personal-information-request/v4/national-insurance-number",
+              text: "No",
+              checked: true if data["write-to-different-address"] === "no"
+            }
+          ]
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

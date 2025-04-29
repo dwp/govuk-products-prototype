@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/personal-information-request.html" %}
+
+{% block pageTitle %}
+  Your birth of birth - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      What time period should the information cover?
+    </h1>
+    
+    <form class="form" action="information" method="post">
+
+    {{ govukDateInput({
+      id: "date-from",
+      namePrefix: "date-from",
+      fieldset: {
+        legend: {
+          text: "From",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          classes: 'govuk-input--width-2',
+          name: 'day',
+          value: data['date-from-day']
+        },
+        {
+          classes: 'govuk-input--width-2',
+          name: 'month',
+          value: data['date-from-month']
+        },
+        {
+          classes: 'govuk-input--width-4',
+          name: 'year',
+          value: data['date-from-year']
+        }
+      ]
+    }) }}
+
+    {{ govukDateInput({
+      id: "date-to",
+      namePrefix: "date-to",
+      fieldset: {
+        legend: {
+          text: "To",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          classes: 'govuk-input--width-2',
+          name: 'day',
+          value: data['date-to-day']
+        },
+        {
+          classes: 'govuk-input--width-2',
+          name: 'month',
+          value: data['date-to-month']
+        },
+        {
+          classes: 'govuk-input--width-4',
+          name: 'year',
+          value: data['date-to-year']
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      attributes: "govuk-button"
+    }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
