@@ -43,8 +43,41 @@
       <ol class="dwp-timeline__items">
 
         <li class="dwp-timeline__item">
+          <p class="dwp-timeline__datetime">15 Apr 2025</p>
+          <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v6/index.html">Version 6</a> - Content changes {{govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</h2>
+          {{ govukDetails({
+            summaryText: "Main changes",
+            html: 
+            govukTable({
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Change",
+                  classes: "govuk-!-width-one-half"
+                },
+                {
+                  text: "Why we made the change"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    html: '<p class="govuk-body">Removed question 6 &#39;Do you or your partner live in Scotland and get Pension Age Disability Payment?&#39;</p>'
+                  },
+                  {
+                    html: '<p class="govuk-body">We were originally told by stakeholders that the calculator did not handle this benefit as it had a different rate but now we know that it doesn&#39;t have a different rate. Therefore it no longer needs to be a knockout question.</p>
+                    <p class="govuk-body">The calculator has been updated to include Pension Age Disability Payment and Scottish Adult Disability Living Allowance.</p>'
+                  }
+                ]
+              ]
+            })
+          }) }}
+        </li>
+
+
+        <li class="dwp-timeline__item">
           <p class="dwp-timeline__datetime">25 Nov 2024</p>
-          <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v4/index.html">Version 5</a> - Content changes {{govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</h2>
+          <h2 class="dwp-timeline__heading"><a class="govuk-link" href="v5/index.html">Version 5</a> - Content changes</h2>
           {{ govukDetails({
             summaryText: "Main changes",
             html: 
