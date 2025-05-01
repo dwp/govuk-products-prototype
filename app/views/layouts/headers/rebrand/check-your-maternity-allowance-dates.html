@@ -13,3 +13,9 @@
 {% set serviceName %}
   Check your Maternity Allowance dates
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}

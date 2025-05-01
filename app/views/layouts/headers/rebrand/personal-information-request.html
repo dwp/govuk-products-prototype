@@ -18,3 +18,9 @@
 {% set serviceName %}
   Request your personal information from DWP
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}

@@ -18,3 +18,9 @@
 {% set serviceName %}
   Send a personal information request for a citizen
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}

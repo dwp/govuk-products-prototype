@@ -13,3 +13,9 @@
 {% set serviceName %}
   Contact the Winter Fuel Payment Centre
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}

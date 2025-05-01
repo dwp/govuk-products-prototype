@@ -13,3 +13,9 @@
 {% set serviceName %}
   Cold Weather Payments
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}

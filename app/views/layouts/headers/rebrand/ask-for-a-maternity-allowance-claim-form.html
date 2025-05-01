@@ -13,3 +13,9 @@
 {% set serviceName %}
   Ask for a Maternity Allowance claim form
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}
