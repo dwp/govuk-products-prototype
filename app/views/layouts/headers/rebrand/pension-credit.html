@@ -13,3 +13,9 @@
 {% set serviceName %}
   Pension Credit calculator
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}

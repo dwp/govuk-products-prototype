@@ -18,3 +18,9 @@
 {% set serviceName %}
   Employment and Support Allowance and Severe Disability Premium review request
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}

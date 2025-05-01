@@ -13,3 +13,9 @@
 {% set serviceName %}
   Contact Employer Services
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}

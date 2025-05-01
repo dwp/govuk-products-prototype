@@ -13,3 +13,9 @@
 {% set serviceName %}
   Find your nearest office
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}

@@ -18,3 +18,9 @@
 {% set serviceName %}
   Find out who to contact about money taken off your Universal Credit payment  
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}

@@ -13,3 +13,9 @@
 {% set serviceName %}
   Contact the  International Pension Centre
 {% endset %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}
