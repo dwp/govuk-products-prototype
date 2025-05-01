@@ -13,7 +13,7 @@
     "@x-govuk/govuk-prototype-filters": "^1.4.3",
     "alternative-formats-plugin": "github:dwp/alternative-formats-plugin",
     "find-an-address-plugin": "github:dwp/find-an-address-plugin",
-    "govuk-frontend": "^5.10.0-internal.1",
+    "govuk-frontend": "5.10.0",
     "govuk-prototype-kit": "13.16.2",
     "jquery": "3.7.1",
     "radio-button-redirect": "^1.2.0"
