@@ -1,21 +1,5 @@
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-
-{% set govukRebrand = true %}
-
-{% block header %}
-  {{ govukHeader({
-    serviceName: "",
-    serviceUrl: "index.html",
-    rebrand: true
-  }) }}
-{% endblock %}
+{% extends "layouts/headers/rebrand/rebrand.html" %}
 
 {% set serviceName %}
   Pension Credit calculator
 {% endset %}
-
-{% block footer %}
-  {{ govukFooter({
-    rebrand: true
-  }) }}
-{% endblock %}

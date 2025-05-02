@@ -1,0 +1,22 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% set govukRebrand = true %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: "",
+    serviceUrl: "index.html",
+    rebrand: true
+  }) }}
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    rebrand: true
+  }) }}
+{% endblock %}
+
+
+
+
+
