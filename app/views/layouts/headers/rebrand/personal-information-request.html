@@ -1,14 +1,5 @@
 {% extends "layouts/headers/rebrand/rebrand.html" %}
 
-{% block header %}
-  {{ super() }}
-
-  {{ govukServiceNavigation({
-    serviceName: "Request your personal information from DWP",
-    serviceUrl: "index.html"
-  }) }}
-{% endblock %}
-
 {% set serviceName %}
   Request your personal information from DWP
 {% endset %}
