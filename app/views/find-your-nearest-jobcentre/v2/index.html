@@ -14,10 +14,28 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Why do you want to contact Jobcentre Plus?</h1>
-  
-    <p class="govuk-body"><a class="govuk-link" href="https://www.gov.uk/universal-credit/acontact-universal-credit#guide-contents">Contact us about Universal Credit</a></p>
-    <p class="govuk-body"><a class="govuk-link" href="search">Contact us about anything else</a></p>
+    <h1 class="govuk-heading-xl">Find your nearest office</h1>
+
+    {{ govukRadios({
+      name: "country",
+      fieldset: {
+        legend: {
+          text: "Why do you want to contact Jobcentre Plus?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "Contact us about Universal Credit",
+          text: "Contact us about Universal Credit"
+        },
+        {
+          value: "Contact us about anything else",
+          text: "Contact us about anything else"
+        }
+      ]
+    }) }}
 
   </div>
 </div>
