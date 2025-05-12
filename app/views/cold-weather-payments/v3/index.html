@@ -15,14 +15,37 @@
 
     <h1 class="govuk-heading-xl">Cold Weather Payment</h1>
 
-    <h2 class="govuk-heading-l">Which country do you want to check a postcode for?</h1>
-  
-    <p class="govuk-body"><a class="govuk-link" href="search">England</a></p>
-    <p class="govuk-body"><a class="govuk-link" href="ni">Northern Ireland</a></p>
-    <p class="govuk-body"><a class="govuk-link" href="scotland">Scotland</a></p>
-    <p class="govuk-body"><a class="govuk-link" href="search">Wales</a></p>
+    {{ govukRadios({
+      name: "country",
+      fieldset: {
+        legend: {
+          text: "Which country do you want to check a postcode for?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "England",
+          text: "England"
+        },
+        {
+          value: "Northern Ireland",
+          text: "Northern Ireland"
+        },
+        {
+          value: "Scotland",
+          text: "Scotland"
+        },
+        {
+          value: "Wales",
+          text: "Wales"
+        }
+      ]
+    }) }}
 
-    <h2 class="govuk-heading-l">Help us improve</h2>
+
+    <h2 class="govuk-heading-m">Help us improve</h2>
     <p class="govuk-body"><a class="govuk-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DpxP-knna0i8NIr6EGM3VoCNQgbNAjxHjLjIMX0kidBUMFo5WkZGOFUyWE5LS0NNQUhHRzhaTjZKVi4u">Give your feedback on this service</a></p>
 
   </div>
