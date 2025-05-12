@@ -5,18 +5,25 @@
   Contact form - {{ serviceName }} - GOV.UK
 {% endblock %}
 
-{% set govukRebrand = true %}
+{% block header %}
+  {{ super() }}
+
+  {{ govukServiceNavigation({
+    serviceName: "  Ask for a Maternity Allowance claim form",
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-     <!--  <h1 class="govuk-heading-l">
-        Ask for a Maternity Allowance claim form
+     <h1 class="govuk-heading-l">
+        Your details
       </h1>  
 
-      <h2 class="govuk-heading-m">
+    <!--    <h2 class="govuk-heading-m">
         Alternative formats
       </h2>  
 
