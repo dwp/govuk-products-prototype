@@ -7,12 +7,12 @@
     display: none;
 }
 
-main.govuk-main-wrapper {
-    @include govuk-responsive-padding(6, "top");
+.dwp-footer {
+    border-top: 1px solid #b1b4b6;
 }
 
-.dwp-header {
-    border-bottom: 10px solid $govuk-brand-colour;
+main.govuk-main-wrapper {
+    @include govuk-responsive-padding(6, "top");
 }
 
 .app-big-bar {
