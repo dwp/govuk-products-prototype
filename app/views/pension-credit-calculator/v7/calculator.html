@@ -1,7 +1,11 @@
-{% extends "layouts/headers/pension-credit-calculator.html" %}
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/pension-credit.html" %}
 
 {% block pageTitle %}
   About you - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
 {% endblock %}
 
 {% block content %}
@@ -59,7 +63,7 @@
         name: "live",
         fieldset: {
           legend: {
-            text: "Are you a:",
+            text: "Where do you live?",
             classes: "govuk-fieldset__legend--s"
           }
         },
