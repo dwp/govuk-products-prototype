@@ -3,3 +3,12 @@
 {% set serviceName %}
   Find your nearest office
 {% endset %}
+
+{% block header %}
+  {{ super() }}
+
+{{ govukServiceNavigation({
+    serviceName: "Find your nearest office",
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}

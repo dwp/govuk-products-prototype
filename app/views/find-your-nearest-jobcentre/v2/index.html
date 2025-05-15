@@ -5,6 +5,12 @@
   Why do you want to contact Jobcentre Plus? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
 {% block beforeContent %}
   {% include "layouts/welsh-toggle-wo-back-link.html" %}
 {% endblock %}
