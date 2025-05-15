@@ -3,3 +3,12 @@
 {% set serviceName %}
   Contact the Winter Fuel Payment Centre
 {% endset %}
+
+{% block header %}
+  {{ super() }}
+
+{{ govukServiceNavigation({
+    serviceName: "Contact the Winter Fuel Payment Centre",
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}
