@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/opt-out-of-winter-fuel-payment.html" %}
+
+{% block pageTitle %}
+  What happens next - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You're not eligible for a Winter Fuel Payment
+      </h1>
+
+       <p class="govuk-body">You're not eligible for a Winter Fuel payment if you were born on or after 22 September 1959.</p>
+
+      <p class="govuk-body"> You may be able to get other help with heating costs:</p>
+     
+     <ul class="govuk-list govuk-list--bullet">
+      <li><a class="govuk-link" href="https://www.gov.uk/the-warm-home-discount-scheme">Warm Home Discount Scheme (opens in new tab)</a></li>
+      <li><a class="govuk-link" href="https://www.gov.uk/cold-weather-payment">Cold Weather Payment (opens in new tab)</a> (in England and Wales)</li>
+      <li><a class="govuk-link" href="https://www.mygov.scot/cold-weather-payment-is-changing">Winter Heating Payment (opens in new tab)</a> (in Scotland)</li>
+    </ul>
+
+     <p class="govuk-body">You can also <a href="https://www.gov.uk/check-benefits-financial-support govuk-link--no-visited-state" class="govuk-link">check what benefits and other financial support you can get (opens in new tab)</a>.</p>
+
+        <p class="govuk-body">
+          <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=6fbxllcQF0GsKIDN_ob4w0lbmY1t3m5OseC4I1ZU_lJUMk1YTEZRTFlJMENVN1BMMVFaVkFLMU1SMy4u" class="govuk-link" target="_blank">
+            What did you think of this service? (opens in new tab)
+          </a> (takes 30 seconds)
+        </p>
+
+        {{ govukDetails({
+          summaryText: "Get help with this form",
+          html: '<a href="https://www.gov.uk/winter-fuel-payment/report-change-circumstances#contact-the-winter-fuel-payment-centre">Contact the Winter Fuel Payment Centre (opens in new tab)</a>'
+        }) }}
+    </div>
+  </div>
+{% endblock %}

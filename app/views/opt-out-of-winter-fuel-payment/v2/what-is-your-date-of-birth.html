@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/opt-out-of-winter-fuel-payment.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="what-is-your-address" method="post">
+
+      {{ govukDateInput({
+        id: "optoutwfp--dob",
+        namePrefix: "optoutwfp--dob",
+        fieldset: {
+        legend: {
+          text: "What is your date of birth?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+        },
+        hint: {
+          text: "For example, 27 3 1950"
+        },
+        items: [
+          {
+            name: "day",
+            value: data['optoutwfp--dob-day'],
+            classes: "govuk-input--width-2",
+            inputmode: "numeric"
+          },
+          {
+            name: "month",
+            value: data['optoutwfp--dob-month'],
+            classes: "govuk-input--width-2",
+            inputmode: "numeric"
+          },
+          {
+            name: "year",
+            value: data['optoutwfp--dob-year'],
+            classes: "govuk-input--width-4",
+            inputmode: "numeric"
+          }
+        ]
+      }) }}
+     
+      {{ govukButton({
+        text: "Continue",
+        attributes: "govuk-button"
+      }) }}
+    </form>
+
+    {{ govukDetails({
+      summaryText: "Get help with this form",
+      html: '<a href="https://www.gov.uk/winter-fuel-payment/report-change-circumstances#contact-the-winter-fuel-payment-centre">Contact the Winter Fuel Payment Centre (opens in new tab)</a>'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

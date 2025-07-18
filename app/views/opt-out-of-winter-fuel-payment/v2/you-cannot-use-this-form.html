@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/opt-out-of-winter-fuel-payment.html" %}
+
+{% block pageTitle %}
+  What happens next - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">You cannot use this form</h2>
+
+        <p class="govuk-body">You can only opt out of Winter Fuel Payment using this form if you live in England, Wales or Northern Ireland.</p>
+
+        <h2 class="govuk-heading-m">If you live in Scotland</h2>
+
+        <p class="govuk-body">
+          You cannot get a Winter Fuel Payment. You might be eligible for
+          <a href="https://www.mygov.scot/pension-age-winter-heating-payment" class="govuk-link" target="_blank">
+            Pension Age Winter Heating Payment (opens in new tab)
+          </a>.
+        </p>
+
+        <p class="govuk-body">
+          <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=6fbxllcQF0GsKIDN_ob4w0lbmY1t3m5OseC4I1ZU_lJUMk1YTEZRTFlJMENVN1BMMVFaVkFLMU1SMy4u" class="govuk-link" target="_blank">
+            What did you think of this service? (opens in new tab)
+          </a> (takes 30 seconds)
+        </p>
+
+        {{ govukDetails({
+          summaryText: "Get help with this form",
+          html: '<a href="https://www.gov.uk/winter-fuel-payment/report-change-circumstances#contact-the-winter-fuel-payment-centre">Contact the Winter Fuel Payment Centre (opens in new tab)</a>'
+        }) }}
+    </div>
+  </div>
+{% endblock %}

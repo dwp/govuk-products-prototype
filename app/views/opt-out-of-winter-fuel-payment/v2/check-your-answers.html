@@ -1,0 +1,225 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/opt-out-of-winter-fuel-payment.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      
+    <h1 class="govuk-heading-l">Check your answers before submitting your form</h1>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: "Do you live in England, Wales or Northern Ireland?"
+          },
+          value: {
+            text: data['optoutwfp--location']
+          },
+          actions: {
+            items: [
+              {
+                href: "index",
+                text: "Change",
+                visuallyHiddenText: "if you live in England, Wales or Northern Ireland"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Were you born before 22 September 1959?"
+          },
+          value: {
+            text: data['optoutwfp--born-before']
+          },
+          actions: {
+            items: [
+              {
+                href: "were-you-born-before-22-september-1959",
+                text: "Change",
+                visuallyHiddenText: "if were you born before 22 September 1959"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "What is your National Insurance number?"
+          },
+          value: {
+            text: data['optoutwfp--nino']
+          },
+          actions: {
+            items: [
+              {
+                href: "what-is-your-national-insurance-number",
+                text: "Change",
+                visuallyHiddenText: "National Insurance number"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "What is your full name?"
+          },
+          value: {
+            text: data['optoutwfp--full-name']
+          },
+          actions: {
+            items: [
+              {
+                href: "what-is-your-full-name",
+                text: "Change",
+                visuallyHiddenText: "full name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "What is your date of birth?"
+          },
+          value: {
+            text: data['optoutwfp--dob-day'] + " " + data['optoutwfp--dob-month'] + " " + data['optoutwfp--dob-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "what-is-your-date-of-birth",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "What is your address?"
+          },
+          value: {
+            text: data['optoutwfp--address-line-1'] + ", " + data['optoutwfp--address-line-2'] + ", " + data['optoutwfp--address-town'] + ", " + data['optoutwfp--address-county'] + ", " + data['optoutwfp--address-postcode']
+          },
+          actions: {
+            items: [
+              {
+                href: "what-is-your-address",
+                text: "Change",
+                visuallyHiddenText: "address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "What is your phone number? (optional)"
+          },
+          value: {
+            text: data['optoutwfp--phone-number'] or "Phone number not given"
+          },
+          actions: {
+            items: [
+              {
+                href: "what-is-your-phone-number",
+                text: "Change",
+                visuallyHiddenText: "phone number"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "If you live in Wales, would you like to speak to someone in Welsh?"
+          },
+          value: {
+            text: data['optoutwfp--contact-in-welsh']
+          },
+          actions: {
+            items: [
+              {
+                href: "if-you-live-in-wales",
+                text: "Change",
+                visuallyHiddenText: "if you live in Wales, would you like to speak to someone in Welsh"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <form class="form" action="submitted" method="post">
+      {% set emailHtml %}
+        {{ govukInput({
+          id: "email-address",
+          name: "email-address",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-two-third",
+          label: {
+            text: "Email address"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        name: "optoutwfp--email-confirmation",
+        value: data['optoutwfp--email-confirmation'],
+        fieldset: {
+          legend: {
+            text: "Do you want to get an email confirming your form has been submitted?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "We'll only use the email address you provide here to send a confirmation that your form's been successfully submitted. It will not contain a copy of your answers."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            conditional: {
+              html: emailHtml
+            },
+            checked: true if data["optoutwfp--email-confirmation"] === "Yes"
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: true if data["optoutwfp--email-confirmation"] === "No"
+          }
+        ]
+      }) }}
+
+    <h2 class="govuk-heading-m">Declaration</h2>
+    <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+    {{ govukButton({
+      text: "Agree and submit",
+      attribute: "govuk-button"
+    }) }}
+
+  </form>
+
+    {{ govukDetails({
+      summaryText: "Get help with this form",
+      html: '<a href="https://www.gov.uk/winter-fuel-payment/report-change-circumstances#contact-the-winter-fuel-payment-centre">Contact the Winter Fuel Payment Centre (opens in new tab)</a>'
+    }) }}
+   
+  </div>
+</div>
+
+{% endblock %}

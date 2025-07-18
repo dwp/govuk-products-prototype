@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/opt-out-of-winter-fuel-payment.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    rebrand: true
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {{ govukRadios({
+        name: "optoutwfp--location",
+        value: data['optoutwfp--location'],
+        fieldset: {
+          legend: {
+            text: "Do you live in England, Wales or Northern Ireland?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Yes~/opt-out-of-winter-fuel-payment/v1/were-you-born-before-22-september-1959",
+            text: "Yes",
+            checked: true if data["optoutwfp--location"] === "Yes"
+          },
+          {
+            value: "No~/opt-out-of-winter-fuel-payment/v1/you-cannot-use-this-form",
+            text: "No",
+            checked: true if data["optoutwfp--location"] === "No"
+          }
+        ]
+      }) }}
+  
+      {{ govukButton({
+        text: "Continue",
+        attributes: "govuk-button"
+      }) }}
+    </form>
+
+    {{ govukDetails({
+      summaryText: "Get help with this form",
+      html: '<a href="https://www.gov.uk/winter-fuel-payment/report-change-circumstances#contact-the-winter-fuel-payment-centre">Contact the Winter Fuel Payment Centre (opens in new tab)</a>'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
