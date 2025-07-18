@@ -4,9 +4,12 @@
 
 {% block header %}
   {{ govukHeader({
-    serviceName: "",
-    serviceUrl: "index.html",
     rebrand: true
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: serviceName,
+    serviceUrl: "index.html"
   }) }}
 {% endblock %}
 
