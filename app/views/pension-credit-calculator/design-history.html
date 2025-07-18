@@ -1,27 +1,15 @@
 {% extends "layouts/main.html" %}
-
-{% set serviceName %}
-  Pension Credit calculator 
-{% endset %}
+{% extends "layouts/headers/rebrand/pension-credit.html" %}
 
 {% block pageTitle %}
   Design history - {{ serviceName }}
 {% endblock %}
 
 {% block header %}
-
+  {{ govukHeader({
+    rebrand: true
+  }) }}
 {% endblock %}
-
-{% block bodyStart %}
- {% from "internal-service-header/macro.njk" import dwpHeader %}
- {{
-     dwpHeader({
-         serviceName: "GOV.UK team prototype library" ,
-         serviceHref: "/",
-         container: true
-     })
- }}
- {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({

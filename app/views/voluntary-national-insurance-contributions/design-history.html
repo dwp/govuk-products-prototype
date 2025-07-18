@@ -1,8 +1,8 @@
 {% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/rebrand.html" %}
 
 {% set serviceName %}
-Request a call back to pay voluntary National Insurance contributions
-
+  Request a call back to pay voluntary National Insurance contributions 
 {% endset %}
 
 {% block pageTitle %}
@@ -10,19 +10,10 @@ Request a call back to pay voluntary National Insurance contributions
 {% endblock %}
 
 {% block header %}
-
+  {{ govukHeader({
+    rebrand: true
+  }) }}
 {% endblock %}
-
-{% block bodyStart %}
- {% from "internal-service-header/macro.njk" import dwpHeader %}
- {{
-     dwpHeader({
-         serviceName: "GOV.UK team prototype library" ,
-         serviceHref: "/",
-         container: true
-     })
- }}
- {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
