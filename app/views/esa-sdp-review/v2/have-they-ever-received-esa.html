@@ -16,30 +16,25 @@
     <form class="form" method="post">
 
     {{ govukRadios({
-      name: "esa--is-partner-blind-sight-impaired",
-      value: data['esa--is-partner-blind-sight-impaired'],
+      name: "esa--have-they-ever-received-esa",
+      value: data['esa--have-they-ever-received-esa'],
       fieldset: {
         legend: {
-          text: "Is your partner registered blind or severely sight impaired?",
+          text: "Have they ever received Employment and Support Allowance?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       items: [
         {
-          value: "Yes~/esa-sdp-review/v2/what-is-your-full-name",
+          value: "Yes~/esa-sdp-review/v2/were-they-in-receipt",
           text: "Yes",
-          checked: true if data["esa--is-partner-blind-sight-impaired"] === "Yes"
+          checked: true if data["esa--have-they-ever-received-esa"] === "Yes"
         },
         {
-          value: "No~/esa-sdp-review/v2/you-are-not-eligible",
+          value: "No~/esa-sdp-review/v2/they-were-not-eligible",
           text: "No",
-          checked: true if data["esa--is-partner-blind-sight-impaired"] === "No"
-        },
-        {
-          value: "Dont-know~/esa-sdp-review/v2/what-is-your-full-name",
-          text: "Don't know",
-          checked: true if data["esa--is-partner-blind-sight-impaired"] === "Dont-know"
+          checked: true if data["esa--have-they-ever-received-esa"] === "No"
         }
       ]
     }) }}

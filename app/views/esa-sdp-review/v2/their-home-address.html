@@ -20,19 +20,19 @@
       value: data['esa--home-address'],
       fieldset: {
         legend: {
-          text: "Is your home address in the UK?",
+          text: "Is their home address in the UK?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       items: [
         {
-          value: "Yes~/esa-sdp-review/v2/home-address-uk",
+          value: "Yes~/esa-sdp-review/v2/their-home-address-uk",
           text: "Yes",
           checked: true if data["esa--home-address"] === "Yes"
         },
         {
-          value: "No~/esa-sdp-review/v2/home-address-abroad",
+          value: "No~/esa-sdp-review/v2/their-home-address-abroad",
           text: "No",
           checked: true if data["esa--home-address"] === "No"
         }

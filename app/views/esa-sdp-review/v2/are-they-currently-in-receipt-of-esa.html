@@ -16,25 +16,22 @@
 
     <form class="form" method="post">
       {{ govukRadios({
-        name: "esa--contact-in-welsh",
-        value: data['esa--contact-in-welsh'],
+        name: "esa--they-currently-in-receipt",
+        value: data['esa--they-currently-in-receipt'],
         fieldset: {
           legend: {
-            text: "If you live in Wales, would you like to speak to someone in Welsh? (Optional)",
+            text: "Are they currently in receipt of Employment and Support Allowance?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
         items: [
           {
-            value: "Yes~/esa-sdp-review/v2/are-you-in-receipt",
-            text: "Yes",
-            conditional: {
-              html: phoneNumberHTML
-            }
+            value: "Yes~/esa-sdp-review/v2/are-they-in-receipt",
+            text: "Yes"
           },
           {
-            value: "No~/esa-sdp-review/v2/have-you-ever-received-esa",
+            value: "No~/esa-sdp-review/v2/have-they-ever-received-esa",
             text: "No"
           }
         ]

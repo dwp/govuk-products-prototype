@@ -13,14 +13,14 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/esa-sdp-was-your-in-receipt-partner-benefits" method="post">
+    <form class="form" action="/esa-sdp-is-their-in-receipt-partner-benefits" method="post">
 
 {{ govukCheckboxes({
-  name: "esa--was-your-in-receipt-partner-benefits",
-  value: data['esa--was-your-in-receipt-partner-benefits'],
+  name: "esa--is-their-in-receipt-partner-benefits",
+  value: data['esa--is-their-in-receipt-partner-benefits'],
   fieldset: {
     legend: {
-      text: "Was your partner in receipt of any of the following benefits?",
+      text: "Is their partner in receipt of any of the following benefits?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
@@ -61,6 +61,7 @@
       divider: "or"
     },
     {
+      id: "dont-know",
       value: "Don't know",
       text: "Don't know",
       behaviour: "exclusive"

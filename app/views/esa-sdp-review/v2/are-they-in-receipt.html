@@ -16,30 +16,30 @@
     <form class="form" method="post">
 
     {{ govukRadios({
-      name: "esa--is-partner-blind-sight-impaired",
-      value: data['esa--is-partner-blind-sight-impaired'],
+      name: "esa--present-in-receipt",
+      value: data['esa--present-in-receipt'],
       fieldset: {
         legend: {
-          text: "Is your partner registered blind or severely sight impaired?",
+          text: "Are they in receipt of Adult Disability Payment, Personal Independence Payment or Disability Living Allowance?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       items: [
         {
-          value: "Yes~/esa-sdp-review/v2/what-is-your-full-name",
+          value: "Yes~/esa-sdp-review/v2/do-they-live-with-a-partner",
           text: "Yes",
-          checked: true if data["esa--is-partner-blind-sight-impaired"] === "Yes"
+          checked: true if data["esa--present-in-receipt"] === "Yes"
         },
         {
-          value: "No~/esa-sdp-review/v2/you-are-not-eligible",
+          value: "No~/esa-sdp-review/v2/they-are-not-eligible",
           text: "No",
-          checked: true if data["esa--is-partner-blind-sight-impaired"] === "No"
+          checked: true if data["esa--present-in-receipt"] === "No"
         },
         {
-          value: "Dont-know~/esa-sdp-review/v2/what-is-your-full-name",
+          value: "Dont-know~/esa-sdp-review/v2/do-they-live-with-a-partner",
           text: "Don't know",
-          checked: true if data["esa--is-partner-blind-sight-impaired"] === "Dont-know"
+          checked: true if data["esa--present-in-receipt"] === "Dont-know"
         }
       ]
     }) }}

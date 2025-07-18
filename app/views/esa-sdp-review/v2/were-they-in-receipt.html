@@ -20,24 +20,24 @@
       value: data['esa--past-in-receipt'],
       fieldset: {
         legend: {
-          text: "Were you in receipt of Adult Disability Payment, Personal Independence Payment or Disability Living Allowance?",
+          text: "Were they in receipt of Adult Disability Payment, Personal Independence Payment or Disability Living Allowance?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       items: [
       {
-        value: "Yes~/esa-sdp-review/v2/did-you-live-with-a-partner",
+        value: "Yes~/esa-sdp-review/v2/did-they-live-with-a-partner",
         text: "Yes",
         checked: true if data["esa--past-in-receipt"] === "Yes"
       },
       {
-        value: "No~/esa-sdp-review/v2/were-not-eligible",
+        value: "No~/esa-sdp-review/v2/they-were-not-eligible",
         text: "No",
         checked: true if data["esa--past-in-receipt"] === "No"
       },
       {
-        value: "Dont-know~/esa-sdp-review/v2/did-you-live-with-a-partner",
+        value: "Dont-know~/esa-sdp-review/v2/did-they-live-with-a-partner",
         text: "Don't know",
         checked: true if data["esa--past-in-receipt"] === "Dont-know"
       }

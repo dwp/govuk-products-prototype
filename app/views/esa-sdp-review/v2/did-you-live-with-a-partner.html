@@ -13,7 +13,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="past-partner-standard-or-enhanced-rate" method="post">
+    <form class="form" method="post">
 
     {{ govukRadios({
       name: "esa--did-you-live-with-a-partner",
@@ -27,12 +27,12 @@
       },
       items: [
         {
-          value: "Yes~/esa-sdp-review/v2/past-partner-standard-or-enhanced-rate",
+          value: "Yes~/esa-sdp-review/v2/was-your-partner-in-receipt",
           text: "Yes",
           checked: true if data["esa--did-you-live-with-a-partner"] === "Yes"
         },
         {
-          value: "No~/esa-sdp-review/v2/check-your-answers",
+          value: "No~/esa-sdp-review/v2/what-is-your-full-name",
           text: "No",
           checked: true if data["esa--did-you-live-with-a-partner"] === "No"
         }

@@ -2,7 +2,7 @@
 {% extends "layouts/headers/rebrand/esa-sdp-review.html" %}
 
 {% block pageTitle %}
-  {{ serviceName }} - GOV.UK
+  Are you requesting a review on behalf of someone else? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,7 +27,7 @@
       },
       items: [
         {
-          value: "Yes~/esa-sdp-review/v2/",
+          value: "Yes~/esa-sdp-review/v2/are-they-currently-in-receipt-of-esa",
           text: "Yes",
           checked: true if data["esa--requester"] === "Yes"
         },

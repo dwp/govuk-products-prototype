@@ -16,30 +16,25 @@
     <form class="form" method="post">
 
     {{ govukRadios({
-      name: "esa--is-partner-blind-sight-impaired",
-      value: data['esa--is-partner-blind-sight-impaired'],
+      name: "esa--home-address",
+      value: data['esa--home-address'],
       fieldset: {
         legend: {
-          text: "Is your partner registered blind or severely sight impaired?",
+          text: "Is your home address in the UK?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       items: [
         {
-          value: "Yes~/esa-sdp-review/v2/what-is-your-full-name",
+          value: "Yes~/esa-sdp-review/v2/your-home-address-uk",
           text: "Yes",
-          checked: true if data["esa--is-partner-blind-sight-impaired"] === "Yes"
+          checked: true if data["esa--home-address"] === "Yes"
         },
         {
-          value: "No~/esa-sdp-review/v2/you-are-not-eligible",
+          value: "No~/esa-sdp-review/v2/your-home-address-abroad",
           text: "No",
-          checked: true if data["esa--is-partner-blind-sight-impaired"] === "No"
-        },
-        {
-          value: "Dont-know~/esa-sdp-review/v2/what-is-your-full-name",
-          text: "Don't know",
-          checked: true if data["esa--is-partner-blind-sight-impaired"] === "Dont-know"
+          checked: true if data["esa--home-address"] === "No"
         }
       ]
     }) }}

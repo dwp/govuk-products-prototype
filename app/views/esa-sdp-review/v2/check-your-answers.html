@@ -16,8 +16,230 @@
 
     <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are you requesting a review on behalf of someone else?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--requester']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="what-is-their-full-name.html">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Employment and Support Allowance details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are you currently in receipt of Employment and Support Allowance?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--currently-in-receipt']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="are-you-currently-in-receipt-of-esa.html">Change<span class="govuk-visually-hidden"> previous application
+              number</span></a>
+        </dd>
+      </div>
+
+      {% if data['esa--currently-in-receipt'] == "No" %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Have you ever received Employment and Support Allowance?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--have-you-ever-received-esa']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="have-you-ever-received-esa.html">Change<span class="govuk-visually-hidden"> previous application
+              number</span></a>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if data['esa--currently-in-receipt'] == "Yes" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Are you in receipt of Adult Disability Payment, Personal Independence Payment or Disability Living Allowance?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['esa--present-in-receipt']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="present-citizen-standard-or-enhanced-rate.html">Change<span class="govuk-visually-hidden"> licence type</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you live with a partner?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['esa--do-you-live-with-a-partner']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="do-you-live-with-a-partner.html">Change<span class="govuk-visually-hidden"> home address</span></a>
+          </dd>
+        </div>
+
+        {% if data['esa--do-you-live-with-a-partner'] == "Yes" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is your partner in receipt of any of the following benefits?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['esa--is-your-in-receipt-partner-benefits'] or "not given"}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="is-your-partner-in-receipt.html">Change<span class="govuk-visually-hidden"> licence period</span></a>
+          </dd>
+        </div>
+          {% if data['esa--is-your-in-receipt-partner-benefits'] == "No" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is your partner registered blind or severely sight impaired?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['esa--is-partner-blind-sight-impaired']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="is-your-partner-registered-blind.html">Change<span class="govuk-visually-hidden"> licence period</span></a>
+            </dd>
+          </div>
+          {% endif %}
+        {% endif %}
+
+      {% endif %}
+
+      {% if data['esa--currently-in-receipt'] == "No" and data['esa--have-you-ever-received-esa'] == "yes" %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Were you in receipt of Adult Disability Payment, Personal Independence Payment or Disability Living Allowance?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--past-in-receipt']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="past-partner-standard-or-enhanced-rate.html">Change<span class="govuk-visually-hidden"> licence type</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Did you live with a partner?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--did-you-live-with-a-partner']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="did-you-live-with-a-partner.html">Change<span class="govuk-visually-hidden"> home address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Was your partner in receipt of Personal Independence Payment, Adult Disability Payment, Armed Forces Independence Payment, Disability Living Allowance, Attendance Allowance, Constant Attendance Allowance, Pension Age Disability Payment?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--past-partner-in-receipt']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="past-partner-standard-or-enhanced-rate.html">Change<span class="govuk-visually-hidden"> licence period</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Was your partner registered blind or severely sight impaired?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--was-partner-blind-sight-impaired']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="past-partner-registered-blind-or-severely-sight-impaired.html">Change<span class="govuk-visually-hidden"> licence period</span></a>
+        </dd>
+      </div>
+    {% endif %}
+    </dl>
+
     <h2 class="govuk-heading-m">Personal details</h2>
 
+    <!-- If someone other than the citizen is completing the form -->
+    {% if data['esa--requester'] == "Yes" %}
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--full-name']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="what-is-their-full-name.html">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--dob-day']}} {{data['esa--dob-month']}} {{data['esa--dob-year']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="what-is-their-date-of-birth.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance Nummber
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--national-insurance-number']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="what-is-their-national-insurance-number.html">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body"> {{data['address-line-1']}}</p>
+          <p class="govuk-body"> {{data['address-line-2']}}</p>
+          <p class="govuk-body"> {{data['town-city']}}</p>
+          <p class="govuk-body"> {{data['postcode']}}</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/dwp-find-an-address-plugin/manual-entry">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--phone-number']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="what-is-their-contact-number.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact in Welsh
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--contact-in-welsh']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="contact-them-in-welsh.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+        </dd>
+      </div>
+    </dl>
+    {% endif %}
+
+    <!-- If the citizen is completing the form -->
+    {% if data['esa--requester'] == "No" %}
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -74,134 +296,22 @@
           {{data['esa--phone-number']}}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+          <a class="govuk-link" href="what-is-your-contact-number.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact in Welsh
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['esa--contact-in-welsh']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="contact-you-in-welsh.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
         </dd>
       </div>
     </dl>
-    <h2 class="govuk-heading-m">Employment and Support Allowance details</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Are you currently in receipt of Employment and Support Allowance?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['esa--currently-in-receipt']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="are-you-currently-in-receipt-of-esa.html">Change<span class="govuk-visually-hidden"> previous application
-              number</span></a>
-        </dd>
-      </div>
-
-      {% if data['esa--currently-in-receipt'] == "No" %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Have you ever received Employment and Support Allowance?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['esa--have-you-ever-received-esa']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="have-you-ever-received-esa.html">Change<span class="govuk-visually-hidden"> previous application
-              number</span></a>
-        </dd>
-      </div>
-      {% endif %}
-
-      {% if data['esa--currently-in-receipt'] == "Yes" %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Are you in receipt of Adult Disability Payment, Personal Independence Payment or Disability Living Allowance?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['esa--present-in-receipt']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="present-citizen-standard-or-enhanced-rate.html">Change<span class="govuk-visually-hidden"> licence type</span></a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Do you live with a partner?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['esa--do-you-live-with-a-partner']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="did-you-live-with-a-partner.html">Change<span class="govuk-visually-hidden"> home address</span></a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Is your partner in receipt of Personal Independence Payment, Adult Disability Payment, Armed Forces Independence Payment, Disability Living Allowance, Attendance Allowance, Constant Attendance Allowance or Pension Age Disability Payment?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['esa--present-partner-in-receipt']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="present-partner-standard-or-enhanced-rate.html">Change<span class="govuk-visually-hidden"> licence period</span></a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Is your partner registered blind or severely sight impaired?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['esa--is-partner-blind-sight-impaired']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="present-partner-registered-blind-or-severely-sight-impaired.html">Change<span class="govuk-visually-hidden"> licence period</span></a>
-          </dd>
-        </div>
-      {% endif %}
-
-      {% if data['esa--currently-in-receipt'] == "No" and data['esa--have-you-ever-received-esa'] == "yes" %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Were you in receipt of Adult Disability Payment, Personal Independence Payment or Disability Living Allowance?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['esa--past-in-receipt']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="past-partner-standard-or-enhanced-rate.html">Change<span class="govuk-visually-hidden"> licence type</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Did you live with a partner?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['esa--did-you-live-with-a-partner']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="did-you-live-with-a-partner.html">Change<span class="govuk-visually-hidden"> home address</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Was your partner in receipt of Personal Independence Payment, Adult Disability Payment, Armed Forces Independence Payment, Disability Living Allowance, Attendance Allowance, Constant Attendance Allowance, Pension Age Disability Payment?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['esa--past-partner-in-receipt']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="past-partner-standard-or-enhanced-rate.html">Change<span class="govuk-visually-hidden"> licence period</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Was your partner registered blind or severely sight impaired?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['esa--was-partner-blind-sight-impaired']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="past-partner-registered-blind-or-severely-sight-impaired.html">Change<span class="govuk-visually-hidden"> licence period</span></a>
-        </dd>
-      </div>
     {% endif %}
-    </dl>
 
     <h2 class="govuk-heading-m">Now send your application</h2>
 

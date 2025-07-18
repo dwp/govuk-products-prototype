@@ -13,61 +13,68 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/esa-sdp-partner-benefits" method="post">
+    <form class="form" action="/esa-sdp-is-your-in-receipt-partner-benefits" method="post">
 
-{{ govukCheckboxes({
-  name: "esa--present-partner-in-receipt",
-  value: data['esa--present-partner-in-receipt'],
-  fieldset: {
-    legend: {
-      text: "Is your partner in receipt of any of the following benefits?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  hint: {
-    text: "Select all that apply"
-  },
-  items: [
-    {
-      value: "Personal Independence Payment",
-      text: "Personal Independence Payment"
-    },
-    {
-      value: "Adult Disability Payment",
-      text: "Adult Disability Payment"
-    },
-    {
-      value: "Armed Forces Independence Payment",
-      text: "Armed Forces Independence Payment"
-    },
-    {
-      value: "Disability Living Allowance",
-      text: "Disability Living Allowance"
-    },
-    {
-      value: "Attendance Allowance",
-      text: "Attendance Allowance"
-    },
-    {
-      value: "Constant Attendance Allowance",
-      text: "Constant Attendance Allowance"
-    },
-    {
-      value: "Pension Age Disability Payment",
-      text: "Pension Age Disability Payment"
-    },
-    {
-      divider: "or"
-    },
-    {
-      id: "dont-know",
-      value: "Don't know",
-      text: "Don't know",
-      behaviour: "exclusive"
-    }
-  ]
-}) }}
+    {{ govukCheckboxes({
+      name: "esa--is-your-in-receipt-partner-benefits",
+      value: data['esa--is-your-in-receipt-partner-benefits'],
+      fieldset: {
+        legend: {
+          text: "Is your partner in receipt of any of the following benefits?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Select all that apply"
+      },
+      items: [
+        {
+          value: "Personal Independence Payment",
+          text: "Personal Independence Payment",
+          checked: true if data['esa--is-your-in-receipt-partner-benefits'].includes("Personal Independence Payment")
+        },
+        {
+          value: "Adult Disability Payment",
+          text: "Adult Disability Payment",
+          checked: true if data['esa--is-your-in-receipt-partner-benefits'].includes("Adult Disability Payment")
+
+        },
+        {
+          value: "Armed Forces Independence Payment",
+          text: "Armed Forces Independence Payment"
+        },
+        {
+          value: "Disability Living Allowance",
+          text: "Disability Living Allowance"
+        },
+        {
+          value: "Attendance Allowance",
+          text: "Attendance Allowance"
+        },
+        {
+          value: "Constant Attendance Allowance",
+          text: "Constant Attendance Allowance"
+        },
+        {
+          value: "Pension Age Disability Payment",
+          text: "Pension Age Disability Payment"
+        },
+        {
+          value: "Don't know",
+          text: "Don't know"
+        },
+        {
+          divider: "or"
+        },
+        {
+          id: "no",
+          value: "No",
+          text: "No",
+          behaviour: "exclusive"
+        }
+      ]
+    }) }}
 
     {{ govukButton({
       text: "Continue",
