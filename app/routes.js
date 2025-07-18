@@ -128,16 +128,64 @@ router.post('/pir-v3-receiving-benefit', function(request, response) {
 })
 
 // -------------------------------------------------------------------------------------------------------------------------
-// Employment and Support Allowance and Severe Disability Premium review request - v3
+// Employment and Support Allowance and Severe Disability Premium review request - v2
 
-router.post('/esa-sdp-partner-benefits', function(request, response) {
+/* router.post('/esa-sdp-is-your-in-receipt-partner-benefits', function(request, response) {
 
-    var partnerBenefits = request.session.data['esa--present-partner-in-receipt']
+    var partnerBenefits = request.session.data['esa--is-your-in-receipt-partner-benefits']
 
-    if (partnerBenefits.length > 0){
-        response.redirect("/esa-sdp-review/v3/is-your-partner-registered-blind")
+    if (partnerBenefits.length > 0 || partnerBenefits != 'undefined' || partnerBenefits !== null || partnerBenefits == "Don't know"){
+        response.redirect("/esa-sdp-review/v2/what-is-your-full-name")
     }
-    else if (partnerBenefits == "Don't know") {
-        response.redirect("/esa-sdp-review/v3/what-is-your-full-name")
+    else {
+        response.redirect("/esa-sdp-review/v2/is-your-partner-registered-blind")
+    }
+}) */
+
+router.post('/esa-sdp-is-your-in-receipt-partner-benefits', function(request, response) {
+
+    var partnerBenefits = request.session.data['esa--is-your-in-receipt-partner-benefits']
+
+    if (partnerBenefits == "No"){
+        response.redirect("/esa-sdp-review/v2/is-your-partner-registered-blind")
+    }
+    else {
+        response.redirect("/esa-sdp-review/v2/what-is-your-full-name")
+    }
+})
+
+router.post('/esa-sdp-is-their-in-receipt-partner-benefits', function(request, response) {
+
+    var partnerBenefits = request.session.data['esa--is-their-in-receipt-partner-benefits']
+
+    if (partnerBenefits == "No"){
+        response.redirect("/esa-sdp-review/v2/is-their-partner-registered-blind")
+    }
+    else {
+        response.redirect("/esa-sdp-review/v2/what-is-their-full-name")
+    }
+})
+
+router.post('/esa-sdp-was-your-in-receipt-partner-benefits', function(request, response) {
+
+    var partnerBenefits = request.session.data['esa--was-your-in-receipt-partner-benefits']
+
+    if (partnerBenefits == "No"){
+        response.redirect("/esa-sdp-review/v2/was-your-partner-registered-blind")
+    }
+    else {
+        response.redirect("/esa-sdp-review/v2/what-is-your-full-name")
+    }
+})
+
+router.post('/esa-sdp-was-their-in-receipt-partner-benefits', function(request, response) {
+
+    var partnerBenefits = request.session.data['esa--was-their-in-receipt-partner-benefits']
+
+    if (partnerBenefits == "No"){
+        response.redirect("/esa-sdp-review/v2/was-their-partner-registered-blind")
+    }
+    else {
+        response.redirect("/esa-sdp-review/v2/what-is-their-full-name")
     }
 })
