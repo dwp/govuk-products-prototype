@@ -1,0 +1,12 @@
+{% extends "layouts/headers/rebrand/rebrand.html" %}
+
+{% set serviceName %}
+  Opt out of Winter Fuel Payment
+{% endset %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
