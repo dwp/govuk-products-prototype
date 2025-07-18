@@ -1,4 +1,5 @@
 {% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/rebrand.html" %}
 
 {% block pageTitle %}
   GOV.UK team products
@@ -6,15 +7,14 @@
 
 {% block head %}
   {{ super() }}
+  <!-- Styles for search from Intelligence Community Design System 2.25.1 -->
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@ukic/web-components/dist/core/core.css" crossorigin="anonymous" />
 {% endblock %}
 
 {% block header %}
-
 {% endblock %}
 
 {% block beforeContent %}
-
 {% endblock %}
 
 {% block bodyStart %}
@@ -86,7 +86,7 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="ask-for-a-maternity-allowance-claim-form/v2/index.html">Version 2<span class="govuk-visually-hidden">of Ask for a Maternity Allowance claim form</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">20 Nov 2023</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-2_ask-for-a-maternity-allowance-claim-form.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 2 of Ask for a Maternity Allowance claim form</span></a></td>
             </tr>
@@ -148,7 +148,7 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="check-your-maternity-allowance-dates/v1/index.html">Version 1<span class="govuk-visually-hidden">of Check your maternity allowance dates</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Alpha", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_check-your-maternity-allowance-dates.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Check your maternity allowance dates</span></a></td>
             </tr>
@@ -209,6 +209,7 @@
 
     <div class="app-card">
       <div class="app-card-title-wrapper">
+        {{ govukTag({ text: "On hold", classes: "govuk-tag--red" })}}
         <h2 class="govuk-heading-m govuk-product">Employment and Support Allowance and Severe Disability Premium review request</h2>
         <p class="govuk-body app-card-title-description">
           Enables users to request a review to see if they should have received Severe Disability Premium.
@@ -279,7 +280,7 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="contact-dwp-about-accessibility/v1/index.html">Version 1<span class="govuk-visually-hidden">of Contact DWP about accessibility</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_contact-dwp-about-accessibility.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Contact DWP about accessibility</span></a></td>
             </tr>
@@ -320,7 +321,7 @@
               <td class="govuk-table__cell"><a class="govuk-link" href="contact-employer-services/v3/index.html">Version 3 - rebrand<span class="govuk-visually-hidden">of Contact Employer Services</span></a></td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell">29 Apr 2025</td>
-              <td class="govuk-table__cell">-/td>
+              <td class="govuk-table__cell">-</td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="contact-employer-services/v2/index.html">Version 2<span class="govuk-visually-hidden">of Contact Employer Services</span></a></td>
@@ -330,7 +331,7 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="contact-employer-services/v1/index.html">Version 1<span class="govuk-visually-hidden">of Contact Employer Services</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_contact-employer-services.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Contact Employer Services</span></a></td>
             </tr>
@@ -383,7 +384,7 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="contact-the-dwp-ministerial-correspondence-team/v1/index.html">Version 1<span class="govuk-visually-hidden">of Contact the DWP ministerial correspondence team</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_contact-the-dwp-ministerial-correspondence-team.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Contact the DWP ministerial correspondence team</span></a></td>
             </tr>
@@ -427,7 +428,7 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="contact-the-international-pension-centre/v1/index.html">Version 1<span class="govuk-visually-hidden">of Contact International Pension Centre</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_contact-the-international-pension-centre.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Contact International Pension Centre</span></a></td>
             </tr>
@@ -465,14 +466,20 @@
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a class="govuk-link" href="contact-winter-fuel-payments-centre/v3/index.html">Version 3 - rebrand<span class="govuk-visually-hidden">of Contact the Winter Fuel Payments Centre</span></a></td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="contact-winter-fuel-payments-centre/v4/index.html">Version 4 - rebrand<span class="govuk-visually-hidden">of Contact the Winter Fuel Payments Centre</span></a></td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell">29 Apr 2025</td>
               <td class="govuk-table__cell">-</td>
             </tr>
             <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a class="govuk-link" href="contact-winter-fuel-payments-centre/v3/index.html">Version 3<span class="govuk-visually-hidden">of Contact the Winter Fuel Payments Centre</span></a></td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">24 Jun 2025</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-3_contact-winter-fuel-payments-centre.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 3 of Contact the Winter Fuel Payments Centre</span></a></td>
+            </tr>
+            <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="contact-winter-fuel-payments-centre/v2/index.html">Version 2<span class="govuk-visually-hidden">of Contact the Winter Fuel Payments Centre</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell">Early Nov 2023</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-2_contact-winter-fuel-payments-centre.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 2 of Contact the Winter Fuel Payments Centre</span></a></td>
             </tr>
@@ -521,25 +528,25 @@
               <td class="govuk-table__cell"><a class="govuk-link" href="cost-of-living/retiring-mtb5/index.html">Retiring MTB5<span class="govuk-visually-hidden">Cost of Living</span></a></td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell">Mar 2024</td>
-              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/cost-of-living_retiring-mtb5.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for retiring MTB5 - Cost of Living</span></a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="cost-of-living/mtb5/index.html">MTB5<span class="govuk-visually-hidden">Cost of Living</span></a></td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell">Feb 2024</td>
-              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/cost-of-living_mtb5.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for MTB5 - Cost of Living</span></a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="cost-of-living/retiring-mtb4/index.html">Retiring MTB4<span class="govuk-visually-hidden">Cost of Living</span></a></td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell">-</td>
-              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/cost-of-living_retiring-mtb4.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for retiring MTB4 - Cost of Living</span></a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="cost-of-living/mtb4/index.html">MTB4<span class="govuk-visually-hidden">Cost of Living</span></a></td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell">-</td>
-              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/cost-of-living_mtb4.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for MTB4 - Cost of Living</span></a></td>
             </tr>
           </tbody>
         </table>
@@ -582,7 +589,7 @@
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell"><a class="govuk-link" href="find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment/v2/index.html">Version 2<span class="govuk-visually-hidden">of Find out who to contact about money taken off your Universal Credit payment</span></a></td>
-                <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+                <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
                 <td class="govuk-table__cell">-</td>
                 <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-2_find-out-who-to-contact-about-money-taken-off-your-universal-credit-payment.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 2 of Find out who to contact about money taken off your Universal Credit payment</span></a></td>
               </tr>
@@ -688,13 +695,67 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="get-a-proof-of-benefit-letter/v1/index.html">Version 1<span class="govuk-visually-hidden">of Get a proof of benefit letter</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_get-a-proof-of-benefit-letter.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Get a proof of benefit letter</span></a></td>
             </tr>
           </tbody>
         </table>
     </div></div>
+
+    <div class="app-card">
+      <div class="app-card-title-wrapper">
+        <h2 class="govuk-heading-m govuk-product">Opt out of Winter Fuel Payment</h2>
+        <p class="govuk-body app-card-title-description">     
+          Enables users to Opt out of Winter Fuel Payment.    
+        </p> 
+        <details class="govuk-details app-card-title-govuk-links">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">GOV.UK pages<span class="govuk-visually-hidden">for Opt out of Winter Fuel Payment</span></span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body"><a href="https://www.gov.uk/winter-fuel-payment" class="govuk-link">Winter Fuel Payment</a></p>
+          </div>
+        </details>  
+      </div>
+      
+      <div class="app-card-content">
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Prototype versions for Opt out of Winter Fuel Payment</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Version</th>
+              <th scope="col" class="govuk-table__header">Phase</th>
+              <th scope="col" class="govuk-table__header">Last updated</th>
+              <th scope="col" class="govuk-table__header">User journey</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a class="govuk-link" href="opt-out-of-winter-fuel-payment/v2/index.html">Version 2<span class="govuk-visually-hidden">of Opt out of Winter Fuel Payment</span></a></td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">17 July 2025</td>
+              <td class="govuk-table__cell">-</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a class="govuk-link" href="opt-out-of-winter-fuel-payment/v1/index.html">Version 1<span class="govuk-visually-hidden">of Opt out of Winter Fuel Payment</span></a></td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">27 June 2025</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_opt-out-of-winter-fuel-payment.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Opt out of Winter Fuel Payment</span></a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        {{ govukButton({
+          text: "View design history",
+          classes: "govuk-button--secondary",
+          href: "opt-out-of-winter-fuel-payment/design-history.html",
+          attributes: {
+            "aria-label": "View design history for Opt out of Winter Fuel Payment"
+          }
+        }) }}
+    </div>
+  </div>
 
     <div class="app-card">
       <div class="app-card-title-wrapper">
@@ -789,7 +850,7 @@
 
   <div class="app-card">
     <div class="app-card-title-wrapper">
-      {{ govukTag({ text: "To be decommissioned 00:00 on 6 April", classes: "govuk-tag--red" })}}
+      {{ govukTag({ text: "Decommissioned", classes: "govuk-tag--red" })}}
       <h2 class="govuk-heading-m govuk-product">Request a call back to pay voluntary National Insurance contributions</h2>
       <p class="govuk-body app-card-title-description">
         Enables users to request a call back to pay voluntary National Insurance contributions.
@@ -814,13 +875,13 @@
                 <br>
                 <a class="govuk-link" href="voluntary-national-insurance-contributions/v7/future-pension-centre.html">Version 3 - Contact Future Pension Centre<span class="govuk-visually-hidden"></span></a>
               </td>
-              <td class="govuk-table__cell">{{govukTag({ text: "Go live - 00:00 on 6 April", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">24 Mar 2025</td>
-              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-3_voluntary-national-insurance-contributions.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 3 of Request information about underpaid state pension for someone who has died</span></a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="voluntary-national-insurance-contributions/v6/index.html">Version 2<span class="govuk-visually-hidden">of Request a call back to pay voluntary National Insurance contributions</span></a></td>
-              <td class="govuk-table__cell">{{govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell">11 Mar 2025</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-2_voluntary-national-insurance-contributions.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 2 of Request information about underpaid state pension for someone who has died</span></a></td>
             </tr>
@@ -875,7 +936,7 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a class="govuk-link" href="request-information-about-underpaid-state-pension-for-someone-who-has-died/v2/service-closed.html">Version 2<span class="govuk-visually-hidden">of Request information about underpaid state pension for someone who has died</span></a></td>
-            <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+            <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
             <td class="govuk-table__cell">11 Dec 2024</td>
             <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-2_request-information-about-underpaid-state-pension-for-someone-who-has-died.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 2 of Request information about underpaid state pension for someone who has died</span></a></td>
           </tr>
@@ -934,7 +995,7 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="personal-information-request/v2/index.html">Version 2<span class="govuk-visually-hidden">of Request your personal information</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">05 Nov 2024</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-2_personal-information-request.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 2 of Request your personal information</span></a></td>
             </tr>
@@ -977,7 +1038,7 @@
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a class="govuk-link" href="personal-information-request-for-a-citizen/v2/index.html">Version 2<span class="govuk-visually-hidden">ofSend a personal information request for a citizen</span></a></td>
-              <td class="govuk-table__cell">{{ govukTag({ text: "Live - Beta", classes: "govuk-tag--light-blue" })}}</td>
+              <td class="govuk-table__cell">{{ govukTag({ text: "Live", classes: "govuk-tag--light-blue" })}}</td>
               <td class="govuk-table__cell">-</td>
               <td class="govuk-table__cell"><a class="govuk-link" href="/public/images/version-1_personal-information-request-for-a-citizen.pdf#navpanes=0" type="application/pdf">User journey (PDF)<span class="govuk-visually-hidden">for version 1 of Send a personal information request for a citizen</span></a></td>
             </tr>
