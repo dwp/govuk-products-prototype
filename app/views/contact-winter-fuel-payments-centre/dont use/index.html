@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/contact-winter-fuel-payments-centre.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Contact the Winter Fuel Payments Centre
+      </h1>
+
+      {{ govukInsetText({
+        html: 'If you are contacting us to opt out of getting Winter Fuel Payments, you should use <a href="">the opt out of Winter Fuel Payment form</a>.'
+      }) }}
+
+      <form class="form" method="post">
+       
+        {{ govukRadios({
+          name: "age-verification",
+          id: "age-verification",
+          value: data['age-verification'],
+          fieldset: {
+            legend: {
+              text: "Were you born before 22 September 1959?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "If you're enquiring for someone else, were they born before 22 September 1959?"
+          },
+          items: [
+            {
+              value: "yes~/contact-winter-fuel-payments-centre/v3/contact-form",
+              text: "Yes"
+            },
+            {
+              value: "no~/contact-winter-fuel-payments-centre/v3/not-eligible",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
