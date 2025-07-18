@@ -5,6 +5,12 @@
   {{ serviceName }} - GOV.UK 
 {% endblock %}
 
+{% block header %}
+  {{ govukHeader({
+    rebrand: true
+  }) }}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukBreadcrumbs({
     items: [{
@@ -23,7 +29,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -96,5 +101,4 @@
   </div>
   </main>
 </div>
-
 {% endblock %}

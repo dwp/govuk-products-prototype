@@ -5,14 +5,19 @@
   {{ serviceName }} - GOV.UK
 {% endblock %}
 
-{% block beforeContent %}
- 
-{{ govukPhaseBanner({
-  tag: {
-  text: "Alpha"
-  },
-    html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+{% block header %}
+  {{ govukHeader({
+    rebrand: true
   }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+    text: "Alpha"
+    },
+      html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
 {% endblock %}
 
 {% block content %}
