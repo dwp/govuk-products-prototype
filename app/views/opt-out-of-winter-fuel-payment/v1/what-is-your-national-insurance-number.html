@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/opt-out-of-winter-fuel-payment.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="what-is-your-full-name" method="post">
+
+      {{ govukInput({
+        label: {
+          text: "What is your National Insurance number?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        },
+        hint: {
+          text: "It's on your National Insurance card, benefit letter, payslip or P60 - for example, 'QQ 12 34 56 C'"
+        },
+        classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
+        id: "optoutwfp--nino",
+        name: "optoutwfp--nino",
+        value: data['optoutwfp--full-name'],
+        spellcheck: false
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        attributes: "govuk-button"
+      }) }}
+    </form>
+
+    {{ govukDetails({
+      summaryText: "Get help with this form",
+      html: '<a href="https://www.gov.uk/winter-fuel-payment/report-change-circumstances#contact-the-winter-fuel-payment-centre">Contact the Winter Fuel Payment Centre (opens in new tab)</a>'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

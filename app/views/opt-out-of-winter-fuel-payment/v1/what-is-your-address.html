@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/opt-out-of-winter-fuel-payment.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="what-is-your-phone-number" method="post">
+
+      {% call govukFieldset({
+        legend: {
+          text: "What is your address?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+      
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          id: "optoutwfp--address-line-1",
+          name: "optoutwfp--address-line-1",
+          value: data['optoutwfp--address-line-1'],
+          autocomplete: "address-line1"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          id: "optoutwfp--address-line-2",
+          name: "optoutwfp--address-line-2",
+          value: data['optoutwfp--address-line-2'],
+          autocomplete: "address-line2"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "Town or city"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "optoutwfp--address-town",
+          name: "optoutwfp--address-town",
+          value: data['optoutwfp--address-town'],
+          autocomplete: "address-level2"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "County (optional)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "optoutwfp--address-county",
+          name: "optoutwfp--address-county",
+          value: data['optoutwfp--address-county']
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          classes: "govuk-input--width-10",
+          id: "optoutwfp--address-postcode",
+          name: "optoutwfp--address-postcode",
+          value: data['optoutwfp--address-postcode'],
+          autocomplete: "postal-code"
+        }) }}
+      
+      {% endcall %}
+      {{ govukButton({
+        text: "Continue",
+        attributes: "govuk-button"
+      }) }}
+    </form>
+
+    {{ govukDetails({
+      summaryText: "Get help with this form",
+      html: '<a href="https://www.gov.uk/winter-fuel-payment/report-change-circumstances#contact-the-winter-fuel-payment-centre">Contact the Winter Fuel Payment Centre (opens in new tab)</a>'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
