@@ -5,23 +5,22 @@
   {{ serviceName }} - GOV.UK
 {% endblock %}
 
-{% block beforeContent %}
-{{ super() }}
-  {% from "language-toggle/macro.njk" import dwpLanguageToggle %}
-  {{ dwpLanguageToggle({
-    selectedLang: "en",
-    href: {
-        en: "#",
-        cy: "#"
-    }
+{% block header %}
+  {{ govukHeader({
+    rebrand: true
   }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {% include "layouts/welsh-toggle-wo-back-link.html" %}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
+    <h1 class="govuk-heading-l">
       Contact Employer Services 
     </h1>
 
@@ -31,7 +30,7 @@
    
     {{ govukInput({
       label: {
-        text: "Contact name",
+        text: "Full name",
         classes: "govuk-label--m"
       },
       id: "contact-name",
@@ -40,7 +39,7 @@
 
     {{ govukInput({
       label: {
-        text: "Business name",
+        text: "Name of your business",
         classes: "govuk-label--m"
       },
       id: "business-name",
@@ -85,7 +84,7 @@
         isPageHeading: false
       },
       hint: {
-        text: "Tell us if you are recruiting nationally in a number of locations or a single location. Please give the names of the towns or cities and postcodes if you know them."
+        text: "Tell us if you're recruiting nationally, in multiple locations or a single location. Tell us the names of the towns or cities and postcodes if you know them."
       }
     }) }}
 
@@ -103,7 +102,7 @@
       name: "advice",
       fieldset: {
         legend: {
-          text: "What recruitment advice do you need",
+          text: "What recruitment advice do you need?",
           isPageHeading: false,
           classes: "govuk-fieldset__legend--m"
         }
@@ -152,18 +151,9 @@
       ]
     }) }}
 
-    {{ govukInput({
-      label: {
-        text: "Where did you hear about Contact Employer Services? (Optional)",
-        classes: "govuk-label--m"
-      },
-      id: "where-did-you-hear",
-      name: "whereDidYouHear"
-    }) }}
-
     {{ govukButton({
-      text: "Send your enquiry",
-      href: "what-happens-next"
+      text: "Continue",
+      href: "where-did-you-hear"
     }) }}
 
   </div>
