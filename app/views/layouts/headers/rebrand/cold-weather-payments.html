@@ -3,12 +3,3 @@
 {% set serviceName %}
   Cold Weather Payments
 {% endset %}
-
-{% block header %}
-  {{ super() }}
-
-{{ govukServiceNavigation({
-  serviceName: "Cold Weather Payments",
-  serviceUrl: "index.html"
-}) }}
-{% endblock %}
