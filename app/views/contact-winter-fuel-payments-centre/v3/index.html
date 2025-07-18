@@ -1,13 +1,8 @@
 {% extends "layouts/main.html" %}
-{% extends "layouts/headers/rebrand/contact-winter-fuel-payments-centre.html" %}
+{% extends "layouts/headers/contact-winter-fuel-payments-centre.html" %}
 
 {% block pageTitle %}
   {{ serviceName }} - GOV.UK
-{% endblock %}
-
-{% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
 {% endblock %}
 
 {% block content %}
@@ -19,7 +14,19 @@
         Contact the Winter Fuel Payments Centre
       </h1>
 
-       <p class="govuk-body">If you've claimed Winter Fuel Payment before, you should get it automatically.</p>
+     <!--  <p class="govuk-body">You will get a Winter Fuel Payment for winter 2025 to 2026 if all of the following apply:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+          <li>you were born before 22 September 1959</li>
+          <li>your income is £35,000 or lower</li>
+          <li>you live in England or Wales</li>
+      </ul> 
+
+      <p class="govuk-body">To find out if you're eligible for the Winter Fuel Payment<a href=""></a></p>-->
+
+      {{ govukInsetText({
+        html: 'If you are contacting us to opt out of getting Winter Fuel Payments, you should use <a href="">the opt out of Winter Fuel Payment form</a>.'
+      }) }}
 
       <form class="form" method="post">
        
@@ -29,12 +36,12 @@
           value: data['age-verification'],
           fieldset: {
             legend: {
-              text: "Were you born before 25 September 1957?",
+              text: "Were you born before 22 September 1959?",
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "If you're enquiring for someone else, were they born before 25 September 1957?"
+            text: "If you're enquiring for someone else, were they born before 22 September 1959?"
           },
           items: [
             {
