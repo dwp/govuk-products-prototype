@@ -20,4 +20,4 @@ todo-check:
 heroku-site-publish:
   extends: .heroku-site-publish-template
   variables:
-    HEROKU_APP_NAME: govuk-products-prototype
+    HEROKU_APP_NAME: govuk-products-prototype-2f3c89bacfee
