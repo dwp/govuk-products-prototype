@@ -1,0 +1,315 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/personal-information-request.html" %}
+
+{% block pageTitle %}
+Check your answers - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <form class="form"  method="post">
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['full-name'] or "Full name not given"}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> your full name</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Have you been known by another name?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['another-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">Change<span class="govuk-visually-hidden"> have you been known by another name?</span></a>
+            </dd>
+          </div>
+
+          {% if data['another-name'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your previous names
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['previous-names'] or "Previous names not given"}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="previous-names">Change<span class="govuk-visually-hidden"> your previous names</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{dateOfBirth}}
+           
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="date-of-birth">Change<span class="govuk-visually-hidden"> your date of birth</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you have an address in the UK?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['address-in-uk']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address">Change<span class="govuk-visually-hidden"> do you have an address in the UK?</span></a>
+            </dd>
+          </div>
+          
+          {% if data['address-in-uk'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your UK address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['uk-home-address-line-1']}},
+             
+              {% if data['uk-home-address-line-2'] != "" %}
+              {{data['uk-home-address-line-2']}},
+              {% endif %}
+
+              {{data['uk-home-address-town']}},
+              {{data['uk-home-address-county']}},
+              {{data['uk-home-address-postcode']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="home-address-uk">Change<span class="govuk-visually-hidden"> your UK address</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['address-in-uk'] == "no" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your address abroad
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['home-address-abroad'] or "Abroad address not given"}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="home-address-abroad">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Should we send the information to a different address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['write-to-different-address']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="write-to-different-address">Change<span class="govuk-visually-hidden"> should we send the information to a different address?</span></a>
+            </dd>
+          </div>
+
+          {% if data['address-to-write-to'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your UK address to write to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['write-to-uk-address-line-1']}},              
+              {% if data['write-to-uk-address-line-2'] != "" %}
+              {{data['write-to-uk-address-line-2']}},
+              {% endif %}
+              {{data['write-to-uk-address-town']}},
+              {{data['write-to-uk-address-county']}},
+              {{data['write-to-uk-address-postcode']}}            
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['address-to-write-to'] == "no" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your address abroad to write to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['write-to-abroad-address'] or "Abroad address not given"}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Can you tell us your National Insurance number?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['national-insurance-number'] == "" %}
+                National Insurance number not given
+              {% else %}
+                {{data['national-insurance-number']}}
+              {% endif %}        
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="national-insurance-number">Change<span class="govuk-visually-hidden"> your National Insurance number</span></a>
+            </dd>
+          </div>
+
+          {% if data['national-insurance-number'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">           
+                {{data['nino']}}       
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="national-insurance-number">Change<span class="govuk-visually-hidden"> your National Insurance number</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What time period should the information cover - From
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{datePeriodFrom}}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="dates">Change<span class="govuk-visually-hidden"> what time period should the information cover - From</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What time period should the information cover - To
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{datePeriodTo}}
+
+         
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="dates">Change<span class="govuk-visually-hidden"> what time period should the information cover - To</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What information do you need?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['information'] or "Information not given"}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="information">Change<span class="govuk-visually-hidden"> what information you need</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Can we call you if we need to check something?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['callback'] == "" %}
+                Phone number not given 
+              {% else %}
+                {{data['callback']}}
+              {% endif %}   
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="callback">Change<span class="govuk-visually-hidden"> can we call you if we need to check something?</span></a>
+            </dd>
+          </div>
+
+          {% if data['callback'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['callback-yes']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="callback">Change<span class="govuk-visually-hidden"> can we call you if we need to check something?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you need the information in an alternative format?
+            </dt>
+            <dd class="govuk-summary-list__value">              
+              {% if data['alternative-format'] == "" %}
+                Alternative format not given
+              {% else %}
+                {{data['alternative-format']}}
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="alternative-format">Change<span class="govuk-visually-hidden"> do you need the information in an alternative format?</span></a>
+            </dd>
+          </div>
+
+          {% if data['alternative-format'] == "yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you need the information in an alternative format?
+            </dt>
+            <dd class="govuk-summary-list__value">              
+              {{data['alternative-format-yes']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="alternative-format">Change<span class="govuk-visually-hidden"> do you need the information in an alternative format?</span></a>
+            </dd>
+          </div>
+          {% endif %}
+        </dl>
+
+        <h2 class="govuk-heading-m">Now send your request for personal information</h2>
+
+        <p class="govuk-body">By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+        {{ govukButton({
+          text: "Accept and send request",
+          href: "what-happens-next"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
