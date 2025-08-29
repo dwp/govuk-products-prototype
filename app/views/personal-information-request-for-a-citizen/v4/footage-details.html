@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/personal-information-request-for-a-citizen.html" %}
+
+{% block pageTitle %}
+  CCTV or Body Worn Camera footage details - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">The citizen's request</span>
+      CCTV or Body Worn Camera footage details
+    </h1>
+
+    <p class="govuk-body">To help us find the footage, you should tell us:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>which building or location the recording took place 
+      </li>
+      <li>the date and approximate time of the recording 
+      </li>
+      <li>a short description of the event 
+      </li>
+      <li>a description of the citizen, including what they were wearing or doing at the time
+      </li>
+    </ul>
+
+    <form class="form" action="request-not-related-to-footage" method="post">
+    
+    {{ govukTextarea({
+      name: "footage-details",
+      id: "footage-details",
+      value: data['footage-details'],
+      rows: "8",
+      label: {
+        text: "What footage do they need?",
+        classes: "govuk-label--m"
+      }
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      attributes: "govuk-button"
+    }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
