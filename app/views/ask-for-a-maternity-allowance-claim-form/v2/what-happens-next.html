@@ -5,8 +5,12 @@
   What happens next - {{ serviceName }} - GOV.UK
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
+  {{ super() }}
+  {% include "layouts/welsh-toggle-wo-back-link.html" %}
+{% endblock %}
 
+{% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -28,5 +32,4 @@
 
     </div>
   </div>
-
 {% endblock %}
