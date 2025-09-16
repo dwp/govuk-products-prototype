@@ -19,16 +19,12 @@ The citizen's request  - {{ serviceName }} - GOV.UK
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        The citizen's request
+        Requesting information (not related to CCTV or Body Worn Camera footage)
       </h1>
 
       <form class="form" action="how-we-took-the-request" method="post">
 
-        <h2 class="govuk-heading-m">
-          Requesting information (not related to CCTV or Body Worn Camera footage)
-        </h2>
-
-        <h3 class="govuk-heading-s">What time period should the information cover?</h2>
+        <h3 class="govuk-heading-m">What time period should the information cover?</h2>
 
         <div class="govuk-hint">For example, from 27 9 2021 to 16 10 2021</div>
 
@@ -100,38 +96,10 @@ The citizen's request  - {{ serviceName }} - GOV.UK
           rows: "10",
           label: {
             text: "What information do they need?",
-            classes: "govuk-label--s"
+            classes: "govuk-label--m"
           },
           hint: {
             text: "Ask them to be as specific as possible. If their request relates to a particular benefit or payment, say what this is."
-          }
-        }) }}
-
-        <h2 class="govuk-heading-m">
-          CCTV or Body Worn Camera footage details
-        </h2>
-
-        <p class="govuk-body">To help us find the footage, you should tell us:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>which building or location the recording took place 
-          </li>
-          <li>the date and approximate time of the recording 
-          </li>
-          <li>a short description of the event 
-          </li>
-          <li>a description of the citizen, including what they were wearing or doing at the time
-          </li>
-        </ul>
-        
-        {{ govukTextarea({
-          name: "footage-details",
-          id: "footage-details",
-          value: data['footage-details'],
-          rows: "8",
-          label: {
-            text: "What footage do they need?",
-            classes: "govuk-label--s"
           }
         }) }}
 
