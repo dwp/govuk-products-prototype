@@ -1,0 +1,212 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/personal-information-request-for-a-citizen.html" %}
+
+{% block pageTitle %}
+  What address should we write to?  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        The citizen's request
+      </h1>
+
+      <h2 class="govuk-heading-m">What time period should the information cover?</h2>
+
+      <div class="govuk-hint">For example, from 27 9 2021 to 16 10 2021</div>
+  
+      <form class="form" action="how-we-took-the-request" method="post">
+
+        {{ govukDateInput({
+          id: "date-from",
+          namePrefix: "date-from",
+          fieldset: {
+            legend: {
+              text: "From",
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 9 2021"
+          },
+          items: [
+            {
+              classes: 'govuk-input--width-2',
+              name: 'day',
+              value: data['date-from-day']
+            },
+            {
+              classes: 'govuk-input--width-2',
+              name: 'month',
+              value: data['date-from-month']
+            },
+            {
+              classes: 'govuk-input--width-4',
+              name: 'year',
+              value: data['date-from-year']
+            }
+          ]
+        }) }}
+    
+        {{ govukDateInput({
+          id: "date-to",
+          namePrefix: "date-to",
+          fieldset: {
+            legend: {
+              text: "To",
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 16 10 2021"
+          },
+          items: [
+            {
+              classes: 'govuk-input--width-2',
+              name: 'day',
+              value: data['date-to-day']
+            },
+            {
+              classes: 'govuk-input--width-2',
+              name: 'month',
+              value: data['date-to-month']
+            },
+            {
+              classes: 'govuk-input--width-4',
+              name: 'year',
+              value: data['date-to-year']
+            }
+          ]
+        }) }}
+
+        <h2 class="govuk-heading-m">
+          About their request
+        </h2>
+
+        <p class="govuk-body">Be as specific as you can. If their request relates to a particular benefit or payment, please say what this is.</p>
+
+        <h3 class="govuk-heading-s">Request for CCTV or Body Worn Camera footage </h3>
+
+        <p class="govuk-body"> If their request is for CCTV or Body Worn Camera footage from a DWP office or Jobcentre, we must be able to identify them in the recording. To help us locate the footage, please include:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the name of the building or location where the recording took place</li>
+          <li>the date and approximate time they want the footage from</li>
+          <li>a brief description of what happened</li>
+          <li>a description of the citizen, including what they were wearing at the time</li>
+        </ul>
+
+        {{ govukTextarea({
+          name: "information",
+          id: "information",
+          value: data['information'],
+          rows: "8",
+          label: {
+            text: "Give as much detail as you can about their request",
+            classes: "govuk-label--s"
+          }
+        }) }}
+
+        {% set callCitizenYesHtml %}
+          {{ govukInput({
+            id: "call-citizen-yes",
+            name: "call-citizen-yes",
+            value: data['call-citizen-yes'],
+            classes: "govuk-input--width-20",
+            label: {
+              text: "Their phone number"
+            }
+          }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "call-citizen",
+          value: data['call-citizen'],
+          fieldset: {
+            legend: {
+              text: "Do they agree that we can call them if we need to check something?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "This can speed up their request. Otherwise, we may need to write to them."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: callCitizenYesHtml
+              },
+              checked: true if data["permanent-address-in-uk"] === "yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: true if data["permanent-address-in-uk"] === "no"
+            }
+          ]
+        }) }}
+
+        {% set alternativeFormatYesHtml %}
+          {{ govukInput({
+            id: "alternative-format-yes",
+            name: "alternative-format-yes",
+            value: data['alternative-format-yes'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: "What format"
+            }
+          }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "alternative-format",
+          value: data['alternative-format'],
+          fieldset: {
+            legend: {
+              text: "Do they need to receive their information in an alternative format?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, braille or large print."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: alternativeFormatYesHtml
+              },
+              checked: true if data["alternative-format"] === "yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: true if data["alternative-format"] === "no"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          attributes: "govuk-button"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
