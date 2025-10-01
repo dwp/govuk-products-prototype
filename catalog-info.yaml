@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: prototype.interface.govuk-products-prototype
-  title: govuk-products-prototype
+  title: Govuk-Products-Prototype
   description: |
     Prototypes for DWP GOV.UK products.
 
