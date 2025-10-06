@@ -135,47 +135,6 @@
           classes: "govuk-input--width-20"
         }) }}
 
-        {% set callCitizenYesHtml %}
-          {{ govukInput({
-            id: "call-citizen-yes",
-            name: "call-citizen-yes",
-            value: data['call-citizen-yes'],
-            classes: "govuk-input--width-20",
-            label: {
-              text: "Their phone number"
-            }
-          }) }}
-        {% endset -%}
-
-        {{ govukRadios({
-          name: "call-citizen",
-          value: data['call-citizen'],
-          fieldset: {
-            legend: {
-              text: "Do they agree that we can call them if we need to check something?",
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "This can speed up their request. Otherwise, we may need to write to them."
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              conditional: {
-                html: callCitizenYesHtml
-              },
-              checked: true if data["permanent-address-in-uk"] === "yes"
-            },
-            {
-              value: "no",
-              text: "No",
-              checked: true if data["permanent-address-in-uk"] === "no"
-            }
-          ]
-        }) }}
-
         {% set alternativeFormatYesHtml %}
           {{ govukInput({
             id: "alternative-format-yes",
