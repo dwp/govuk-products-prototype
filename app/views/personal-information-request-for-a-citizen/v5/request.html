@@ -118,6 +118,23 @@
           }
         }) }}
 
+              {{ govukInput({
+          label: {
+            text: "What is their phone number? (optional)",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "The quickest way for us to contact them is by phone. We will use this number to... We can use a landline if they do not have a mobile phone."
+          },
+          id: "phone-number",
+          name: "phone-number",
+          value: data['phone-number'],
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20"
+        }) }}
+
         {% set callCitizenYesHtml %}
           {{ govukInput({
             id: "call-citizen-yes",

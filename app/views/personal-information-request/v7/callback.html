@@ -16,48 +16,25 @@ Can we call you if we need to check something? - {{ serviceName }} - GOV.UK
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
       
       <form class="form" action="alternative-format" method="post">
 
-        {% set callbackHtml %}
-        {{ govukInput({
-          id: "callback-yes",
-          name: "callback-yes",
-          value: data['callback-yes'],
-          classes: "govuk-input--width-20",
+            {{ govukInput({
           label: {
-            text: "Your phone number",
-            classes: "govuk-input--width-20 govuk-label--m"
-          }
-        }) }}
-        {% endset -%}
-
-        {{ govukRadios({
-          name: "callback",
-          value: data['callback'],
-          fieldset: {
-            legend: {
-              text: "Can we call you if we need to check something?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
+            text: "What is your phone number? (optional)",
+            classes: "govuk-label--l",
+            isPageHeading: true
           },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              conditional: {
-                html: callbackHtml
-              },
-              checked: true if data["callback"] === "yes"
-            },
-            {
-              value: "no",
-              text: "No",
-              checked: true if data["callback"] === "no"
-            }
-          ]
+          hint: {
+            text: "The quickest way for us to contact you is by phone. We will use this number to... We can use a landline if you do not have a mobile phone."
+          },
+          id: "phone-number",
+          name: "phone-number",
+          value: data['phone-number'],
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20"
         }) }}
         
         {{ govukButton({

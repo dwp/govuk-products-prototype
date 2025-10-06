@@ -48,12 +48,12 @@
           },
           items: [
             {
-              value: "citizen~/personal-information-request-for-a-citizen/v2/about-the-citizen",
+              value: "citizen~/personal-information-request-for-a-citizen/v5/about-the-citizen",
               text: "The citizen",
               checked: true if data["requester"] === "citizen"
             },
             {
-              value: "appointee~/personal-information-request-for-a-citizen/v2/about-the-citizen",
+              value: "appointee~/personal-information-request-for-a-citizen/v5/about-the-citizen",
               text: "Their appointee",
               conditional: {
                 html: requesterAppointeeHtml
@@ -61,7 +61,7 @@
               checked: true if data["requester"] === "appointee"
             },
             {
-              value: "someone-else~/personal-information-request-for-a-citizen/v2/how-authority-confirmed",
+              value: "someone-else~/personal-information-request-for-a-citizen/v5/how-authority-confirmed",
               text: "Someone else",
               conditional: {
                 html: requesterSomeoneElseHtml
