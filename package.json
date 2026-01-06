@@ -8,15 +8,19 @@
     "node": "18.14.2"
   },
   "dependencies": {
-    "@dwp/dwp-frontend": "3.3.0",
+    "@dwp/dwp-frontend": "3.4.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
-    "@govuk-prototype-kit/step-by-step": "2.2.3",
+    "@govuk-prototype-kit/step-by-step": "2.2.4",
     "@govuk-prototype-kit/task-list": "2.0.0",
     "@x-govuk/edit-prototype-in-browser": "^0.3.2",
+    "axios": "^1.13.2",
+    "cross-spawn": "^7.0.6",
     "find-an-address-plugin": "github:dwp/find-an-address-plugin",
-    "govuk-frontend": "5.11.0",
-    "govuk-prototype-kit": "13.17.0",
+    "form-data": "^4.0.5",
+    "govuk-frontend": "5.13.0",
+    "govuk-prototype-kit": "13.18.1",
     "jquery": "3.7.1",
+    "qs": "^6.14.1",
     "radio-button-redirect": "^1.2.0"
   }
 }
