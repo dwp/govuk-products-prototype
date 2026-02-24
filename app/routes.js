@@ -6,8 +6,8 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 
-const findAddressPlugin = require("find-an-address-plugin");
-findAddressPlugin(router);
+/* const findAddressPlugin = require("find-an-address-plugin");
+findAddressPlugin(router); */
 
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
