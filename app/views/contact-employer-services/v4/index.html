@@ -1,0 +1,174 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/contact-employer-services.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    rebrand: true
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {% include "layouts/welsh-toggle-wo-back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Contact Employer Services 
+    </h1>
+
+    <p class="govuk-body">Fill out your details and we will get back to you.</p>
+    
+    <p class="govuk-body">You can also <a class="govuk-link" href="https://www.gov.uk/jobcentre-plus-help-for-recruiters/recruitment-advice-and-support">contact us by phone</a>.</p>
+   
+    {{ govukInput({
+      label: {
+        text: "Full name",
+        classes: "govuk-label--m"
+      },
+      id: "contact-name",
+      name: "contactName"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Name of your business",
+        classes: "govuk-label--m"
+      },
+      id: "business-name",
+      name: "businessName"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Business email address",
+        classes: "govuk-label--m"
+      },
+      id: "email",
+      name: "email"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Phone number",
+        classes: "govuk-label--m"
+      },
+      id: "phone-number",
+      name: "phoneNumber",
+      classes: "govuk-input--width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Postcode where your business is based",
+        classes: "govuk-label--m"
+      },
+      id: "business-location-postcode",
+      name: "businessLocationPostcode",
+      classes: "govuk-input--width-20"
+    }) }}
+
+    {{ govukTextarea({
+      name: "moreDetail",
+      id: "more-detail",
+      label: {
+        text: "Where are you recruiting?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      hint: {
+        text: "Tell us if you're recruiting nationally, in multiple locations or a single location. Tell us the names of the towns or cities and postcodes if you know them."
+      }
+    }) }}
+
+    {% set adviceHtml %}
+    {{ govukInput({
+      id: "recruitment-advice",
+      name: "recruitmentAdvice",
+      label: {
+        text: "Which other recruitment services are you interested in?"
+      }
+    }) }}
+    {% endset -%}
+
+    {{ govukCheckboxes({
+      name: "advice",
+      fieldset: {
+        legend: {
+          text: "Which recruitment services are you interested in?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Apprenticeships",
+          text: "Apprenticeships"
+        },
+        {
+          value: "Jobs Guarantee (18 to 21 year olds)",
+          text: "Jobs Guarantee (18 to 21 year olds)"
+        },
+        {
+          value: "Recruiting for current vacancies",
+          text: "Recruiting for current vacancies"
+        },
+        {
+          value: "Recruitment events and jobs fairs",
+          text: "Recruitment events and jobs fairs"
+        },
+        {
+          value: "Sector-based Work Academy Programmes (SWAP)",
+          text: "Sector-based Work Academy Programmes (SWAP)"
+        },
+        {
+          value: "Work experience",
+          text: "Work experience"
+        },
+        {
+          value: "other",
+          text: "Other",
+          conditional: {
+            html: adviceHtml
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      name: "location",
+      fieldset: {
+        legend: {
+          text: "If you are an employer in Wales, would you like to speak to someone in Welsh? (Optional)",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "where-did-you-hear"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
