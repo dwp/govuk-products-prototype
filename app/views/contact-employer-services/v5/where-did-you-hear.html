@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/headers/rebrand/contact-employer-services.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: "Contact Employer Services",
+    serviceUrl: "index.html"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {% include "layouts/welsh-toggle-w-back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   
+    {% set hearAboutOtherHtml %}
+    {{ govukInput({
+      id: "hear-about-other",
+      name: "hearAboutOther",
+      label: {
+        text: "Where did you hear about us?"
+      }
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      name: "hear-about",
+      fieldset: {
+        legend: {
+          text: "Where did you hear about contacting Employer Services?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      },
+      items: [
+      {
+        value: "GOV.UK",
+        text: "GOV.UK"
+      },
+      {
+        value: "I've used the service before",
+        text: "I've used the service before"
+      },
+      {
+        value: "Jobcentre Plus or DWP",
+        text: "Jobcentre Plus or DWP"
+      },
+      {
+        value: "Online advert",
+        text: "Online advert"
+      },
+      {
+        value: "Online search",
+        text: "Online search"
+      },
+      {
+        value: "Recommendation from a colleague or another business",
+        text: "Recommendation from a colleague or another business"
+      },
+      {
+        value: "Social media",
+        text: "Social media"
+      },
+      {
+        value: "other",
+        text: "Other",
+        conditional: {
+          html: hearAboutOtherHtml
+        }
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "I do not remember",
+        text: "I do not remember"
+      }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Send your enquiry",
+      href: "what-happens-next"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
