@@ -13,7 +13,7 @@
     "axios": "1.20.0",
     "cross-spawn": "7.0.6",
     "form-data": "4.0.6",
-    "govuk-frontend": "6.0.0",
+    "govuk-frontend": "6.5.1",
     "govuk-prototype-kit": "npm:@dwp-govuk/govuk-prototype-kit@13.20.2",
     "jquery": "4.0.0",
     "node": "18.20.8",
